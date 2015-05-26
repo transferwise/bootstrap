@@ -2775,7 +2775,7 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
@@ -2829,7 +2829,7 @@
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
           <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
       <span class="nt">&lt;/form&gt;</span>
       <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav navbar-right"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -2893,7 +2893,7 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
@@ -2903,7 +2903,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
 
   <div class="bs-callout bs-callout-warning" id="callout-navbar-mobile-caveats">
@@ -2932,12 +2932,12 @@
           <a class="navbar-brand" href="#">Brand</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
-          <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+          <button type="button" class="btn btn-primary navbar-btn">Sign in</button>
         </div>
       </div>
     </nav>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default navbar-btn"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary navbar-btn"</span><span class="nt">&gt;</span>Sign in<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
   <div class="bs-callout bs-callout-warning" id="callout-navbar-btn-context">
     <h4>Context-specific usage</h4>
@@ -4523,6 +4523,141 @@
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"well well-sm"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></div>
 </div>
 
+<div class="bs-docs-section">
+  <h1 id="logos" class="page-header">Logos</h1>
+  <p>Logos do not have a fixed size, they expand to fill the dimensions of
+      their container.  Make sure to specify a height otherwise your logo may
+      not render.</p>
+
+  <h2>Example</h2>
+  <div class="bs-example" data-example-id="logo">
+      <div style="padding: 10px">
+          <div class="logo logo-primary" style="height: 36px;"></div>
+      </div>
+      <div class="bg-primary" style="padding: 10px;">
+          <div class="logo logo-inverse" style="height: 36px;"></div>
+      </div>
+      <div style="padding: 10px">
+          <div class="logo logo-full-primary" style="height: 50px;"></div>
+      </div>
+      <div class="bg-primary" style="padding: 10px;">
+          <div class="logo logo-full-inverse" style="height: 50px;"></div>
+      </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-primary"</span> <span class="na">style=</span><span class="s">"height: 36px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-inverse"</span> <span class="na">style=</span><span class="s">"height: 36px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-full-primary"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-full-inverse"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+    <h2>Flags</h2>
+    <div class="bs-example" data-example-id="flag">
+        <div style="padding: 10px">
+            <div class="flag flag-default" style="height: 50px;"></div>
+        </div>
+        <div style="padding: 10px;">
+            <div class="flag flag-info" style="height: 50px;"></div>
+        </div>
+    </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flag flag-default"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flag flag-info"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+</div>
+
+<div class="bs-docs-section">
+  <h1 id="circles" class="page-header">Circles</h1>
+  <p>Circles are used to add visual interest to body text, they often help
+      to represent steps in a process or to accompany a set of discrete
+      points.  Circles normally contain iconography but may contain single
+      letters.</p>
+
+  <h2>Example</h2>
+  <div class="bs-example" data-example-id="circle">
+      <div class="circle">
+          <i class="glyphicon glyphicon-globe"></i>
+      </div>
+      <span class="circle">
+          A
+      </span>
+      <div class="circle">
+          <img data-holder-rendered="true"
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRkODVlZDIyZTIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGQ4NWVkMjJlMiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuNDY2NjY3MTc1MjkyOTciIHk9Ijk3LjM1Ij4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="" data-src="holder.js/100%x100%" alt="100%x100%" />
+      </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
+    A
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h2>Available variations</h2>
+  <p>Add any of the below modifier classes to change the size of a circle.
+      Nest circles in links to gain hover states.</p>
+
+  <div class="bs-example" data-example-id="circle-variants">
+    <a href="" class="circle circle-lg">
+      <i class="glyphicon glyphicon-globe"></i>
+    </a>
+    <a href="" class="circle circle-lg">
+        <img data-holder-rendered="true"
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRkODVlZDIyZTIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGQ4NWVkMjJlMiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuNDY2NjY3MTc1MjkyOTciIHk9Ijk3LjM1Ij4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="" data-src="holder.js/100%x100%" alt="100%x100%" />
+    </a>
+    <a href="" class="circle circle-sm">
+        <i class="glyphicon glyphicon-upload"></i>
+    </a>
+    <a href="">
+        <span class="circle circle-sm active">
+            <i class="glyphicon glyphicon-ok-sign"></i>
+        </span>
+    </a>
+    <div class="bg-primary clearfix">
+        <a href="" class="circle circle-sm pull-left">
+            A
+        </a>
+        <a href="" class="circle circle-sm active pull-left">
+            B
+        </a>
+        <a href="" class="circle circle-sm pull-left">
+            C
+        </a>
+        <a href="" class="circle circle-sm pull-left">
+            D
+        </a>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-upload"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"circle circle-sm active"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-ok-sign"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary clearfix"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm active pull-left"</span><span class="nt">&gt;</span>B<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>C<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>D<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+</div>
+
 
         </div>
         
@@ -4674,6 +4809,8 @@
 </li>
 <li><a href="#responsive-embed">Responsive embed</a></li>
 <li><a href="#wells">Wells</a></li>
+<li><a href="#logos">Logos</a></li>
+<li><a href="#circles">Circles</a></li>
 
               
             </ul>
@@ -4719,7 +4856,7 @@
     <ul class="bs-docs-footer-links text-muted">
       <li>Currently v3.3.4</li>
       <li>&middot;</li>
-      <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+      <li><a href="https://github.com/transferwise/bootstrap">GitHub</a></li>
       <li>&middot;</li>
       <li><a href="../getting-started/#examples">Examples</a></li>
       <li>&middot;</li>
@@ -4731,9 +4868,9 @@
       <li>&middot;</li>
       <li><a href="http://blog.getbootstrap.com">Blog</a></li>
       <li>&middot;</li>
-      <li><a href="https://github.com/twbs/bootstrap/issues">Issues</a></li>
+      <li><a href="https://github.com/transferwise/bootstrap/issues">Issues</a></li>
       <li>&middot;</li>
-      <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a></li>
+      <li><a href="https://github.com/transferwise/bootstrap/releases">Releases</a></li>
     </ul>
   </div>
 </footer>
