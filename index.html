@@ -54,7 +54,8 @@
     <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 
     <!-- Docs master nav -->
-    <header class="navbar navbar-default navbar-static-top bs-docs-nav" id="top" role="banner">
+    <header class="navbar navbar-default navbar-static-top" id="top" role="banner"
+  data-spy="affix" data-offset-top="60">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
@@ -95,15 +96,18 @@
 
 
     <!-- Page content of course! -->
-    <main class="bs-docs-masthead bg-primary" id="content" role="main" tabindex="-1">
-  <div class="container">
-    <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">B</span>
-    <p class="lead">Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</p>
-    <p class="lead">
-      <a href="getting-started#download" class="btn btn-primary btn-lg" onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 3.3.4');">Download Bootstrap</a>
-    </p>
-    <p class="version">Currently v3.3.4</p>
-    <!--
+    <div class="jumbotron-image" style="background-image: url('/assets/img/css-bg.jpg')">
+    <main class="jumbotron" id="content" role="main" tabindex="-1">
+        <div class="container">
+            <h1>TransferWise Bootstrap</h1>
+            <p class="lead">Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</p>
+            <p class="lead">This is a fork of the main Bootstrap project implementing the TransferWise style guide.</p>
+
+            <p class="lead">
+              <a href="getting-started#download" class="btn btn-primary btn-lg" onclick="ga('send', 'event', 'Jumbotron actions', 'Download', 'Download 3.3.4');">Download Bootstrap</a>
+            </p>
+            <p class="version">Currently v3.3.4</p>
+            <!--
 <div id="carbonads-container">
     <div class="carbonad">
         <div id="azcarbon"></div>
@@ -112,8 +116,9 @@
 </div>
 -->
 
-  </div>
-</main>
+        </div>
+    </main>
+</div>
 
 <div class="bs-docs-featurette">
   <div class="container">
@@ -147,7 +152,7 @@
   </div>
 </div>
 
-<div class="bs-docs-featurette">
+<div class="bs-docs-featurette bg-info">
   <div class="container">
     <h2 class="bs-docs-featurette-title">Built with Bootstrap.</h2>
     <p class="lead">Millions of amazing sites across the web are being built with Bootstrap. Get started on your own with our growing <a href="../getting-started/#examples">collection of examples</a> or by exploring some of our favorites.</p>
