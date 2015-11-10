@@ -59,6 +59,7 @@
     <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 
     <!-- Docs master nav -->
+    <div class="bg-primary">
     <header class="navbar navbar-inverse navbar-static-top" id="top" role="banner"
   data-spy="affix" data-offset-top="60">
   <div class="container">
@@ -99,31 +100,186 @@
   </div>
 </header>
 
+    </div>
 
     <!-- Docs page layout -->
-    <div class="jumbotron" id="content" tabindex="-1">
-      <div class="container">
-        <h1>Components</h1>
-        <p>Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.</p>
-        <!--
-<div id="carbonads-container">
-    <div class="carbonad">
-        <div id="azcarbon"></div>
-        <script>var z = document.createElement("script"); z.async = true; z.src = "http://engine.carbonads.com/z/32341/azcarbon_2_1_0_HORIZ"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
-    </div>
-</div>
--->
-
-      </div>
-    </div>
-
     <div class="container bs-docs-container">
+      <div class="row m-t-lg">
+        
+        <div class="col-md-3" role="complementary">
+            <h3>Components</h3>
+            <p>Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.</p>
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+            <ul class="nav bs-docs-sidenav">
+              
+                <li>
+  <a href="#glyphicons">Glyphicons</a>
+  <ul class="nav">
+    <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
+    <li><a href="#glyphicons-how-to-use">How to use</a></li>
+    <li><a href="#glyphicons-examples">Examples</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#dropdowns">Dropdowns</a>
+  <ul class="nav">
+    <li><a href="#dropdowns-example">Example</a></li>
+    <li><a href="#dropdowns-alignment">Alignment</a></li>
+    <li><a href="#dropdowns-headers">Headers</a></li>
+    <li><a href="#dropdowns-divider">Divider</a></li>
+    <li><a href="#dropdowns-disabled">Disabled menu items</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#btn-groups">Button groups</a>
+  <ul class="nav">
+    <li><a href="#btn-groups-single">Basic example</a></li>
+    <li><a href="#btn-groups-toolbar">Button toolbar</a></li>
+    <li><a href="#btn-groups-sizing">Sizing</a></li>
+    <li><a href="#btn-groups-nested">Nesting</a></li>
+    <li><a href="#btn-groups-vertical">Vertical variation</a></li>
+    <li><a href="#btn-groups-justified">Justified button groups</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#btn-dropdowns">Button dropdowns</a>
+  <ul class="nav">
+    <li><a href="#btn-dropdowns-single">Single button dropdowns</a></li>
+    <li><a href="#btn-dropdowns-split">Split button dropdowns</a></li>
+    <li><a href="#btn-dropdowns-sizing">Sizing</a></li>
+    <li><a href="#btn-dropdowns-dropup">Dropup variation</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#input-groups">Input groups</a>
+  <ul class="nav">
+    <li><a href="#input-groups-basic">Basic example</a></li>
+    <li><a href="#input-groups-sizing">Sizing</a></li>
+    <li><a href="#input-groups-checkboxes-radios">Checkbox and radios addons</a></li>
+    <li><a href="#input-groups-buttons">Button addons</a></li>
+    <li><a href="#input-groups-buttons-dropdowns">Buttons with dropdowns</a></li>
+    <li><a href="#input-groups-buttons-segmented">Segmented buttons</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#nav">Navs</a>
+  <ul class="nav">
+    <li><a href="#nav-tabs">Tabs</a></li>
+    <li><a href="#nav-pills">Pills</a></li>
+    <li><a href="#nav-justified">Justified</a></li>
+    <li><a href="#nav-disabled-links">Disabled links</a></li>
+    <li><a href="#nav-dropdowns">Using dropdowns</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#navbar">Navbar</a>
+  <ul class="nav">
+    <li><a href="#navbar-default">Default navbar</a></li>
+    <li><a href="#navbar-brand-image">Brand image</a></li>
+    <li><a href="#navbar-forms">Forms</a></li>
+    <li><a href="#navbar-buttons">Buttons</a></li>
+    <li><a href="#navbar-text">Text</a></li>
+    <li><a href="#navbar-links">Non-nav links</a></li>
+    <li><a href="#navbar-component-alignment">Component alignment</a></li>
+    <li><a href="#navbar-fixed-top">Fixed to top</a></li>
+    <li><a href="#navbar-fixed-bottom">Fixed to bottom</a></li>
+    <li><a href="#navbar-static-top">Static top</a></li>
+    <li><a href="#navbar-inverted">Inverted navbar</a></li>
+  </ul>
+</li>
+<li><a href="#breadcrumbs">Breadcrumbs</a></li>
+<li>
+  <a href="#pagination">Pagination</a>
+  <ul class="nav">
+    <li><a href="#pagination-default">Default pagination</a></li>
+    <li><a href="#pagination-pager">Pager</a></li>
+  </ul>
+</li>
+<li><a href="#labels">Labels</a></li>
+<li><a href="#badges">Badges</a></li>
+<li><a href="#jumbotron">Jumbotron</a></li>
+<li><a href="#page-header">Page header</a></li>
+<li>
+  <a href="#thumbnails">Thumbnails</a>
+  <ul class="nav">
+    <li><a href="#thumbnails-default">Default example</a></li>
+    <li><a href="#thumbnails-custom-content">Custom content</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#alerts">Alerts</a>
+  <ul class="nav">
+    <li><a href="#alerts-examples">Examples</a></li>
+    <li><a href="#alerts-dismissible">Dismissible alerts</a></li>
+    <li><a href="#alerts-links">Links in alerts</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#progress">Progress bars</a>
+  <ul class="nav">
+    <li><a href="#progress-basic">Basic example</a></li>
+    <li><a href="#progress-label">With label</a></li>
+    <li><a href="#progress-alternatives">Contextual alternatives</a></li>
+    <li><a href="#progress-striped">Striped</a></li>
+    <li><a href="#progress-animated">Animated</a></li>
+    <li><a href="#progress-stacked">Stacked</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#media">Media object</a>
+  <ul class="nav">
+    <li><a href="#media-default">Default media</a></li>
+    <li><a href="#media-list">Media list</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#list-group">List group</a>
+  <ul class="nav">
+    <li><a href="#list-group-basic">Basic example</a></li>
+    <li><a href="#list-group-badges">Badges</a></li>
+    <li><a href="#list-group-linked">Linked items</a></li>
+    <li><a href="#list-group-disabled">Disabled items</a></li>
+    <li><a href="#list-group-contextual-classes">Contextual classes</a></li>
+    <li><a href="#list-group-custom-content">Custom content</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#panels">Panels</a>
+  <ul class="nav">
+    <li><a href="#panels-basic">Basic example</a></li>
+    <li><a href="#panels-heading">Panel with heading</a></li>
+    <li><a href="#panels-footer">Panel with footer</a></li>
+    <li><a href="#panels-alternatives">Contextual alternatives</a></li>
+    <li><a href="#panels-tables">With tables</a>
+    <li><a href="#panels-list-group">With list groups</a>
+  </ul>
+</li>
+<li><a href="#responsive-embed">Responsive embed</a></li>
+<li><a href="#wells">Wells</a></li>
+<li><a href="#logos">Logos</a></li>
+<li><a href="#circles">Circles</a></li>
 
-      <div class="row">
-        <div class="col-md-9" role="main">
-          <div class="panel m-t-lg">
-	<div class="panel-body">
-<div class="bs-docs-section">
+              
+            </ul>
+            <a class="back-to-top" href="#top">
+              Back to top
+            </a>
+            
+            <a href="#" class="bs-docs-theme-toggle" role="button">
+              Preview theme
+            </a>
+            
+          </nav>
+        </div>
+        
+
+          <div class="col-md-9" role="main">
+            <div class="panel">
+              <!--<div class="panel-heading">
+                  <h3 class="panel-title">Components</h3>
+              </div>-->
+              <div class="panel-body">
+                  <div class="bs-docs-section">
   <h1 id="glyphicons" class="page-header">Glyphicons</h1>
 
   <h2 id="glyphicons-glyphs">Available glyphs</h2>
@@ -2584,9 +2740,10 @@
   <p>Pills are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
   <div class="bs-example" data-example-id="simple-nav-stacked">
     <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-      <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">Profile</a></li>
-      <li role="presentation"><a href="#">Messages</a></li>
+      <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Profile overview</a></li>
+      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit profile</a></li>
+      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-ok"></span>Verification<span class="badge">2</span></a></li>
+      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-camera"></span>Profile picture</a></li>
     </ul>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-stacked"</span><span class="nt">&gt;</span>
@@ -4680,175 +4837,10 @@
 
 </div>
 
-	</div>
-</div>
 
-        </div>
-        
-        <div class="col-md-3" role="complementary">
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
-            <ul class="nav bs-docs-sidenav">
-              
-                <li>
-  <a href="#glyphicons">Glyphicons</a>
-  <ul class="nav">
-    <li><a href="#glyphicons-glyphs">Available glyphs</a></li>
-    <li><a href="#glyphicons-how-to-use">How to use</a></li>
-    <li><a href="#glyphicons-examples">Examples</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#dropdowns">Dropdowns</a>
-  <ul class="nav">
-    <li><a href="#dropdowns-example">Example</a></li>
-    <li><a href="#dropdowns-alignment">Alignment</a></li>
-    <li><a href="#dropdowns-headers">Headers</a></li>
-    <li><a href="#dropdowns-divider">Divider</a></li>
-    <li><a href="#dropdowns-disabled">Disabled menu items</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#btn-groups">Button groups</a>
-  <ul class="nav">
-    <li><a href="#btn-groups-single">Basic example</a></li>
-    <li><a href="#btn-groups-toolbar">Button toolbar</a></li>
-    <li><a href="#btn-groups-sizing">Sizing</a></li>
-    <li><a href="#btn-groups-nested">Nesting</a></li>
-    <li><a href="#btn-groups-vertical">Vertical variation</a></li>
-    <li><a href="#btn-groups-justified">Justified button groups</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#btn-dropdowns">Button dropdowns</a>
-  <ul class="nav">
-    <li><a href="#btn-dropdowns-single">Single button dropdowns</a></li>
-    <li><a href="#btn-dropdowns-split">Split button dropdowns</a></li>
-    <li><a href="#btn-dropdowns-sizing">Sizing</a></li>
-    <li><a href="#btn-dropdowns-dropup">Dropup variation</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#input-groups">Input groups</a>
-  <ul class="nav">
-    <li><a href="#input-groups-basic">Basic example</a></li>
-    <li><a href="#input-groups-sizing">Sizing</a></li>
-    <li><a href="#input-groups-checkboxes-radios">Checkbox and radios addons</a></li>
-    <li><a href="#input-groups-buttons">Button addons</a></li>
-    <li><a href="#input-groups-buttons-dropdowns">Buttons with dropdowns</a></li>
-    <li><a href="#input-groups-buttons-segmented">Segmented buttons</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#nav">Navs</a>
-  <ul class="nav">
-    <li><a href="#nav-tabs">Tabs</a></li>
-    <li><a href="#nav-pills">Pills</a></li>
-    <li><a href="#nav-justified">Justified</a></li>
-    <li><a href="#nav-disabled-links">Disabled links</a></li>
-    <li><a href="#nav-dropdowns">Using dropdowns</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#navbar">Navbar</a>
-  <ul class="nav">
-    <li><a href="#navbar-default">Default navbar</a></li>
-    <li><a href="#navbar-brand-image">Brand image</a></li>
-    <li><a href="#navbar-forms">Forms</a></li>
-    <li><a href="#navbar-buttons">Buttons</a></li>
-    <li><a href="#navbar-text">Text</a></li>
-    <li><a href="#navbar-links">Non-nav links</a></li>
-    <li><a href="#navbar-component-alignment">Component alignment</a></li>
-    <li><a href="#navbar-fixed-top">Fixed to top</a></li>
-    <li><a href="#navbar-fixed-bottom">Fixed to bottom</a></li>
-    <li><a href="#navbar-static-top">Static top</a></li>
-    <li><a href="#navbar-inverted">Inverted navbar</a></li>
-  </ul>
-</li>
-<li><a href="#breadcrumbs">Breadcrumbs</a></li>
-<li>
-  <a href="#pagination">Pagination</a>
-  <ul class="nav">
-    <li><a href="#pagination-default">Default pagination</a></li>
-    <li><a href="#pagination-pager">Pager</a></li>
-  </ul>
-</li>
-<li><a href="#labels">Labels</a></li>
-<li><a href="#badges">Badges</a></li>
-<li><a href="#jumbotron">Jumbotron</a></li>
-<li><a href="#page-header">Page header</a></li>
-<li>
-  <a href="#thumbnails">Thumbnails</a>
-  <ul class="nav">
-    <li><a href="#thumbnails-default">Default example</a></li>
-    <li><a href="#thumbnails-custom-content">Custom content</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#alerts">Alerts</a>
-  <ul class="nav">
-    <li><a href="#alerts-examples">Examples</a></li>
-    <li><a href="#alerts-dismissible">Dismissible alerts</a></li>
-    <li><a href="#alerts-links">Links in alerts</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#progress">Progress bars</a>
-  <ul class="nav">
-    <li><a href="#progress-basic">Basic example</a></li>
-    <li><a href="#progress-label">With label</a></li>
-    <li><a href="#progress-alternatives">Contextual alternatives</a></li>
-    <li><a href="#progress-striped">Striped</a></li>
-    <li><a href="#progress-animated">Animated</a></li>
-    <li><a href="#progress-stacked">Stacked</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#media">Media object</a>
-  <ul class="nav">
-    <li><a href="#media-default">Default media</a></li>
-    <li><a href="#media-list">Media list</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#list-group">List group</a>
-  <ul class="nav">
-    <li><a href="#list-group-basic">Basic example</a></li>
-    <li><a href="#list-group-badges">Badges</a></li>
-    <li><a href="#list-group-linked">Linked items</a></li>
-    <li><a href="#list-group-disabled">Disabled items</a></li>
-    <li><a href="#list-group-contextual-classes">Contextual classes</a></li>
-    <li><a href="#list-group-custom-content">Custom content</a></li>
-  </ul>
-</li>
-<li>
-  <a href="#panels">Panels</a>
-  <ul class="nav">
-    <li><a href="#panels-basic">Basic example</a></li>
-    <li><a href="#panels-heading">Panel with heading</a></li>
-    <li><a href="#panels-footer">Panel with footer</a></li>
-    <li><a href="#panels-alternatives">Contextual alternatives</a></li>
-    <li><a href="#panels-tables">With tables</a>
-    <li><a href="#panels-list-group">With list groups</a>
-  </ul>
-</li>
-<li><a href="#responsive-embed">Responsive embed</a></li>
-<li><a href="#wells">Wells</a></li>
-<li><a href="#logos">Logos</a></li>
-<li><a href="#circles">Circles</a></li>
-
-              
-            </ul>
-            <a class="back-to-top" href="#top">
-              Back to top
-            </a>
-            
-            <a href="#" class="bs-docs-theme-toggle" role="button">
-              Preview theme
-            </a>
-            
-          </nav>
-        </div>
-        
+              </div>
+            </div>
+          </div>
       </div>
     </div>
 
