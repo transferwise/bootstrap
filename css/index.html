@@ -59,9 +59,10 @@
     <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
 
     <!-- Docs master nav -->
-    <div class="bg-primary">
-    <header class="navbar navbar-inverse navbar-static-top" id="top" role="banner"
-  data-spy="affix" data-offset-top="60">
+    <header class="navbar navbar-inverse navbar-static-top bg-primary"
+      id="top" role="banner"
+      data-spy="affix" data-offset-top="60">
+    
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
@@ -70,7 +71,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand">Bootstrap</a>
+      <a href="../" class="navbar-brand hidden-sm">Bootstrap</a>
+      <div class="flag flag-info hidden-md hidden-lg hidden-xs"></div>
     </div>
     <nav id="bs-navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -96,11 +98,15 @@
         <li><a href="http://blog.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');">Blog</a></li>
       </ul>
       -->
+      <div class="navbar-right hidden-sm hidden-md">
+          <a href="/getting-started/#download" class="btn btn-success navbar-btn">
+              Download
+          </a>
+      </div>
     </nav>
   </div>
-</header>
 
-    </div>
+    </header>
 
     <!-- Docs page layout -->
     <div class="container bs-docs-container">
@@ -109,8 +115,10 @@
         <div class="col-md-3" role="complementary">
             <h3>CSS</h3>
             <p>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.</p>
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
-            <ul class="nav bs-docs-sidenav">
+            <hr />
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm"
+            data-spy="affix" data-offset-top="230" data-offset-bottom="430">
+            <ul class="nav bs-docs-sidenav nav-stacked nav-pills">
               
                 <li>
   <a href="#overview">Overview</a>
@@ -680,7 +688,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-9 col-md-push-3"</span><span class="nt">&gt;</span>.col-md-9 .col-md-push-3<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3 col-md-pull-9"</span><span class="nt">&gt;</span>.col-md-3 .col-md-pull-9<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
+<!--
   <h2 id="grid-less">Less mixins and variables</h2>
   <p>In addition to <a href="#grid-example-basic">prebuilt grid classes</a> for fast layouts, Bootstrap includes Less variables and mixins for quickly generating your own simple, semantic layouts.</p>
 
@@ -840,6 +848,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-main"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content-secondary"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+-->
 </div>
 
 <div class="bs-docs-section">
@@ -1012,7 +1021,7 @@
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;em&gt;</span>rendered as italicized text<span class="nt">&lt;/em&gt;</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+  <div class="alert alert-info" id="callout-type-b-i-elems">
     <h4>Alternate elements</h4>
     <p>Feel free to use <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> in HTML5. <code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while <code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.</p>
   </div>
@@ -1255,7 +1264,7 @@
   <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
 <span class="nt">&lt;/dl&gt;</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-info" id="callout-type-dl-truncate">
+  <div class="alert alert-info" id="callout-type-dl-truncate">
     <h4>Auto-truncating</h4>
     <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
   </div>
@@ -1382,7 +1391,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h2 id="tables-striped">Striped rows</h2>
   <p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
-  <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
+  <div class="alert alert-danger" id="callout-tables-striped-ie8">
     <h4>Cross-browser compatibility</h4>
     <p>Striped tables are styled via the <code>:nth-child</code> CSS selector, which is not available in Internet Explorer 8.</p>
   </div>
@@ -1588,7 +1597,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     </table>
   </div>
   <div class="bs-example" data-example-id="contextual-table">
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>#</th>
@@ -1654,7 +1663,8 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
         </tr>
       </tbody>
     </table>
-  </div><!-- /example -->
+  </div>
+
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- On rows --&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"success"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
@@ -1670,7 +1680,8 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
 <span class="nt">&lt;/tr&gt;</span></code></pre></div>
-  <div class="bs-callout bs-callout-warning" id="callout-tables-context-accessibility">
+
+  <div class="alert alert-warning" id="callout-tables-context-accessibility">
     <h4>Conveying meaning to assistive technologies</h4>
     <p>Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (the visible text in the relevant table row/cell), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
   </div>
@@ -1678,11 +1689,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h2 id="tables-responsive">Responsive tables</h2>
   <p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
 
-  <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-overflow">
+  <div class="alert alert-warning" id="callout-tables-responsive-overflow">
     <h4>Vertical clipping/truncation</h4>
     <p>Responsive tables make use of <code>overflow-y: hidden</code>, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.</p>
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-ff-fieldset">
+  <div class="alert alert-warning" id="callout-tables-responsive-ff-fieldset">
     <h4>Firefox and fieldsets</h4>
     <p>Firefox has some awkward fieldset styling involving <code>width</code> that interferes with the responsive table. This cannot be overriden without a Firefox-specific hack that we <strong>don't</strong> provide in Bootstrap:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@-moz-document</span> <span class="n">url-prefix</span><span class="p">()</span> <span class="p">{</span>
@@ -1803,10 +1814,6 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
         <p class="help-block">Example block-level help text here.</p>
       </div>
       <div class="checkbox">
@@ -1825,10 +1832,6 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputPassword1"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputPassword1"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputFile"</span><span class="nt">&gt;</span>File input<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"exampleInputFile"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Example block-level help text here.<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
@@ -1838,7 +1841,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
-  <div class="bs-callout bs-callout-warning" id="callout-formgroup-inputgroup">
+  <div class="alert alert-warning" id="callout-formgroup-inputgroup">
     <h4>Don't mix form groups with input groups</h4>
     <p>Do not mix form groups directly with <a href="/components/#input-groups">input groups</a>. Instead, nest the input group inside of the form group.</p>
   </div>
@@ -1846,11 +1849,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h2 id="forms-inline">Inline form</h2>
   <p>Add <code>.form-inline</code> to your form (which doesn't have to be a <code>&lt;form&gt;</code>) for left-aligned and inline-block controls. <strong>This only applies to forms within viewports that are at least 768px wide.</strong></p>
-  <div class="bs-callout bs-callout-danger" id="callout-inline-form-width">
+  <div class="alert alert-danger" id="callout-inline-form-width">
     <h4>May require custom widths</h4>
     <p>Inputs and selects have <code>width: 100%;</code> applied by default in Bootstrap. Within inline forms, we reset that to <code>width: auto;</code> so multiple controls can reside on the same line. Depending on your layout, additional custom widths may be required.</p>
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-inline-form-labels">
+  <div class="alert alert-warning" id="callout-inline-form-labels">
     <h4>Always add labels</h4>
     <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these is present, screen readers may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.</p>
   </div>
@@ -1939,7 +1942,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Transfer cash<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
-
+<!--
   <h2 id="forms-horizontal">Horizontal form</h2>
   <p>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding <code>.form-horizontal</code> to the form (which doesn't have to be a <code>&lt;form&gt;</code>). Doing so changes <code>.form-group</code>s to behave as grid rows, so no need for <code>.row</code>.</p>
   <div class="bs-example" data-example-id="simple-horizontal-form">
@@ -1971,7 +1974,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
         </div>
       </div>
     </form>
-  </div><!-- /.bs-example -->
+  </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"inputEmail3"</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
@@ -2000,14 +2003,14 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
-
+-->
 
   <h2 id="forms-controls">Supported controls</h2>
   <p>Examples of standard form controls supported in an example form layout.</p>
 
   <h3>Inputs</h3>
   <p>Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.</p>
-  <div class="bs-callout bs-callout-danger" id="callout-input-needs-type">
+  <div class="alert alert-danger" id="callout-input-needs-type">
     <h4>Type declaration required</h4>
     <p>Inputs will only be fully styled if their <code>type</code> is properly declared.</p>
   </div>
@@ -2017,7 +2020,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     </form>
   </div><!-- /.bs-example -->
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Text input"</span><span class="nt">&gt;</span></code></pre></div>
-  <div class="bs-callout bs-callout-info" id="callout-xref-input-group">
+  <div class="alert alert-info" id="callout-xref-input-group">
     <h4>Input groups</h4>
     <p>To add integrated text or buttons before and/or after any text-based <code>&lt;input&gt;</code>, <a href="../components/#input-groups">check out the input group component</a>.</p>
   </div>
@@ -2284,7 +2287,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <input class="form-control" id="focusedInput" type="text" value="Demonstrative focus state">
     </form>
   </div>
-  <div class="bs-callout bs-callout-info" id="callout-focus-demo">
+  <div class="alert alert-info" id="callout-focus-demo">
     <h4>Demo <code>:focus</code> state</h4>
     <p>The above example input uses custom styles in our documentation to demonstrate the <code>:focus</code> state on a <code>.form-control</code>.</p>
   </div>
@@ -2302,12 +2305,12 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h3 id="forms-disabled-fieldsets">Disabled fieldsets</h3>
   <p>Add the <code>disabled</code> attribute to a <code>&lt;fieldset&gt;</code> to disable all the controls within the <code>&lt;fieldset&gt;</code> at once.</p>
 
-  <div class="bs-callout bs-callout-warning" id="callout-fieldset-disabled-pointer-events">
+  <div class="alert alert-warning" id="callout-fieldset-disabled-pointer-events">
     <h4>Caveat about link functionality of <code>&lt;a&gt;</code></h4>
     <p>By default, browsers will treat all native form controls (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> and <code>&lt;button&gt;</code> elements) inside a <code>&lt;fieldset disabled&gt;</code> as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes <code>&lt;a ... class="btn btn-*"&gt;</code> elements, these will only be given a style of <code>pointer-events: none</code>. As noted in the section about <a href="#buttons-disabled">disabled state for buttons</a> (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Opera 18 and below, or in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.</p>
   </div>
 
-  <div class="bs-callout bs-callout-danger" id="callout-fieldset-disabled-ie">
+  <div class="alert alert-danger" id="callout-fieldset-disabled-ie">
     <h4>Cross-browser compatibility</h4>
     <p>While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don't fully support the <code>disabled</code> attribute on a <code>&lt;fieldset&gt;</code>. Use custom JavaScript to disable the fieldset in these browsers.</p>
   </div>
@@ -2369,7 +2372,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h2 id="forms-control-validation">Validation states</h2>
   <p>Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
 
-  <div class="bs-callout bs-callout-warning" id="callout-form-validation-state-accessibility">
+  <div class="alert alert-warning" id="callout-form-validation-state-accessibility">
     <h4>Conveying validation state to assistive technologies and colorblind users</h4>
     <p>Using these validation styles to denote the state of a form control only provides a visual, color-based indication, which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.</p>
     <p>Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the form control's <code>&lt;label&gt;</code> text itself (as is the case in the following code example), include a <a href="../components/#glyphicons">Glyphicon</a> (with appropriate alternative text using the <code>.sr-only</code> class - see the <a href="../components/#glyphicons-examples">Glyphicon examples</a>), or by providing an additional <a href="#forms-help-text">help text</a> block. Specifically for assistive technologies, invalid form controls can also be assigned an <code>aria-invalid="true"</code> attribute.</p>
@@ -2389,18 +2392,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
         <label class="control-label" for="inputError1">Input with error</label>
         <input type="text" class="form-control" id="inputError1">
       </div>
-      <div class="checkbox has-success">
-        <label>
-            <input type="checkbox" id="checkboxSuccess" value="option1">
-            Checkbox with success
-        </label>
-      </div>
-      <div class="checkbox has-warning">
-        <label>
-            <input type="checkbox" id="checkboxWarning" value="option1">
-            Checkbox with warning
-        </label>
-      </div>
+
       <div class="checkbox has-error">
         <label>
             <input type="checkbox" id="checkboxError" value="option1">
@@ -2421,18 +2413,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"inputError1"</span><span class="nt">&gt;</span>Input with error<span class="nt">&lt;/label&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"inputError1"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox has-success"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxSuccess"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
-      Checkbox with success
-  <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox has-warning"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxWarning"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
-    Checkbox with warning
-  <span class="nt">&lt;/label&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox has-error"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"checkboxError"</span> <span class="na">value=</span><span class="s">"option1"</span><span class="nt">&gt;</span>
@@ -2443,11 +2424,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h3>With optional icons</h3>
   <p>You can also add optional feedback icons with the addition of <code>.has-feedback</code> and the right icon.</p>
   <p><strong class="text-danger">Feedback icons only work with textual <code>&lt;input class="form-control"&gt;</code> elements.</strong></p>
-  <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-positioning">
+  <div class="alert alert-warning" id="callout-has-feedback-icon-positioning">
     <h4>Icons, labels, and input groups</h4>
     <p>Manual positioning of feedback icons is required for inputs without a label and for <a href="../components#input-groups">input groups</a> with an add-on on the right. You are strongly encouraged to provide labels for all inputs for accessibility reasons. If you wish to prevent labels from being displayed, hide them with the <code>.sr-only</code> class. If you must do without labels, adjust the <code>top</code> value of the feedback icon. For input groups, adjust the <code>right</code> value to an appropriate pixel value depending on the width of your addon.</p>
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-accessibility">
+  <div class="alert alert-warning" id="callout-has-feedback-icon-accessibility">
     <h4>Conveying the icon's meaning to assistive technologies</h4>
     <p>To ensure that assistive technologies – such as screen readers – correctly convey the meaning of an icon, additional hidden text should be included with the <code>.sr-only</code> class and explicitly associated with the form control it relates to using <code>aria-describedby</code>. Alternatively, ensure that the meaning (for instance, the fact that there is a warning for a particular text entry field) is conveyed in some other form, such as changing the text of the actual <code>&lt;label&gt;</code> associated with the form control.</p>
     <p>Although the following examples already mention the validation state of their respective form controls in the <code>&lt;label&gt;</code> text itself, the above technique (using <code>.sr-only</code> text and <code>aria-describedby</code>) has been included for illustrative purposes.</p>
@@ -2666,7 +2647,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control input-lg"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span>
 <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control input-sm"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/select&gt;</span></code></pre></div>
-
+<!--
   <h3>Horizontal form group sizes</h3>
   <p>Quickly size labels and form controls within <code>.form-horizontal</code> by adding <code>.form-group-lg</code> or <code>.form-group-sm</code>.</p>
   <div class="bs-example" data-example-id="form-group-height-sizes">
@@ -2684,7 +2665,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
         </div>
       </div>
     </form>
-  </div><!-- /.bs-example -->
+  </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group form-group-lg"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-2 control-label"</span> <span class="na">for=</span><span class="s">"formGroupInputLarge"</span><span class="nt">&gt;</span>Large label<span class="nt">&lt;/label&gt;</span>
@@ -2699,7 +2680,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></div>
-
+-->
 
   <h3>Column sizing</h3>
   <p>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</p>
@@ -2737,7 +2718,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h2 id="forms-help-text">Help text</h2>
   <p>Block level help text for form controls.</p>
-  <div class="bs-callout bs-callout-info" id="callout-help-text-accessibility">
+  <div class="alert alert-info" id="callout-help-text-accessibility">
     <h4>Associating help text with form controls</h4>
     <p>Help text should be explicitly associated with the form control it relates to using the <code>aria-describedby</code> attribute. This will ensure that assistive technologies – such as screen readers – will announce this help text when the user focuses or enters the control.</p>
   </div>
@@ -2772,17 +2753,17 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Input"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-warning" id="callout-buttons-context-usage">
+  <div class="alert alert-warning" id="callout-buttons-context-usage">
     <h4>Context-specific usage</h4>
     <p>While button classes can be used on <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements, only <code>&lt;button&gt;</code> elements are supported within our nav and navbar components.</p>
   </div>
 
-  <div class="bs-callout bs-callout-warning" id="callout-buttons-anchor-accessibility">
+  <div class="alert alert-warning" id="callout-buttons-anchor-accessibility">
     <h4>Links acting as buttons</h4>
     <p>If the <code>&lt;a&gt;</code> elements are used to act as buttons – triggering in-page functionality, rather than navigating to another document or section within the current page – they should also be given an appropriate <code>role="button"</code>.</p>
   </div>
 
-  <div class="bs-callout bs-callout-warning" id="callout-buttons-ff-height">
+  <div class="alert alert-warning" id="callout-buttons-ff-height">
     <h4>Cross-browser rendering</h4>
     <p>As a best practice, <strong>we highly recommend using the <code>&lt;button&gt;</code> element whenever possible</strong> to ensure matching cross-browser rendering.</p>
     <p>Among other things, there's <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">a bug in Firefox &lt;30</a> that prevents us from setting the <code>line-height</code> of <code>&lt;input&gt;</code>-based buttons, causing them to not exactly match the height of other buttons on Firefox.</p>
@@ -2834,7 +2815,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <span class="c">&lt;!-- Special button for logging in with Google --&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-facebook"</span><span class="nt">&gt;</span>Login with Facebook<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-warning" id="callout-buttons-color-accessibility">
+  <div class="alert alert-warning" id="callout-buttons-color-accessibility">
     <h4>Conveying meaning to assistive technologies</h4>
     <p>Using color to add meaning to a button only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (the visible text of the button), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
   </div>
@@ -2923,7 +2904,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-lg btn-primary"</span> <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>Primary button<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default btn-lg"</span> <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-danger" id="callout-buttons-ie-disabled">
+  <div class="alert alert-danger" id="callout-buttons-ie-disabled">
     <h4>Cross-browser compatibility</h4>
     <p>If you add the <code>disabled</code> attribute to a <code>&lt;button&gt;</code>, Internet Explorer 9 and below will render text gray with a nasty text-shadow that we cannot fix.</p>
   </div>
@@ -2939,7 +2920,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <p>
     We use <code>.disabled</code> as a utility class here, similar to the common <code>.active</code> class, so no prefix is required.
   </p>
-  <div class="bs-callout bs-callout-warning" id="callout-buttons-disabled-anchor">
+  <div class="alert alert-warning" id="callout-buttons-disabled-anchor">
     <h4>Link functionality caveat</h4>
     <p>This class uses <code>pointer-events: none</code> to try to disable the link functionality of <code>&lt;a&gt;</code>s, but that CSS property is not yet standardized and isn't fully supported in Opera 18 and below, or in Internet Explorer 11. In addition, even in browsers that do support <code>pointer-events: none</code>, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, use custom JavaScript to disable such links.</p>
   </div>
@@ -2952,7 +2933,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h2 id="images-responsive">Responsive images</h2>
   <p>Images in Bootstrap 3 can be made responsive-friendly via the addition of the <code>.img-responsive</code> class. This applies <code>max-width: 100%;</code>, <code>height: auto;</code> and <code>display: block;</code> to the image so that it scales nicely to the parent element.</p>
   <p>To center images which use the <code>.img-responsive</code> class, use <code>.center-block</code> instead of <code>.text-center</code>. <a href="../css/#helper-classes-center">See the helper classes section</a> for more details about <code>.center-block</code> usage.</p>
-  <div class="bs-callout bs-callout-warning" id="callout-images-ie-svg">
+  <div class="alert alert-warning" id="callout-images-ie-svg">
     <h4>SVG images and IE 8-10</h4>
     <p>In Internet Explorer 8-10, SVG images with <code>.img-responsive</code> are disproportionately sized. To fix this, add <code>width: 100% \9;</code> where necessary. Bootstrap doesn't apply this automatically as it causes complications to other image formats.</p>
   </div>
@@ -2960,7 +2941,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h2 id="images-shapes">Image shapes</h2>
   <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
-  <div class="bs-callout bs-callout-danger" id="callout-images-ie-rounded-corners">
+  <div class="alert alert-danger" id="callout-images-ie-rounded-corners">
     <h4>Cross-browser compatibility</h4>
     <p>Keep in mind that Internet Explorer 8 lacks support for rounded corners.</p>
   </div>
@@ -2993,11 +2974,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-warning"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span></code></pre></div>
-  <div class="bs-callout bs-callout-info" id="callout-helper-context-color-specificity">
+  <div class="alert alert-info" id="callout-helper-context-color-specificity">
     <h4>Dealing with specificity</h4>
     <p>Sometimes emphasis classes cannot be applied due to the specificity of another selector. In most cases, a sufficient workaround is to wrap your text in a <code>&lt;span&gt;</code> with the class.</p>
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-helper-context-color-accessibility">
+  <div class="alert alert-warning" id="callout-helper-context-color-accessibility">
     <h4>Conveying meaning to assistive technologies</h4>
     <p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (the contextual colors are only used to reinforce meaning that is already present in the text/markup), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
   </div>
@@ -3008,21 +2989,20 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
     <div class="bg-primary p-a-md">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
     <div class="bg-default p-a-md">Ut semper congue tellus nec molestie.</div>
     <div class="bg-info p-a-md">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
+    <!--
     <div class="bg-success p-a-md">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
     <div class="bg-warning p-a-md">Etiam porta sem malesuada magna mollis euismod.</div>
     <div class="bg-danger p-a-md">Donec ullamcorper nulla non metus auctor fringilla.</div>
+-->
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-default"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-success"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-warning"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></div>
-  <div class="bs-callout bs-callout-info" id="callout-helper-bg-specificity">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></div>
+  <div class="alert alert-info" id="callout-helper-bg-specificity">
     <h4>Dealing with specificity</h4>
     <p>Sometimes contextual background classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element's content in a <code>&lt;div&gt;</code> with the class.</p>
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-helper-bg-accessibility">
+  <div class="alert alert-warning" id="callout-helper-bg-accessibility">
     <h4>Conveying meaning to assistive technologies</h4>
     <p>As with <a href="#helper-classes-colors">contextual colors</a>, ensure that any meaning conveyed through color is also conveyed in a format that is not purely presentational.</p>
   </div>
@@ -3063,11 +3043,41 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nc">.pull-right</span><span class="o">()</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
 
-  <div class="bs-callout bs-callout-warning" id="callout-helper-pull-navbar">
+  <div class="alert alert-warning" id="callout-helper-pull-navbar">
     <h4>Not for use in navbars</h4>
     <p>To align components in navbars with utility classes, use <code>.navbar-left</code> or <code>.navbar-right</code> instead. <a href="../components/#navbar-component-alignment">See the navbar docs</a> for details.</p>
   </div>
 
+
+  <h3>Responsive floats</h3>
+  <p>Float an element to the left or right only until grid collapse.</p>
+  <div class="bs-example" data-example-id="contextual-colors-helpers">
+    <div class="clearfix">
+      <div class="pull-left-sm">.pull-left-sm</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-left-md">.pull-left-md</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-left-lg">.pull-left-lg</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-right-sm">.pull-right-sm</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-right-md">.pull-right-md</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-right-lg">.pull-right-lg</div>
+    </div>
+  </div>
+  
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-sm"</span><span class="nt">&gt;</span>.pull-left-sm<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-md"</span><span class="nt">&gt;</span>.pull-left-md<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-lg"</span><span class="nt">&gt;</span>.pull-left-lg<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-sm"</span><span class="nt">&gt;</span>.pull-right-sm<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-md"</span><span class="nt">&gt;</span>.pull-right-md<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-lg"</span><span class="nt">&gt;</span>.pull-right-lg<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h3 id="helper-classes-center">Center content blocks</h3>
   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
@@ -3409,505 +3419,6 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <span class="visible-sm-block visible-md-block">&#10004; Hidden on small and medium</span>
     </div>
   </div>
-</div>
-
-<div class="bs-docs-section">
-  <h1 id="less" class="page-header">Using Less</h1>
-
-  <p class="lead">Bootstrap's CSS is built on Less, a preprocessor with additional functionality like variables, mixins, and functions for compiling CSS. Those looking to use the source Less files instead of our compiled CSS files can make use of the numerous variables and mixins we use throughout the framework.</p>
-
-  <p>Grid variables and mixins are covered <a href="#grid-less">within the Grid system section</a>.</p>
-
-
-  <h2 id="less-bootstrap">Compiling Bootstrap</h2>
-  <p>Bootstrap can be used in at least two ways: with the compiled CSS or with the source Less files. To compile the Less files, <a href="../getting-started/#grunt">consult the Getting Started section</a> for how to setup your development environment to run the necessary commands.</p>
-  <p>Third party compilation tools may work with Bootstrap, but they are not supported by our core team.</p>
-
-  <h2 id="less-variables">Variables</h2>
-  <p>Variables are used throughout the entire project as a way to centralize and share commonly used values like colors, spacing, or font stacks. For a complete breakdown, please see <a href="../customize/#less-variables-section">the Customizer</a>.</p>
-
-  <h3 id="less-variables-colors">Colors</h3>
-  <p>Easily make use of two color schemes: grayscale and semantic. Grayscale colors provide quick access to commonly used shades of black while semantic include various colors assigned to meaningful contextual values.</p>
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch gray-darker"></div>
-      <div class="color-swatch gray-dark"></div>
-      <div class="color-swatch gray"></div>
-      <div class="color-swatch gray-light"></div>
-      <div class="color-swatch gray-lighter"></div>
-    </div>
-  </div>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@gray-darker</span><span class="nd">:</span>  <span class="nn">#384347</span><span class="p">;</span>
-<span class="k">@gray-dark</span><span class="nd">:</span>    <span class="nn">#495860</span><span class="p">;</span>
-<span class="k">@gray</span><span class="nd">:</span>         <span class="nn">#5D7079</span><span class="p">;</span>
-<span class="k">@gray-light</span><span class="nd">:</span>   <span class="nn">#819DA9</span><span class="p">;</span>
-<span class="k">@gray-lighter</span><span class="nd">:</span> <span class="nn">#D3D5D8</span><span class="p">;</span></code></pre></div>
-
-  <div class="bs-example">
-    <div class="color-swatches">
-      <div class="color-swatch brand-primary"></div>
-      <div class="color-swatch brand-success"></div>
-      <div class="color-swatch brand-info"></div>
-      <div class="color-swatch brand-warning"></div>
-      <div class="color-swatch brand-danger"></div>
-    </div>
-  </div>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@brand-primary</span><span class="nd">:</span> <span class="nn">#223049</span>
-<span class="o">@</span><span class="nt">brand-success</span><span class="nd">:</span> <span class="nn">#4CBA38</span><span class="p">;</span>
-<span class="k">@brand-info</span><span class="nd">:</span>    <span class="nn">#01A4DF</span><span class="p">;</span>
-<span class="k">@brand-warning</span><span class="nd">:</span> <span class="nn">#FF9700</span><span class="p">;</span>
-<span class="k">@brand-danger</span><span class="nd">:</span>  <span class="nn">#F43820</span><span class="p">;</span></code></pre></div>
-
-  <p>Use any of these color variables as they are or reassign them to more meaningful variables for your project.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Use as-is
-</span><span class="nc">.masthead</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="o">@</span><span class="n">brand-primary</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Reassigned variables in Less
-</span><span class="k">@alert-message-background</span><span class="nd">:</span> <span class="o">@</span><span class="nt">brand-info</span><span class="p">;</span>
-<span class="nc">.alert</span> <span class="p">{</span>
-  <span class="nl">background-color</span><span class="p">:</span> <span class="o">@</span><span class="n">alert-message-background</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-variables-scaffolding">Scaffolding</h3>
-  <p>A handful of variables for quickly customizing key elements of your site's skeleton.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Scaffolding
-</span><span class="k">@body-bg</span><span class="nd">:</span>    <span class="nn">#fff</span><span class="p">;</span>
-<span class="k">@text-color</span><span class="nd">:</span> <span class="o">@</span><span class="nt">black-50</span><span class="p">;</span></code></pre></div>
-
-  <h3 id="less-variables-links">Links</h3>
-  <p>Easily style your links with the right color with only one value.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Variables
-</span><span class="k">@link-color</span><span class="nd">:</span>       <span class="o">@</span><span class="nt">brand-primary</span><span class="p">;</span>
-<span class="k">@link-hover-color</span><span class="nd">:</span> <span class="nt">darken</span><span class="o">(@</span><span class="nt">link-color</span><span class="o">,</span> <span class="nt">15</span><span class="nv">%</span><span class="o">)</span><span class="p">;</span>
-
-<span class="c1">// Usage
-</span><span class="nt">a</span> <span class="p">{</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">link-color</span><span class="p">;</span>
-  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-
-  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">link-hover-color</span><span class="p">;</span>
-    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-  <p>Note that the <code>@link-hover-color</code> uses a function, another awesome tool from Less, to automagically create the right hover color. You can use <code>darken</code>, <code>lighten</code>, <code>saturate</code>, and <code>desaturate</code>.</p>
-
-  <h3 id="less-variables-typography">Typography</h3>
-  <p>Easily set your typeface, text size, leading, and more with a few quick variables. Bootstrap makes use of these as well to provide easy typographic mixins.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@font-family-sans-serif</span><span class="nd">:</span>  <span class="s2">"Helvetica Neue"</span><span class="o">,</span> <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="p">;</span>
-<span class="k">@font-family-serif</span><span class="nd">:</span>       <span class="nt">Georgia</span><span class="o">,</span> <span class="s2">"Times New Roman"</span><span class="o">,</span> <span class="nt">Times</span><span class="o">,</span> <span class="nt">serif</span><span class="p">;</span>
-<span class="k">@font-family-monospace</span><span class="nd">:</span>   <span class="nt">Menlo</span><span class="o">,</span> <span class="nt">Monaco</span><span class="o">,</span> <span class="nt">Consolas</span><span class="o">,</span> <span class="s2">"Courier New"</span><span class="o">,</span> <span class="nt">monospace</span><span class="p">;</span>
-<span class="k">@font-family-base</span><span class="nd">:</span>        <span class="o">@</span><span class="nt">font-family-sans-serif</span><span class="p">;</span>
-
-<span class="k">@font-size-base</span><span class="nd">:</span>          <span class="nt">14px</span><span class="p">;</span>
-<span class="k">@font-size-large</span><span class="nd">:</span>         <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.25</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~18px
-</span><span class="k">@font-size-small</span><span class="nd">:</span>         <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">0</span><span class="nc">.85</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~12px
-</span>
-<span class="k">@font-size-h1</span><span class="nd">:</span>            <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">2</span><span class="nc">.6</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~36px
-</span><span class="k">@font-size-h2</span><span class="nd">:</span>            <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">2</span><span class="nc">.15</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~30px
-</span><span class="k">@font-size-h3</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.7</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~24px
-</span><span class="k">@font-size-h4</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">1</span><span class="nc">.25</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~18px
-</span><span class="k">@font-size-h5</span><span class="nd">:</span>            <span class="o">@</span><span class="nt">font-size-base</span><span class="p">;</span>
-<span class="k">@font-size-h6</span><span class="nd">:</span>            <span class="nt">ceil</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="nt">0</span><span class="nc">.85</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~12px
-</span>
-<span class="k">@line-height-base</span><span class="nd">:</span>        <span class="nt">1</span><span class="nc">.428571429</span><span class="p">;</span> <span class="c1">// 20/14
-</span><span class="k">@line-height-computed</span><span class="nd">:</span>    <span class="nt">floor</span><span class="o">((@</span><span class="nt">font-size-base</span> <span class="o">*</span> <span class="o">@</span><span class="nt">line-height-base</span><span class="o">))</span><span class="p">;</span> <span class="c1">// ~20px
-</span>
-<span class="k">@headings-font-family</span><span class="nd">:</span>    <span class="nt">inherit</span><span class="p">;</span>
-<span class="k">@headings-font-weight</span><span class="nd">:</span>    <span class="nt">500</span><span class="p">;</span>
-<span class="k">@headings-line-height</span><span class="nd">:</span>    <span class="nt">1</span><span class="nc">.1</span><span class="p">;</span>
-<span class="k">@headings-color</span><span class="nd">:</span>          <span class="nt">inherit</span><span class="p">;</span></code></pre></div>
-
-  <h3 id="less-variables-icons">Icons</h3>
-  <p>Two quick variables for customizing the location and filename of your icons.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@icon-font-path</span><span class="nd">:</span>          <span class="s2">"../fonts/"</span><span class="p">;</span>
-<span class="k">@icon-font-name</span><span class="nd">:</span>          <span class="s2">"glyphicons-halflings-regular"</span><span class="p">;</span></code></pre></div>
-
-  <h3 id="less-variables-components">Components</h3>
-  <p>Components throughout Bootstrap make use of some default variables for setting common values. Here are the most commonly used.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@padding-base-vertical</span><span class="nd">:</span>          <span class="nt">6px</span><span class="p">;</span>
-<span class="k">@padding-base-horizontal</span><span class="nd">:</span>        <span class="nt">12px</span><span class="p">;</span>
-
-<span class="k">@padding-large-vertical</span><span class="nd">:</span>         <span class="nt">10px</span><span class="p">;</span>
-<span class="k">@padding-large-horizontal</span><span class="nd">:</span>       <span class="nt">16px</span><span class="p">;</span>
-
-<span class="k">@padding-small-vertical</span><span class="nd">:</span>         <span class="nt">5px</span><span class="p">;</span>
-<span class="k">@padding-small-horizontal</span><span class="nd">:</span>       <span class="nt">10px</span><span class="p">;</span>
-
-<span class="k">@padding-xs-vertical</span><span class="nd">:</span>            <span class="nt">1px</span><span class="p">;</span>
-<span class="k">@padding-xs-horizontal</span><span class="nd">:</span>          <span class="nt">5px</span><span class="p">;</span>
-
-<span class="k">@line-height-large</span><span class="nd">:</span>              <span class="nt">1</span><span class="nc">.33</span><span class="p">;</span>
-<span class="k">@line-height-small</span><span class="nd">:</span>              <span class="nt">1</span><span class="nc">.5</span><span class="p">;</span>
-
-<span class="k">@border-radius-base</span><span class="nd">:</span>             <span class="nt">4px</span><span class="p">;</span>
-<span class="k">@border-radius-large</span><span class="nd">:</span>            <span class="nt">6px</span><span class="p">;</span>
-<span class="k">@border-radius-small</span><span class="nd">:</span>            <span class="nt">3px</span><span class="p">;</span>
-
-<span class="k">@component-active-color</span><span class="nd">:</span>         <span class="nn">#fff</span><span class="p">;</span>
-<span class="k">@component-active-bg</span><span class="nd">:</span>            <span class="o">@</span><span class="nt">brand-primary</span><span class="p">;</span>
-
-<span class="k">@caret-width-base</span><span class="nd">:</span>               <span class="nt">4px</span><span class="p">;</span>
-<span class="k">@caret-width-large</span><span class="nd">:</span>              <span class="nt">5px</span><span class="p">;</span></code></pre></div>
-
-
-  <h2 id="less-mixins-vendor">Vendor mixins</h2>
-  <p>Vendor mixins are mixins to help support multiple browsers by including all relevant vendor prefixes in your compiled CSS.</p>
-
-
-  <h3 id="less-mixins-box-sizing">Box-sizing</h3>
-  <p>Reset your components' box model with a single mixin. For context, see this <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">helpful article from Mozilla</a>.</p>
-  <p>The mixin is <strong>deprecated</strong> as of v3.2.0, with the introduction of Autoprefixer. To preserve backwards-compatibility, Bootstrap will continue to use the mixin internally until Bootstrap v4.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box-sizing</span><span class="o">(@</span><span class="nt">box-model</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-box-sizing</span><span class="p">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span> <span class="c1">// Safari &lt;= 5
-</span>     <span class="na">-moz-box-sizing</span><span class="p">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span> <span class="c1">// Firefox &lt;= 19
-</span>          <span class="nl">box-sizing</span><span class="p">:</span> <span class="o">@</span><span class="n">box-model</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-rounded-corners">Rounded corners</h3>
-  <p>Today all modern browsers support the non-prefixed <code>border-radius</code> property. As such, there is no <code>.border-radius()</code> mixin, but Bootstrap does include shortcuts for quickly rounding two corners on a particular side of an object.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.border-top-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-   <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.border-right-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border-bottom-right-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-     <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.border-bottom-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border-bottom-right-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-   <span class="nl">border-bottom-left-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.border-left-radius</span><span class="o">(@</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">border-bottom-left-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-     <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-box-shadow">Box (Drop) shadows</h3>
-  <p>If your target audience is using the latest and greatest browsers and devices, be sure to just use the <code>box-shadow</code> property on its own. If you need support for older Android (pre-v4) and iOS devices (pre-iOS 5), use the <strong>deprecated</strong> mixin to pick up the required <code>-webkit</code> prefix.</p>
-  <p>The mixin is <strong>deprecated</strong> as of v3.1.0, since Bootstrap doesn't officially support the outdated platforms that don't support the standard property. To preserve backwards-compatibility, Bootstrap will continue to use the mixin internally until Bootstrap v4.</p>
-  <p>Be sure to use <code>rgba()</code> colors in your box shadows so they blend as seamlessly as possible with backgrounds.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="err">.</span><span class="nl">box-shadow</span><span class="err">(@</span><span class="na">shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">3px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">25</span><span class="p">))</span> <span class="p">{</span>
-  <span class="na">-webkit-box-shadow</span><span class="p">:</span> <span class="o">@</span><span class="n">shadow</span><span class="p">;</span> <span class="c1">// iOS &lt;4.3 &amp; Android &lt;4.1
-</span>          <span class="nl">box-shadow</span><span class="p">:</span> <span class="o">@</span><span class="n">shadow</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-transitions">Transitions</h3>
-  <p>Multiple mixins for flexibility. Set all transition information with one, or specify a separate delay and duration as needed.</p>
-  <p>The mixins are <strong>deprecated</strong> as of v3.2.0, with the introduction of Autoprefixer. To preserve backwards-compatibility, Bootstrap will continue to use the mixins internally until Bootstrap v4.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.transition</span><span class="o">(@</span><span class="nt">transition</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition</span><span class="p">:</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-          <span class="nl">transition</span><span class="p">:</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transition-property</span><span class="o">(@</span><span class="nt">transition-property</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition-property</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-property</span><span class="p">;</span>
-          <span class="nl">transition-property</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-property</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transition-delay</span><span class="o">(@</span><span class="nt">transition-delay</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition-delay</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-delay</span><span class="p">;</span>
-          <span class="nl">transition-delay</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-delay</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transition-duration</span><span class="o">(@</span><span class="nt">transition-duration</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition-duration</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-duration</span><span class="p">;</span>
-          <span class="nl">transition-duration</span><span class="p">:</span> <span class="o">@</span><span class="n">transition-duration</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transition-timing-function</span><span class="o">(@</span><span class="nt">timing-function</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition-timing-function</span><span class="p">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
-          <span class="nl">transition-timing-function</span><span class="p">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transition-transform</span><span class="o">(@</span><span class="nt">transition</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transition</span><span class="p">:</span> <span class="o">-</span><span class="n">webkit-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-     <span class="na">-moz-transition</span><span class="p">:</span> <span class="o">-</span><span class="n">moz-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-       <span class="na">-o-transition</span><span class="p">:</span> <span class="o">-</span><span class="n">o-transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-          <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="o">@</span><span class="n">transition</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-transformations">Transformations</h3>
-  <p>Rotate, scale, translate (move), or skew any object.</p>
-  <p>The mixins are <strong>deprecated</strong> as of v3.2.0, with the introduction of Autoprefixer. To preserve backwards-compatibility, Bootstrap will continue to use the mixins internally until Bootstrap v4.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.rotate</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">rotate</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.scale</span><span class="o">(@</span><span class="nt">ratio</span><span class="p">;</span> <span class="k">@ratio-y</span><span class="nc">...</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="o">@</span><span class="n">ratio</span><span class="o">,</span> <span class="o">@</span><span class="n">ratio-y</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.translate</span><span class="o">(@</span><span class="nt">x</span><span class="p">;</span> <span class="k">@y</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.skew</span><span class="o">(@</span><span class="nt">x</span><span class="p">;</span> <span class="k">@y</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">skewX</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="p">)</span> <span class="nf">skewY</span><span class="p">(</span><span class="o">@</span><span class="n">y</span><span class="p">);</span> <span class="c1">// See https://github.com/twbs/bootstrap/issues/4885; IE9+
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">skew</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.translate3d</span><span class="o">(@</span><span class="nt">x</span><span class="p">;</span> <span class="k">@y</span><span class="p">;</span> <span class="k">@z</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">translate3d</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="o">,</span> <span class="o">@</span><span class="n">z</span><span class="p">);</span>
-          <span class="nl">transform</span><span class="p">:</span> <span class="nf">translate3d</span><span class="p">(</span><span class="o">@</span><span class="n">x</span><span class="o">,</span> <span class="o">@</span><span class="n">y</span><span class="o">,</span> <span class="o">@</span><span class="n">z</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="nc">.rotateX</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">rotateX</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.rotateY</span><span class="o">(@</span><span class="nt">degrees</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-      <span class="na">-ms-transform</span><span class="p">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform</span><span class="p">:</span> <span class="nf">rotateY</span><span class="p">(</span><span class="o">@</span><span class="n">degrees</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nc">.perspective</span><span class="o">(@</span><span class="nt">perspective</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-perspective</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-     <span class="na">-moz-perspective</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-          <span class="nl">perspective</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.perspective-origin</span><span class="o">(@</span><span class="nt">perspective</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-perspective-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-     <span class="na">-moz-perspective-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-          <span class="nl">perspective-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">perspective</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.transform-origin</span><span class="o">(@</span><span class="nt">origin</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-transform-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">origin</span><span class="p">;</span>
-     <span class="na">-moz-transform-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">origin</span><span class="p">;</span>
-      <span class="na">-ms-transform-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">origin</span><span class="p">;</span> <span class="c1">// IE9 only
-</span>          <span class="nl">transform-origin</span><span class="p">:</span> <span class="o">@</span><span class="n">origin</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-animations">Animations</h3>
-  <p>A single mixin for using all of CSS3's animation properties in one declaration and other mixins for individual properties.</p>
-  <p>The mixins are <strong>deprecated</strong> as of v3.2.0, with the introduction of Autoprefixer. To preserve backwards-compatibility, Bootstrap will continue to use the mixins internally until Bootstrap v4.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.animation</span><span class="o">(@</span><span class="nt">animation</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation</span><span class="p">:</span> <span class="o">@</span><span class="n">animation</span><span class="p">;</span>
-          <span class="nl">animation</span><span class="p">:</span> <span class="o">@</span><span class="n">animation</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-name</span><span class="o">(@</span><span class="nt">name</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-name</span><span class="p">:</span> <span class="o">@</span><span class="n">name</span><span class="p">;</span>
-          <span class="nl">animation-name</span><span class="p">:</span> <span class="o">@</span><span class="n">name</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-duration</span><span class="o">(@</span><span class="nt">duration</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-duration</span><span class="p">:</span> <span class="o">@</span><span class="n">duration</span><span class="p">;</span>
-          <span class="nl">animation-duration</span><span class="p">:</span> <span class="o">@</span><span class="n">duration</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-timing-function</span><span class="o">(@</span><span class="nt">timing-function</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-timing-function</span><span class="p">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
-          <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="o">@</span><span class="n">timing-function</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-delay</span><span class="o">(@</span><span class="nt">delay</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-delay</span><span class="p">:</span> <span class="o">@</span><span class="n">delay</span><span class="p">;</span>
-          <span class="nl">animation-delay</span><span class="p">:</span> <span class="o">@</span><span class="n">delay</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-iteration-count</span><span class="o">(@</span><span class="nt">iteration-count</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-iteration-count</span><span class="p">:</span> <span class="o">@</span><span class="n">iteration-count</span><span class="p">;</span>
-          <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="o">@</span><span class="n">iteration-count</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.animation-direction</span><span class="o">(@</span><span class="nt">direction</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-animation-direction</span><span class="p">:</span> <span class="o">@</span><span class="n">direction</span><span class="p">;</span>
-          <span class="nl">animation-direction</span><span class="p">:</span> <span class="o">@</span><span class="n">direction</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-opacity">Opacity</h3>
-  <p>Set the opacity for all browsers and provide a <code>filter</code> fallback for IE8.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.opacity</span><span class="o">(@</span><span class="nt">opacity</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">opacity</span><span class="p">:</span> <span class="o">@</span><span class="n">opacity</span><span class="p">;</span>
-  <span class="c1">// IE8 filter
-</span>  <span class="k">@opacity-ie</span><span class="nd">:</span> <span class="o">(@</span><span class="nt">opacity</span> <span class="o">*</span> <span class="nt">100</span><span class="o">)</span><span class="p">;</span>
-  <span class="nl">filter</span><span class="p">:</span> <span class="o">~</span><span class="s2">"alpha(opacity=@{opacity-ie})"</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-placeholder">Placeholder text</h3>
-  <p>Provide context for form controls within each field.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="err">.</span><span class="na">placeholder</span><span class="err">(@</span><span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">input-color-placeholder</span><span class="p">)</span> <span class="p">{</span>
-  <span class="err">&amp;</span><span class="p">:</span><span class="o">:-</span><span class="n">moz-placeholder</span>           <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Firefox
-</span>  <span class="err">&amp;</span><span class="p">:</span><span class="o">-</span><span class="n">ms-input-placeholder</span>       <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Internet Explorer 10+
-</span>  <span class="err">&amp;</span><span class="p">:</span><span class="o">:-</span><span class="n">webkit-input-placeholder</span>  <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="o">@</span><span class="n">color</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Safari and Chrome
-</span><span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-columns">Columns</h3>
-  <p>Generate columns via CSS within a single element.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.content-columns</span><span class="o">(@</span><span class="nt">width</span><span class="p">;</span> <span class="k">@count</span><span class="p">;</span> <span class="k">@gap</span><span class="o">)</span> <span class="p">{</span>
-  <span class="na">-webkit-column-width</span><span class="p">:</span> <span class="o">@</span><span class="n">width</span><span class="p">;</span>
-     <span class="na">-moz-column-width</span><span class="p">:</span> <span class="o">@</span><span class="n">width</span><span class="p">;</span>
-          <span class="nl">column-width</span><span class="p">:</span> <span class="o">@</span><span class="n">width</span><span class="p">;</span>
-  <span class="na">-webkit-column-count</span><span class="p">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
-     <span class="na">-moz-column-count</span><span class="p">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
-          <span class="nl">column-count</span><span class="p">:</span> <span class="o">@</span><span class="n">count</span><span class="p">;</span>
-  <span class="na">-webkit-column-gap</span><span class="p">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
-     <span class="na">-moz-column-gap</span><span class="p">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
-          <span class="nl">column-gap</span><span class="p">:</span> <span class="o">@</span><span class="n">gap</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-gradients">Gradients</h3>
-  <p>Easily turn any two colors into a background gradient. Get more advanced and set a direction, use three colors, or use a radial gradient. With a single mixin you get all the prefixed syntaxes you'll need.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.vertical</span><span class="o">(</span><span class="nn">#333</span><span class="p">;</span> <span class="nn">#000</span><span class="o">)</span><span class="p">;</span>
-<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.horizontal</span><span class="o">(</span><span class="nn">#333</span><span class="p">;</span> <span class="nn">#000</span><span class="o">)</span><span class="p">;</span>
-<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.radial</span><span class="o">(</span><span class="nn">#333</span><span class="p">;</span> <span class="nn">#000</span><span class="o">)</span><span class="p">;</span></code></pre></div>
-  <p>You can also specify the angle of a standard two-color, linear gradient:</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.directional</span><span class="o">(</span><span class="nn">#333</span><span class="p">;</span> <span class="nn">#000</span><span class="p">;</span> <span class="nt">45deg</span><span class="o">)</span><span class="p">;</span></code></pre></div>
-  <p>If you need a barber-stripe style gradient, that's easy, too. Just specify a single color and we'll overlay a translucent white stripe.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.striped</span><span class="o">(</span><span class="nn">#333</span><span class="p">;</span> <span class="nt">45deg</span><span class="o">)</span><span class="p">;</span></code></pre></div>
-  <p>Up the ante and use three colors instead. Set the first color, the second color, the second color's color stop (a percentage value like 25%), and the third color with these mixins:</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.vertical-three-colors</span><span class="o">(</span><span class="nn">#777</span><span class="p">;</span> <span class="nn">#333</span><span class="p">;</span> <span class="nt">25</span><span class="nv">%</span><span class="p">;</span> <span class="nn">#000</span><span class="o">)</span><span class="p">;</span>
-<span class="nn">#gradient</span> <span class="o">&gt;</span> <span class="nc">.horizontal-three-colors</span><span class="o">(</span><span class="nn">#777</span><span class="p">;</span> <span class="nn">#333</span><span class="p">;</span> <span class="nt">25</span><span class="nv">%</span><span class="p">;</span> <span class="nn">#000</span><span class="o">)</span><span class="p">;</span></code></pre></div>
-  <p><strong>Heads up!</strong> Should you ever need to remove a gradient, be sure to remove any IE-specific <code>filter</code> you may have added. You can do that by using the <code>.reset-filter()</code> mixin alongside <code>background-image: none;</code>.</p>
-
-
-  <h2 id="less-mixins-utility">Utility mixins</h2>
-  <p>Utility mixins are mixins that combine otherwise unrelated CSS properties to achieve a specific goal or task.</p>
-
-  <h3 id="less-mixins-clearfix">Clearfix</h3>
-  <p>Forget adding <code>class="clearfix"</code> to any element and instead add the <code>.clearfix()</code> mixin where appropriate. Uses the <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">micro clearfix</a> from <a href="https://twitter.com/necolas" target="_blank">Nicolas Gallagher</a>.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Mixin
-</span><span class="nc">.clearfix</span><span class="o">()</span> <span class="p">{</span>
-  <span class="k">&amp;</span><span class="nd">:before</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
-    <span class="nl">content</span><span class="p">:</span> <span class="s2">" "</span><span class="p">;</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
-    <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.container</span> <span class="p">{</span>
-  <span class="nc">.clearfix</span><span class="o">()</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-centering">Horizontal centering</h3>
-  <p>Quickly center any element within its parent. <strong>Requires <code>width</code> or <code>max-width</code> to be set.</strong></p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Mixin
-</span><span class="nc">.center-block</span><span class="o">()</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
-  <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.container</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">940px</span><span class="p">;</span>
-  <span class="nc">.center-block</span><span class="o">()</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-sizing">Sizing helpers</h3>
-  <p>Specify the dimensions of an object more easily.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Mixins
-</span><span class="nc">.size</span><span class="o">(@</span><span class="nt">width</span><span class="p">;</span> <span class="k">@height</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="o">@</span><span class="n">width</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="o">@</span><span class="n">height</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.square</span><span class="o">(@</span><span class="nt">size</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nc">.size</span><span class="o">(@</span><span class="nt">size</span><span class="p">;</span> <span class="k">@size</span><span class="o">)</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.image</span> <span class="p">{</span> <span class="nc">.size</span><span class="o">(</span><span class="nt">400px</span><span class="p">;</span> <span class="nt">300px</span><span class="o">)</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.avatar</span> <span class="p">{</span> <span class="nc">.square</span><span class="o">(</span><span class="nt">48px</span><span class="o">)</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-resizable">Resizable textareas</h3>
-  <p>Easily configure the resize options for any textarea, or any other element. Defaults to normal browser behavior (<code>both</code>).</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="err">.</span><span class="na">resizable</span><span class="err">(@</span><span class="nl">direction</span><span class="p">:</span> <span class="nb">both</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Options: horizontal, vertical, both
-</span>  <span class="nl">resize</span><span class="p">:</span> <span class="o">@</span><span class="n">direction</span><span class="p">;</span>
-  <span class="c1">// Safari fix
-</span>  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-truncating">Truncating text</h3>
-  <p>Easily truncate text with an ellipsis with a single mixin. <strong>Requires element to be <code>block</code> or <code>inline-block</code> level.</strong></p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Mixin
-</span><span class="nc">.text-overflow</span><span class="o">()</span> <span class="p">{</span>
-  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
-  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.branch-name</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">max-width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
-  <span class="nc">.text-overflow</span><span class="o">()</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-
-  <h3 id="less-mixins-retina-images">Retina images</h3>
-  <p>Specify two image paths and the @1x image dimensions, and Bootstrap will provide an @2x media query. <strong>If you have many images to serve, consider writing your retina image CSS manually in a single media query.</strong></p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.img-retina</span><span class="o">(@</span><span class="nt">file-1x</span><span class="p">;</span> <span class="k">@file-2x</span><span class="p">;</span> <span class="k">@width-1x</span><span class="p">;</span> <span class="k">@height-1x</span><span class="o">)</span> <span class="p">{</span>
-  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("@{file-1x}")</span><span class="p">;</span>
-
-  <span class="k">@media</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>   <span class="nt">min--moz-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>     <span class="nt">-o-min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">/</span><span class="nt">1</span><span class="o">),</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>        <span class="nt">min-device-pixel-ratio</span><span class="nd">:</span> <span class="nt">2</span><span class="o">),</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>                <span class="nt">min-resolution</span><span class="nd">:</span> <span class="nt">192dpi</span><span class="o">),</span>
-  <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span>                <span class="nt">min-resolution</span><span class="nd">:</span> <span class="nt">2dppx</span><span class="o">)</span> <span class="p">{</span>
-    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("@{file-2x}")</span><span class="p">;</span>
-    <span class="nl">background-size</span><span class="p">:</span> <span class="o">@</span><span class="n">width-1x</span> <span class="o">@</span><span class="n">height-1x</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.jumbotron</span> <span class="p">{</span>
-  <span class="nc">.img-retina</span><span class="o">(</span><span class="s2">"/img/bg-1x.png"</span><span class="o">,</span> <span class="s2">"/img/bg-2x.png"</span><span class="o">,</span> <span class="nt">100px</span><span class="o">,</span> <span class="nt">100px</span><span class="o">)</span><span class="p">;</span>
-<span class="p">}</span></code></pre></div>
-</div>
-
-<div class="bs-docs-section">
-  <h1 id="sass" class="page-header">Using Sass</h1>
-  <p class="lead">While Bootstrap is built on Less, it also has an <a href="https://github.com/transferwise/bootstrap-sass">official Sass port</a>. We maintain it in a separate GitHub repository and handle updates with a conversion script.</p>
-
-  <h2 id="sass-contents">What's included</h2>
-  <p>Since the Sass port has a separate repo and serves a slightly different audience, the contents of the project differ greatly from the main Bootstrap project. This ensures the Sass port is as compatible with as many Sass-based systems as possible.</p>
-
-  <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Path</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"><code>lib/</code></th>
-          <td>Ruby gem code (Sass configuration, Rails and Compass integrations)</td>
-        </tr>
-        <tr>
-          <th scope="row"><code>tasks/</code></th>
-          <td>Converter scripts (turning upstream Less to Sass)</td>
-        </tr>
-        <tr>
-          <th scope="row"><code>test/</code></th>
-          <td>Compilation tests</td>
-        </tr>
-        <tr>
-          <th scope="row"><code>templates/</code></th>
-          <td>Compass package manifest</td>
-        </tr>
-        <tr>
-          <th scope="row"><code>vendor/assets/</code></th>
-          <td>Sass, JavaScript, and font files</td>
-        </tr>
-        <tr>
-          <th scope="row"><code>Rakefile</code></th>
-          <td>Internal tasks, such as rake and convert</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p>Visit the <a href="https://github.com/transferwise/bootstrap-sass">Sass port's GitHub repository</a> to see these files in action.</p>
-
-
-  <h2 id="sass-installation">Installation</h2>
-  <p>For information on how to install and use Bootstrap for Sass, consult the <a href="https://github.com/transferwise/bootstrap-sass">GitHub repository readme</a>. It's the most up to date source and includes information for use with Rails, Compass, and standard Sass projects.</p>
-  <p>
-    <a class="btn btn-lg btn-success" href="https://github.com/transferwise/bootstrap-sass">Bootstrap for Sass</a>
-  </p>
 </div>
 
 
