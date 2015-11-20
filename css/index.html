@@ -2958,6 +2958,31 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <div class="bs-docs-section">
   <h1 id="helper-classes" class="page-header">Helper classes</h1>
 
+  <h3 id="helper-classes-spacing">Spacing</h3>
+  <p>Several utility classes are available for spacing.  There are both margin  <code>m-</code>
+      and padding <code>p-</code> classes, that add spacing to the top <code>t</code>,
+      bottom <code>b</code>, left <code>l</code>, right <code>r</code>, or all
+      <code>a</code>.  For example to add margin to the top use class
+      <code>.m-t</code>, to adding padding on all sides use <code>.p-a</code></p>
+  <p>By default these classes add 8px of spacing, you can also add the
+      <code>-md</code> modifier to add 16px, or the <code>-lg</code> modifier to
+      add 24px e.g. <code>.m-b-lg</code> adds 24px of bottom margin.</p>
+  <div class="bs-example" data-example-id="helper-classes-spacing">
+      <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b">.mb</button></span></div>
+      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-md">.m-b-md</button></span></div>
+      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-l-lg m-b-lg">.m-l-lg .m-b-lg</button></span></div>
+      <div class="m-a"><button class="btn btn-primary p-a">.p-a</button></div>
+      <div class="m-a"><button class="btn btn-primary p-a-md">.p-a-md</button></div>
+      <div class="m-a"><button class="btn btn-primary p-a-lg">.p-a-lg</button></div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b"</span><span class="nt">&gt;</span>.mb<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-a-md"</span><span class="nt">&gt;</span>.m-a-md<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-l-lg m-b-lg"</span><span class="nt">&gt;</span>.m-l-lg .m-b-lg<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a"</span><span class="nt">&gt;</span>.p-a<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-md"</span><span class="nt">&gt;</span>.p-a-md<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-lg"</span><span class="nt">&gt;</span>.p-a-lg<span class="nt">&lt;/button&gt;</span></code></pre></div>
+
+
   <h3 id="helper-classes-colors">Contextual colors</h3>
   <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
   <div class="bs-example" data-example-id="contextual-colors-helpers">
@@ -3071,7 +3096,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <div class="pull-right-lg">.pull-right-lg</div>
     </div>
   </div>
-  
+
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-sm"</span><span class="nt">&gt;</span>.pull-left-sm<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-md"</span><span class="nt">&gt;</span>.pull-left-md<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-lg"</span><span class="nt">&gt;</span>.pull-left-lg<span class="nt">&lt;/div&gt;</span>
