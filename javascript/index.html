@@ -540,28 +540,20 @@
   </div>
 
   <h2 id="buttons-stateful">Stateful</h2>
-  <p>Add <code>data-loading-text="Loading..."</code> to use a loading state on a button.</p>
-  <p><strong class="text-danger">This feature is deprecated since v3.3.5 and will be removed in v4.</strong></p>
-  <div class="alert alert-info" id="callout-buttons-state-names">
-    <h4>Use whichever state you like!</h4>
-    <p>For the sake of this demonstration, we are using <code>data-loading-text</code> and <code>$().button('loading')</code>, but that's not the only state you can use. <a href="#buttons-methods">See more on this below in the <code>$().button(string)</code> documentation</a>.</p>
-  </div>
+  <p>To use a loading state with a button, you should set the button to disabled,
+      and add the <code>.btn-loader</code>.
+      The Bootstrap button loader is deprecated so you'll need to code up in your
+      favoured style.</p>
   <div class="bs-example">
-    <button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-      Loading state
+    <button type="button" class="btn btn-primary" disabled>
+      Save
+      <span class="btn-loader m-l-md"></span>
     </button>
   </div><!-- /example -->
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">id=</span><span class="s">"myButton"</span> <span class="na">data-loading-text=</span><span class="s">"Loading..."</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
-  Loading state
-<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;script&gt;</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#myButton'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">$btn</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'loading'</span><span class="p">)</span>
-    <span class="c1">// business logic...</span>
-    <span class="nx">$btn</span><span class="p">.</span><span class="nx">button</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">)</span>
-  <span class="p">})</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+  Save
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"btn-loader m-l-md"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
   <h2 id="buttons-single-toggle">Single toggle</h2>
   <p>Add <code>data-toggle="button"</code> to activate toggling on a single button.</p>
@@ -1517,6 +1509,7 @@
   <p>Modals have two optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>.</p>
   <div class="bs-example">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-md">Normal modal</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Large modal --&gt;</span>
@@ -1524,6 +1517,17 @@
 
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade bs-example-modal-lg"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"myLargeModalLabel"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-dialog modal-lg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Normal modal --&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">data-target=</span><span class="s">".bs-example-modal-md"</span><span class="nt">&gt;</span>Small modal<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal fade bs-example-modal-md"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">role=</span><span class="s">"dialog"</span> <span class="na">aria-labelledby=</span><span class="s">"mySmallModalLabel"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-dialog"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"modal-content"</span><span class="nt">&gt;</span>
       ...
     <span class="nt">&lt;/div&gt;</span>
@@ -1549,6 +1553,20 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myNormalModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myNormalModalLabel">Normal modal</h4>
         </div>
         <div class="modal-body">
           ...
