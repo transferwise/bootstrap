@@ -12,11 +12,11 @@ var fs = require('fs');
 module.exports = function generateGlyphiconsData(grunt) {
   // Pass encoding, utf8, so `readFileSync` will return a string instead of a
   // buffer
-  var glyphiconsFile = fs.readFileSync('less/glyphicons.less', 'utf8');
+  var glyphiconsFile = fs.readFileSync('less/transferwise-icons.less', 'utf8');
   var glyphiconsLines = glyphiconsFile.split('\n');
 
   // Use any line that starts with ".glyphicon-" and capture the class name
-  var iconClassName = /^\.(glyphicon-[a-zA-Z0-9-]+)/;
+  var iconClassName = /^\.(icon-[a-zA-Z0-9-]+)/;
   var glyphiconsData = '# This file is generated via Grunt task. **Do not edit directly.**\n' +
                        '# See the \'build-glyphicons-data\' task in Gruntfile.js.\n\n';
   var glyphiconsYml = 'docs/_data/glyphicons.yml';
