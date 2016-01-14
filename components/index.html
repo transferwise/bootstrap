@@ -194,6 +194,7 @@
     <li><a href="#list-group-custom-content">Custom content</a></li>
   </ul>
 </li>
+<li><a href="#loaders">Loaders</a></li>
 <li><a href="#logos">Logos</a></li>
 <li>
   <a href="#media">Media object</a>
@@ -3181,6 +3182,56 @@
     <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"list-group-item-heading"</span><span class="nt">&gt;</span>List group item heading<span class="nt">&lt;/h4&gt;</span>
     <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"list-group-item-text"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</div>
+
+<div class="bs-docs-section">
+  <h1 id="loaders" class="page-header">Loaders</h1>
+
+  <p>Indicate a page is loading, use only for large page sections.  Never use
+	  more than one loader simultaneously.</p>
+
+  <div class="bs-example" data-example-id="simple-alerts">
+    <div class="bg-primary p-a-lg text-center">
+      <div class="loader">
+        <div class="loader-spinner">
+        </div>
+        <div class="loader-flag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="-2 -2 56 56">
+            <polygon class="loader-flag-stroke"  stroke="#00B9FF" stroke-width="2" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="300" stroke-dashoffset="300" fill="none" points="24.6,27.3 0,27.3 14.3,13.7 6.1,0 48.2,0 26.3,52 19.5,52 39.2,5.5 16.8,5.5 21.6,13.6 13.4,21.8 27,21.8" />
+          </svg>
+          <svg class="loader-flag-fill" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 2 52 48">
+            <polygon fill="#00B9FF" points="6.1,0 14.3,13.7 0,27.3 24.6,27.3 27,21.8 13.4,21.8 21.6,13.6 16.8,5.5 39.2,5.5 19.5,52 26.3,52 48.2,0 "/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="p-a-lg text-center">
+      <div class="loader">
+        <div class="loader-spinner">
+        </div>
+        <div class="loader-flag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="-2 -2 56 56">
+            <polygon class="loader-flag-stroke" stroke="#00B9FF" stroke-width="2" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="300" stroke-dashoffset="300" fill="none" points="26.3,52 19.5,52 39.2,5.5 16.8,5.5 21.6,13.6 13.4,21.8 27,21.8 24.6,27.3 0,27.3 14.3,13.7 6.1,0 48.2,0" />
+          </svg>
+          <svg class="loader-flag-fill" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 2 52 48">
+            <polygon fill="#00B9FF" points="6.1,0 14.3,13.7 0,27.3 24.6,27.3 27,21.8 13.4,21.8 21.6,13.6 16.8,5.5 39.2,5.5 19.5,52 26.3,52 48.2,0 "/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader-spinner"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader-flag"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">width=</span><span class="s">"52"</span> <span class="na">height=</span><span class="s">"52"</span> <span class="na">viewBox=</span><span class="s">"-2 -2 56 56"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;polygon</span> <span class="na">class=</span><span class="s">"loader-flag-stroke"</span>  <span class="na">stroke=</span><span class="s">"#00B9FF"</span> <span class="na">stroke-width=</span><span class="s">"2"</span> <span class="na">stroke-linejoin=</span><span class="s">"miter"</span> <span class="na">stroke-linecap=</span><span class="s">"round"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">stroke-dasharray=</span><span class="s">"300"</span> <span class="na">stroke-dashoffset=</span><span class="s">"300"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">points=</span><span class="s">"24.6,27.3 0,27.3 14.3,13.7 6.1,0 48.2,0 26.3,52 19.5,52 39.2,5.5 16.8,5.5 21.6,13.6 13.4,21.8 27,21.8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/svg&gt;</span>
+    <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"loader-flag-fill"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">width=</span><span class="s">"52"</span> <span class="na">height=</span><span class="s">"52"</span> <span class="na">viewBox=</span><span class="s">"0 2 52 48"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#00B9FF"</span> <span class="na">points=</span><span class="s">"6.1,0 14.3,13.7 0,27.3 24.6,27.3 27,21.8 13.4,21.8 21.6,13.6 16.8,5.5 39.2,5.5 19.5,52 26.3,52 48.2,0 "</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/svg&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </div>
 

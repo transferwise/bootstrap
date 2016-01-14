@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.3.5 (http://bootstrap.transferwise.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
 
@@ -1213,14 +1213,14 @@ Imaging with any questions regarding Web ../fonts:  http://webfonts.assets.com
   font-family: 'Sharp Sans Frontieres';
   font-weight: 500;
 
-  src: url('../../assets/SharpSansFrontieres-Medium.eot');
+  src: url('../fonts/SharpSansFrontieres-Medium.eot');
   src: local('☺'), url('../fonts/SharpSansFrontieres-Medium.woff') format('woff'), url('../fonts/SharpSansFrontieres-Medium.svg#font') format('svg');
 }
 @font-face {
   font-family: 'Sharp Sans Frontieres';
   font-weight: 800;
 
-  src: url('../../assets/SharpSansFrontieres-Bold.eot');
+  src: url('../fonts/SharpSansFrontieres-Bold.eot');
   src: local('☺'), url('../fonts/SharpSansFrontieres-Bold.woff') format('woff'), url('../fonts/SharpSansFrontieres-Bold.svg#font') format('svg');
 }
 body {
@@ -1514,13 +1514,17 @@ ol ol {
 }
 .list-inline {
   padding-left: 0;
-  margin-left: -5px;
+  margin-left: -4px;
   list-style: none;
 }
 .list-inline > li {
   display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 8px;
+  padding-left: 4px;
+  border-right: 1px solid #6f8691;
+}
+.list-inline > li:last-child {
+  border-right: 0;
 }
 dl {
   margin-top: 0;
@@ -3094,10 +3098,18 @@ fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 .form-control-static {
-  min-height: 40px;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  min-height: 48px;
+  padding-top: 11px;
+  padding-right: 16px;
+  padding-bottom: 11px;
+  padding-left: 16px;
   margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #d3d5d8;
+  background-color: #f2f5f7;
+  border: 1px solid #e2e6e8;
+  border-radius: 3px;
 }
 .form-control-static.input-lg,
 .form-control-static.input-sm {
@@ -3374,7 +3386,7 @@ select[multiple].input-lg {
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
-    padding-top: 9px;
+    padding-top: 14px;
     margin-bottom: 0;
     text-align: right;
   }
@@ -3422,6 +3434,10 @@ select[multiple].input-lg {
   left: 40px;
   display: block;
 }
+.radio > label .replaced,
+.checkbox > label .replaced {
+  display: none;
+}
 .radio > label input[type=radio] + .input-replacement,
 .checkbox > label input[type=radio] + .input-replacement,
 .radio > label input[type=radio] + .input-replacement + .disabled-replacement,
@@ -3440,6 +3456,13 @@ select[multiple].input-lg {
 .checkbox > label input[type=checkbox]:checked + .input-replacement {
   background-color: #00b9ff;
 }
+.radio > label input[type=radio] + .input-replacement > span,
+.checkbox > label input[type=radio] + .input-replacement > span,
+.radio > label input[type=radio] + .input-replacement + .disabled-replacement > span,
+.checkbox > label input[type=radio] + .input-replacement + .disabled-replacement > span {
+  margin: 11px;
+  border-radius: 50%;
+}
 .radio > label input[type=radio]:checked + .input-replacement > span,
 .checkbox > label input[type=radio]:checked + .input-replacement > span,
 .radio > label input[type=radio]:checked + .input-replacement + .disabled-replacement > span,
@@ -3449,7 +3472,6 @@ select[multiple].input-lg {
   height: 12px;
   margin: 5px;
   background-color: #00b9ff;
-  border-radius: 50%;
 }
 .radio > label input[type=checkbox]:checked + .input-replacement > span,
 .checkbox > label input[type=checkbox]:checked + .input-replacement > span,
@@ -3514,18 +3536,18 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
   background: #fff;
   border: 1px solid #d3d5d8;
   border-radius: 3px;
-  -webkit-transition: all .1s ease-in-out;
-       -o-transition: all .1s ease-in-out;
-          transition: all .1s ease-in-out;
+  -webkit-transition: all .15s ease-in-out;
+       -o-transition: all .15s ease-in-out;
+          transition: all .15s ease-in-out;
 }
 .form-group .input-replacement > span {
   width: 0;
   height: 0;
   margin: 12px 0 0 12px;
   text-align: center;
-  -webkit-transition: all .1s ease-in;
-       -o-transition: all .1s ease-in;
-          transition: all .1s ease-in;
+  -webkit-transition: all .15s ease-in-out;
+       -o-transition: all .15s ease-in-out;
+          transition: all .15s ease-in-out;
 }
 .form-group .input-replacement > .glyphicon {
   display: none;
@@ -3550,6 +3572,10 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
 .form-group .disabled .disabled-replacement,
 .form-group [disabled] + .input-replacement + .disabled-replacement {
   display: block;
+}
+.form-group .checkbox-lg .input-replacement,
+.form-group .radio-lg .input-replacement {
+  top: 23px;
 }
 .form-horizontal .checkbox,
 .form-horizontal .radio {
@@ -3594,9 +3620,6 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
 }
 .form-control-feedback {
   font-size: 24px;
-}
-.form-horizontal .control-label {
-  padding-top: 13px;
 }
 .label {
   position: relative;
@@ -3680,18 +3703,19 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
 .checkbox > label,
 .radio > label {
   display: block;
-  padding-top: 12px;
+  padding-top: 11px;
   padding-right: 16px;
-  padding-bottom: 12px;
+  padding-bottom: 11px;
   font-size: 16px;
   line-height: 24px;
   color: #2f4366;
   cursor: pointer;
+  background-color: #fff;
   border: 1px solid #d3d5d8;
   border-radius: 3px;
-  -webkit-transition: border .1s ease-in-out;
-       -o-transition: border .1s ease-in-out;
-          transition: border .1s ease-in-out;
+  -webkit-transition: border .15s ease-in-out, background-color .15s ease-in-out;
+       -o-transition: border .15s ease-in-out, background-color .15s ease-in-out;
+          transition: border .15s ease-in-out, background-color .15s ease-in-out;
 }
 .checkbox > label:hover,
 .radio > label:hover {
@@ -3733,6 +3757,24 @@ fieldset[disabled] .radio label,
   color: #d3d5d8;
   background-color: #f2f5f7;
   border-color: #e2e6e8;
+}
+.checkbox.checkbox-lg > label,
+.radio.checkbox-lg > label,
+.checkbox.radio-lg > label,
+.radio.radio-lg > label {
+  min-height: 72px;
+}
+.checkbox.checkbox-lg > label small,
+.radio.checkbox-lg > label small,
+.checkbox.radio-lg > label small,
+.radio.radio-lg > label small,
+.checkbox.checkbox-lg > label .small,
+.radio.checkbox-lg > label .small,
+.checkbox.radio-lg > label .small,
+.radio.radio-lg > label .small {
+  display: block;
+  font-size: 14px;
+  color: #829ca9;
 }
 /* If a radio group has an error all section are invalid */
 .has-error .radio > label {
@@ -7700,17 +7742,19 @@ a.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
+  line-height: 24px;
+  color: #00b9ff;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #00a4df;
   text-decoration: none;
   cursor: pointer;
+}
+.close:active {
+  color: #008ec0;
 }
 button.close {
   -webkit-appearance: none;
@@ -7718,6 +7762,163 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
+}
+.loader {
+  position: relative;
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+}
+.loader .loader-flag {
+  position: relative;
+  top: 58px;
+  left: 52px;
+  width: 52px;
+  height: 52px;
+}
+.loader .loader-flag-stroke {
+  -webkit-animation: loaderStroke 3.5s infinite;
+       -o-animation: loaderStroke 3.5s infinite;
+          animation: loaderStroke 3.5s infinite;
+}
+.loader .loader-flag-fill {
+  position: absolute;
+  top: 1px;
+  display: block;
+  opacity: 1;
+  -webkit-animation: loaderFill 3.5s infinite;
+       -o-animation: loaderFill 3.5s infinite;
+          animation: loaderFill 3.5s infinite;
+}
+.loader .loader-spinner {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iNTQgLTU0IDE2MCAxNjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgNTQgLTU0IDE2MCAxNjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxsaW5lYXJHcmFkaWVudCBpZD0icGF0aC00XzJfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjEwOC42NjI1IiB5MT0iNTIuMTc1IiB4Mj0iMTA3LjY2MjUiIHkyPSI1Mi4xNzUiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoMTYwIDAgMCAtODAgLTE3MTcyIDQxNjApIj48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojMDBCOUZGIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzAwQjlGRjtzdG9wLW9wYWNpdHk6MCIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggaWQ9InBhdGgtNF8xXyIgZmlsbD0idXJsKCNwYXRoLTRfMl8pIiBkPSJNMjE0LDI2YzAtNDQuMi0zNS44LTgwLTgwLTgwUzU0LTE4LjIsNTQsMjZoMmMwLTQzLjEsMzQuOS03OCw3OC03OHM3OCwzNC45LDc4LDc4SDIxNHoiLz48L3N2Zz4=);
+  -webkit-animation: rotating 1.4s linear infinite;
+       -o-animation: rotating 1.4s linear infinite;
+          animation: rotating 1.4s linear infinite;
+}
+/* Animations */
+@-webkit-keyframes loaderStroke {
+  30% {
+    opacity: 0;
+
+    stroke-dashoffset: 300;
+  }
+  40% {
+    opacity: 1;
+
+    stroke-dashoffset: 300;
+  }
+  70% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes loaderStroke {
+  30% {
+    opacity: 0;
+
+    stroke-dashoffset: 300;
+  }
+  40% {
+    opacity: 1;
+
+    stroke-dashoffset: 300;
+  }
+  70% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes loaderStroke {
+  30% {
+    opacity: 0;
+
+    stroke-dashoffset: 300;
+  }
+  40% {
+    opacity: 1;
+
+    stroke-dashoffset: 300;
+  }
+  70% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes loaderFill {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes loaderFill {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loaderFill {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 .modal-open {
   overflow: hidden;
@@ -8716,7 +8917,7 @@ a.btn {
 address {
   margin-bottom: 16px;
 }
-footer {
+.footer {
   background-color: #f2f5f7;
 }
 blockquote footer {
@@ -8796,33 +8997,37 @@ blockquote footer {
     border-bottom-color: transparent;
   }
 }
-footer,
+.footer {
+  font-size: 14px;
+  line-height: 24px;
+}
+.footer a:not(.btn) {
+  color: #6f8691;
+}
+.footer a:not(.btn):hover,
+.footer a:not(.btn):focus {
+  color: #5d7079;
+}
+.footer a:not(.btn):active {
+  color: #2f4366;
+}
+.footer,
 .bg-default {
   background-color: #f2f5f7;
 }
-footer h1,
+.footer h1,
 .bg-default h1,
-footer h2,
+.footer h2,
 .bg-default h2,
-footer h3,
+.footer h3,
 .bg-default h3,
-footer h4,
+.footer h4,
 .bg-default h4,
-footer h5,
+.footer h5,
 .bg-default h5,
-footer h6,
+.footer h6,
 .bg-default h6 {
   color: #223049;
-}
-footer a:not(.btn) {
-  color: #829ca9;
-}
-footer a:not(.btn):hover,
-footer a:not(.btn):focus {
-  color: #6f8691;
-}
-footer a:not(.btn):active {
-  color: #5d7079;
 }
 .badge {
   position: relative;
@@ -8835,9 +9040,6 @@ footer a:not(.btn):active {
   border: none;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-}
-.modal-header .close {
-  margin-top: 0;
 }
 .dropdown-menu > li:not(.dropdown-header) {
   padding-left: 0;

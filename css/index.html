@@ -2141,6 +2141,43 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+  <h4>Two line checkbox and radio</h4>
+  <p>Add the <code>.checkbox-lg</code> or <code>.radio-lg</code> to utilise a
+      two line form control.  Use <code>small</code> to position the second line 
+      of text.</p>
+  <div class="bs-example" data-example-id="large-checkboxes-radios">
+    <form>
+      <div class="checkbox checkbox-lg">
+        <label>
+          <input type="checkbox" value="">
+          Important information
+          <small>Subsequent information</small>
+        </label>
+      </div>
+      <div class="radio radio-lg">
+        <label>
+          <input type="radio" value="">
+          Important information
+          <small>Subsequent information</small>
+        </label>
+      </div>
+    </form>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"checkbox checkbox-lg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    Important information
+    <span class="nt">&lt;small&gt;</span>Subsequent information<span class="nt">&lt;/small&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"radio radio-lg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    Important information
+    <span class="nt">&lt;small&gt;</span>Subsequent information<span class="nt">&lt;/small&gt;</span>
+  <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
   <h4>Inline checkboxes and radios</h4>
   <p>Use the <code>.checkbox-inline</code> or <code>.radio-inline</code> classes on a series of checkboxes or radios for controls that appear on the same line.</p>
   <div class="bs-example" data-example-id="inline-checkboxes-radios">
@@ -3004,14 +3041,14 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <code>-md</code> modifier to add 16px, or the <code>-lg</code> modifier to
       add 24px e.g. <code>.m-b-lg</code> adds 24px of bottom margin.</p>
   <div class="bs-example" data-example-id="helper-classes-spacing">
-      <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b">.mb</button></span></div>
+      <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b">.m-b</button></span></div>
       <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-md">.m-b-md</button></span></div>
       <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-l-lg m-b-lg">.m-l-lg .m-b-lg</button></span></div>
       <div class="m-a"><button class="btn btn-primary p-a">.p-a</button></div>
       <div class="m-a"><button class="btn btn-primary p-a-md">.p-a-md</button></div>
       <div class="m-a"><button class="btn btn-primary p-a-lg">.p-a-lg</button></div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b"</span><span class="nt">&gt;</span>.mb<span class="nt">&lt;/button&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b"</span><span class="nt">&gt;</span>.m-b<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-a-md"</span><span class="nt">&gt;</span>.m-a-md<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-l-lg m-b-lg"</span><span class="nt">&gt;</span>.m-l-lg .m-b-lg<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a"</span><span class="nt">&gt;</span>.p-a<span class="nt">&lt;/button&gt;</span>
