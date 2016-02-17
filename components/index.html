@@ -267,6 +267,17 @@
     <li><a href="#thumbnails-custom-content">Custom content</a></li>
   </ul>
 </li>
+<li>
+  <a href="#tiles">Tiles</a>
+  <ul class="nav">
+    <li><a href="#tiles-simple">Simple tile</a></li>
+    <li><a href="#tiles-images">Tiles with images</a></li>
+    <li><a href="#tiles-descriptive">With short descriptive text</a></li>
+    <li><a href="#tiles-unique">Unique information</a></li>
+    <li><a href="#tiles-benefits">Benefits of a certain tile</a></li>
+    <li><a href="#tiles-disabled">Disabled Tile</a></li>
+  </ul>
+</li>
 <li><a href="#wells">Wells</a></li>
 
               
@@ -4116,7 +4127,7 @@
       <ul class="pagination">
         <li>
           <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
+            <span aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span>
           </a>
         </li>
         <li><a href="#">1</a></li>
@@ -4126,7 +4137,7 @@
         <li><a href="#">5</a></li>
         <li>
           <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
+            <span aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span>
           </a>
         </li>
       </ul>
@@ -4136,7 +4147,7 @@
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li&gt;</span>
       <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-label=</span><span class="s">"Previous"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-chevron-left"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;</span>
       <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -4146,7 +4157,7 @@
     <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;</span>
       <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-label=</span><span class="s">"Next"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;raquo;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-chevron-right"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;</span>
       <span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
   <span class="nt">&lt;/ul&gt;</span>
@@ -4157,19 +4168,19 @@
   <div class="bs-example" data-example-id="disabled-active-pagination">
     <nav>
       <ul class="pagination">
-        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
         <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
      </ul>
    </nav>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav&gt;</span>
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-label=</span><span class="s">"Previous"</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span><span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">aria-label=</span><span class="s">"Previous"</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-chevron-left"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>1 <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
     ...
   <span class="nt">&lt;/ul&gt;</span>
@@ -4179,7 +4190,7 @@
   <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;span&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span><span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-chevron-left"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;</span>
       <span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;/li&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>
@@ -4195,35 +4206,35 @@
   <div class="bs-example" data-example-id="pagination-sizing">
     <nav>
       <ul class="pagination pagination-lg">
-        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
       </ul>
     </nav>
     <nav>
       <ul class="pagination">
-        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
       </ul>
     </nav>
     <nav>
       <ul class="pagination pagination-sm">
-        <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+        <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
       </ul>
     </nav>
   </div>
@@ -4869,6 +4880,227 @@
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</div>
+
+<div class="bs-docs-section">
+  <h1 id="tiles" class="page-header">Tiles</h1>
+  <p class="lead">Provide a set of related clickable options that are easily glanceable and compareable.</p>
+
+  <p class="text-warning">
+    Use Bootstrap's grid system to arrange the tiles with sensible sizing. Tiles always sit within a <code>class="row tile-row"</code>
+  </p>
+
+  <h2 id="tiles-simple">Simple Tile</h2>
+  <p>At it's simplest form, tiles show an abbreviation or icon and a title.</p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg">
+          KP
+        </div>
+        <h5>Myself</h5>
+      </div>
+    </div>
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg">
+          <i class="icon icon-profile"></i>
+        </div>
+        <h5>Someone else</h5>
+      </div>
+    </div>
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg">
+          <i class="icon icon-briefcase"></i>
+        </div>
+        <h5>TransferWise Ltd.</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+        ...
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+  <h2 id="tiles-images">Tiles with images</h2>
+  <p>If you want an image e.g. a user avatar, add a <code>background-image</code> as a <code>style</code> property on the <code>.circle</code> div. </p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
+        <h5>Myself</h5>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+  <h2 id="tiles-descriptive">Tiles with a short descriptive text</h2>
+  <p>Be concise when adding more text. The user will use this information to compare between options.</p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg" style="background-image: url('/assets/img/mike.jpg');"></div>
+        <h5>Mike Marter</h5>
+        <p>EUR account ending 2843</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg" style="background-image: url('/assets/img/mo.jpg');"></div>
+        <h5>The Mo</h5>
+        <p>EUR account ending 5234</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
+        <h5>Kish Patel</h5>
+        <p>EUR account ending 6798</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+  <h2 id="tiles-unique">Tiles with unique information</h2>
+  <p>When the option has further information unique to it alone and it is 100% necessary to show it, do so below a <code>hr</code> tag within a <code>p</code></p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 col-sm-12 tile-container">
+      <div class="tile">
+        <div class="circle circle-lg">
+          <i class="icon icon-card"></i>
+        </div>
+        <h5>Credit Card</h5>
+        <p>Visa and Mastercard are supported</p>
+        <hr>
+        <p>+£1 card fee</p>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 tile-container">
+      <div class="tile">
+          <div class="circle circle-lg">
+            <i class="icon icon-card"></i>
+          </div>
+          <h5>Bank Transfer</h5>
+          <p>Send the money from your Internet Banking</p>
+          <hr>
+          <p>1 day slower</p>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+        ...
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;hr&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+  <h2 id="tiles-benefits">Benefits of a certain tile</h2>
+  <p>Add a <code>tile-ribbon-benefit</code> div within the tile if benefits of that tile are worth showing to the user. Copy should be kept short as space is limited.</p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 col-sm-12 tile-container">
+      <div class="tile">
+          <div class="circle circle-lg">
+            <i class="icon icon-card"></i>
+          </div>
+          <div class="tile-ribbon-benefit">Faster</div>
+          <h5>Debit Card</h5>
+          <p>Visa and Mastercard are supported</p>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+        ...
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-ribbon-benefit"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
+  <h2 id="tiles-disabled">Disabled Tile</h2>
+  <p>Add a <code>tile-disabled</code> class to <code>tile</code> when the option is disabled, providing an explanation to the user as to why they cannot select that option.</p>
+
+  <div class="row tile-row">
+
+    <div class="col-md-4 col-sm-12 tile-container">
+      <div class="tile tile-disabled">
+          <div class="circle circle-lg">
+            <i class="icon icon-card"></i>
+          </div>
+          <h5>Credit Card</h5>
+          <p>Visa and Mastercard are supported</p>
+          <hr>
+          <p><span class="text-warning">Unavailable</span> for amounts larger than £2000</p>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile tile-disabled"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+        ...
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;hr&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+
 </div>
 
 <div class="bs-docs-section">

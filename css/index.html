@@ -1578,7 +1578,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h2 id="tables-contextual-classes">Contextual classes</h2>
   <p>Use contextual classes to color table rows or individual cells.</p>
-  <div class="table-responsive">
+  <div class="table-responsive table-bordered">
     <table class="table table-bordered table-striped">
       <colgroup>
         <col class="col-xs-1">
@@ -1717,6 +1717,13 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h2 id="tables-responsive">Responsive tables</h2>
   <p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
 
+  <div class="alert alert-danger">
+    <h4>Responsive bordered tables</h4>
+    <p>When using <code>.table-responsive</code> with a bordered table you must
+        apply the <code>.table-bordered</code> class to both the
+        <code>.table-responsive</code> container and the nested <code>.table</code>.</p>
+  </div>
+
   <div class="alert alert-warning" id="callout-tables-responsive-overflow">
     <h4>Vertical clipping/truncation</h4>
     <p>Responsive tables make use of <code>overflow-y: hidden</code>, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.</p>
@@ -1776,7 +1783,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       </table>
     </div><!-- /.table-responsive -->
 
-    <div class="table-responsive">
+    <div class="table-responsive table-bordered">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -1823,6 +1830,12 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   </div><!-- /example -->
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-responsive"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-responsive table-bordered"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span><span class="nt">&gt;</span>
     ...
   <span class="nt">&lt;/table&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
