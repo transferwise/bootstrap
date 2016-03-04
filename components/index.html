@@ -65,44 +65,60 @@
     
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#tw-navbar" aria-controls="tw-navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand hidden-sm">Bootstrap</a>
-      <div class="flag flag-info hidden-md hidden-lg hidden-xs"></div>
+
+      <a href="../" class="navbar-brand hidden-md hidden-sm hidden-xs">TransferWise Bootstrap</a>
+      <a href="../" class="logo-text logo-text-inverse visible-xs-block visible-sm-block"></a>
+      <a href="../" class="flag flag-info visible-md-block"></a>
     </div>
-    <nav id="bs-navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="../getting-started/">Getting started</a>
-        </li>
-        <li>
-          <a href="../css/">CSS</a>
-        </li>
-        <li class="active">
-          <a href="../components/">Components</a>
-        </li>
-        <li>
-          <a href="../javascript/">JavaScript</a>
-        </li>
-        <li>
-          <a href="../customize/">Customize</a>
-        </li>
-      </ul>
-      <!--
-      <ul class="nav navbar-nav navbar-right">
+    <nav id="tw-navbar" class="collapse navbar-collapse navbar-collapse-with-panel">
+      <a class="cover collapsed"
+          data-toggle="collapse"
+          data-target="#tw-navbar"
+          aria-controls="tw-navbar"
+          aria-expanded="false">
+      </a>
+      <div class="navbar-collapse-panel">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="../getting-started/">Getting started</a>
+          </li>
+          <li>
+            <a href="../css/">CSS</a>
+          </li>
+          <li class="active">
+            <a href="../components/">Components</a>
+          </li>
+          <li>
+            <a href="../javascript/">JavaScript</a>
+          </li>
+          <li>
+            <a href="../customize/">Customize</a>
+          </li>
+        </ul>
+        <!--
+        <ul class="nav navbar-nav navbar-right">
         <li><a href="http://expo.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Expo');">Expo</a></li>
         <li><a href="http://blog.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');">Blog</a></li>
-      </ul>
-      -->
-      <div class="navbar-right hidden-sm hidden-md">
+        </ul>
+        -->
+        <div class="navbar-right">
           <a href="/getting-started/#download" class="btn btn-success navbar-btn">
               Download
           </a>
+        </div>
       </div>
+      <a href="#" role="button"
+          class="navbar-toggle close collapsed"
+          data-toggle="collapse"
+          data-target="#tw-navbar"
+          aria-controls="tw-navbar"
+          aria-expanded="false">&times;</a>
     </nav>
   </div>
 
@@ -112,11 +128,11 @@
     <div class="container bs-docs-container">
       <div class="row m-t-lg">
         
-        <div class="col-md-3" role="complementary">
+        <div class="col-lg-3" role="complementary">
             <h3>Components</h3>
             <p>Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.</p>
             <hr />
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm"
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm hidden-md"
             data-spy="affix" data-offset-top="230" data-offset-bottom="430">
             <ul class="nav bs-docs-sidenav nav-stacked nav-pills">
               
@@ -294,7 +310,7 @@
         </div>
         
 
-          <div class="col-md-9" role="main">
+          <div class="col-lg-9" role="main">
             <div class="panel">
               <!--<div class="panel-heading">
                   <h3 class="panel-title">Components</h3>
@@ -1025,30 +1041,31 @@
   <h1 id="circles" class="page-header">Circles</h1>
   <p>Circles are used to add visual interest to body text, they often help
       to represent steps in a process or to accompany a set of discrete
-      points.  Circles normally contain iconography but may contain single
-      letters.</p>
+      points.  Circles may contain images, iconography or letters, and
+      are generally central in their column.
+  </p>
 
   <div class="bs-example" data-example-id="circle">
-      <div class="circle">
+      <div class="circle m-b-1">
           <i class="glyphicon glyphicon-globe"></i>
       </div>
-      <span class="circle">
-          AZ
-      </span>
-      <div class="circle">
-          <img data-holder-rendered="true"
-            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRkODVlZDIyZTIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGQ4NWVkMjJlMiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuNDY2NjY3MTc1MjkyOTciIHk9Ijk3LjM1Ij4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="" data-src="holder.js/100%x100%" alt="100%x100%" />
+      <div class="circle m-b-1">
+          <i class="icon icon-card"></i>
       </div>
+      <div class="circle m-b-1">
+          AZ
+      </div>
+      <img class="circle m-b-1" src="/assets/img/mike.jpg" alt="Mike" />
+      <div class="circle m-b-1" style="background-image: url('/assets/img/mike.jpg');"></div>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
-    A
+    AZ
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
 
   <h2>Circle variations</h2>
   <p>Add any of the below modifier classes to change the size of a circle.
@@ -1056,7 +1073,7 @@
 
   <div class="bs-example" data-example-id="circle-variants">
     <a href="" class="circle circle-lg">
-      <i class="glyphicon glyphicon-globe"></i>
+        <i class="icon icon-card"></i>
     </a>
     <a href="" class="circle circle-lg">
         <img data-holder-rendered="true"
@@ -1065,28 +1082,26 @@
     <a href="" class="circle circle-sm">
         <i class="glyphicon glyphicon-upload"></i>
     </a>
-    <a href="">
-        <span class="circle circle-sm active">
-            <i class="glyphicon glyphicon-ok-sign"></i>
-        </span>
+    <a href="" class="circle circle-sm active">
+        <i class="icon icon-check-circle"></i>
     </a>
-    <div class="bg-primary clearfix">
-        <a href="" class="circle circle-sm pull-left">
+    <div class="bg-primary p-a-1 clearfix">
+        <a href="" class="circle circle-sm pull-left m-r-1">
             A
         </a>
-        <a href="" class="circle circle-sm active pull-left">
+        <a href="" class="circle circle-sm active pull-left m-r-1">
             B
         </a>
-        <a href="" class="circle circle-sm pull-left">
+        <a href="" class="circle circle-sm pull-left m-r-1">
             C
         </a>
-        <a href="" class="circle circle-sm pull-left">
+        <a href="" class="circle circle-sm pull-left m-r-1">
             D
         </a>
     </div>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
@@ -1094,10 +1109,8 @@
 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-upload"</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"circle circle-sm active"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-ok-sign"</span><span class="nt">&gt;&lt;/i&gt;</span>
-    <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-ok-sign"</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary clearfix"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/a&gt;</span>
@@ -3529,41 +3542,55 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse navbar-collapse-with-panel" id="bs-example-navbar-collapse-1">
+          <a class="cover collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-controls="bs-example-navbar-collapse-1"
+              aria-expanded="false">
+          </a>
+          <div class="navbar-collapse-panel">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse-panel -->
+          <a href="#" role="button"
+              class="navbar-toggle close collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-controls="bs-example-navbar-collapse-1"
+              aria-expanded="false">&times;</a>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
@@ -3582,42 +3609,55 @@
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- Collect the nav links, forms, and other content for toggling --&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse"</span> <span class="na">id=</span><span class="s">"bs-example-navbar-collapse-1"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
-          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>One more separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-          <span class="nt">&lt;/ul&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;/ul&gt;</span>
-      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"navbar-form navbar-left"</span> <span class="na">role=</span><span class="s">"search"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
-      <span class="nt">&lt;/form&gt;</span>
-      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav navbar-right"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
-          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
-            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-          <span class="nt">&lt;/ul&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse navbar-collapse-with-panel"</span> <span class="na">id=</span><span class="s">"bs-example-navbar-collapse-1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"cover collapsed"</span>
+          <span class="na">data-toggle=</span><span class="s">"collapse"</span>
+          <span class="na">data-target=</span><span class="s">"#bs-example-navbar-collapse-1"</span>
+          <span class="na">aria-controls=</span><span class="s">"bs-example-navbar-collapse-1"</span>
+          <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-collapse-panel"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>(current)<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>One more separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"navbar-form navbar-left"</span> <span class="na">role=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav navbar-right"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Something else here<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Separated link<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.navbar-collapse-panel --&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">role=</span><span class="s">"button"</span>
+          <span class="na">class=</span><span class="s">"navbar-toggle close collapsed"</span>
+          <span class="na">data-toggle=</span><span class="s">"collapse"</span>
+          <span class="na">data-target=</span><span class="s">"#bs-example-navbar-collapse-1"</span>
+          <span class="na">aria-controls=</span><span class="s">"bs-example-navbar-collapse-1"</span>
+          <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/a&gt;</span>
     <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.navbar-collapse --&gt;</span>
   <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.container-fluid --&gt;</span>
 <span class="nt">&lt;/nav&gt;</span></code></pre></div>
@@ -4598,39 +4638,55 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+
+  <h2 id="progress-sizes">Large progress bars</h2>
+  <p>The large progress bar can be used to visually depict a comparison.</p>
+  <div class="bs-example" data-example-id="simple-progress-bar">
+    <div class="progress progress-lg">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <span class="sr-only">60% Complete</span>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress progress-lg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"60"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span> <span class="na">style=</span><span class="s">"width: 60%;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>60% Complete<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
   <h2 id="progress-label">With label</h2>
   <p>Remove the <code>&lt;span&gt;</code> with <code>.sr-only</code> class from within the progress bar to show a visible percentage.</p>
   <div class="bs-example" data-example-id="progress-bar-with-label">
-    <div class="progress">
+    <div class="progress progress-lg">
       <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
         60%
       </div>
     </div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress progress-lg"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"60"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span> <span class="na">style=</span><span class="s">"width: 60%;"</span><span class="nt">&gt;</span>
     60%
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
   <p>To ensure that the label text remains legible even for low percentages, consider adding a <code>min-width</code> to the progress bar.</p>
   <div class="bs-example" data-example-id="progress-bar-at-low-percentage">
-    <div class="progress">
+    <div class="progress progress-lg">
       <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
         0%
       </div>
     </div>
-    <div class="progress">
+    <div class="progress progress-lg">
       <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
         2%
       </div>
     </div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress progress-lg"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"0"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span><span class="nt">&gt;</span>
     0%
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress progress-lg"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"2"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span> <span class="na">style=</span><span class="s">"width: 2%;"</span><span class="nt">&gt;</span>
     2%
   <span class="nt">&lt;/div&gt;</span>
@@ -4640,6 +4696,11 @@
   <h2 id="progress-alternatives">Contextual alternatives</h2>
   <p>Progress bars use some of the same button and alert classes for consistent styles.</p>
   <div class="bs-example" data-example-id="contextual-progress-bar">
+    <div class="progress">
+      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+        <span class="sr-only">100% Complete (success)</span>
+      </div>
+    </div>
     <div class="progress">
       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
         <span class="sr-only">40% Complete (success)</span>
@@ -4662,6 +4723,11 @@
     </div>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-primary"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"100"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span> <span class="na">style=</span><span class="s">"width: 100%"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>100% Complete (success)<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-success"</span> <span class="na">role=</span><span class="s">"progressbar"</span> <span class="na">aria-valuenow=</span><span class="s">"40"</span> <span class="na">aria-valuemin=</span><span class="s">"0"</span> <span class="na">aria-valuemax=</span><span class="s">"100"</span> <span class="na">style=</span><span class="s">"width: 40%"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>40% Complete (success)<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -4681,7 +4747,7 @@
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>80% Complete (danger)<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
+<!--
   <h2 id="progress-striped">Striped</h2>
   <p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
   <div class="bs-example" data-example-id="striped-progress-bar">
@@ -4741,6 +4807,7 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+
   <h2 id="progress-stacked">Stacked</h2>
   <p>Place multiple bars into the same <code>.progress</code> to stack them.</p>
   <div class="bs-example" data-example-id="stacked-progress-bar">
@@ -4748,7 +4815,7 @@
       <div class="progress-bar progress-bar-success" style="width: 35%">
         <span class="sr-only">35% Complete (success)</span>
       </div>
-      <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 20%">
+      <div class="progress-bar progress-bar-warning" style="width: 20%">
         <span class="sr-only">20% Complete (warning)</span>
       </div>
       <div class="progress-bar progress-bar-danger" style="width: 10%">
@@ -4760,13 +4827,14 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-success"</span> <span class="na">style=</span><span class="s">"width: 35%"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>35% Complete (success)<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-warning progress-bar-striped"</span> <span class="na">style=</span><span class="s">"width: 20%"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-warning"</span> <span class="na">style=</span><span class="s">"width: 20%"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>20% Complete (warning)<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"progress-bar progress-bar-danger"</span> <span class="na">style=</span><span class="s">"width: 10%"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>10% Complete (danger)<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+-->
 </div>
 
 <div class="bs-docs-section">
@@ -4834,9 +4902,10 @@
 
   <h2 id="thumbnails-custom-content">Custom content</h2>
   <p>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</p>
+  <p>Use the <code>.row-equal-height</code> modifier to match the height of the thumbnails.</p>
   <div class="bs-example" data-example-id="thumbnails-with-custom-content">
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
+    <div class="row row-equal-height">
+      <div class="col-sm-6 col-xl-4">
         <div class="thumbnail">
           <img data-src="holder.js/100%x200" alt="Generic placeholder thumbnail">
           <div class="caption">
@@ -4846,17 +4915,17 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-xl-4">
         <div class="thumbnail">
           <img data-src="holder.js/100%x200" alt="Generic placeholder thumbnail">
           <div class="caption">
             <h4>Thumbnail label</h4>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p>Cras justo odio, dapibus ac facilisis in.</p>
             <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-xl-4">
         <div class="thumbnail">
           <img data-src="holder.js/100%x200" alt="Generic placeholder thumbnail">
           <div class="caption">
@@ -4868,8 +4937,8 @@
       </div>
     </div>
   </div><!-- /.bs-example -->
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-equal-height"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-xl-4"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thumbnail"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>
@@ -4886,122 +4955,93 @@
   <h1 id="tiles" class="page-header">Tiles</h1>
   <p class="lead">Provide a set of related clickable options that are easily glanceable and compareable.</p>
 
+  <h2 id="tiles-simple">Simple Tile</h2>
+  <p>In it's simplest form, a tile shows a <a href="#circles">circle</a> containing
+       intials or an icon, alongside a title.</p>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="tile">
+        <div class="circle circle-lg">
+          AZ
+        </div>
+        <h5>Myself</h5>
+      </div>
+    </div>
+  </div>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>AZ<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h2 id="tile-rows">Tile rows</h2>
+  <p>Normally tiles are used in rows, we use our grid columns to dictate
+      how many tiles appear in each row at various screen sizes, our tiles should
+      be of equal height so we use the row modifier <code>.row-equal-height</code>
+      to make each tile in a row match.</p>
+
+  <p>Be concise when adding additional text. The user will use this information
+      to compare between options.</p>
+
   <p class="text-warning">
-    Use Bootstrap's grid system to arrange the tiles with sensible sizing. Tiles always sit within a <code>class="row tile-row"</code>
+     Tile rows use flexbox for matched height, which may not work in earlier
+     versions of Internet Explorer.
   </p>
 
-  <h2 id="tiles-simple">Simple Tile</h2>
-  <p>At it's simplest form, tiles show an abbreviation or icon and a title.</p>
-
-  <div class="row tile-row">
-
-    <div class="col-md-4 tile-container">
+  <div class="row row-equal-height">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
-        <div class="circle circle-lg">
-          KP
-        </div>
-        <h5>Myself</h5>
-      </div>
-    </div>
-
-    <div class="col-md-4 tile-container">
-      <div class="tile">
-        <div class="circle circle-lg">
-          <i class="icon icon-profile"></i>
-        </div>
+        <div class="circle circle-lg" style="background-image: url('/assets/img/mo.jpg');"></div>
         <h5>Someone else</h5>
-      </div>
-    </div>
-
-    <div class="col-md-4 tile-container">
-      <div class="tile">
-        <div class="circle circle-lg">
-          <i class="icon icon-briefcase"></i>
-        </div>
-        <h5>TransferWise Ltd.</h5>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-        ...
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-
-  <h2 id="tiles-images">Tiles with images</h2>
-  <p>If you want an image e.g. a user avatar, add a <code>background-image</code> as a <code>style</code> property on the <code>.circle</code> div. </p>
-
-  <div class="row tile-row">
-
-    <div class="col-md-4 tile-container">
-      <div class="tile">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
-        <h5>Myself</h5>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-
-  <h2 id="tiles-descriptive">Tiles with a short descriptive text</h2>
-  <p>Be concise when adding more text. The user will use this information to compare between options.</p>
-
-  <div class="row tile-row">
-
-    <div class="col-md-4 tile-container">
-      <div class="tile">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/mike.jpg');"></div>
-        <h5>Mike Marter</h5>
         <p>EUR account ending 2843</p>
       </div>
     </div>
-
-    <div class="col-md-4 tile-container">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/mo.jpg');"></div>
-        <h5>The Mo</h5>
+        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
+        <h5>Myself</h5>
         <p>EUR account ending 5234</p>
       </div>
     </div>
-
-    <div class="col-md-4 tile-container">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
-        <h5>Kish Patel</h5>
+        <div class="circle circle-lg" style="background-image: url('/assets/img/mike.jpg');"></div>
+        <h5>Really long title that causes text wrap</h5>
         <p>EUR account ending 6798</p>
       </div>
     </div>
-
   </div>
 
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-equal-height"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
       <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
       <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
-
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h2 id="tiles-unique">Tiles with unique information</h2>
   <p>When the option has further information unique to it alone and it is 100% necessary to show it, do so below a <code>hr</code> tag within a <code>p</code></p>
 
-  <div class="row tile-row">
-
-    <div class="col-md-4 col-sm-12 tile-container">
+  <div class="row row-equal-height">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
         <div class="circle circle-lg">
           <i class="icon icon-card"></i>
@@ -5009,43 +5049,38 @@
         <h5>Credit Card</h5>
         <p>Visa and Mastercard are supported</p>
         <hr>
-        <p>+£1 card fee</p>
+        <p>&plus;&pound;1 card fee</p>
       </div>
     </div>
-
-    <div class="col-md-4 col-sm-12 tile-container">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
           <div class="circle circle-lg">
             <i class="icon icon-card"></i>
           </div>
           <h5>Bank Transfer</h5>
           <p>Send the money from your Internet Banking</p>
-          <hr>
+          <hr />
           <p>1 day slower</p>
         </div>
     </div>
-
   </div>
 
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-        ...
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;hr&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
   <h2 id="tiles-benefits">Benefits of a certain tile</h2>
   <p>Add a <code>tile-ribbon-benefit</code> div within the tile if benefits of that tile are worth showing to the user. Copy should be kept short as space is limited.</p>
 
-  <div class="row tile-row">
-
-    <div class="col-md-4 col-sm-12 tile-container">
+  <div class="row row-equal-height">
+    <div class="col-sm-6 col-md-4">
       <div class="tile">
           <div class="circle circle-lg">
             <i class="icon icon-card"></i>
@@ -5055,26 +5090,22 @@
           <p>Visa and Mastercard are supported</p>
         </div>
     </div>
-
   </div>
 
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-        ...
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-ribbon-benefit"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-ribbon-benefit"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
   <h2 id="tiles-disabled">Disabled Tile</h2>
   <p>Add a <code>tile-disabled</code> class to <code>tile</code> when the option is disabled, providing an explanation to the user as to why they cannot select that option.</p>
 
-  <div class="row tile-row">
-
+  <div class="row row-equal-height">
     <div class="col-md-4 col-sm-12 tile-container">
       <div class="tile tile-disabled">
           <div class="circle circle-lg">
@@ -5086,20 +5117,17 @@
           <p><span class="text-warning">Unavailable</span> for amounts larger than £2000</p>
         </div>
     </div>
-
   </div>
 
-  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4 tile-container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile tile-disabled"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-        ...
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;hr&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile tile-disabled"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;hr&gt;</span>
+  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </div>
 

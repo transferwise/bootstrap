@@ -65,44 +65,60 @@
     
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#tw-navbar" aria-controls="tw-navbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand hidden-sm">Bootstrap</a>
-      <div class="flag flag-info hidden-md hidden-lg hidden-xs"></div>
+
+      <a href="../" class="navbar-brand hidden-md hidden-sm hidden-xs">TransferWise Bootstrap</a>
+      <a href="../" class="logo-text logo-text-inverse visible-xs-block visible-sm-block"></a>
+      <a href="../" class="flag flag-info visible-md-block"></a>
     </div>
-    <nav id="bs-navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="../getting-started/">Getting started</a>
-        </li>
-        <li class="active">
-          <a href="../css/">CSS</a>
-        </li>
-        <li>
-          <a href="../components/">Components</a>
-        </li>
-        <li>
-          <a href="../javascript/">JavaScript</a>
-        </li>
-        <li>
-          <a href="../customize/">Customize</a>
-        </li>
-      </ul>
-      <!--
-      <ul class="nav navbar-nav navbar-right">
+    <nav id="tw-navbar" class="collapse navbar-collapse navbar-collapse-with-panel">
+      <a class="cover collapsed"
+          data-toggle="collapse"
+          data-target="#tw-navbar"
+          aria-controls="tw-navbar"
+          aria-expanded="false">
+      </a>
+      <div class="navbar-collapse-panel">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="../getting-started/">Getting started</a>
+          </li>
+          <li class="active">
+            <a href="../css/">CSS</a>
+          </li>
+          <li>
+            <a href="../components/">Components</a>
+          </li>
+          <li>
+            <a href="../javascript/">JavaScript</a>
+          </li>
+          <li>
+            <a href="../customize/">Customize</a>
+          </li>
+        </ul>
+        <!--
+        <ul class="nav navbar-nav navbar-right">
         <li><a href="http://expo.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Expo');">Expo</a></li>
         <li><a href="http://blog.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');">Blog</a></li>
-      </ul>
-      -->
-      <div class="navbar-right hidden-sm hidden-md">
+        </ul>
+        -->
+        <div class="navbar-right">
           <a href="/getting-started/#download" class="btn btn-success navbar-btn">
               Download
           </a>
+        </div>
       </div>
+      <a href="#" role="button"
+          class="navbar-toggle close collapsed"
+          data-toggle="collapse"
+          data-target="#tw-navbar"
+          aria-controls="tw-navbar"
+          aria-expanded="false">&times;</a>
     </nav>
   </div>
 
@@ -112,11 +128,11 @@
     <div class="container bs-docs-container">
       <div class="row m-t-lg">
         
-        <div class="col-md-3" role="complementary">
+        <div class="col-lg-3" role="complementary">
             <h3>CSS</h3>
             <p>Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.</p>
             <hr />
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm"
+          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm hidden-md"
             data-spy="affix" data-offset-top="230" data-offset-bottom="430">
             <ul class="nav bs-docs-sidenav nav-stacked nav-pills">
               
@@ -271,7 +287,7 @@
         </div>
         
 
-          <div class="col-md-9" role="main">
+          <div class="col-lg-9" role="main">
             <div class="panel">
               <!--<div class="panel-heading">
                   <h3 class="panel-title">CSS</h3>
@@ -342,22 +358,26 @@
 
   <h2 id="grid-media-queries">Media queries</h2>
   <p>We use the following media queries in our Less files to create the key breakpoints in our grid system.</p>
-<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* Extra small devices (phones, less than 768px) */</span>
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* Extra small devices (phones, less than 576px) */</span>
 <span class="cm">/* No media query since this is the default in Bootstrap */</span>
 
-<span class="cm">/* Small devices (tablets, 768px and up) */</span>
+<span class="cm">/* Small devices (phablets, 576px and up) */</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
 
-<span class="cm">/* Medium devices (desktops, 992px and up) */</span>
+<span class="cm">/* Medium devices (tablets, 768px and up) */</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
 
-<span class="cm">/* Large devices (large desktops, 1200px and up) */</span>
-<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+<span class="cm">/* Large devices (desktops, 992px and up) */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="cm">/* Extra large devices (large desktops, 1200px and up) */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-xl-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
   <p>We occasionally expand on these media queries to include a <code>max-width</code> to limit CSS to a narrower set of devices.</p>
 <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-xs-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
 <span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
-<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-xl-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
 
   <h2 id="grid-options">Grid options</h2>
   <p>See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>
@@ -368,18 +388,22 @@
           <th></th>
           <th>
             Extra small devices
-            <small>Phones (&lt;768px)</small>
+            <small>Phones (&lt;576px)</small>
           </th>
           <th>
             Small devices
-            <small>Tablets (&ge;768px)</small>
+            <small>Tablets (&ge;576px)</small>
           </th>
           <th>
             Medium devices
-            <small>Desktops (&ge;992px)</small>
+            <small>Desktops (&ge;768px)</small>
           </th>
           <th>
             Large devices
+            <small>Desktops (&ge;992px)</small>
+          </th>
+          <th>
+            Extra large devices
             <small>Desktops (&ge;1200px)</small>
           </th>
         </tr>
@@ -388,14 +412,15 @@
         <tr>
           <th class="text-nowrap" scope="row">Grid behavior</th>
           <td>Horizontal at all times</td>
-          <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+          <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Container width</th>
           <td>None (auto)</td>
-          <td>750px</td>
-          <td>970px</td>
-          <td>1170px</td>
+          <td>None (auto)</td>
+          <td>720px</td>
+          <td>940px</td>
+          <td>1140px</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Class prefix</th>
@@ -403,33 +428,35 @@
           <td><code>.col-sm-</code></td>
           <td><code>.col-md-</code></td>
           <td><code>.col-lg-</code></td>
+          <td><code>.col-xl-</code></td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row"># of columns</th>
-          <td colspan="4">12</td>
+          <td colspan="5">12</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Column width</th>
           <td class="text-muted">Auto</td>
-          <td>~62px</td>
-          <td>~81px</td>
-          <td>~97px</td>
+          <td class="text-muted">Auto</td>
+          <td>~46px</td>
+          <td>~56px</td>
+          <td>~73px</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Gutter width</th>
-          <td colspan="4">30px (15px on each side of a column)</td>
+          <td colspan="5">24px (12px on each side of a column)</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Nestable</th>
-          <td colspan="4">Yes</td>
+          <td colspan="5">Yes</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Offsets</th>
-          <td colspan="4">Yes</td>
+          <td colspan="5">Yes</td>
         </tr>
         <tr>
           <th class="text-nowrap" scope="row">Column ordering</th>
-          <td colspan="4">Yes</td>
+          <td colspan="5">Yes</td>
         </tr>
       </tbody>
     </table>
@@ -578,6 +605,34 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-9"</span><span class="nt">&gt;</span>.col-xs-9<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>.col-xs-4<span class="nt">&lt;br&gt;</span>Since 9 + 4 = 13 <span class="ni">&amp;gt;</span> 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.<span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-6"</span><span class="nt">&gt;</span>.col-xs-6<span class="nt">&lt;br&gt;</span>Subsequent columns continue along the new line.<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h2 id="grid-example-equal-height">Equal height columns</h2>
+  <p>If you want the columns of your grid to have the same height, add the <code>.row-equal-height</code> modifier.</p>
+  <p>This can be used to match the height of nested containers, or to control the
+      behaviour of columns that wrap to a new line.</p>
+  <p class="text-warning">Equal height columns use flexbox which is not supported in earlier versions of some browsers.</p>
+  <div class="bs-docs-grid">
+    <h5>Without row-equal-height</h5>
+    <div class="row show-grid">
+      <div class="col-xs-4">Column 1. This column contains more content than the following columns and would naturally have a greater height.</div>
+      <div class="col-xs-4">Column 2.</div>
+      <div class="col-xs-4">Column 3.</div>
+      <div class="col-xs-4">Column 4.</div>
+    </div>
+    <h5>With row-equal-height</h5>
+    <div class="row row-equal-height show-grid">
+      <div class="col-xs-4">Column 1. This column contains more content than the following columns and would naturally have a greater height.</div>
+      <div class="col-xs-4">Column 2.</div>
+      <div class="col-xs-4">Column 3.</div>
+      <div class="col-xs-4">Column 4.</div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-equal-height"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>Column 1. This column...<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>Column 2.<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>Column 3.<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-4"</span><span class="nt">&gt;</span>Column 4.<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h2 id="grid-responsive-resets">Responsive column resets</h2>
@@ -3049,35 +3104,37 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       and padding <code>p-</code> classes, that add spacing to the top <code>t</code>,
       bottom <code>b</code>, left <code>l</code>, right <code>r</code>, or all
       <code>a</code>.  For example to add margin to the top use class
-      <code>.m-t</code>, to adding padding on all sides use <code>.p-a</code></p>
-  <p>By default these classes add 8px of spacing, you can also add the
-      <code>-md</code> modifier to add 16px, or the <code>-lg</code> modifier to
-      add 24px e.g. <code>.m-b-lg</code> adds 24px of bottom margin.</p>
+      <code>.m-t-1</code>, to adding padding on all sides use <code>.p-a</code></p>
+  <p>These classes add spacing in multiples of 8px, so adding the
+      <code>-1</code> modifier add 8px, <code>-2</code> adds 16px, <code>-3</code> for
+      24px e.g. <code>.m-b-3</code> adds 24px of bottom margin.</p>
+  <p>You can also use the <code>-0</code> modifier to remove any existing spacing,
+      e.g. <code>.m-b-0</code> to remove bottom margin</p>
   <div class="bs-example" data-example-id="helper-classes-spacing">
-      <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b">.m-b</button></span></div>
-      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-md">.m-b-md</button></span></div>
-      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-l-lg m-b-lg">.m-l-lg .m-b-lg</button></span></div>
-      <div class="m-a"><button class="btn btn-primary p-a">.p-a</button></div>
-      <div class="m-a"><button class="btn btn-primary p-a-md">.p-a-md</button></div>
-      <div class="m-a"><button class="btn btn-primary p-a-lg">.p-a-lg</button></div>
+      <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b-1">.m-b-1</button></span></div>
+      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-2">.m-b-2</button></span></div>
+      <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-l-3 m-b-3">.m-l-3 .m-b-3</button></span></div>
+      <div class="m-a"><button class="btn btn-primary p-a-1">.p-a-1</button></div>
+      <div class="m-a"><button class="btn btn-primary p-a-2">.p-a-2</button></div>
+      <div class="m-a"><button class="btn btn-primary p-a-3">.p-a-3</button></div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b"</span><span class="nt">&gt;</span>.m-b<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-a-md"</span><span class="nt">&gt;</span>.m-a-md<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-l-lg m-b-lg"</span><span class="nt">&gt;</span>.m-l-lg .m-b-lg<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a"</span><span class="nt">&gt;</span>.p-a<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-md"</span><span class="nt">&gt;</span>.p-a-md<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-lg"</span><span class="nt">&gt;</span>.p-a-lg<span class="nt">&lt;/button&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b"</span><span class="nt">&gt;</span>.m-b-1<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-a-md"</span><span class="nt">&gt;</span>.m-a-2<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-l-lg m-b-lg"</span><span class="nt">&gt;</span>.m-l-3 .m-b-3<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-1"</span><span class="nt">&gt;</span>.p-a-1<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-2"</span><span class="nt">&gt;</span>.p-a-2<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn p-a-3"</span><span class="nt">&gt;</span>.p-a-3<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
-<h3 id="helper-classes-xl-spacing">xl and xxl</h3>
-<p>There are two additional sizes, xl and xxl, that are only available for margin
-    bottom, use <code>.m-b-xl</code> or <code>.m-b-xxl</code> to provide 32px
+<h3 id="helper-classes-xl-spacing">m-b-4 and m-b-5</h3>
+<p>There are two additional sizes, m-b-4 and m-b-5, that are only available for margin
+    bottom, use <code>.m-b-4</code> or <code>.m-b-5</code> to provide 32px
     or 40px of spacing.</p>
 <div class="bs-example" data-example-id="helper-classes-xl-spacing">
-    <div class="m-a"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b-xl">.m-b-xl</button></span></div>
-    <div class="m-a"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-xxl">.m-b-xxl</button></span></div>
+    <div class="m-a-1"><span style="display: inline-block;" class="bg-default"><button class="btn btn-primary m-b-4">.m-b-4</button></span></div>
+    <div class="m-a-1"><span style="display: inline-block;"  class="bg-default"><button class="btn btn-primary m-b-5">.m-b-5</button></span></div>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b-xl"</span><span class="nt">&gt;</span>.m-b-xl<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b-xxl"</span><span class="nt">&gt;</span>.m-b-xxl<span class="nt">&lt;/button&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b-4"</span><span class="nt">&gt;</span>.m-b-4<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn m-b-5"</span><span class="nt">&gt;</span>.m-b-5<span class="nt">&lt;/button&gt;</span></code></pre></div>
 
   <h3 id="helper-classes-colors">Contextual colors</h3>
   <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
@@ -3172,33 +3229,43 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 
   <h3>Responsive floats</h3>
   <p>Float an element to the left or right only until grid collapse.</p>
-  <div class="bs-example" data-example-id="contextual-colors-helpers">
+  <div class="bs-example text-center" data-example-id="contextual-colors-helpers">
     <div class="clearfix">
-      <div class="pull-left-sm">.pull-left-sm</div>
+      <div class="pull-sm-left">.pull-sm-left</div>
     </div>
     <div class="clearfix">
-      <div class="pull-left-md">.pull-left-md</div>
+      <div class="pull-md-left">.pull-md-left</div>
     </div>
     <div class="clearfix">
-      <div class="pull-left-lg">.pull-left-lg</div>
+      <div class="pull-lg-left">.pull-lg-left</div>
     </div>
     <div class="clearfix">
-      <div class="pull-right-sm">.pull-right-sm</div>
+      <div class="pull-xl-left">.pull-xl-left</div>
     </div>
     <div class="clearfix">
-      <div class="pull-right-md">.pull-right-md</div>
+      <div class="pull-sm-right">.pull-sm-right</div>
     </div>
     <div class="clearfix">
-      <div class="pull-right-lg">.pull-right-lg</div>
+      <div class="pull-md-right">.pull-md-right</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-lg-right">.pull-lg-right</div>
+    </div>
+    <div class="clearfix">
+      <div class="pull-xl-right">.pull-xl-right</div>
     </div>
   </div>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-sm"</span><span class="nt">&gt;</span>.pull-left-sm<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-md"</span><span class="nt">&gt;</span>.pull-left-md<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left-lg"</span><span class="nt">&gt;</span>.pull-left-lg<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-sm"</span><span class="nt">&gt;</span>.pull-right-sm<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-md"</span><span class="nt">&gt;</span>.pull-right-md<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-right-lg"</span><span class="nt">&gt;</span>.pull-right-lg<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-sm-left"</span><span class="nt">&gt;</span>.pull-sm-left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-md-left"</span><span class="nt">&gt;</span>.pull-md-left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-lg-left"</span><span class="nt">&gt;</span>.pull-lg-left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-xl-left"</span><span class="nt">&gt;</span>.pull-xl-left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-sm-right"</span><span class="nt">&gt;</span>.pull-sm-right<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-md-right"</span><span class="nt">&gt;</span>.pull-md-right<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-lg-right"</span><span class="nt">&gt;</span>.pull-lg-right<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-xl-right"</span><span class="nt">&gt;</span>.pull-xl-right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h3 id="helper-classes-center">Center content blocks</h3>
   <p>Set an element to <code>display: block</code> and center via <code>margin</code>. Available as a mixin and class.</p>
@@ -3299,26 +3366,31 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <th></th>
           <th>
             Extra small devices
-            <small>Phones (&lt;768px)</small>
+            <small>Phones (&lt;576px)</small>
           </th>
           <th>
             Small devices
-            <small>Tablets (&ge;768px)</small>
+            <small>Tablets (&ge;576px)</small>
           </th>
           <th>
             Medium devices
-            <small>Desktops (&ge;992px)</small>
+            <small>Desktops (&ge;768px)</small>
           </th>
           <th>
             Large devices
-            <small>Desktops (&ge;1200px)</small>
+            <small>Desktops (&ge;992px)</small>
           </th>
+           <th>
+             Extra Large devices
+             <small>Desktops (&ge;1200px)</small>
+           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <th scope="row"><code>.visible-xs-*</code></th>
           <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
@@ -3329,6 +3401,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <td class="is-visible">Visible</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
         </tr>
         <tr>
           <th scope="row"><code>.visible-md-*</code></th>
@@ -3336,9 +3409,19 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <td class="is-hidden">Hidden</td>
           <td class="is-visible">Visible</td>
           <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
         </tr>
         <tr>
           <th scope="row"><code>.visible-lg-*</code></th>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.visible-xl-*</code></th>
+          <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-hidden">Hidden</td>
@@ -3352,11 +3435,13 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
         </tr>
         <tr>
           <th scope="row"><code>.hidden-sm</code></th>
           <td class="is-visible">Visible</td>
           <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
         </tr>
@@ -3366,9 +3451,19 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <td class="is-visible">Visible</td>
           <td class="is-hidden">Hidden</td>
           <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
         </tr>
         <tr>
           <th scope="row"><code>.hidden-lg</code></th>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-visible">Visible</td>
+          <td class="is-hidden">Hidden</td>
+          <td class="is-visible">Visible</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>.hidden-xl</code></th>
+          <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
           <td class="is-visible">Visible</td>
@@ -3444,22 +3539,26 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h3>Visible on...</h3>
   <p>Green checkmarks indicate the element <strong>is visible</strong> in your current viewport.</p>
   <div class="row responsive-utilities-test visible-on">
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-xs">Extra small</span>
       <span class="visible-xs-block">&#10004; Visible on x-small</span>
     </div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-sm">Small</span>
       <span class="visible-sm-block">&#10004; Visible on small</span>
     </div>
     <div class="clearfix visible-xs-block"></div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-md">Medium</span>
       <span class="visible-md-block">&#10004; Visible on medium</span>
     </div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-lg">Large</span>
       <span class="visible-lg-block">&#10004; Visible on large</span>
+    </div>
+    <div class="col-xs-6 col-sm-2">
+      <span class="hidden-xl">Extra Large</span>
+      <span class="visible-xl-block">&#10004; Visible on x-large</span>
     </div>
   </div>
   <div class="row responsive-utilities-test visible-on">
@@ -3477,8 +3576,8 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <span class="visible-xs-block visible-md-block">&#10004; Visible on x-small and medium</span>
     </div>
     <div class="col-xs-6">
-      <span class="hidden-sm hidden-lg">Small and large</span>
-      <span class="visible-sm-block visible-lg-block">&#10004; Visible on small and large</span>
+      <span class="hidden-sm hidden-xl">Small and extra large</span>
+      <span class="visible-sm-block visible-xl-block">&#10004; Visible on small and x-large</span>
     </div>
     <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6">
@@ -3494,22 +3593,26 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <h3>Hidden on...</h3>
   <p>Here, green checkmarks also indicate the element <strong>is hidden</strong> in your current viewport.</p>
   <div class="row responsive-utilities-test hidden-on">
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-xs">Extra small</span>
       <span class="visible-xs-block">&#10004; Hidden on x-small</span>
     </div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-sm">Small</span>
       <span class="visible-sm-block">&#10004; Hidden on small</span>
     </div>
     <div class="clearfix visible-xs-block"></div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-md">Medium</span>
       <span class="visible-md-block">&#10004; Hidden on medium</span>
     </div>
-    <div class="col-xs-6 col-sm-3">
+    <div class="col-xs-6 col-sm-2">
       <span class="hidden-lg">Large</span>
       <span class="visible-lg-block">&#10004; Hidden on large</span>
+    </div>
+    <div class="col-xs-6 col-sm-2">
+      <span class="hidden-xl">Extra Large</span>
+      <span class="visible-xl-block">&#10004; Hidden on x-large</span>
     </div>
   </div>
   <div class="row responsive-utilities-test hidden-on">
@@ -3527,8 +3630,8 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       <span class="visible-xs-block visible-md-block">&#10004; Hidden on x-small and medium</span>
     </div>
     <div class="col-xs-6">
-      <span class="hidden-sm hidden-lg">Small and large</span>
-      <span class="visible-sm-block visible-lg-block">&#10004; Hidden on small and large</span>
+      <span class="hidden-sm hidden-xl">Small and large</span>
+      <span class="visible-sm-block visible-xl-block">&#10004; Hidden on small and x-large</span>
     </div>
     <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6">
