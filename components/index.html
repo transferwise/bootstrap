@@ -556,6 +556,37 @@
   <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+  <h2 id="btn-dropdowns-input">Input button dropdowns</h2>
+  <p>We also use our button dropdown styles to provide a stylised select box.</p>
+  <p class="alert alert-danger">
+      Bootstrap simply supplies the required styles.  A full implementation for
+      Angular 1.X can be found in our styleguide-components.</p>
+  <div class="bs-example" data-example-id="input-button-dropdown">
+    <div class="btn-group btn-block">
+      <button type="button" class="btn btn-input dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="form-control-placeholder">Select an option...</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li class="active"><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+        <li><a href="#">Option 3</a></li>
+      </ul>
+    </div><!-- /btn-group -->
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Single button --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group btn-block"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-input dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form-control-placeholder"</span><span class="nt">&gt;</span>Select an option...<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+
   <h2 id="btn-dropdowns-split">Split button dropdowns</h2>
   <p>Similarly, create split button dropdowns with the same markup changes, only with a separate button.</p>
   <div class="bs-example" data-example-id="split-button-dropdown">
@@ -1042,10 +1073,12 @@
   <p>Circles are used to add visual interest to body text, they often help
       to represent steps in a process or to accompany a set of discrete
       points.  Circles may contain images, iconography or letters, and
-      are generally central in their column.
+      are generally central in their column, or used as avatars, left-aligned in
+      lists.
   </p>
 
-  <div class="bs-example" data-example-id="circle">
+  <div class="bs-example bg-default" data-example-id="circle">
+      <div class="well">
       <div class="circle m-b-1">
           <i class="glyphicon glyphicon-globe"></i>
       </div>
@@ -1057,67 +1090,76 @@
       </div>
       <img class="circle m-b-1" src="/assets/img/mike.jpg" alt="Mike" />
       <div class="circle m-b-1" style="background-image: url('/assets/img/mike.jpg');"></div>
+      </div>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-globe"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">href=</span><span class="s">"..."</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span><span class="nt">&gt;</span>
-    AZ
+  AZ
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle"</span> <span class="na">style=</span><span class="s">"background-image: url('...');"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
 
-  <h2>Circle variations</h2>
+  <h2>Size variations</h2>
   <p>Add any of the below modifier classes to change the size of a circle.
       Nest circles in links to gain hover states.</p>
 
   <div class="bs-example" data-example-id="circle-variants">
-    <a href="" class="circle circle-lg">
+    <div class="well">
+    <a href="" class="circle circle-lg m-b-1">
         <i class="icon icon-card"></i>
     </a>
-    <a href="" class="circle circle-lg">
-        <img data-holder-rendered="true"
-          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRkODVlZDIyZTIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGQ4NWVkMjJlMiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuNDY2NjY3MTc1MjkyOTciIHk9Ijk3LjM1Ij4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" style="" data-src="holder.js/100%x100%" alt="100%x100%" />
+    <a href="">
+        <img class="circle circle m-b-1" src="/assets/img/mike.jpg" alt="Mike" />
     </a>
-    <a href="" class="circle circle-sm">
+    <a href="" class="circle circle-sm m-b-1">
         <i class="glyphicon glyphicon-upload"></i>
     </a>
-    <a href="" class="circle circle-sm active">
-        <i class="icon icon-check-circle"></i>
+    <a href="" class="circle circle-xs m-b-1">
+        A
     </a>
-    <div class="bg-primary p-a-1 clearfix">
-        <a href="" class="circle circle-sm pull-left m-r-1">
-            A
-        </a>
-        <a href="" class="circle circle-sm active pull-left m-r-1">
-            B
-        </a>
-        <a href="" class="circle circle-sm pull-left m-r-1">
-            C
-        </a>
-        <a href="" class="circle circle-sm pull-left m-r-1">
-            D
-        </a>
     </div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-md"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-upload"</span><span class="nt">&gt;&lt;/i&gt;</span>
-<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm active"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"glyphicon glyphicon-ok-sign"</span><span class="nt">&gt;&lt;/i&gt;</span>
-<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary clearfix"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm active pull-left"</span><span class="nt">&gt;</span>B<span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>C<span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm pull-left"</span><span class="nt">&gt;</span>D<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-xs"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<h2>Inverse circles</h2>
+<p>There are two styling variants.  If you are using a circle on a white background
+    use the <code>.circle-inverse</code> class to apply a contrasting background.</p>
+
+<div class="bs-example" data-example-id="circle-variants">
+  <a href="" class="circle circle-sm circle-inverse m-b-1">
+    <i class="icon icon-card"></i>
+  </a>
+  <a href="" class="circle circle-sm circle-inverse m-b-1">
+    AZ
+  </a>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"circle circle-sm circle-inverse"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<h2>Responsive circles</h2>
+<p>The responsive circle variant decreases in size on smaller screen widths,
+    the md circle takes the size of an sm, and the lg variant takes on the size
+    of an md.  Simply add the <code>.circle-responsize</code> class.</p>
+
+<div class="bs-example" data-example-id="circle-variants">
+  <div class="circle circle-lg circle-inverse circle-responsive m-b-1">
+    <i class="icon icon-card"></i>
+  </div>
+  <div class="circle circle-md circle-inverse circle-responsive m-b-1">
+    AZ
+  </div>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg circle-inverse circle-responsive"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-md circle-inverse circle-responsive"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 </div>
 
@@ -2846,7 +2888,7 @@
       <div class="col-lg-6">
         <div class="input-group">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
+            <button class="btn btn-primary" type="button">Go!</button>
           </span>
           <input type="text" class="form-control" placeholder="Search for...">
         </div><!-- /input-group -->
@@ -2855,7 +2897,7 @@
         <div class="input-group input-group-sm">
           <input type="text" class="form-control" placeholder="Search for...">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
+            <button class="btn btn-primary btn-sm" type="button">Go!</button>
           </span>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
@@ -2865,7 +2907,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
       <span class="nt">&lt;/span&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search for..."</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
@@ -2874,7 +2916,7 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group input-group-sm"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Search for..."</span><span class="nt">&gt;</span>
       <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-sm"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Go!<span class="nt">&lt;/button&gt;</span>
       <span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /input-group --&gt;</span>
   <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.col-lg-6 --&gt;</span>
@@ -2887,7 +2929,7 @@
       <div class="col-lg-6">
         <div class="input-group">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -2903,7 +2945,7 @@
         <div class="input-group input-group-lg">
           <input type="text" class="form-control" aria-label="Text input with dropdown button">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
+            <button type="button" class="btn btn-input dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -2920,7 +2962,7 @@
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-6"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -2936,7 +2978,7 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group input-group-lg"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">aria-label=</span><span class="s">"..."</span><span class="nt">&gt;</span>
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group-btn"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-input dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Action <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/button&gt;</span>
         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu dropdown-menu-right"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
           <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another action<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -2955,8 +2997,8 @@
       <div class="col-lg-6">
         <div class="input-group">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-primary">Action</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="caret"></span>
               <span class="sr-only">Toggle Dropdown</span>
             </button>
@@ -2975,8 +3017,8 @@
         <div class="input-group">
           <input type="text" class="form-control" aria-label="Text input with segmented button dropdown">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default">Action</button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-primary">Action</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="caret"></span>
               <span class="sr-only">Toggle Dropdown</span>
             </button>
