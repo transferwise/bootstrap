@@ -238,7 +238,7 @@ ol {
   }
 }
 
-ul.tw-list-styled {
+.circle-list(@color, @content) {
   padding: 0;
   margin: 32px 0;
   list-style-type: none;
@@ -246,30 +246,38 @@ ul.tw-list-styled {
     position: relative;
     padding-left: 40px;
     margin-bottom: 16px;
-    counter-increment: step-counter;
     strong {
-      color: @brand-green;
+      color: @color;
     }
     &::before {
+      content: @content;
+      color: @color;
+      border: 1px solid @brand-smoke-plus-10;
       font-family: "TransferWise-IconFont";
       position: absolute;
       left: 0;
       width: 24px;
-      content: "\e916";
       line-height: 22px;
       margin-right: 16px;
       font-size: 16px;
       text-align: center;
-      color: @brand-green;
       font-weight: bold;
-      padding: 0px 3px;
-      border: 1px solid @brand-smoke-plus-10;
+      padding: 0 3px;
       border-radius: 50%;
     }
   }
 }
 
-ol.tw-list-styled {
+ul.circle-list {
+  &-checked {
+    .circle-list(@brand-green, "\e916")
+  }
+  &-сlosed {
+    .circle-list(@brand-red, "\e917")
+  }
+}
+
+ol.circle-list {
   padding: 0;
   margin: 32px 0;
   list-style-type: none;
@@ -292,7 +300,7 @@ ol.tw-list-styled {
       text-align: center;
       color: @brand-light-blue;
       font-weight: bold;
-      padding: 0px 7px;
+      padding: 0 7px;
       border: 1px solid @brand-smoke-plus-10;
       border-radius: 50%;
     }
