@@ -5140,6 +5140,40 @@
   <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+  <h2 id="tiles-responsive">Responsive Tiles</h2>
+  <p>Better responsive behaviour can be achieved using
+    the <code>.tile-icon</code> and <code>.tile-text</code> containers.</p>
+
+  <p class="text-warning">When using responsive tiles always use
+    <code>.circle-responsive</code> to scale your icon on smaller
+    screens.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="tile" tabindex="0" role="button">
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive">
+            AZ
+          </div>
+        </div>
+        <div class="tile-text">
+          <h5>Myself</h5>
+          <p>Summary description</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-icon"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg circle-responsive"</span><span class="nt">&gt;</span>AZ<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
   <h2 id="tile-rows">Tile rows</h2>
   <p>Normally tiles are used in rows, we use our grid columns to dictate
       how many tiles appear in each row at various screen sizes, our tiles should
@@ -5157,23 +5191,35 @@
   <div class="row row-equal-height">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/mo.jpg');"></div>
-        <h5>Someone else</h5>
-        <p>EUR account ending 2843</p>
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive" style="background-image: url('/assets/img/mo.jpg');"></div>
+        </div>
+        <div class="tile-text">
+          <h5>Someone else</h5>
+          <p>EUR account ending 2843</p>
+        </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/kish.jpg');"></div>
-        <h5>Myself</h5>
-        <p>EUR account ending 5234</p>
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive" style="background-image: url('/assets/img/kish.jpg');"></div>
+        </div>
+        <div class="tile-text">
+          <h5>Myself</h5>
+          <p>EUR account ending 5234</p>
+        </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-        <div class="circle circle-lg" style="background-image: url('/assets/img/mike.jpg');"></div>
-        <h5>Really long title that causes text wrap</h5>
-        <p>EUR account ending 6798</p>
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive" style="background-image: url('/assets/img/mike.jpg');"></div>
+        </div>
+        <div class="tile-text">
+          <h5>Really long title that causes text wrap</h5>
+          <p>EUR account ending 6798</p>
+        </div>
       </div>
     </div>
   </div>
@@ -5181,23 +5227,17 @@
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row row-equal-height"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12 col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+      ...
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12 col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+      ...
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-12 col-sm-6 col-md-4"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-      <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+      ...
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
@@ -5208,36 +5248,48 @@
   <div class="row row-equal-height">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-        <div class="circle circle-lg">
-          <i class="icon icon-card"></i>
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive">
+            <i class="icon icon-card"></i>
+          </div>
         </div>
-        <h5>Credit Card</h5>
-        <p>Visa and Mastercard are supported</p>
-        <hr>
-        <p>&plus;&pound;1 card fee</p>
+        <div class="tile-text">
+          <h5>Credit Card</h5>
+          <p>Visa and Mastercard are supported</p>
+          <hr />
+          <p>&plus;&pound;1 card fee</p>
+        </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-          <div class="circle circle-lg">
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive">
             <i class="icon icon-card"></i>
           </div>
+        </div>
+        <div class="tile-text">
           <h5>Bank Transfer</h5>
           <p>Send the money from your Internet Banking</p>
           <hr />
           <p>1 day slower</p>
         </div>
+      </div>
     </div>
   </div>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-icon"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg circle-responsive"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-card"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
@@ -5247,23 +5299,31 @@
   <div class="row row-equal-height">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="tile" tabindex="0" role="button">
-          <div class="circle circle-lg">
+        <div class="tile-ribbon-benefit">Faster</div>
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-responsive">
             <i class="icon icon-card"></i>
           </div>
-          <div class="tile-ribbon-benefit">Faster</div>
+        </div>
+        <div class="tile-text">
           <h5>Debit Card</h5>
           <p>Visa and Mastercard are supported</p>
         </div>
+      </div>
     </div>
   </div>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile"</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    ...
-  <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-ribbon-benefit"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-icon"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg circle-responsive"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 
@@ -5273,25 +5333,33 @@
   <div class="row row-equal-height">
     <div class="col-xs-12 col-sm-6 col-md-4 tile-container">
       <div class="tile tile-disabled">
-          <div class="circle circle-lg circle-inverse">
+        <div class="tile-icon">
+          <div class="circle circle-lg circle-inverse circle-responsive">
             <i class="icon icon-card"></i>
           </div>
+        </div>
+        <div class="tile-text">
           <h5>Credit Card</h5>
           <p>Visa and Mastercard are supported</p>
           <hr>
           <p><span class="text-warning">Unavailable</span> for amounts larger than £2000</p>
         </div>
+      </div>
     </div>
   </div>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile tile-disabled"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg"</span><span class="nt">&gt;</span>
-    ...
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-icon"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"circle circle-lg circle-responsive"</span><span class="nt">&gt;</span>
+      ...
+    <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
-  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;hr&gt;</span>
-  <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tile-text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>...<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;p&gt;</span>...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
   <h2 id="tiles-inverse">Inverse Tiles</h2>
