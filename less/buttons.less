@@ -164,6 +164,9 @@
       @input-border-focus
   );
 }
+.btn-input .caret {
+  margin-left: 8px;
+}
 
 .btn-facebook {
 	.button-outline (
@@ -215,18 +218,18 @@
 }
 
 .btn-image {
-    background-color: #7A8392;
+    background-color: @brand-grey-plus-10;
     background-color: rgba(255,255,255, 0.4);
     color: @brand-white;
     &:hover,
     &:focus {
-        background-color: #7A8392;
+        background-color: @brand-grey-plus-10;
         background-color: rgba(24,33,56, 0.56);
     }
 
     &:active,
     &:hover:active {
-        background: #192439;
+        background: @brand-grey-minus-20;
     }
 }
 .btn-inverse {
@@ -243,8 +246,8 @@
 // Make a button look and behave like a link
 .btn-link {
   color: @link-color;
-  font-weight: normal;
-  border-radius: 0;
+  text-decoration: @link-decoration;
+  border-color: transparent;
 
   &,
   &:active,
@@ -254,17 +257,15 @@
     background-color: transparent;
     .box-shadow(none);
   }
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: transparent;
-  }
+
   &:hover,
   &:focus {
-    color: @link-hover-color;
-    text-decoration: @link-hover-decoration;
-    background-color: transparent;
+    border-color: @btn-default-border;
+    text-decoration: @link-decoration;
+  }
+  &:active {
+    color: @btn-default-border-active;
+    border-color: @btn-default-border-active;
   }
   &[disabled],
   fieldset[disabled] & {
