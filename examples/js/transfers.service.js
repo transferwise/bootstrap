@@ -33,7 +33,7 @@
 				shortString: "Account ending 1234"
 			},
 			status: "PAUSED",
-			reason: "Problem with your documents",
+			reason: "We received your money. There was a problem with your documents.",
 			reference: "Ref123",
 			fee: 0.50,
 			rate: 1.2345,
@@ -41,7 +41,7 @@
 			updated: "2016-07-01T12:34:56Z",
 		},{
 			id: 2,
-			type: "TOPUP",
+			type: "TRANSFER",
 			source: "GBP",
 			target: "USD",
 			sourceAmount: 10.00,
@@ -57,7 +57,7 @@
 				shortString: "USD balance"
 			},
 			status: "PROCESSING",
-			reason: "Processing",
+			reason: "We received your money. We're processing your transfer.",
 			reference: "Ref123",
 			fee: 0.50,
 			rate: 1.2345,
@@ -65,7 +65,7 @@
 			updated: "2016-07-01T12:34:56Z",
 		},{
 			id: 3,
-			type: "TOPUP",
+			type: "TRANSFER",
 			source: "GBP",
 			target: "USD",
 			sourceAmount: 10.00,
@@ -104,7 +104,7 @@
 				shortString: "Account ending 1234"
 			},
 			status: "AWAITING_FUNDS",
-			reason: "Awaiting your payment",
+			reason: "Waiting for you to pay in.",
 			reference: "Ref123",
 			fee: 0.50,
 			rate: 1.2345,
@@ -127,8 +127,8 @@
 				name: "Mike Marter",
 				shortString: "Account ending 1234"
 			},
-			status: "PAUSED",
-			reason: "Holy shit, someone wrote a really long error message about what was wrong with this transfer. Someone should have a word, but at least our layout didn't break.",
+			status: "FUNDED",
+			reason: "We're waiting for your money to arrive in our account.",
 			reference: "Ref123",
 			fee: 50.00,
 			rate: 1.2345,
@@ -148,11 +148,12 @@
 				shortString: "Debite card ending 4321"
 			},
 			targetAccount: {
-				name: "Mike Marter",
+				name: "Steve Pole",
 				type: "ACCOUNT",
 				shortString: "Account ending 1234"
 			},
-			status: "COMPLETED",
+			status: "PAID_OUT",
+			reason: "We've sent out your money, it may take some time to arrive in the account.",
 			reference: "Ref123",
 			fee: 0.50,
 			rate: 1.2345,
@@ -161,7 +162,7 @@
 			completed: "2016-07-01T12:34:56Z"
 		},{
 			id: 7,
-			type: "CARD",
+			type: "TRANSFER",
 			source: "GBP",
 			target: "GBP",
 			sourceAmount: 2.50,
@@ -232,7 +233,7 @@
 			updated: "2016-06-10T12:34:56Z"
 		},{
 			id: 10,
-			type: "TOPUP",
+			type: "TRANSFER",
 			source: "GBP",
 			target: "GBP",
 			sourceAmount: 100.00,
@@ -256,7 +257,7 @@
 			completed: "2016-04-01T12:34:56Z"
 		},{
 			id: 11,
-			type: "CONVERSION",
+			type: "TRANSFER",
 			source: "EUR",
 			target: "GBP",
 			sourceAmount: 100.00,
@@ -303,5 +304,129 @@
 			updated: "2016-04-01T12:34:56Z",
 			completed: "2016-04-01T12:34:56Z"
 		}];
+
+		/*
+		{
+			id: 2,
+			type: "TOPUP",
+			source: "GBP",
+			target: "USD",
+			sourceAmount: 10.00,
+			targetAmount: 12.34,
+			sourceAccount: {
+				name: "Steve Pole",
+				type: "CARD",
+				shortString: "Debit card ending 4321"
+			},
+			targetAccount: {
+				name: "Steve Pole",
+				type: "WALLET",
+				shortString: "USD balance"
+			},
+			status: "PROCESSING",
+			reason: "We received your money. We're processing your transfer.",
+			reference: "Ref123",
+			fee: 0.50,
+			rate: 1.2345,
+			created: "2016-06-30T12:34:56Z",
+			updated: "2016-07-01T12:34:56Z",
+		},{
+			id: 3,
+			type: "TOPUP",
+			source: "GBP",
+			target: "USD",
+			sourceAmount: 10.00,
+			targetAmount: 12.34,
+			sourceAccount: {
+				name: "Steve Pole",
+				type: "CARD",
+				shortString: "Debit card ending 4321"
+			},
+			targetAccount: {
+				name: "Steve Pole",
+				type: "WALLET",
+				shortString: "USD balance"
+			},
+			status: "CONVERTING",
+			reason: "Converting",
+			reference: "Ref123",
+			fee: 5.50,
+			rate: 1.2345,
+			created: "2016-06-30T12:34:56Z",
+			updated: "2016-07-01T12:34:56Z",
+		},{
+			id: 7,
+			type: "CARD",
+			source: "GBP",
+			target: "GBP",
+			sourceAmount: 2.50,
+			targetAmount: 2.50,
+			sourceAccount: {
+				name: "Steve Pole",
+				type: "CARD",
+				shortString: "Debit card ending 4321"
+			},
+			targetAccount: {
+				name: "Peet's coffee",
+				type: "MERCHANT",
+				shortString: "Merchant account"
+			},
+			status: "COMPLETED",
+			reference: "Ref123",
+			fee: 0.00,
+			rate: 1.0000,
+			created: "2016-06-30T12:34:56Z",
+			updated: "2016-07-01T12:34:56Z",
+			completed: "2016-07-01T12:34:56Z"
+		},{
+			id: 10,
+			type: "TOPUP",
+			source: "GBP",
+			target: "GBP",
+			sourceAmount: 100.00,
+			targetAmount: 100.00,
+			sourceAccount: {
+				name: "Steve Pole",
+				type: "CARD",
+				shortString: "Debit card ending 4321"
+			},
+			targetAccount: {
+				name: "Steve Pole",
+				type: "WALLET",
+				shortString: "GBP balance"
+			},
+			status: "COMPLETED",
+			reference: "Ref123",
+			fee: 0.00,
+			rate: 1.0000,
+			created: "2016-03-30T12:34:56Z",
+			updated: "2016-04-01T12:34:56Z",
+			completed: "2016-04-01T12:34:56Z"
+		},{
+			id: 11,
+			type: "CONVERSION",
+			source: "EUR",
+			target: "GBP",
+			sourceAmount: 100.00,
+			targetAmount: 91.23,
+			sourceAccount: {
+				name: "Steve Pole",
+				type: "WALLET",
+				shortString: "EUR balance"
+			},
+			targetAccount: {
+				name: "Steve Pole",
+				type: "WALLET",
+				shortString: "GBP balance"
+			},
+			status: "COMPLETED",
+			reference: "Ref123",
+			fee: 0.50,
+			rate: 0.9123,
+			created: "2016-03-30T12:34:56Z",
+			updated: "2016-04-01T12:34:56Z",
+			completed: "2016-04-01T12:34:56Z"
+		},
+		*/
 	}
 })(window.angular);
