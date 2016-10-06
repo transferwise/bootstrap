@@ -571,11 +571,23 @@
         <li><a href="#">Option 2</a></li>
         <li><a href="#">Option 3</a></li>
       </ul>
-    </div><!-- /btn-group -->
+    </div>
+
+    <div class="btn-group btn-block">
+      <button type="button" class="btn btn-input btn-input-inverse dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="form-control-placeholder">Select an option...</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li class="active"><a href="#">Option 1</a></li>
+        <li><a href="#">Option 2</a></li>
+        <li><a href="#">Option 3</a></li>
+      </ul>
+    </div>
   </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Single button --&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Regular dropdown --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group btn-block"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-input dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-input dropdown-toggle"</span>
+    <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form-control-placeholder"</span><span class="nt">&gt;</span>Select an option...<span class="nt">&lt;/span&gt;</span>
     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
   <span class="nt">&lt;/button&gt;</span>
@@ -583,6 +595,18 @@
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Option 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Inverse dropdown --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn-group btn-block"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-input btn-input-inverse dropdown-toggle"</span>
+    <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"form-control-placeholder"</span><span class="nt">&gt;</span>Select an option...<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+    ...
   <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
@@ -694,7 +718,7 @@
   <h2 id="btn-dropdowns-sizing">Sizing</h2>
   <p>Button dropdowns work with buttons of all sizes.</p>
   <div class="bs-example" data-example-id="button-dropdown-sizing">
-    <div class="btn-toolbar" role="toolbar">
+    <div class="m-b-3">
       <div class="btn-group">
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Large button <span class="caret"></span>
@@ -708,7 +732,7 @@
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /btn-toolbar -->
-    <div class="btn-toolbar" role="toolbar">
+    <div class="m-b-3">
       <div class="btn-group">
         <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Small button <span class="caret"></span>
@@ -722,7 +746,7 @@
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /btn-toolbar -->
-    <div class="btn-toolbar" role="toolbar">
+    <div class="m-b-3">
       <div class="btn-group">
         <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           Extra small button <span class="caret"></span>
@@ -1114,7 +1138,7 @@
         <i class="icon icon-card"></i>
     </a>
     <a href="">
-        <img class="circle circle m-b-1" src="/assets/img/mike.jpg" alt="Mike" />
+        <img class="circle circle-md m-b-1" src="/assets/img/mike.jpg" alt="Mike" />
     </a>
     <a href="" class="circle circle-sm m-b-1">
         <i class="glyphicon glyphicon-upload"></i>
@@ -3409,7 +3433,7 @@
     <div class="media">
       <div class="media-left">
         <a href="#" class="circle">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
       <div class="media-body">
@@ -3419,7 +3443,7 @@
     </div>
     <div class="media">
       <div class="media-left">
-        <a href="#" class="circle">
+        <a href="#" class="circle circle-inverse">
           AA
         </a>
       </div>
@@ -3446,14 +3470,14 @@
       </div>
       <div class="media-right">
         <a href="#" class="circle">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
     </div>
     <div class="media">
       <div class="media-left">
         <a href="#" class="circle">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
       <div class="media-body">
@@ -3462,7 +3486,7 @@
       </div>
       <div class="media-right">
         <a href="#" class="circle">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
     </div>
@@ -3486,7 +3510,7 @@
     <div class="media">
       <div class="media-left">
         <a class="circle" href="#">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
       <div class="media-body">
@@ -3498,7 +3522,7 @@
     <div class="media">
       <div class="media-left media-middle">
         <a class="circle" href="#">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
       <div class="media-body">
@@ -3510,7 +3534,7 @@
     <div class="media">
       <div class="media-left media-bottom">
         <a class="circle" href="#">
-          <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+          <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
         </a>
       </div>
       <div class="media-body">
@@ -3539,7 +3563,7 @@
       <li class="media">
         <div class="media-left">
           <a class="circle" href="#">
-            <img class="media-object" data-src="holder.js/72x72" alt="Generic placeholder image">
+            <img class="media-object" data-src="holder.js/48x48" alt="Generic placeholder image">
           </a>
         </div>
         <div class="media-body">
@@ -4082,18 +4106,11 @@
   <h2 id="nav-tabs">Tabs</h2>
   <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
   <div class="bs-example well" data-example-id="simple-nav-tabs">
-    <div class="well">
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
-    <div class="panel">
-        <div class="panel-body">
-            Examples
-        </div>
-    </div>
-</div>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-tabs"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
