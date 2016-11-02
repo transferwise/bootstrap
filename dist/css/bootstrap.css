@@ -11051,7 +11051,7 @@ a.circle.active:hover {
   font-style: normal;
   font-weight: normal;
 
-  src: url('../fonts/TransferWise-IconFont.ttf?ny1zvb') format('truetype'), url('../fonts/TransferWise-IconFont.woff?ny1zvb') format('woff'), url('../fonts/TransferWise-IconFont.svg?ny1zvb#TransferWise-IconFont') format('svg');
+  src: url('../fonts/TransferWise-IconFont.ttf?2zey5d') format('truetype'), url('../fonts/TransferWise-IconFont.woff?2zey5d') format('woff'), url('../fonts/TransferWise-IconFont.svg?2zey5d#TransferWise-IconFont') format('svg');
 }
 .icon {
   /* use !important to prevent issues with browser extensions that change ../fonts */
@@ -11074,6 +11074,9 @@ a.circle.active:hover {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-add:before {
+  content: "\e90d";
 }
 .icon-chart:before {
   content: "\e936";
