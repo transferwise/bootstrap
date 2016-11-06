@@ -415,6 +415,7 @@ module.exports = function (grunt) {
           'Attribute “ng-if” not allowed on element “img” at this point.',
           'Attribute “ng-if” not allowed on element “hr” at this point.',
           'Attribute “ng-if” not allowed on element “ul” at this point.',
+          'Attribute “ng-if” not allowed on element “li” at this point.',
           'Attribute “ng-class” not allowed on element “li” at this point.',
           'Attribute “ng-class” not allowed on element “i” at this point.',
           'Attribute “ng-class” not allowed on element “div” at this point.',
@@ -461,7 +462,11 @@ module.exports = function (grunt) {
           'Element “tw-checkbox” not allowed as child of element “label” in this context. (Suppressing further errors from this subtree.)',
           'Element “tw-radio” not allowed as child of element “label” in this context. (Suppressing further errors from this subtree.)',
           'Element “tw-date” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
-          'Element “help-modal” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)'
+          'Element “help-modal” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “tw-progress-steps” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “topup-form” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “profile-block” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “simple-nav” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)'
         ],
         'attr-name-style': false,
         'label-req-for': false,

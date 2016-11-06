@@ -1,0 +1,114 @@
+<form>
+	<div class="form-group form-group-lg">
+		<label class="control-label">Top up</label>
+		<div class="input-group input-group-lg" ng-init="$ctrl.currency1 = 'usd'">
+			<input type="text" class="form-control"
+				value="1,000"
+				placeholder=".input-group" />
+			<span class="input-group-btn currency-select">
+				<tw-select options="$ctrl.currencies" tw-focusable
+					ng-model="$ctrl.currency1"
+					ng-required="true"
+					filter="Search for currency / country"
+					size="lg"
+					inverse="true"
+					dropdown-right="xs"
+					dropdown-width="lg"
+					hide-note="true"></tw-select>
+			</span>
+		</div>
+	</div>
+	<div class="form-group" ng-if="$ctrl.currency1 !== 'usd'">
+		<label class="control-label">You don't have a {{$ctrl.currency1 | uppercase}} balance</label>
+		<div class="radio" ng-init="$ctrl.action = 'open'">
+			<label>
+				<tw-radio name="radio1" ng-model="$ctrl.action" ng-value="'open'" tw-focusable></tw-radio>
+				Open a {{$ctrl.currency1 | uppercase}} balance
+			</label>
+		</div>
+		<div class="radio m-b-0">
+			<label>
+				<tw-radio name="radio1" ng-model="$ctrl.action" ng-value="'convert'" tw-focusable></tw-radio>
+				Convert to USD balance
+			</label>
+		</div>
+
+		<ul ng-if="$ctrl.action === 'convert'"
+			class="sequence sequence-top sequence-bottom">
+			<li ng-if="$ctrl.showFees">
+				<div class="row">
+					<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
+						<strong>- 4.99 GBP</strong>
+					</div>
+					<div class="col-xs-7 col-sm-8 col-md-9">
+						TransferWise fee
+					</div>
+				</div>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<div class="row">
+					<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
+						<strong>- 2.00 GBP</strong>
+					</div>
+					<div class="col-xs-7 col-sm-8 col-md-9">
+						Fee to pay with
+						<span style="display: inline-block">
+							<tw-select class="m-b-0"
+								options="$ctrl.payInMethods"
+								ng-model="$ctrl.payInMethod"
+								ng-required="true"
+								hide-note="true"
+								dropdown-width="md"
+								size="sm"></tw-select>
+						</span>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a href="" ng-click="$ctrl.showFees = !$ctrl.showFees">
+					<span class="sequence-icon"><i class="icon icon-fast-flag"></i></span>
+					<div class="row">
+						<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
+							<strong>6.99 GBP</strong>
+						</div>
+						<div class="col-xs-7 col-sm-8 col-md-9">
+							Total fees
+						</div>
+					</div>
+				</a>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<div class="row">
+					<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
+						<strong>993.01 GBP</strong>
+					</div>
+					<div class="col-xs-7 col-sm-8 col-md-9">
+						Amount to convert
+					</div>
+				</div>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<div class="row">
+					<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
+						<strong>x 1.23456</strong>
+					</div>
+					<div class="col-xs-7 col-sm-8 col-md-9">
+						Guaranteed rate
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="form-group form-group-lg" ng-if="$ctrl.action === 'convert'">
+			<label class="control-label">You get</label>
+			<div class="input-group input-group-lg">
+				<input type="text" class="form-control" value="1,234.56" />
+				<span class="input-group-addon">
+					USD
+				</span>
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-success btn-block" type="submit">
+		Pay £1,000 {{$ctrl.currency1 | uppercase}}
+	</button>
+</form>

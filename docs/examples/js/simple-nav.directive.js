@@ -2,23 +2,19 @@
 	'use strict';
 	angular
 		.module('ExampleApp')
-		.directive('nextCards', NextCardsDirective);
+		.directive('simpleNav', [SimpleNav]);
 
-	function NextCardsDirective() {
+	function SimpleNav() {
 		return {
 			bindToController: true,
 			controller: function() {
-				if (!this.show) {
-					this.show = 3;
-				}
+
 			},
 			controllerAs: '$ctrl',
 			replace: false,
 			restrict: 'E',
-			scope: {
-				show: '='
-			},
-			templateUrl: 'partials/next-card.html'
+			scope: {},
+			templateUrl: "partials/simple-nav.html"
 		}
 	}
 })(window.angular);

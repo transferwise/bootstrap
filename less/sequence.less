@@ -3,72 +3,85 @@
 @sequence-pip-size: 8px;
 @sequence-line-width: 2px;
 
-@sequence-complete-color: #00b9ff;;
-@sequence-incomplete-color: #e2e6e8;
+@sequence-border: #e2e6e8;
+@sequence-bg: #FFF;
+
+@sequence-inverse-border: #253655;
+@sequence-inverse-bg: #37517e;
+
+@sequence-spacing-horizontal: 24px;
+
+@sequence-icon-size: 24px;
+@sequence-icon-border: @text-color;
 
 .sequence {
 	position: relative;
-	padding-left: 32px;
-	margin-left: 13px;
+	padding-left: @sequence-spacing-horizontal;
+	padding-right: @sequence-spacing-horizontal;
+	margin-left: (@sequence-spacing-horizontal + 1px);
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	border-color: @sequence-border;
 
 	&:before {
 		content: " ";
 		width: @sequence-line-width;
-		left: 12px;
-		background-color: @sequence-incomplete-color;
+		left: 0;
 		position: absolute;
-
 		height: calc(100% - (@sequence-margin * 2));
 		margin-top: @sequence-margin;
+		border-width: (@sequence-line-width / 2);
+		border-style: solid;
+		border-color: inherit;
 	}
-}
-.sequence-step {
-	display: block;
-	line-height: @sequence-step-height;
-	position: relative;
 
-	&:before {
-		content: " ";
-		width: @sequence-pip-size;
-		height: @sequence-pip-size;
-		margin-left: -23px;
-		margin-top: ((@sequence-step-height / 2) - (@sequence-pip-size / 2));
-		background-color: #FFF; /* @sequence-incomplete-color; */
-		border: @sequence-line-width solid @sequence-incomplete-color;
-		border-radius: 50%;
-		float: left;
+	a {
+		text-decoration: none;
+		font-weight: @font-weight-normal;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
 	}
-	&:first-child {
-		margin-top: @sequence-margin;
-	}
-	&:last-child {
-		margin-bottom: @sequence-margin;
 
-	}
-}
+	> li {
+		display: block;
+		line-height: @sequence-step-height;
+		position: relative;
+		border-color: @sequence-border;
 
-
-.sequence-connect-top.sequence-connect-bottom {
-	&:before {
-		height: 100%;
-	}
-}
-
-&.sequence-active {
-	.sequence-step {
 		&:before {
-			background-color: @sequence-complete-color;
-			border-color: @sequence-complete-color;
+			content: " ";
+			position: absolute;
+			width: @sequence-pip-size;
+			height: @sequence-pip-size;
+			margin-left: (-@sequence-spacing-horizontal - (@sequence-pip-size / 2) + 1px);
+			margin-top: ((@sequence-step-height / 2) - (@sequence-pip-size / 2));
+			border-radius: 50%;
+			z-index: 2;
+			border-width: (@sequence-pip-size / 2);
+			border-style: solid;
+			border-color: inherit;
 		}
 		&:after {
 			content: " ";
 			position: absolute;
 			width: @sequence-line-width;
-			left: -20px;
+			left: -@sequence-spacing-horizontal;
 			top: 0;
 			height: 100%;
-			background-color: @sequence-complete-color;
+			border-width: (@sequence-line-width / 2);
+			border-style: solid;
+			border-color: inherit;
 		}
+		&:first-child {
+			margin-top: @sequence-margin;
+		}
+		&:last-child {
+			margin-bottom: @sequence-margin;
+		}
+
 		&:first-child:after {
 			margin-top: @sequence-margin;
 			height: calc(100% - @sequence-margin);
@@ -77,31 +90,45 @@
 			height: calc(100% - @sequence-margin);
 		}
 	}
-	.sequence-step-active {
+
+	.active {
+		color: @brand-navy;
+		font-weight: @font-weight-semi-bold;
+
+		.small {
+			color: @text-color;
+			font-weight: @font-weight-normal;
+		}
+		&:before {
+			border-color: @brand-navy;
+		}
 		&:after {
 			height: (@sequence-step-height / 2);
 		}
 		&:first-child:after {
 			height: 0;
 		}
-	}
-	.sequence-step-active ~ .sequence-step {
-		&:before {
-			background-color: #FFF; /*@sequence-incomplete-color;*/
-			border-color: @sequence-incomplete-color;
-		}
-		&:after {
-			width: 0;
+		~ li {
+			border-color: @sequence-border;
+			&:after {
+				width: 0;
+			}
 		}
 	}
 }
 
-.sequence-connect-top {
+.sequence-top.sequence-bottom {
+	&:before {
+		height: 100%;
+	}
+}
+
+.sequence-top {
 	&:before {
 		height: calc(100% - @sequence-margin);
 		margin-top: 0;
 	}
-	.sequence-step:first-child {
+	> li:first-child {
 		margin-top: 0;
 		padding-top: @sequence-margin;
 
@@ -110,23 +137,144 @@
 			height: 100%;
 		}
 	}
-	.sequence-step-active:first-child {
+	.active:first-child {
 		&:after {
 			height: ((@sequence-step-height / 2) + @sequence-margin);
 		}
 	}
 }
 
-.sequence-connect-bottom {
+.sequence-bottom {
 	&:before {
 		height: calc(100% - @sequence-margin);
 	}
-	.sequence-step:last-child {
+	> li:last-child {
 		margin-bottom: 0;
 		padding-bottom: @sequence-margin;
 
 		&:after {
 			height: 100%;
 		}
+	}
+}
+
+
+.sequence-inverse {
+	border-color: @sequence-inverse-border;
+	> li {
+		border-color: @sequence-inverse-border;
+	}
+	.active {
+		color: #FFF;
+		&:before {
+			border-color: #FFF; 
+		}
+		~ li {
+			border-color: @sequence-inverse-border;
+		}
+	}
+	.small,
+	.active .small {
+		color: #FFF;
+	}
+}
+
+.sequence-info > li {
+	border-color: @state-info-border;
+	&.active {
+		color: @state-info-text;
+		&:before {
+			border-color: @state-info-border;
+			background-color: @state-info-border;
+		}
+	}
+}
+.sequence-primary > li {
+	border-color: @brand-navy;
+	&.active {
+		color: @brand-navy;
+		&:before {
+			border-color: @brand-navy;
+			background-color: @brand-navy;
+		}
+	}
+}
+.sequence-success > li {
+	border-color: @state-success-border;
+	&.active {
+		color: @state-success-text;
+		&:before {
+			border-color: @state-success-border;
+			background-color: @state-success-border;
+		}
+	}
+}
+.sequence-warning > li {
+	border-color: @state-warning-border;
+	&.active {
+		color: @state-warning-text;
+		&:before {
+			border-color: @state-warning-border;
+			background-color: @state-warning-border;
+		}
+	}
+}
+.sequence-danger > li {
+	border-color: @state-danger-border;
+	&.active {
+		color: @state-danger-text;
+		&:before {
+			border-color: @state-danger-border;
+			background-color: @state-danger-border;
+		}
+	}
+}
+
+
+.sequence-hollow {
+	> li:before {
+		border-width: @sequence-line-width;
+		background-color: @sequence-bg;
+	}
+	> .active {
+		&:before {
+			border-width: (@sequence-pip-size / 2);
+		}
+		~ li:before {
+			background-color: @sequence-bg;
+		}
+	}
+	&.sequence-inverse > li:before {
+		background-color: @sequence-inverse-bg;
+	}
+}
+
+.sequence-icon {
+	position: absolute;
+	margin-left: (-@sequence-spacing-horizontal - (@sequence-icon-size / 2) + 1px);
+
+	background-color: @sequence-bg;
+	border-radius: 50%;
+	width: @sequence-icon-size;
+	height: @sequence-icon-size;
+	line-height: (@sequence-icon-size + 4px);
+	top: ((@sequence-step-height / 2) - (@sequence-icon-size / 2));
+	z-index: 2;
+	text-align: center;
+	text-decoration: none !important;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+
+	.sequence-inverse & {
+		background-color: @sequence-inverse-bg;
+		border-color: #FFF;
+	}
+
+	.sequence a & {
+		border-color: @link-color;
+	}
+	li:first-child & {
+		top: (((@sequence-step-height / 2) - (@sequence-icon-size / 2)) + @sequence-margin);
 	}
 }
