@@ -443,9 +443,32 @@
     <p id="help-block-@link-active-color" class="help-block">Link active color</p>
   </div>
   <div class="col-xs-4">
+    <label for="input-@link-disabled-color">@link-disabled-color</label>
+    <input id="input-@link-disabled-color" type="text" aria-describedby="help-block-@link-disabled-color" value="@brand-smoke-minus-10" data-var="@link-disabled-color" class="form-control"/>
+    <p id="help-block-@link-disabled-color" class="help-block">Link disabled color</p>
+  </div>
+  <div class="col-xs-4">
     <label for="input-@link-font-weight">@link-font-weight</label>
     <input id="input-@link-font-weight" type="text" aria-describedby="help-block-@link-font-weight" value="@font-weight-semi-bold" data-var="@link-font-weight" class="form-control"/>
     <p id="help-block-@link-font-weight" class="help-block">Link font weight</p>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-xs-4">
+    <label for="input-@link-secondary-color">@link-secondary-color</label>
+    <input id="input-@link-secondary-color" type="text" value="@brand-grey" data-var="@link-secondary-color" class="form-control"/>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@link-secondary-hover-color">@link-secondary-hover-color</label>
+    <input id="input-@link-secondary-hover-color" type="text" value="@brand-grey-minus-10" data-var="@link-secondary-hover-color" class="form-control"/>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@link-secondary-active-color">@link-secondary-active-color</label>
+    <input id="input-@link-secondary-active-color" type="text" value="@brand-grey-minus-20" data-var="@link-secondary-active-color" class="form-control"/>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-xs-4">
+    <label for="input-@link-secondary-font-weight">@link-secondary-font-weight</label>
+    <input id="input-@link-secondary-font-weight" type="text" value="@font-weight-normal" data-var="@link-secondary-font-weight" class="form-control"/>
   </div>
 </div>
 <h2 id="iconography">Iconography</h2>
@@ -661,8 +684,8 @@
     <input id="input-@btn-disabled-bg" type="text" value="@brand-smoke-plus-10" data-var="@btn-disabled-bg" class="form-control"/>
   </div>
   <div class="col-xs-4">
-    <label for="input-@btn-link-disabled-color">@btn-link-disabled-color</label>
-    <input id="input-@btn-link-disabled-color" type="text" value="@brand-smoke-minus-10" data-var="@btn-link-disabled-color" class="form-control"/>
+    <label for="input-@btn-disabled-color">@btn-disabled-color</label>
+    <input id="input-@btn-disabled-color" type="text" value="@brand-smoke-minus-10" data-var="@btn-disabled-color" class="form-control"/>
   </div>
 </div>
 <h3 id="button-default">Button Default</h3>
@@ -1535,11 +1558,24 @@
 <div class="row">
   <div class="col-xs-4">
     <label for="input-@nav-pills-color">@nav-pills-color</label>
-    <input id="input-@nav-pills-color" type="text" value="@brand-navy-minus-10" data-var="@nav-pills-color" class="form-control"/>
+    <input id="input-@nav-pills-color" type="text" value="@link-secondary-color" data-var="@nav-pills-color" class="form-control"/>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@nav-pills-hover-color">@nav-pills-hover-color</label>
+    <input id="input-@nav-pills-hover-color" type="text" value="@link-secondary-hover-color" data-var="@nav-pills-hover-color" class="form-control"/>
   </div>
   <div class="col-xs-4">
     <label for="input-@nav-pills-border-radius">@nav-pills-border-radius</label>
     <input id="input-@nav-pills-border-radius" type="text" value="@border-radius-base" data-var="@nav-pills-border-radius" class="form-control"/>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-xs-4">
+    <label for="input-@nav-pills-active-color">@nav-pills-active-color</label>
+    <input id="input-@nav-pills-active-color" type="text" value="@link-color" data-var="@nav-pills-active-color" class="form-control"/>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@nav-pills-active-hover-color">@nav-pills-active-hover-color</label>
+    <input id="input-@nav-pills-active-hover-color" type="text" value="@link-hover-color" data-var="@nav-pills-active-hover-color" class="form-control"/>
   </div>
   <div class="col-xs-4">
     <label for="input-@nav-pills-active-link-hover-bg">@nav-pills-active-link-hover-bg</label>
@@ -2071,7 +2107,7 @@
 <div class="row">
   <div class="col-xs-4">
     <label for="input-@progress-height">@progress-height</label>
-    <input id="input-@progress-height" type="text" aria-describedby="help-block-@progress-height" value="4px" data-var="@progress-height" class="form-control"/>
+    <input id="input-@progress-height" type="text" aria-describedby="help-block-@progress-height" value="2px" data-var="@progress-height" class="form-control"/>
     <p id="help-block-@progress-height" class="help-block">Progress bar height</p>
   </div>
   <div class="col-xs-4">
@@ -2081,7 +2117,7 @@
   </div>
   <div class="col-xs-4">
     <label for="input-@progress-bg">@progress-bg</label>
-    <input id="input-@progress-bg" type="text" aria-describedby="help-block-@progress-bg" value="@brand-smoke-plus-20" data-var="@progress-bg" class="form-control"/>
+    <input id="input-@progress-bg" type="text" aria-describedby="help-block-@progress-bg" value="@brand-smoke-plus-10" data-var="@progress-bg" class="form-control"/>
     <p id="help-block-@progress-bg" class="help-block">Background color of the whole progress component</p>
   </div>
   <div class="clearfix"></div>
@@ -2115,6 +2151,16 @@
     <label for="input-@progress-bar-danger-bg">@progress-bar-danger-bg</label>
     <input id="input-@progress-bar-danger-bg" type="text" aria-describedby="help-block-@progress-bar-danger-bg" value="@brand-red" data-var="@progress-bar-danger-bg" class="form-control"/>
     <p id="help-block-@progress-bar-danger-bg" class="help-block">Danger progress bar color</p>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-xs-4">
+    <label for="input-@progress-bar-info-bg">@progress-bar-info-bg</label>
+    <input id="input-@progress-bar-info-bg" type="text" aria-describedby="help-block-@progress-bar-info-bg" value="@brand-light-blue" data-var="@progress-bar-info-bg" class="form-control"/>
+    <p id="help-block-@progress-bar-info-bg" class="help-block">Info progress bar color</p>
+  </div>
+  <div class="col-xs-4">
+    <label for="input-@progress-pip-size">@progress-pip-size</label>
+    <input id="input-@progress-pip-size" type="text" value="8px" data-var="@progress-pip-size" class="form-control"/>
   </div>
 </div>
 <h2 id="list-group">List group</h2>

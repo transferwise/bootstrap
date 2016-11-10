@@ -19,7 +19,7 @@
 					\"nav-justified-7-p-x\": $ctrl.steps.length === 7, \
 					\"nav-justified-8-p-x\": $ctrl.steps.length === 8 \
 				}'> \
-					<div class='progress m-b-1'> \
+					<div class='progress'> \
 						<div class='progress-bar' role='progressbar' \
 							aria-valuenow='{{$ctrl.progressPercentage}}' aria-valuemin='0' \
 							aria-valuemax='100' ng-style='{width: $ctrl.progressPercentage + \"%\"}'> \

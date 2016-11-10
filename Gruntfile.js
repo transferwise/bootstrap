@@ -397,6 +397,7 @@ module.exports = function (grunt) {
           'Attribute "autocomplete" not allowed on element "button" at this point.',
           'Attribute "autocomplete" not allowed on element "input" at this point.',
           'Element "img" is missing required attribute "src".',
+          'Attribute “disabled” not allowed on element “a” at this point.',
           'Attribute "ng-app" not allowed on element "body" at this point.',
           'Attribute "ng-controller" not allowed on element "header" at this point.',
           'Attribute “ng-controller” not allowed on element “div” at this point.',
