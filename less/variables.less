@@ -176,8 +176,15 @@
 @link-hover-decoration: underline;
 //** Link active color
 @link-active-color:     @brand-light-blue-minus-20;
+//** Link disabled color
+@link-disabled-color:   @brand-smoke-minus-10;
 //** Link font weight
 @link-font-weight:      @font-weight-semi-bold;
+
+@link-secondary-color:        @brand-grey;
+@link-secondary-hover-color:  @brand-grey-minus-10;
+@link-secondary-active-color: @brand-grey-minus-20;
+@link-secondary-font-weight:  @font-weight-normal;
 
 //== Iconography
 //
@@ -274,7 +281,7 @@
 
 
 @btn-disabled-bg:                @brand-smoke-plus-10;
-@btn-link-disabled-color:        @brand-smoke-minus-10;
+@btn-disabled-color:             @brand-smoke-minus-10;
 
 
 //=== Button Default
@@ -659,8 +666,11 @@
 @nav-tabs-justified-active-link-border-color:     @body-bg;
 
 //== Pills
-@nav-pills-color:                           @brand-navy-minus-10;
+@nav-pills-color:                           @link-secondary-color;
+@nav-pills-hover-color:                     @link-secondary-hover-color;
 @nav-pills-border-radius:                   @border-radius-base;
+@nav-pills-active-color:                    @link-color;
+@nav-pills-active-hover-color:              @link-hover-color;
 @nav-pills-active-link-hover-bg:            @component-active-bg;
 @nav-pills-active-link-hover-color:         @component-active-color;
 

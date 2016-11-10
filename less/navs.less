@@ -127,23 +127,35 @@
 .nav-pills {
   > li {
     float: left;
+    color: @nav-disabled-link-color;
 
     // Links rendered as pills
     > a {
-      border-radius: @nav-pills-border-radius;
       color: @nav-pills-color;
-    }
-    + li {
-      margin-left: 2px;
+      text-decoration: underline;
+      font-size: @font-size-small;
+
+      &:hover,
+      &:focus {
+        color: @nav-pills-hover-color;
+        text-decoration: underline;
+      }
     }
 
     // Active state
-    &.active > a {
+    &.active {
       &,
-      &:hover,
-      &:focus {
-        color: @nav-pills-active-link-hover-color;
-        background-color: @nav-pills-active-link-hover-bg;
+      > a {
+        font-weight: @font-weight-semi-bold;
+        color: @nav-pills-active-color;
+        text-decoration: none;
+      }
+
+      > a {
+        &:hover,
+        &:focus {
+          color: @nav-pills-active-hover-color;
+        }
       }
     }
   }
@@ -156,8 +168,8 @@
     float: none;
 
     > a {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 24px;
+      padding-right: 24px;
       color: @nav-pills-color;
       .transition(all .2s ease-in-out);
       .glyphicon {
@@ -180,6 +192,8 @@
       &:focus {
         background-color: inherit;
         color: @brand-light-blue;
+        border-left: 3px solid @brand-light-blue;
+        padding-left: (24px - 3px);
       }
     }
   }
@@ -197,9 +211,11 @@
 
   > li {
     float: none;
+    text-align: center;
     > a {
       text-align: center;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
+      padding: 0;
     }
   }
 
@@ -218,6 +234,38 @@
     }
   }
 }
+
+@media (min-width: @screen-md-min) {
+  .nav-justified-2-p-x {
+    padding-right: percentage((1 / (2 * 2)));
+    padding-left: percentage((1 / (2 * 2)));
+  }
+  .nav-justified-3-p-x {
+    padding-right: percentage((1 / (3 * 2)));
+    padding-left: percentage((1 / (3 * 2)));
+  }
+  .nav-justified-4-p-x {
+    padding-right: percentage((1 / (4 * 2)));
+    padding-left: percentage((1 / (4 * 2)));
+  }
+  .nav-justified-5-p-x {
+    padding-right: percentage((1 / (5 * 2)));
+    padding-left: percentage((1 / (5 * 2)));
+  }
+  .nav-justified-6-p-x {
+    padding-right: percentage((1 / (6 * 2)));
+    padding-left: percentage((1 / (6 * 2)));
+  }
+  .nav-justified-7-p-x {
+    padding-right: percentage((1 / (7 * 2)));
+    padding-left: percentage((1 / (7 * 2)));
+  }
+  .nav-justified-8-p-x {
+    padding-right: percentage((1 / (8 * 2)));
+    padding-left: percentage((1 / (8 * 2)));
+  }
+}
+
 
 // Move borders to anchors instead of bottom of list
 //
@@ -250,7 +298,6 @@
   }
 }
 
-
 // Tabbable tabs
 // -------------------------
 
@@ -279,7 +326,7 @@
 
 .bg-primary,
 .bg-info {
-    .nav-tabs > li:not(.active) > a {
+    .nav > li:not(.active) > a {
         color: #FFF;
     }
 }
