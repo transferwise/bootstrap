@@ -22,12 +22,15 @@
       padding: @nav-link-padding;
       font-weight: @font-weight-normal;
       font-size: @font-size-base;
+      color: @link-secondary-color;
+
       &:hover,
       &:focus {
         text-decoration: none;
-        color: @nav-link-hover-color;
+        color: @link-secondary-hover-color;
       }
       &:focus {
+        color: @link-secondary-active-color;
         outline-offset: -2px;
       }
     }
@@ -71,6 +74,18 @@
   > li > a > img {
     max-width: none;
   }
+
+  > .active > a {
+    font-weight: @font-weight-semi-bold;
+    color: @link-color;
+    &:hover,
+    &:focus {
+      color: @link-hover-color;
+    }
+    &:active {
+      color: @link-active-color;
+    }
+  }
 }
 
 
@@ -92,12 +107,7 @@
       //border: 1px solid transparent;
       //border-radius: @border-radius-base @border-radius-base 0 0;
       border-bottom: 3px solid transparent;
-      color: @nav-tabs-color;
       font-size: @nav-tabs-font-size;
-      &:hover {
-        color: @nav-tabs-link-hover;
-        //border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
-      }
     }
 
     // Active state, and its :hover to override normal :hover
@@ -105,10 +115,7 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-tabs-active-link-hover-color;
-        //background-color: @nav-tabs-active-link-hover-bg;
-        // border: 1px solid @nav-tabs-active-link-hover-border-color;
-        border-bottom: 3px solid @nav-tabs-active-link-hover-border-color;
+        border-bottom: 3px solid @nav-tabs-active-hover-border-color;
         cursor: default;
         box-shadow: 0 0 0;
       }
@@ -127,36 +134,12 @@
 .nav-pills {
   > li {
     float: left;
-    color: @nav-disabled-link-color;
+    /*color: @nav-disabled-link-color;*/
+    font-size: @nav-pills-font-size;
 
     // Links rendered as pills
     > a {
-      color: @nav-pills-color;
-      text-decoration: underline;
-      font-size: @font-size-small;
-
-      &:hover,
-      &:focus {
-        color: @nav-pills-hover-color;
-        text-decoration: underline;
-      }
-    }
-
-    // Active state
-    &.active {
-      &,
-      > a {
-        font-weight: @font-weight-semi-bold;
-        color: @nav-pills-active-color;
-        text-decoration: none;
-      }
-
-      > a {
-        &:hover,
-        &:focus {
-          color: @nav-pills-active-hover-color;
-        }
-      }
+      font-size: @nav-pills-font-size;
     }
   }
 }
@@ -170,7 +153,6 @@
     > a {
       padding-left: 24px;
       padding-right: 24px;
-      color: @nav-pills-color;
       .transition(all .2s ease-in-out);
       .glyphicon {
         top: 2px;
@@ -178,7 +160,6 @@
       }
       &:active {
         .transition(none);
-        color: @brand-light-blue-minus-20;
       }
     }
 
@@ -191,7 +172,6 @@
       &:hover,
       &:focus {
         background-color: inherit;
-        color: @brand-light-blue;
         border-left: 3px solid @brand-light-blue;
         padding-left: (24px - 3px);
       }
@@ -214,8 +194,6 @@
     text-align: center;
     > a {
       text-align: center;
-      margin-bottom: 8px;
-      padding: 0;
     }
   }
 
@@ -228,12 +206,13 @@
     > li {
       display: table-cell;
       width: 1%;
-      > a {
-        margin-bottom: 0;
-      }
+    }
+    &.nav-pills > li > a {
+      padding: 0;
     }
   }
 }
+
 
 @media (min-width: @screen-md-min) {
   .nav-justified-2-p-x {

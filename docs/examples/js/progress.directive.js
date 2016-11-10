@@ -31,14 +31,12 @@
 					<li role='presentation' ng-repeat='step in $ctrl.steps' \
 						ng-class='{ \
 							active: $ctrl.step === step.value, \
-							invisible: step.hidden \
+							invisible: step.hidden, \
+							disabled: step.disabled \
 						}'> \
-						<a href='' \
-							ng-if='!step.disabled' \
-							ng-click='$ctrl.step = step.value;'> \
+						<a href='' ng-click='$ctrl.step = step.value;'> \
 							{{step.label}} \
 						</a> \
-						<span ng-if='step.disabled'>{{step.label}}</span> \
 					</li> \
 				</ul> \
 				<div class='visible-xs visible-sm form-inline text-xs-center'> \

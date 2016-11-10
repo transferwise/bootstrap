@@ -1130,17 +1130,17 @@ a:focus,
 a.secondary,
 .anchor.secondary {
   font-weight: 500;
-  color: #5d7079;
+  color: #37517e;
 }
 a.secondary:hover,
 .anchor.secondary:hover,
 a.secondary:focus,
 .anchor.secondary:focus {
-  color: #4a5860;
+  color: #00b9ff;
 }
 a.secondary:active,
 .anchor.secondary:active {
-  color: #384347;
+  color: #00a4df;
 }
 figure {
   margin: 0;
@@ -6407,6 +6407,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 8px 24px;
   font-size: 16px;
   font-weight: 500;
+  color: #37517e;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -6414,6 +6415,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-decoration: none;
 }
 .nav > li > a:focus {
+  color: #00a4df;
   outline-offset: -2px;
 }
 .nav > li.disabled > a {
@@ -6441,6 +6443,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a > img {
   max-width: none;
 }
+.nav > .active > a {
+  font-weight: 600;
+  color: #00b9ff;
+}
+.nav > .active > a:hover,
+.nav > .active > a:focus {
+  color: #00a4df;
+}
+.nav > .active > a:active {
+  color: #008ec0;
+}
 .nav-tabs {
   border-bottom: 1px solid #d3d5d8;
 }
@@ -6452,16 +6465,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: 2px;
   font-size: 16px;
   line-height: 24px;
-  color: #6f8691;
   border-bottom: 3px solid transparent;
-}
-.nav-tabs > li > a:hover {
-  color: #00b9ff;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #00b9ff;
   cursor: default;
   border-bottom: 3px solid #00b9ff;
   -webkit-box-shadow: 0 0 0;
@@ -6476,8 +6484,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
 }
 .nav-tabs.nav-justified > li > a {
-  padding: 0;
-  margin-bottom: 8px;
   text-align: center;
 }
 .nav-tabs.nav-justified > .dropdown .dropdown-menu {
@@ -6489,8 +6495,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: table-cell;
     width: 1%;
   }
-  .nav-tabs.nav-justified > li > a {
-    margin-bottom: 0;
+  .nav-tabs.nav-justified.nav-pills > li > a {
+    padding: 0;
   }
 }
 .nav-tabs.nav-justified > li > a {
@@ -6515,27 +6521,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-pills > li {
   float: left;
-  color: #829ca9;
+  /*color: @nav-disabled-link-color;*/
+  font-size: 14px;
 }
 .nav-pills > li > a {
   font-size: 14px;
-  color: #5d7079;
-  text-decoration: underline;
-}
-.nav-pills > li > a:hover,
-.nav-pills > li > a:focus {
-  color: #4a5860;
-  text-decoration: underline;
-}
-.nav-pills > li.active,
-.nav-pills > li.active > a {
-  font-weight: 600;
-  color: #00b9ff;
-  text-decoration: none;
-}
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus {
-  color: #00a4df;
 }
 .nav-stacked > li {
   float: none;
@@ -6543,7 +6533,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-stacked > li > a {
   padding-right: 24px;
   padding-left: 24px;
-  color: #5d7079;
   -webkit-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
@@ -6553,7 +6542,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: 16px;
 }
 .nav-stacked > li > a:active {
-  color: #008ec0;
   -webkit-transition: none;
        -o-transition: none;
           transition: none;
@@ -6565,7 +6553,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-stacked > li.active > a:hover,
 .nav-stacked > li.active > a:focus {
   padding-left: 21px;
-  color: #00b9ff;
   background-color: inherit;
   border-left: 3px solid #00b9ff;
 }
@@ -6577,8 +6564,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
 }
 .nav-justified > li > a {
-  padding: 0;
-  margin-bottom: 8px;
   text-align: center;
 }
 .nav-justified > .dropdown .dropdown-menu {
@@ -6590,8 +6575,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: table-cell;
     width: 1%;
   }
-  .nav-justified > li > a {
-    margin-bottom: 0;
+  .nav-justified.nav-pills > li > a {
+    padding: 0;
   }
 }
 @media (min-width: 768px) {
