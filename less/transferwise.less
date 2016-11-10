@@ -94,6 +94,7 @@ blockquote footer {
     font-size: @font-size-small;
     line-height: @line-height-computed;
 
+    /* TODO deprecate for a.secondary */
     a:not(.btn) {
 
         color: @brand-grey-plus-10;
@@ -232,4 +233,13 @@ li .circle {
 }
 .icon-xxl {
     font-size: 48px;
+}
+
+.tw-rate-lock-link {
+  color: @brand-smoke-minus-10;
+  &:hover,
+  &:focus,
+  &:active {
+    color: @brand-smoke-minus-20;
+  }
 }

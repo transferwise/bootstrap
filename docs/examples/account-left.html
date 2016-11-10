@@ -25,6 +25,7 @@
 
 	<script src="js/one-click.directive.js"></script>
 	<script src="js/nav.directive.js"></script>
+	<script src="js/simple-nav.directive.js"></script>
 	<script src="js/start-new.directive.js"></script>
 	<script src="js/next-cards.directive.js"></script>
 	<script src="js/transfer-list.directive.js"></script>
@@ -80,65 +81,96 @@
 	</script>
 </head>
 <body ng-app="ExampleApp" class="bg-default">
-	<nav-bar></nav-bar>
-	<div ng-controller="PageController as ctrl">
-		<div class="bg-primary p-t-4 p-b-5">
-			<div class="container">
-				<profile-block></profile-block>
-			</div>
+<div class="column-layout">
+<div class="column-layout-left bg-primary">
+	<div class="column-layout-left-top">
+		<!--<div class="p-a-3">
+			<a class="btn btn-success btn-block" href="topup.html">Create</a>
+		</div>-->
+		<div class="p-x-3 m-t-4 m-b-2">
+			<h4>My account</h4>
 		</div>
-		<div class="container">
+		<ul class="nav nav-stacked nav-inverse m-b-1">
+			<li class="active"><a href="">Activity</a></li>
+			<li><a href="">Recipients</a></li>
+			<li><a href="">Profile</a></li>
+		</ul>
+		<div class="p-a-3">
+			<a href="flow.html" class="pull-xs-right text-inverse">top up</a>
+			<h4 class="m-b-2">Balance</h4>
+			<p class="p-y-1 m-b-0">GBP <span class="pull-xs-right">£1,234.56</span></p>
+			<p class="p-y-1 m-b-0">USD <span class="pull-xs-right">$12,345.67</span></p>
+			<p class="p-y-1 m-b-0">EUR <span class="pull-xs-right">€123,456.78</span></p>
+		</div>
 
-			<div class="panel">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-md-6 col-lg-8">
-							<h3 class="panel-title">
-								In progress
-							</h3>
-						</div>
-					</div>
-				</div>
-				<transfer-list
-					transfers="ctrl.activeTransfers"
-					currencies="ctrl.currencies"
-					inactive="false">
-				</transfer-list>
-			</div>
+		<ul class="nav nav-stacked nav-inverse">
+			<li><a href="">Order a card</a></li>
+		</ul>
+	</div>
 
-			<start-new tabs="true"></start-new>
-
-			<div class="panel">
-				<div class="panel-heading">
-					<div class="row">
-						<div class="col-md-6 col-lg-8">
-							<h3 class="panel-title">
-								Recent
-							</h3>
-						</div>
-						<div class="col-md-6 col-lg-4 m-b-1">
-							<div class="input-group input-group-sm m-t-1">
-								<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
-								<input type="text" class="form-control" placeholder="Search..." />
-								 <span class="input-group-btn">
-									 <button class="btn btn-sm btn-primary">Go</button>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<transfer-list
-					transfers="ctrl.historicTransfers"
-					currencies="ctrl.currencies"
-					inactive="true">
-				</transfer-list>
-				<div class="panel-footer">
-					<pagination page="1" total="200"></pagination>
-				</div>
-			</div>
+	<div class="column-layout-left-bottom">
+		<a class="btn btn-success btn-block" href="flow.html">Create</a>
+	</div>
+</div>
+<div class="column-layout-main" ng-controller="PageController as ctrl">
+	<div class="m-t-2">
+		<simple-nav></simple-nav>
+	</div>
+	<div class="p-t-3 p-b-2">
+		<div class="container-fluid">
+			<profile-block></profile-block>
 		</div>
 	</div>
-	<footer-example></footer-example>
-</body>
+	<div class="container-fluid">
+		<next-cards show="1"></next-cards>
 
+		<div class="panel">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-md-6 col-lg-8">
+						<h3 class="panel-title">
+							In progress ({{ctrl.activeTransfers.length}})
+						</h3>
+					</div>
+					<div class="col-md-6 col-lg-4 m-b-1">
+						<div class="input-group input-group-sm m-t-1">
+							<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
+							<input type="text" class="form-control" placeholder="Search..." />
+							 <span class="input-group-btn">
+								 <button class="btn btn-sm btn-primary">Go</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<transfer-list
+				transfers="ctrl.activeTransfers"
+				currencies="ctrl.currencies"
+				inactive="false">
+			</transfer-list>
+		</div>
+
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					Recent ({{ctrl.historicTransfers.length}})
+				</h3>
+			</div>
+			<transfer-list
+				transfers="ctrl.historicTransfers"
+				currencies="ctrl.currencies"
+				inactive="true">
+			</transfer-list>
+			<div class="panel-footer">
+				<pagination page="1" total="200"></pagination>
+			</div>
+		</div>
+
+		<div class="text-xs-center section">
+			&copy; TransferWise 2016
+		</div>
+	</div>
+</div>
+</div>
+</body>
 </html>

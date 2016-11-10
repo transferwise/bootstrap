@@ -11,13 +11,13 @@
 			template:
 			"<div> \
 				<div ng-class='{ \
-					\"p-x-steps-2\": $ctrl.steps.length === 2, \
-					\"p-x-steps-3\": $ctrl.steps.length === 3, \
-					\"p-x-steps-4\": $ctrl.steps.length === 4, \
-					\"p-x-steps-5\": $ctrl.steps.length === 5, \
-					\"p-x-steps-6\": $ctrl.steps.length === 6, \
-					\"p-x-steps-7\": $ctrl.steps.length === 7, \
-					\"p-x-steps-8\": $ctrl.steps.length === 8 \
+					\"nav-justified-2-p-x\": $ctrl.steps.length === 2, \
+					\"nav-justified-3-p-x\": $ctrl.steps.length === 3, \
+					\"nav-justified-4-p-x\": $ctrl.steps.length === 4, \
+					\"nav-justified-5-p-x\": $ctrl.steps.length === 5, \
+					\"nav-justified-6-p-x\": $ctrl.steps.length === 6, \
+					\"nav-justified-7-p-x\": $ctrl.steps.length === 7, \
+					\"nav-justified-8-p-x\": $ctrl.steps.length === 8 \
 				}'> \
 					<div class='progress m-b-1'> \
 						<div class='progress-bar' role='progressbar' \
@@ -27,16 +27,20 @@
 						</div> \
 					</div> \
 				</div> \
-				<div class='btn-group btn-group-justified steps hidden-xs hidden-sm' role='group' aria-label=''> \
-					<a class='btn step' href='' role='button' \
-						ng-repeat='step in $ctrl.steps' \
+				<ul class='nav nav-pills nav-justified small hidden-xs hidden-sm'> \
+					<li role='presentation' ng-repeat='step in $ctrl.steps' \
 						ng-class='{ \
-							\"btn-link-secondary\": $ctrl.step !== step.value, \
-							\"btn-link\": $ctrl.step === step.value, \
-							invisible: step.hidden}' \
-						ng-disabled='step.disabled' \
-						ng-click='$ctrl.step = step.value;'>{{step.label}}</a> \
-				</div> \
+							active: $ctrl.step === step.value, \
+							invisible: step.hidden \
+						}'> \
+						<a href='' \
+							ng-if='!step.disabled' \
+							ng-click='$ctrl.step = step.value;'> \
+							{{step.label}} \
+						</a> \
+						<span ng-if='step.disabled'>{{step.label}}</span> \
+					</li> \
+				</ul> \
 				<div class='visible-xs visible-sm form-inline text-xs-center'> \
 					<div style='dislay: inline-block;'> \
 						<tw-select class='m-t-1' \

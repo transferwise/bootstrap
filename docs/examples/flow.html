@@ -43,13 +43,15 @@
 
 </head>
 <body ng-app="ExampleApp">
-<div class="side-layout">
-<div class="side-layout-left bg-primary">
-	<div class="side-layout-left-top">
-		<!--<div class="logo logo-inverse logo-4 m-l-2 m-t-3 m-b-3"></div>
+<div class="column-layout">
+<div class="column-layout-left bg-primary">
+	<div class="column-layout-left-top">
+		<!--
+		<div class="logo logo-inverse logo-4 m-l-2 m-t-3 m-b-3"></div>
 		<ul class="nav nav-stacked nav-inverse m-t-3 invisible">
 			<li class="active"><a href="">Create transfer</a></li>
-		</ul>-->
+		</ul>
+		-->
 		<ul class="sequence sequence-info sequence-inverse sequence-hollow m-t-4">
 			<li>
 				<p class="m-b-0">Complete profile</p>
@@ -66,11 +68,11 @@
 			<li>Confirm</li>
 		</ul>
 	</div>
-	<div class="side-layout-left-bottom">
+	<div class="column-layout-left-bottom">
 		<a class="btn btn-inverse btn-block" href="account.html">Close</a>
 	</div>
 </div>
-<div class="side-layout-right">
+<div class="column-layout-main">
 	<div class="m-t-2">
 		<simple-nav></simple-nav>
 	</div>
@@ -89,80 +91,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!--
-		<div class="row">
-			<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
-				<div class="m-t-3">
-					<input class="form-control" />
-					<ul class="sequence sequence-top sequence-bottom">
-						<li>
-							<div class="row">
-								<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
-									<strong>- 4.99 GBP</strong>
-								</div>
-								<div class="col-xs-7 col-sm-8 col-md-9">
-									TransferWise fee
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="row">
-								<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
-									<strong>- 2.00 GBP</strong>
-								</div>
-								<div class="col-xs-7 col-sm-8 col-md-9">
-									Fee to pay with
-									<span style="display: inline-block">
-										<tw-select
-										 class="m-b-0"
-											options="[{value: 'card', label: 'Debit Card'}]"
-											ng-model="payInMethod"
-											ng-required="true" size="sm"></tw-select>
-									</span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<a href="">
-								<span class="sequence-icon"><i class="icon icon-fast-flag"></i></span>
-								<div class="row">
-									<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
-										<strong>6.99 GBP</strong>
-									</div>
-									<div class="col-xs-7 col-sm-8 col-md-9">
-										Total fees
-									</div>
-								</div>
-							</a>
-						</li>
-						<li>
-							<div class="row">
-								<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
-									<strong>993.01 GBP</strong>
-								</div>
-								<div class="col-xs-7 col-sm-8 col-md-9">
-									Amount to convert
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="row">
-								<div class="col-xs-5 col-sm-4 col-md-3 text-xs-right">
-									<strong>x 1.23456</strong>
-								</div>
-								<div class="col-xs-7 col-sm-8 col-md-9">
-									Guaranteed rate
-								</div>
-							</div>
-						</li>
-					</ul>
-					<input class="form-control" />
-				</div>
-			</div>
-		</div>
-	-->
-
 
 		<h3 style="margin-top: 800px;">Sequence</h3>
 		<p>Sequence is a flexible component for portraying a sequence of steps.
