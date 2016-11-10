@@ -21,20 +21,26 @@
     border-color: inherit;
   }
 
-  a {
-    text-decoration: none;
-    font-weight: @font-weight-normal;
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-
   > li {
     display: block;
     line-height: @sequence-step-height;
     position: relative;
     border-color: @sequence-border;
+
+    > a {
+      display: block;
+      text-decoration: none;
+      font-weight: @font-weight-normal;
+      color: @link-secondary-color;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: @link-secondary-hover-color;
+      }
+      &:active {
+        color: @link-secondary-active-color;
+      }
+    }
 
     p {
       margin-bottom: 0;
@@ -81,16 +87,29 @@
     }
   }
 
-  .active {
-    color: @brand-navy;
+  > .active {
+    color: @link-color;
     font-weight: @font-weight-semi-bold;
+
+    > a {
+      text-decoration: none;
+      color: @link-color;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: @link-hover-color;
+      }
+      &:active {
+        color: @link-active-color;
+      }
+    }
 
     .small {
       color: @text-color;
       font-weight: @font-weight-normal;
     }
     &:before {
-      border-color: @brand-navy;
+      border-color: @link-color;
     }
     &:after {
       height: (@sequence-step-height / 2);
@@ -153,12 +172,16 @@
   border-color: @sequence-inverse-border;
   > li {
     border-color: @sequence-inverse-border;
+    > a {
+      color: #FFF;
+      text-decoration: underline;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
   }
   .active {
-    color: #FFF;
-    &:before {
-      border-color: #FFF;
-    }
     ~ li {
       border-color: @sequence-inverse-border;
     }
@@ -262,6 +285,7 @@
   }
 
   .sequence a & {
+    color: @link-color;
     border-color: @link-color;
   }
   .sequence li:first-child & {

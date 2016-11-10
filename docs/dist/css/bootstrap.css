@@ -11461,19 +11461,25 @@ a.circle.active:hover {
   border-style: solid;
   border-width: 1px;
 }
-.sequence a {
-  font-weight: 500;
-  text-decoration: none;
-}
-.sequence a:hover,
-.sequence a:focus {
-  text-decoration: underline;
-}
 .sequence > li {
   position: relative;
   display: block;
   line-height: 32px;
   border-color: #e2e6e8;
+}
+.sequence > li > a {
+  display: block;
+  font-weight: 500;
+  color: #37517e;
+  text-decoration: none;
+}
+.sequence > li > a:hover,
+.sequence > li > a:focus {
+  color: #00b9ff;
+  text-decoration: none;
+}
+.sequence > li > a:active {
+  color: #00a4df;
 }
 .sequence > li p {
   padding-bottom: 8px;
@@ -11518,27 +11524,39 @@ a.circle.active:hover {
   height: -webkit-calc(100% - 16px);
   height:         calc(100% - 16px);
 }
-.sequence .active {
+.sequence > .active {
   font-weight: 600;
-  color: #37517e;
+  color: #00b9ff;
 }
-.sequence .active .small {
+.sequence > .active > a {
+  color: #00b9ff;
+  text-decoration: none;
+}
+.sequence > .active > a:hover,
+.sequence > .active > a:focus {
+  color: #00a4df;
+  text-decoration: none;
+}
+.sequence > .active > a:active {
+  color: #008ec0;
+}
+.sequence > .active .small {
   font-weight: 500;
   color: #6f8691;
 }
-.sequence .active:before {
-  border-color: #37517e;
+.sequence > .active:before {
+  border-color: #00b9ff;
 }
-.sequence .active:after {
+.sequence > .active:after {
   height: 16px;
 }
-.sequence .active:first-child:after {
+.sequence > .active:first-child:after {
   height: 0;
 }
-.sequence .active ~ li {
+.sequence > .active ~ li {
   border-color: #e2e6e8;
 }
-.sequence .active ~ li:after {
+.sequence > .active ~ li:after {
   width: 0;
 }
 .sequence-top.sequence-bottom:before {
@@ -11577,11 +11595,13 @@ a.circle.active:hover {
 .sequence-inverse > li {
   border-color: #253655;
 }
-.sequence-inverse .active {
+.sequence-inverse > li > a {
   color: #fff;
+  text-decoration: underline;
 }
-.sequence-inverse .active:before {
-  border-color: #fff;
+.sequence-inverse > li > a:hover,
+.sequence-inverse > li > a:focus {
+  text-decoration: underline;
 }
 .sequence-inverse .active ~ li {
   border-color: #253655;
@@ -11674,6 +11694,7 @@ a.circle.active:hover {
   border-color: #fff;
 }
 .sequence a .sequence-icon {
+  color: #00b9ff;
   border-color: #00b9ff;
 }
 .sequence li:first-child .sequence-icon {
