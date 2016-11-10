@@ -8029,6 +8029,9 @@ a.thumbnail.active {
   padding-left: 0;
   list-style: none;
 }
+.dropdown-menu .media-body {
+  overflow: hidden;
+}
 .list-group {
   padding-left: 0;
   margin-bottom: 20px;
