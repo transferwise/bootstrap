@@ -134,7 +134,7 @@
             <hr />
           <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm hidden-md"
             data-spy="affix" data-offset-top="230" data-offset-bottom="430">
-            <ul class="nav bs-docs-sidenav nav-stacked nav-pills">
+            <ul class="nav bs-docs-sidenav nav-stacked">
               
                 
 <li>
@@ -273,6 +273,17 @@
     <li><a href="#progress-striped">Striped</a></li>
     <li><a href="#progress-animated">Animated</a></li>
     <li><a href="#progress-stacked">Stacked</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#sequences">Sequences</a>
+  <ul class="nav">
+    <li><a href="#sequences-progress">Progress</a></li>
+    <li><a href="#sequences-contextual-alternatives">Contextual alternatives</a></li>
+    <li><a href="#sequences-inverse">Inverse</a></li>
+    <li><a href="#sequences-connections">Connections</a></li>
+    <li><a href="#sequences-icons">Icons</a></li>
+    <li><a href="#sequences-hollow">Hollow</a></li>
   </ul>
 </li>
 <li><a href="#responsive-embed">Responsive embed</a></li>
@@ -3392,7 +3403,6 @@
       their container.  Make sure to specify a height otherwise your logo may
       not render.</p>
 
-  <h2>Example</h2>
   <div class="bs-example" data-example-id="logo">
       <div style="padding: 10px">
           <div class="logo logo-primary" style="height: 50px;"></div>
@@ -3407,7 +3417,18 @@
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-inverse"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-    <h2>Flags</h2>
+  <h3 id="logo-sizes">Logo sizes</h3>
+  <p class="m-b-0">Quick sizes that whose height is a multiple of our spacing.</p>
+  <div class="bs-example" data-example-id="logo">
+    <div class="logo logo-primary logo-3 m-t-3 m-b-3"></div>
+    <div class="logo logo-primary logo-4 m-b-3"></div>
+    <div class="logo logo-primary logo-5 m-b-3"></div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-primary logo-3"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-primary logo-4"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"logo logo-primary logo-5"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+    <h2 id="flags">Flags</h2>
     <div class="bs-example" data-example-id="flag">
         <div style="padding: 10px">
             <div class="flag flag-default" style="height: 50px;"></div>
@@ -3679,18 +3700,6 @@
           <div class="navbar-collapse-panel">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
               <div class="form-group">
@@ -4105,7 +4114,7 @@
 
   <h2 id="nav-tabs">Tabs</h2>
   <p>Note the <code>.nav-tabs</code> class requires the <code>.nav</code> base class.</p>
-  <div class="bs-example well" data-example-id="simple-nav-tabs">
+  <div class="bs-example" data-example-id="simple-nav-tabs">
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Home</a></li>
       <li role="presentation"><a href="#">Profile</a></li>
@@ -4139,17 +4148,17 @@
   <p>Navs are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
   <div class="bs-example" data-example-id="simple-nav-stacked">
     <ul class="nav nav-stacked nav-pills-stacked-example">
-      <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>Profile overview</a></li>
-      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit profile</a></li>
-      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-ok"></span>Verification<span class="badge">2</span></a></li>
-      <li role="presentation"><a href="#"><span class="glyphicon glyphicon-camera"></span>Profile picture</a></li>
+      <li role="presentation" class="active"><a href="#">Profile overview</a></li>
+      <li role="presentation"><a href="#">Edit profile</a></li>
+      <li role="presentation"><a href="#">Verification<span class="badge">2</span></a></li>
+      <li role="presentation"><a href="#">Profile picture</a></li>
     </ul>
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-stacked"</span><span class="nt">&gt;</span>
   ...
 <span class="nt">&lt;/ul&gt;</span></code></pre></div>
 
-<!--
+<!-- -->
   <h2 id="nav-justified">Justified</h2>
   <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.nav-justified</code>. On smaller screens, the nav links are stacked.</p>
   <p><strong class="text-danger">Justified navbar nav links are currently not supported.</strong></p>
@@ -4198,7 +4207,7 @@
   ...
 <span class="nt">&lt;/ul&gt;</span></code></pre></div>
 
--->
+<!-- -->
 
 
   <h2 id="nav-dropdowns">Using dropdowns</h2>
@@ -5042,6 +5051,280 @@
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"embed-responsive embed-responsive-4by3"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"embed-responsive-item"</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/iframe&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
+</div>
+
+<div class="bs-docs-section">
+  <h1 id="sequences" class="page-header">Sequences</h1>
+  <p>Sequence is a flexible component for portraying a sequence of steps.
+    It can be used to portray a sequence that the user may be required to
+    complete, and the current progress through that sequence.</p>
+  <p class="m-b-0">It can also be used to connect other elements, and to portray a set of
+    transformations that relate them.</p>
+
+  <div class="bs-example" data-example-id="sequences">
+    <div class="row m-b-0">
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence">
+          <li>
+            Sequence
+            <p class="small">Summary of something</p>
+          </li>
+          <li>Step two</li>
+          <li class="active">Step three</li>
+        </ul>
+      </div>
+       <div class="col-sm-6 m-b-0">
+         <ul class="sequence">
+           <li>
+             <a href="">Sequence</a>
+             <p class="small">Summary of something</p>
+           </li>
+           <li><a href="">Step two</a></li>
+           <li class="active"><a href="">Step three</a></li>
+         </ul>
+       </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    Step one
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>Summary of something<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Step two<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>Step three<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Step one<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>Summary of something<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Step two<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Step three<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+
+  <h2 id="sequences-progress">Sequence progress</h2>
+  <p>We can use the sequence component to convey progress using
+    one of our contextual variants.</p>
+  <p class="m-b-0">All steps up to and including the active step will be coloured.  If no step
+    is active the whole bar will be coloured.</p>
+  <div class="bs-example" data-example-id="sequences-progress">
+    <div class="row m-b-0">
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence sequence-primary">
+          <li>
+            Sequence primary
+            <p class="small">Summary of something</p>
+          </li>
+          <li class="active">Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-primary"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+  <h3 id="sequences-contextual-alternatives">Contextual alternatives</h3>
+  <div class="bs-example" data-example-id="sequences-contextual-alternatives">
+    <div class="row m-b-0">
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence sequence-info">
+          <li>
+            Sequence info
+            <p class="small">Summary of something</p>
+          </li>
+          <li class="active">Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence sequence-success">
+          <li>
+            Sequence success
+            <p class="small">Summary of something</p>
+          </li>
+          <li>Step two</li>
+          <li class="active">Step three</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence sequence-warning">
+          <li class="active">
+            Sequence warning
+            <p class="small">Summary of something</p>
+          </li>
+          <li>Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+      <div class="col-sm-6 m-b-0">
+        <ul class="sequence sequence-danger">
+          <li>
+            Sequence danger
+            <p class="small">Summary of something</p>
+          </li>
+          <li class="active">Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-success"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-warning"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+
+  <h2 id="sequences-inverse">Sequence inverse</h2>
+  <p class="m-b-0">Inverse variant for use in combination with
+    <code>.bg-primary</code> utility class.</p>
+  <div class="bs-example" data-example-id="sequences-inverse">
+    <div class="bg-primary">
+      <div class="row m-b-0">
+        <div class="col-sm-6 m-b-0">
+          <ul class="sequence sequence-inverse">
+            <li>
+              Sequence info
+              <p class="small">Summary of something</p>
+            </li>
+            <li class="active">Step two</li>
+            <li>Step three</li>
+          </ul>
+        </div>
+        <div class="col-sm-6 m-b-0">
+          <ul class="sequence sequence-inverse sequence-top sequence-bottom sequence-info">
+            <li>
+              <a href="">Sequence success</a>
+              <p class="small">Summary of something</p>
+            </li>
+            <li class="active"><a href="">Step two</a></li>
+            <li>Step three</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-inverse"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-inverse sequence-info sequence-top sequence-bottom"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+    <h2 id="sequences-connections">Sequence connections</h2>
+    <p class="m-b-0">The connecting variants allow us to use sequence to convey a set of
+      transformations that relate to other elements.</p>
+    <div class="bs-example" data-example-id="sequences-connections">
+      <div class="checkbox m-b-0">
+        <label>
+            <button class="tw-checkbox-button checked">
+              <span class="tw-checkbox-check glyphicon glyphicon-ok"></span>
+            </button>
+            Lines up with checkbox
+        </label>
+      </div>
+      <div class="row">
+        <div class="col-md-4 m-b-0">
+          <ul class="sequence sequence-bottom">
+            <li>
+              Sequence bottom
+              <p class="small">Summary of something</p>
+            </li>
+            <li>Step two</li>
+            <li>Step three</li>
+          </ul>
+        </div>
+        <div class="col-md-4 m-b-0">
+          <ul class="sequence sequence-top sequence-bottom sequence-info">
+            <li>
+              Sequence top/bottom
+              <p class="small">Summary of something</p>
+            </li>
+            <li>Step two</li>
+            <li class="active">Step three</li>
+          </ul>
+        </div>
+        <div class="col-md-4 m-b-0">
+          <ul class="sequence sequence-top sequence-info">
+            <li>
+              Sequence top
+              <p class="small">Summary of something</p>
+            </li>
+            <li class="active">Step two</li>
+            <li>Step three</li>
+          </ul>
+        </div>
+      </div>
+      <input type="text" class="form-control" value="12,345.67" />
+    </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-top"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-top sequence-bottom"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-bottom"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/ul&gt;</span></code></pre></div>
+
+  <h2 id="sequences-icons">Sequence icons</h2>
+  <p class="m-b-0">Sequence icons allow us to introduce iconography to help convey the meaning
+    of a step in our sequence.</p>
+  <div class="bs-example" data-example-id="sequences-icons">
+    <div class="row">
+      <div class="col-md-6 m-b-0">
+        <ul class="sequence sequence-top">
+          <li>
+            <span class="sequence-icon"><i class="icon icon-lock"></i></span>
+            Sequence icon
+          </li>
+          <li>
+            <a href="">
+              <span class="sequence-icon"><i class="icon icon-fast-flag"></i></span>
+              Step two
+            </a>
+          </li>
+          <li>Step three</li>
+        </ul>
+      </div>
+      <div class="col-md-6 m-b-0 bg-primary">
+        <ul class="sequence sequence-top sequence-inverse">
+          <li>
+            <span class="sequence-icon"><i class="icon icon-lock"></i></span>
+            Sequence icon
+          </li>
+          <li>
+            <a href="">
+              <span class="sequence-icon"><i class="icon icon-fast-flag"></i></span>
+              Step two
+            </a>
+          </li>
+          <li>Step three</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html">...
+<span class="nt">&lt;li&gt;&lt;span</span> <span class="na">class=</span><span class="s">"sequence-icon"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-lock"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sequence-icon"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"icon icon-fast-flag"</span><span class="nt">&gt;&lt;/i&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+...</code></pre></div>
+
+  <h2 id="sequences-hollow">Sequence hollow</h2>
+  <p class="m-b-0">A variant with hollow pips on non-active steps.</p>
+  <div class="bs-example" data-example-id="sequences-hollow">
+    <div class="row">
+      <div class="col-md-6 m-b-0">
+        <ul class="sequence sequence-top sequence-hollow sequence-info">
+          <li>Step one</li>
+          <li class="active">Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+      <div class="col-md-6 m-b-0 bg-primary">
+        <ul class="sequence sequence-top sequence-inverse sequence-hollow sequence-info">
+          <li>Step one</li>
+          <li class="active">Step two</li>
+          <li>Step three</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"sequence sequence-hollow sequence-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/u&gt;</span></code></pre></div>
 </div>
 
 <div class="bs-docs-section">

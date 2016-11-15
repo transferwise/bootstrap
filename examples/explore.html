@@ -278,7 +278,6 @@
 											ng-required="true"></tw-select>
 									</div>
 								</div>
-
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="control-label">Detailed label</label>
@@ -324,7 +323,11 @@
 												<tw-select options="ctrl.currencies" tw-focusable
 													ng-model="ctrl.currency"
 													ng-required="true"
-													config="ctrl.currencySelectConfig"></tw-select>
+													size="lg"
+													inverse="true"
+													dropdown-right="xs"
+													dropdown-width="lg"
+													hide-note="true"></tw-select>
 											</span>
 										</div>
 									</div>
@@ -349,8 +352,8 @@
 												$
 											</span>
 											<input class="form-control text-xs-right" placeholder=".input-group-lg" />
-											<span class="input-group-addon">
-												USD
+											<span class="input-group-btn">
+												<button class="btn btn-primary">Update</button>
 											</span>
 										</div>
 									</div>
@@ -366,6 +369,32 @@
 											ng-required="true"></tw-select>
 									</div>
 								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Icon select</label>
+										<tw-select options="ctrl.options.icons" tw-focusable
+											ng-model="ctrl.icon"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Icon select</label>
+										<tw-select options="ctrl.options.icons" tw-focusable
+											ng-model="ctrl.icon"
+											ng-required="true"
+											size="lg"></tw-select>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group input-group-lg">
+										<label class="control-label">Circle select</label>
+										<tw-select options="ctrl.options.circles" tw-focusable
+											ng-model="ctrl.circle"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
 							</div>
 						</form>
 						<div class="row m-b-3">
@@ -373,7 +402,62 @@
 								<button class="btn btn-default btn-block">Send to Facebook</button>
 							</div>
 							<div class="col-sm-6">
-								<button class="btn btn-primary btn-block"><i class="icon icon-globe"></i>Send by email</button>
+								<button class="btn btn-primary btn-block">Send by email</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Icon and flag buttons</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn-sm .icon
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn .icon
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn-lg .icon
+								</button>
+							</div>
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn-sm .currency-flag
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn .currency-flag
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn-lg .currency-flag
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn-sm .icon
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn .icon
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn-lg .icon
+								</button>
+							</div>
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn-sm .currency-flag
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn .currency-flag
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn-lg .currency-flag
+								</button>
 							</div>
 						</div>
 					</div>
@@ -396,8 +480,11 @@
 												ng-model="ctrl.currency1"
 												ng-required="true"
 												filter="Search for currency / country"
-												config="ctrl.currencySelectConfig"
-												size="lg"></tw-select>
+												size="lg"
+												inverse="true"
+												dropdown-right="xs"
+												dropdown-width="lg"
+												hide-note="true"></tw-select>
 										</span>
 									</div>
 								</div>
@@ -425,7 +512,11 @@
 												ng-model="ctrl.currency2"
 												ng-required="true"
 												filter="Search for currency / country"
-												config="ctrl.currencySelectConfig"></tw-select>
+												size="lg"
+												inverse="true"
+												dropdown-right="xs"
+												dropdown-width="lg"
+												hide-note="true"></tw-select>
 										</span>
 									</div>
 								</div>
@@ -783,8 +874,8 @@
 					<hr class="m-t-3" />
 					<p class="small">Your customer number is P123456</p>
 					<hr />
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="#form-example">
+					<ul class="nav nav-stacked">
+						<li class="active"><a href="#form-example">
 							<span class="icon icon-profile"></span>Form example</a>
 						</li>
 						<li><a href="#review-example">
