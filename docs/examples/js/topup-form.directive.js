@@ -21,8 +21,8 @@
 
 				this.payInMethods = [
 					{header: 'Payment methods'},
-					{value: '- £2.00 fee', label: 'Debit card', note: ' - £2.00 fee'},
-					{value: '- £3.00 fee', label: 'Credit card', note: ' - £3.00 fee'},
+					{value: '2.00 GBP', label: 'Debit card', note: ' - £2.00 fee'},
+					{value: '3.00 GBP', label: 'Credit card', note: ' - £3.00 fee'},
 					{value: 'No additional fee', label: 'Bank transfer', note: ' - no additional fee'},
 				]
 			},

@@ -11646,7 +11646,7 @@ a.circle.active:hover {
   border-color: #253655;
 }
 .sequence-inverse > li > a {
-  color: #dbf0fd;
+  color: #fff;
 }
 .sequence-inverse .active ~ li {
   border-color: #253655;
@@ -11743,5 +11743,43 @@ a.circle.active:hover {
 }
 .sequence li:first-child .sequence-icon {
   top: 20px;
+}
+.sequence-table {
+  display: table;
+}
+.sequence-table > li {
+  display: table-row;
+}
+.sequence-table > li > .sequence-table-td,
+.sequence-table > li > .sequence-table-th {
+  display: table-cell;
+  padding: 4px 6px;
+}
+.sequence-table > li > .sequence-table-th {
+  font-weight: 600;
+  color: #2e4369;
+}
+.sequence-table > li:before {
+  top: 4px;
+}
+.sequence-table > li .sequence-icon {
+  top: 8px;
+}
+.sequence-table > li:first-child:before {
+  top: 20px;
+}
+.sequence-table > li:first-child .sequence-table-td,
+.sequence-table > li:first-child .sequence-table-th {
+  padding-top: 20px;
+}
+.sequence-table > li:first-child .sequence-icon {
+  top: 23px;
+}
+.sequence-table > li:last-child .sequence-table-td,
+.sequence-table > li:last-child .sequence-table-th {
+  padding-bottom: 20px;
+}
+.sequence-inverse > li > .sequence-table-th {
+  color: #fff;
 }
 /*# sourceMappingURL=bootstrap.css.map */

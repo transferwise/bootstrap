@@ -101,6 +101,7 @@
 			</li>
 		</ul>
 		-->
+		<!--
 		<ul ng-if="$ctrl.action === 'convert'"
 			class="sequence sequence-top sequence-bottom">
 			<li ng-if="$ctrl.showFees">
@@ -155,6 +156,45 @@
 					<dt>Guaranteed rate</dt>
 					<dd>x 1.23456</dd>
 				</dl>
+			</li>
+		</ul>
+		-->
+		<ul ng-if="$ctrl.action === 'convert'"
+			class="sequence sequence-top sequence-bottom sequence-table">
+			<li ng-if="$ctrl.showFees">
+				<div class="sequence-table-th">4.99 GBP</div>
+				<div class="sequence-table-td">TransferWise fee</div>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<div class="sequence-table-th">{{$ctrl.payInMethod}}</div>
+				<div class="sequence-table-td">
+					Pay with
+					<span style="display: inline-block">
+						<tw-select class="m-b-0"
+							options="$ctrl.payInMethods"
+							ng-model="$ctrl.payInMethod"
+							ng-required="true"
+							dropdown-width="md"
+							hide-note="true"
+							size="sm">
+						</tw-select>
+					</span>
+				</div>
+			</li>
+			<li>
+				<a href=""  ng-click="$ctrl.showFees = !$ctrl.showFees">
+					<span class="sequence-icon"><i class="icon icon-close"></i></span>
+				</a>
+				<div class="sequence-table-th">6.99 GBP</div>
+				<div class="sequence-table-td">Total fees</div>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<div class="sequence-table-th">993.01 GBP</div>
+				<div class="sequence-table-td">Amount to convert</div>
+			</li>
+			<li>
+				<div class="sequence-table-th">1.23456</div>
+				<div class="sequence-table-td">Guaranteed rate</div>
 			</li>
 		</ul>
 		<div class="form-group form-group-lg" ng-if="$ctrl.action === 'convert'">
