@@ -176,17 +176,16 @@
   > li {
     border-color: @sequence-inverse-border;
     > a {
-      color: @nav-inverse-link-color;
+      color: #FFF; // @nav-inverse-link-color;
     }
   }
   .active {
     ~ li {
       border-color: @sequence-inverse-border;
     }
-  }
-  .small,
-  .active .small {
-    color: #FFF;
+    .small {
+      color: @brand-smoke-plus-20;
+    }
   }
 }
 

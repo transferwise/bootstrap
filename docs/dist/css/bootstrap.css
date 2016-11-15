@@ -1628,18 +1628,12 @@ a.text-inverse:focus {
   white-space: nowrap;
 }
 .bg-primary {
-  color: #fff;
   background-color: #37517e !important;
-}
-.bg-primary dt,
-.bg-primary dd {
-  color: #fff;
 }
 .bg-success {
   background-color: #d6f5e2 !important;
 }
 .bg-info {
-  color: #fff;
   background-image: -webkit-linear-gradient(top, #00b9ff 0%, #36c9ff 100%);
   background-image:      -o-linear-gradient(top, #00b9ff 0%, #36c9ff 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#00b9ff), to(#36c9ff));
@@ -1655,6 +1649,62 @@ a.text-inverse:focus {
 }
 .bg-default {
   background-color: #f2f5f7 !important;
+}
+.jumbotron,
+.bg-primary {
+  color: #f2f5f7;
+}
+.bg-info {
+  color: #f2f5f7;
+}
+.jumbotron h1,
+.bg-primary h1,
+.bg-info h1,
+.jumbotron h2,
+.bg-primary h2,
+.bg-info h2,
+.jumbotron h3,
+.bg-primary h3,
+.bg-info h3,
+.jumbotron h4,
+.bg-primary h4,
+.bg-info h4,
+.jumbotron h5,
+.bg-primary h5,
+.bg-info h5,
+.jumbotron h6,
+.bg-primary h6,
+.bg-info h6,
+.jumbotron .h1,
+.bg-primary .h1,
+.bg-info .h1,
+.jumbotron .h2,
+.bg-primary .h2,
+.bg-info .h2,
+.jumbotron .h3,
+.bg-primary .h3,
+.bg-info .h3,
+.jumbotron .h4,
+.bg-primary .h4,
+.bg-info .h4,
+.jumbotron .h5,
+.bg-primary .h5,
+.bg-info .h5,
+.jumbotron .h6,
+.bg-primary .h6,
+.bg-info .h6 {
+  color: #fff;
+}
+.jumbotron dd,
+.bg-primary dd,
+.bg-info dd,
+.jumbotron strong,
+.bg-primary strong,
+.bg-info strong,
+.jumbotron .strong,
+.bg-primary .strong,
+.bg-info .strong {
+  color: #fff;
 }
 .page-header {
   padding-bottom: 16px;
@@ -6526,7 +6576,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-inverse > li > a {
-  color: #d8f1fa;
+  color: #dbf0fd;
 }
 .nav-inverse > li > a:hover,
 .nav-inverse > li > a:focus {
@@ -10496,29 +10546,6 @@ button.close {
 .bg-default {
   background-color: #f2f5f7;
 }
-.jumbotron h1,
-.bg-primary h1,
-.bg-info h1,
-.jumbotron h2,
-.bg-primary h2,
-.bg-info h2,
-.jumbotron h3,
-.bg-primary h3,
-.bg-info h3,
-.jumbotron h4,
-.bg-primary h4,
-.bg-info h4,
-.jumbotron h5,
-.bg-primary h5,
-.bg-info h5,
-.jumbotron h6,
-.bg-primary h6,
-.bg-info h6,
-.jumbotron small,
-.bg-primary small,
-.bg-info small {
-  color: #fff;
-}
 .bg-info .btn-default {
   background-color: #fff;
   border-color: #fff;
@@ -11619,14 +11646,13 @@ a.circle.active:hover {
   border-color: #253655;
 }
 .sequence-inverse > li > a {
-  color: #d8f1fa;
+  color: #dbf0fd;
 }
 .sequence-inverse .active ~ li {
   border-color: #253655;
 }
-.sequence-inverse .small,
 .sequence-inverse .active .small {
-  color: #fff;
+  color: #f2f5f7;
 }
 .sequence-info > li {
   border-color: #00b9ff;
