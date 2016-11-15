@@ -19,33 +19,46 @@
     > a {
       position: relative;
       display: block;
+      outline-offset: -1px;
       padding: @nav-link-padding;
       font-weight: @font-weight-normal;
       font-size: @font-size-base;
-      color: @link-secondary-color;
+      color: @nav-link-color;
 
       &:hover,
       &:focus {
         text-decoration: none;
-        color: @link-secondary-hover-color;
+        color: @nav-link-hover-color;
       }
-      &:focus {
-        color: @link-secondary-active-color;
-        outline-offset: -2px;
+      &:active {
+        color: @nav-link-active-color;
       }
     }
+  }
 
-    // Disabled state sets text to gray and nukes hover/tab effects
-    &.disabled > a {
-      color: @nav-disabled-link-color;
+  > .active > a {
+    font-weight: @font-weight-semi-bold;
+    color: @nav-active-link-color;
+    &:hover,
+    &:focus {
+      color: @nav-active-link-hover-color;
+    }
+    &:active {
+      color: @nav-active-link-active-color;
+    }
+  }
 
-      &:hover,
-      &:focus {
-        color: @nav-disabled-link-hover-color;
-        text-decoration: none;
-        background-color: transparent;
-        cursor: @cursor-disabled;
-      }
+  // Disabled state sets text to gray and nukes hover/tab effects
+  > .disabled > a {
+    color: @nav-disabled-link-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @nav-disabled-link-hover-color;
+      text-decoration: none;
+      background-color: transparent;
+      cursor: @cursor-default;
     }
   }
 
@@ -74,20 +87,20 @@
   > li > a > img {
     max-width: none;
   }
+}
 
-  > .active > a {
-    font-weight: @font-weight-semi-bold;
-    color: @link-color;
+.nav-inverse {
+  > li > a {
+    color: @nav-inverse-link-color;
     &:hover,
     &:focus {
-      color: @link-hover-color;
+      color: @nav-inverse-link-hover-color;
     }
     &:active {
-      color: @link-active-color;
+      color: @nav-inverse-link-active-color;
     }
   }
 }
-
 
 // Tabs
 // -------------------------
@@ -109,22 +122,14 @@
       border-bottom: 3px solid transparent;
       font-size: @nav-tabs-font-size;
     }
-
-    // Active state, and its :hover to override normal :hover
-    &.active > a {
-      &,
-      &:hover,
-      &:focus {
-        border-bottom: 3px solid @nav-tabs-active-hover-border-color;
-        cursor: default;
-        box-shadow: 0 0 0;
-      }
-    }
   }
-  // pulling this in mainly for less shorthand
-  &.nav-justified {
-    .nav-justified();
-    .nav-tabs-justified();
+  > .active > a {
+    border-bottom: 3px solid @nav-tabs-active-hover-border-color;
+    &:hover,
+    &:focus {
+      color: @link-color;
+      cursor: default;
+    }
   }
 }
 
@@ -134,7 +139,6 @@
 .nav-pills {
   > li {
     float: left;
-    /*color: @nav-disabled-link-color;*/
     font-size: @nav-pills-font-size;
 
     // Links rendered as pills
@@ -191,6 +195,9 @@
 
   > li {
     float: none;
+    display: table-cell;
+    vertical-align: top;
+    width: 1%;
     text-align: center;
     > a {
       text-align: center;
@@ -202,14 +209,8 @@
     left: auto;
   }
 
-  @media (min-width: @screen-sm-min) {
-    > li {
-      display: table-cell;
-      width: 1%;
-    }
-    &.nav-pills > li > a {
-      padding: 0;
-    }
+  &.nav-pills > li > a {
+    padding: 0;
   }
 }
 
@@ -251,28 +252,26 @@
 // Mixin for adding on top the shared `.nav-justified` styles for our tabs
 .nav-tabs-justified {
   border-bottom: 0;
-
-  > li > a {
-    // Override margin from .nav-tabs
-    margin-right: 0;
-    border-radius: @border-radius-base;
-  }
-
-  > .active > a,
-  > .active > a:hover,
-  > .active > a:focus {
-    border: 1px solid @nav-tabs-justified-link-border-color;
-  }
-
-  @media (min-width: @screen-sm-min) {
-    > li > a {
+  > li {
+    float: none;
+    display: table-cell;
+    width: 1%;
+    text-align: center;
+    vertical-align: top;
+    > a {
+      // Override margin from .nav-tabs
+      margin-right: 0;
       border-bottom: 1px solid @nav-tabs-justified-link-border-color;
-      border-radius: @border-radius-base @border-radius-base 0 0;
+      border-radius: @border-radius-base;
     }
-    > .active > a,
-    > .active > a:hover,
-    > .active > a:focus {
-      border-bottom-color: @nav-tabs-justified-active-link-border-color;
+  }
+
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      border: 1px solid @nav-tabs-justified-link-border-color;
+      border-bottom: 0;
     }
   }
 }
@@ -300,12 +299,4 @@
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
-}
-
-
-.bg-primary,
-.bg-info {
-    .nav > li:not(.active) > a {
-        color: #FFF;
-    }
 }

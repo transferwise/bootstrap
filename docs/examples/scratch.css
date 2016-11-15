@@ -40,3 +40,53 @@
   border-bottom-width: 16px;
 }
 /* End account page */
+
+.navbar-fixed-bottom .nav {
+  min-height: 40px;
+}
+.navbar-fixed-bottom .nav-justified > li {
+  padding-top: 6px;
+  vertical-align: top;
+}
+.navbar-fixed-bottom .navbar-btn {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.column-layout-left {
+  z-index: 10000;
+}
+@media (max-width: 575px) {
+  .container-fluid .panel {
+    margin-right: -12px;
+    margin-left: -12px;
+  }
+}
+@media (max-width: 430px) {
+  .navbar-default .profile-name .text-ellipsis {
+    width: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .container-fluid .navbar-nav {
+    margin-top: 4px;
+    border-bottom: 0;
+  }
+}
+.container-fluid {
+  max-width: 1440px;
+}
+.sequence dd,
+.sequence dt {
+  line-height: 32px;
+}
+.sequence dd {
+  margin-bottom: 8px;
+}
+.sequence > li:last-child dd {
+  margin-bottom: 0;
+}
+@media (min-width: 576px) {
+  .sequence dd {
+    margin-bottom: 0;
+  }
+}

@@ -76,13 +76,17 @@
 			]}).then(function(transfers) {
 				vm.historicTransfers = transfers;
 			});
+
+			vm.burgerToggle = function() {
+				vm.open = !vm.open;
+			}
 		}
 	})(window.angular);
 	</script>
 </head>
 <body ng-app="ExampleApp" class="bg-default">
-<div class="column-layout">
-<div class="column-layout-left bg-primary">
+<div class="column-layout" ng-controller="PageController as ctrl">
+<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}">
 	<div class="column-layout-left-top">
 		<!--<div class="p-a-3">
 			<a class="btn btn-success btn-block" href="topup.html">Create</a>
@@ -95,13 +99,15 @@
 			<li><a href="">Recipients</a></li>
 			<li><a href="">Profile</a></li>
 		</ul>
-		<div class="p-a-3">
+		<div class="p-x-3 m-t-4">
 			<a href="flow.html" class="pull-xs-right text-inverse">top up</a>
 			<h4 class="m-b-2">Balance</h4>
-			<p class="p-y-1 m-b-0">GBP <span class="pull-xs-right">£1,234.56</span></p>
-			<p class="p-y-1 m-b-0">USD <span class="pull-xs-right">$12,345.67</span></p>
-			<p class="p-y-1 m-b-0">EUR <span class="pull-xs-right">€123,456.78</span></p>
 		</div>
+		<ul class="nav nav-stacked nav-inverse m-b-2">
+			<li><a href="">GBP <span class="pull-xs-right">£1,234.56</span></a></li>
+			<li><a href="">USD <span class="pull-xs-right">$12,345.67</span></a></li>
+			<li><a href="">EUR <span class="pull-xs-right">€123,456.78</span></a></li>
+		</ul>
 
 		<ul class="nav nav-stacked nav-inverse">
 			<li><a href="">Order a card</a></li>
@@ -112,9 +118,9 @@
 		<a class="btn btn-success btn-block" href="flow.html">Create</a>
 	</div>
 </div>
-<div class="column-layout-main" ng-controller="PageController as ctrl">
+<div class="column-layout-main">
 	<div class="m-t-2">
-		<simple-nav></simple-nav>
+		<simple-nav on-burger-click="ctrl.burgerToggle()"></simple-nav>
 	</div>
 	<div class="p-t-3 p-b-2">
 		<div class="container-fluid">
@@ -170,6 +176,18 @@
 			&copy; TransferWise 2016
 		</div>
 	</div>
+</div>
+<div class="column-layout-cover"
+	ng-class="{in: ctrl.open}"
+	ng-click="ctrl.open = !ctrl.open;">
+	<a class="close">&times;</a>
+</div>
+<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
+	<ul class="nav nav-justified nav-inverse">
+		<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
+		<li class="active"><a href="">Activity</a></li>
+		<li><a href="" ng-click="ctrl.open = !ctrl.open">More...</a></li>
+	</ul>
 </div>
 </div>
 </body>

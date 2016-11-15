@@ -32,6 +32,7 @@
       text-decoration: none;
       font-weight: @font-weight-normal;
       color: @link-secondary-color;
+      outline-offset: -1px;
       &:hover,
       &:focus {
         text-decoration: none;
@@ -48,7 +49,7 @@
     }
 
     &:before {
-      content: " ";
+      content: "";
       position: absolute;
       width: @sequence-pip-size;
       height: @sequence-pip-size;
@@ -59,9 +60,10 @@
       border-width: (@sequence-pip-size / 2);
       border-style: solid;
       border-color: inherit;
+      outline: 0;
     }
     &:after {
-      content: " ";
+      content: "";
       position: absolute;
       width: @sequence-line-width;
       left: -@sequence-spacing-horizontal;
@@ -70,6 +72,7 @@
       border-width: (@sequence-line-width / 2);
       border-style: solid;
       border-color: inherit;
+      outline: 0;
     }
     &:first-child {
       margin-top: @sequence-margin;
@@ -173,12 +176,7 @@
   > li {
     border-color: @sequence-inverse-border;
     > a {
-      color: #FFF;
-      text-decoration: underline;
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
+      color: @nav-inverse-link-color;
     }
   }
   .active {

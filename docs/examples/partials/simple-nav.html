@@ -1,31 +1,35 @@
 <nav class="navbar navbar-default m-b-0">
 	<!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false">
+		<div class="navbar-header pull-xs-left">
+			<button type="button" class="navbar-toggle visible-md-block collapsed"
+				ng-click="$ctrl.onBurgerClick && $ctrl.onBurgerClick()"
+				aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-
-			<a href="../" class="navbar-brand hidden-sm hidden-xs">TransferWise</a>
-			<a href="../" class="logo-text logo-text-inverse visible-xs-block visible-sm-block" title="TransferWise"></a>
+			<a href="../" class="logo-text visible-md-block" title="TransferWise"></a>
+			<a href="../" class="navbar-brand hidden-md">TransferWise</a>
+			<!--
+			<a href="../" class="navbar-brand">TransferWise</a>
+			-->
 		</div>
 
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right pull-xs-right">
 			<li class="dropdown">
 				<a href="" class="dropdown-toggle profile-name"
 					data-toggle="dropdown" role="button"
 					aria-expanded="false">
 					<span class="text-ellipsis"
 						title="Jonathan Smith-Henry"
-						style="max-width: 220px;">
+						style="max-width: 220px; font-size: 14px !important;">
 						<i class="icon icon-profile m-r-1"></i>Jonathan Smith-Henry Smith-Henry
 					</span>
 					<span class="caret"></span>
 				</a>
-				<ul class="dropdown-menu dropdown-menu-md" role="menu">
+				<ul class="dropdown-menu dropdown-menu-md dropdown-menu-xs-right" role="menu">
 					<li class="p-a-2">
 						<div class="media">
 							<div class="media-left">

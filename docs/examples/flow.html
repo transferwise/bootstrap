@@ -44,7 +44,8 @@
 </head>
 <body ng-app="ExampleApp">
 <div class="column-layout">
-<div class="column-layout-left bg-primary">
+<div class="column-layout-left bg-primary" ng-class="{open: open}">
+
 	<div class="column-layout-left-top">
 		<!--
 		<div class="logo logo-inverse logo-4 m-l-2 m-t-3 m-b-3"></div>
@@ -69,7 +70,7 @@
 		</ul>
 	</div>
 	<div class="column-layout-left-bottom">
-		<a class="btn btn-inverse btn-block" href="account.html">Close</a>
+		<a class="btn btn-inverse btn-block" href="account-left.html">Close</a>
 	</div>
 </div>
 <div class="column-layout-main">
@@ -372,6 +373,18 @@
 		</div>
 	</div>
 </div>
+<div class="column-layout-cover"
+	ng-class="{in: open}"
+	ng-click="open = !open;">
+	<a class="close">&times;</a>
+</div>
+</div>
+<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
+	<ul class="nav nav-justified nav-inverse">
+		<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
+		<li class="active"><a href="">Activity</a></li>
+		<li><a href="" ng-click="open = !open">More...</a></li>
+	</ul>
 </div>
 </body>
 

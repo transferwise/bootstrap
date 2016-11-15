@@ -13,8 +13,10 @@
 			controllerAs: '$ctrl',
 			replace: false,
 			restrict: 'E',
-			scope: {},
-			templateUrl: "partials/simple-nav.html"
+			scope: {
+				onBurgerClick: '&'
+			},
+			templateUrl: 'partials/simple-nav.html'
 		}
 	}
 })(window.angular);

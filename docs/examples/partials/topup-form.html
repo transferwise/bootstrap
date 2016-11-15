@@ -33,7 +33,7 @@
 				Convert to USD balance
 			</label>
 		</div>
-
+		<!--
 		<ul ng-if="$ctrl.action === 'convert'"
 			class="sequence sequence-top sequence-bottom">
 			<li ng-if="$ctrl.showFees">
@@ -98,6 +98,63 @@
 						Guaranteed rate
 					</div>
 				</div>
+			</li>
+		</ul>
+		-->
+		<ul ng-if="$ctrl.action === 'convert'"
+			class="sequence sequence-top sequence-bottom">
+			<li ng-if="$ctrl.showFees">
+				<dl class="dl-horizontal">
+					<dt>TransferWise fee</dt>
+					<dd>- 4.99 GBP</dd>
+				</dl>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<dl class="dl-horizontal">
+					<dt style="overflow: visible;">
+						<span style="display: inline-block">
+							<tw-select class="m-b-0"
+								options="$ctrl.payInMethods"
+								ng-model="$ctrl.payInMethod"
+								ng-required="true"
+								dropdown-width="md"
+								hide-note="true"
+								size="sm">
+							</tw-select>
+						</span>
+					</dt>
+					<dd>
+						{{$ctrl.payInMethod}}
+					</dd>
+				</dl>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<a href=""  ng-click="$ctrl.showFees = !$ctrl.showFees">
+					<span class="sequence-icon"><i class="icon icon-close"></i></span>
+					<dl class="dl-horizontal">
+						<dt>Total fees</dt>
+						<dd>- 6.99 GBP</dd>
+					</dl>
+				</a>
+			</li>
+			<li ng-if="!$ctrl.showFees">
+				<a href="" ng-click="$ctrl.showFees = !$ctrl.showFees">
+					<span class="sequence-icon"><i class="icon icon-fast-flag"></i></span>
+					Total fees <strong>6.99 GBP</strong>,
+					guaranteed rate <strong>1.23456</strong>
+				</a>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<dl class="dl-horizontal">
+					<dt>Amount to convert</dt>
+					<dd>993.01 GBP</dd>
+				</dl>
+			</li>
+			<li ng-if="$ctrl.showFees">
+				<dl class="dl-horizontal">
+					<dt>Guaranteed rate</dt>
+					<dd>x 1.23456</dd>
+				</dl>
 			</li>
 		</ul>
 		<div class="form-group form-group-lg" ng-if="$ctrl.action === 'convert'">
