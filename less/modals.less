@@ -44,7 +44,7 @@
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 16px;
+  margin: @modal-dialog-margin-xs;
 }
 
 // Actual modal
@@ -132,10 +132,8 @@
 
 // Scale up the modal
 @media (min-width: @screen-sm-min) {
-  // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: @modal-md;
-    margin: (@padding-base-vertical * 4) auto;
+    margin: @modal-dialog-margin-sm;
   }
   .modal-content {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
@@ -153,25 +151,36 @@
   }
 }
 
+// Modal sizing
 
-// Modal sizes
-@media (min-width: @screen-sm-min) {
-    .modal-sm,
-    .modal-lg {
-        width: auto;
-        margin: (@padding-base-vertical * 4) @grid-gutter-width;
-    }
+// Responsive modal style for xs modal
+.modal-xs {
+  @media (min-width: (@modal-xs + (@modal-dialog-margin-xs * 2))) {
+    width: @modal-xs;
+    .center-block();
+  }
 }
 
-@media (min-width: (@modal-sm + 32px) ) {
-    .modal-sm {
-        width: @modal-sm;
-        margin: (@padding-base-vertical * 4) auto;
-    }
+// Mixin for sizing modals larger than xs
+.modal-responsive(@size) {
+  @media (min-width: (@size + (@modal-dialog-margin-sm * 2))) {
+    width: @size;
+    .center-block();
+  }
 }
-@media (min-width: @screen-md-min) {
-    .modal-lg {
-        width: @modal-lg;
-        margin: (@padding-base-vertical * 4) auto;
-    }
+
+.modal-dialog:not(.modal-xs):not(.modal-md):not(.modal-lg):not(.modal-xl) {
+  .modal-responsive(@modal-sm);
+}
+
+.modal-md {
+  .modal-responsive(@modal-md);
+}
+
+.modal-lg {
+  .modal-responsive(@modal-lg);
+}
+
+.modal-xl {
+  .modal-responsive(@modal-xl);
 }
