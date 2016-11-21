@@ -125,7 +125,9 @@
 .dropdown-menu > .disabled > a {
   &,
   &:hover,
-  &:focus {
+  &:focus,
+  .small,
+  .secondary {
     color: @dropdown-link-disabled-color;
   }
 
@@ -137,6 +139,15 @@
     background-image: none; // Remove CSS gradient
     .reset-filter();
     cursor: @cursor-disabled;
+  }
+
+  .circle img,
+  .currency-flag {
+    opacity: 0.5;
+  }
+  .circle,
+  .icon {
+    color: @dropdown-link-disabled-color;
   }
 }
 

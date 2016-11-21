@@ -38,9 +38,7 @@ label {
 }
 // TODO remove tw-select-secondary once launched in styleguide
 label,
-.secondary,
-.btn-group .btn .tw-select-secondary,
-.btn-group .dropdown-menu .tw-select-secondary {
+.secondary {
   font-size: @control-label-font-size;
   color: @control-label-color;
   line-height: 20px;
@@ -182,6 +180,16 @@ output {
     height: 144px;
     padding: @padding-large-vertical @padding-base-horizontal @padding-large-vertical @padding-base-horizontal;
   }
+
+  /*
+  // This is under evaluation for the calculator
+  &.input-lg,
+  .input-lg &,
+  .input-group-lg &,
+  .form-group-lg & {
+    font-weight: @font-weight-semi-bold;
+  }
+  */
 }
 
 
@@ -419,7 +427,6 @@ input[type="checkbox"] {
     z-index: 1;
   }
 }
-
 
 // Form control feedback states
 //
@@ -854,8 +861,8 @@ input[type="checkbox"] {
             small,
             .small {
                 display: block;
-                font-size: @control-label-font-size;
-                color: @control-label-color;
+                font-size: @font-size-small;
+                color: @text-secondary-color;
             }
         }
     }
