@@ -98,6 +98,13 @@ a.circle.active:hover {
     color: #FFF;
 }
 
+/* TODO This is a bit hacky, would be better to address circle styles globally */
+.dropdown-menu a:hover .circle {
+  background-color: #FFF;
+  border-color: #FFF;
+  color: @dropdown-link-color;
+}
+
 .circle-inverse {
   background-color: @brand-smoke-plus-20;
 }
