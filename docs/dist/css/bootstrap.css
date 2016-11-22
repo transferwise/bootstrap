@@ -3370,15 +3370,6 @@ output {
   -webkit-transition: border-color ease-in-out .15s;
        -o-transition: border-color ease-in-out .15s;
           transition: border-color ease-in-out .15s;
-  /*
-  // This is under evaluation for the calculator
-  &.input-lg,
-  .input-lg &,
-  .input-group-lg &,
-  .form-group-lg & {
-    font-weight: @font-weight-semi-bold;
-  }
-  */
 }
 .form-control:hover {
   border-color: #829ca9;
@@ -5425,8 +5416,10 @@ input[type="button"].btn-block {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.bootstrap-select .btn-default.btn-lg,
-.btn-input.btn-lg {
+.bootstrap-select .btn-default.btn-lg.btn-addon,
+.btn-input.btn-lg.btn-addon,
+.bootstrap-select .btn-default.btn-lg.btn-input-inverse,
+.btn-input.btn-lg.btn-input-inverse {
   font-weight: 600;
 }
 /* TODO input-inverse is deprecated, remove after styleguide-components updated */
@@ -11140,11 +11133,16 @@ a.circle.active:hover {
   color: #fff;
   text-decoration: none;
 }
-/* TODO This is a bit hacky, would be better to address circle styles globally */
-.dropdown-menu a:hover .circle {
+/* TODO this could be tidier, ideally change the general link behaviour */
+.dropdown-menu li a:hover .circle {
   color: #2e4369;
   background-color: #fff;
   border-color: #fff;
+}
+.dropdown-menu .disabled a:hover .circle {
+  color: #a8aaac;
+  background-color: #f2f5f7;
+  border-color: transparent;
 }
 .circle-inverse {
   background-color: #f2f5f7;
