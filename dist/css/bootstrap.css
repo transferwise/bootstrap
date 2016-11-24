@@ -9334,6 +9334,191 @@ button.close {
             transform: rotate(360deg);
   }
 }
+.tick-container {
+  position: relative;
+  width: 136px;
+  height: 136px;
+  margin: auto;
+}
+.tick-arm-container {
+  position: absolute;
+  top: 12px;
+  left: 63px;
+  display: inline-block;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.tick-arm-1 {
+  position: absolute;
+  top: 61px;
+  left: 19px;
+  width: 8px;
+  height: 8px;
+  background-color: #2ed06e;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-animation: tick-arm-1-draw .8s 1.3s cubic-bezier(.8, .2, 0, 0) forwards;
+       -o-animation: tick-arm-1-draw .8s 1.3s cubic-bezier(.8, .2, 0, 0) forwards;
+          animation: tick-arm-1-draw .8s 1.3s cubic-bezier(.8, .2, 0, 0) forwards;
+}
+.tick-arm-2 {
+  position: absolute;
+  top: 66px;
+  left: 44px;
+  width: 8px;
+  height: 0;
+  background-color: #2ed06e;
+  border-radius: 4px;
+  -webkit-animation: tick-arm-2-draw .8s 1.3s cubic-bezier(.5, 0, 0, 1) forwards;
+       -o-animation: tick-arm-2-draw .8s 1.3s cubic-bezier(.5, 0, 0, 1) forwards;
+          animation: tick-arm-2-draw .8s 1.3s cubic-bezier(.5, 0, 0, 1) forwards;
+}
+.tick-circle-animate {
+  opacity: 0;
+  -webkit-animation: draw 1s .5s cubic-bezier(.8, .2, .2, .5) forwards;
+       -o-animation: draw 1s .5s cubic-bezier(.8, .2, .2, .5) forwards;
+          animation: draw 1s .5s cubic-bezier(.8, .2, .2, .5) forwards;
+}
+.tick-circle {
+  opacity: 1;
+
+  stroke-dashoffset: 0;
+  stroke-dasharray: 400;
+}
+@-webkit-keyframes tick-arm-1-draw {
+  0% {
+    width: 8px;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  30% {
+    width: 33px;
+  }
+  100% {
+    width: 33px;
+    opacity: 1;
+  }
+}
+@-o-keyframes tick-arm-1-draw {
+  0% {
+    width: 8px;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  30% {
+    width: 33px;
+  }
+  100% {
+    width: 33px;
+    opacity: 1;
+  }
+}
+@keyframes tick-arm-1-draw {
+  0% {
+    width: 8px;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  30% {
+    width: 33px;
+  }
+  100% {
+    width: 33px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes tick-arm-2-draw {
+  0% {
+    top: 66px;
+    height: 0;
+  }
+  29% {
+    top: 66px;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    height: 69px;
+  }
+}
+@-o-keyframes tick-arm-2-draw {
+  0% {
+    top: 66px;
+    height: 0;
+  }
+  29% {
+    top: 66px;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    height: 69px;
+  }
+}
+@keyframes tick-arm-2-draw {
+  0% {
+    top: 66px;
+    height: 0;
+  }
+  29% {
+    top: 66px;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    height: 69px;
+  }
+}
+@-webkit-keyframes draw {
+  0% {
+    opacity: 1;
+
+    stroke-dashoffset: -400;
+    stroke-dasharray: 400;
+  }
+  100% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400;
+  }
+}
+@-o-keyframes draw {
+  0% {
+    opacity: 1;
+
+    stroke-dashoffset: -400;
+    stroke-dasharray: 400;
+  }
+  100% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400;
+  }
+}
+@keyframes draw {
+  0% {
+    opacity: 1;
+
+    stroke-dashoffset: -400;
+    stroke-dasharray: 400;
+  }
+  100% {
+    opacity: 1;
+
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400;
+  }
+}
 .tile {
   position: relative;
   width: 100%;
