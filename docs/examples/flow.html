@@ -30,6 +30,66 @@
 	function PageController(SelectOptionsService) {
 		var $ctrl = this;
 	}
+
+	angular
+		.module('ExampleApp')
+		.directive('twProcess', ['$interval', TwProcess]);
+
+	function TwProcess($interval) {
+		return {
+			restrict: 'E',
+			controllerAs: '$ctrl',
+			bindToController: true,
+			scope: {
+				complete: '='
+			},
+			controller: function() {
+				var $ctrl = this;
+				$ctrl.processing = !$ctrl.complete;
+				console.log('processing: ' + $ctrl.processing);
+				var promise = $interval(function() {
+					if ($ctrl.complete) {
+						console.log('finishing: ' + $ctrl.processing);
+						$ctrl.processing = false;
+						//promise.cancel();
+					} else {
+						// TODO just for testing
+						$ctrl.processing = true;
+					}
+				}, 1500);
+			},
+			template:
+			"<div class='tick-container' \
+				ng-class='{ \
+					\"tick-circle-processing\": $ctrl.processing, \
+					\"tick-circle-complete\": !$ctrl.processing \
+				}'> \
+			  <div class='tick-arm-container'> \
+				<div class='tick-arm-1'></div> \
+				<div class='tick-arm-2'></div> \
+			  </div> \
+			  <svg version='1.1' \
+				xmlns='http://www.w3.org/2000/svg' \
+				x='0px' y='0px' \
+				width='136px' height='136px' \
+				viewBox='0 0 136 136' \
+				enable-background='new 0 0 136 136' xml:space='preserve'> \
+				<circle class='tick-circle-animate' \
+				  fill-opacity='0.0' \
+				  stroke-width='3' \
+				  stroke-linejoin='miter' \
+				  stroke-linecap='round' \
+				  stroke-miterlimit='10' \
+				  stroke-opacity='1' \
+				  cx='68' \
+				  cy='68' \
+				  r='63' \
+				  transform='rotate(-90 68 68)'/> \
+			  </svg> \
+			</div>"
+		};
+	}
+
 	</script>
 
 	<script src="js/nav.directive.js"></script>
@@ -65,6 +125,10 @@
 				</div>
 			</div>
 		</div>
+
+		<tw-process complete="ctrl.complete"></tw-process>
+
+		<button class="btn btn-primary" ng-click="ctrl.complete = !ctrl.complete">Complete loader</button>
 
 		<h3 style="margin-top: 800px;">Sequence</h3>
 		<p>Sequence is a flexible component for portraying a sequence of steps.
@@ -345,6 +409,9 @@
 			</div>
 		</div>
 	</div>
+
+
+
 </div>
 <div class="column-layout-right bg-default" ng-class="{open: open}">
 	<div class="column-layout-top">
