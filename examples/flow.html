@@ -34,6 +34,7 @@
 
 	<script src="js/nav.directive.js"></script>
 	<script src="js/simple-nav.directive.js"></script>
+	<script src="js/one-click.directive.js"></script>
 	<script src="js/select-options.service.js"></script>
 	<script src="js/topup-form.directive.js"></script>
 	<script src="js/footer.directive.js"></script>
@@ -44,35 +45,7 @@
 </head>
 <body ng-app="ExampleApp">
 <div class="column-layout">
-<div class="column-layout-left bg-primary" ng-class="{open: open}">
 
-	<div class="column-layout-left-top">
-		<!--
-		<div class="logo logo-inverse logo-4 m-l-2 m-t-3 m-b-3"></div>
-		<ul class="nav nav-stacked nav-inverse m-t-3 invisible">
-			<li class="active"><a href="">Create transfer</a></li>
-		</ul>
-		-->
-		<ul class="sequence sequence-info sequence-inverse sequence-hollow m-t-4">
-			<li>
-				<p class="m-b-0">Complete profile</p>
-				<!--<p class="m-b-0 p-b-1 small">Steve Pole, London</p>-->
-			</li>
-			<li>
-				<p class="m-b-0">Choose recipient</p>
-				<!--<p class="m-b-0 p-b-1 small">Bob Smith a/c ...7890</p>-->
-			</li>
-			<li class="active">
-				<p class="m-b-0">Pay in</p>
-				<p class="m-b-0 p-b-1 small">Choose how you would like to pay</p>
-			</li>
-			<li>Confirm</li>
-		</ul>
-	</div>
-	<div class="column-layout-left-bottom">
-		<a class="btn btn-inverse btn-block" href="account-left.html">Close</a>
-	</div>
-</div>
 <div class="column-layout-main">
 	<div class="m-t-2">
 		<simple-nav></simple-nav>
@@ -371,6 +344,26 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+</div>
+<div class="column-layout-right bg-default" ng-class="{open: open}">
+	<div class="column-layout-top">
+		<ul class="sequence sequence-primary sequence-hollow m-t-4">
+			<li>
+				<p class="m-b-0">Complete profile</p>
+			</li>
+			<li>
+				<p class="m-b-0">Choose recipient</p>
+			</li>
+			<li class="active">
+				<p class="m-b-0">Pay in</p>
+				<p class="m-b-0 p-b-1 small">Choose how you would like to pay</p>
+			</li>
+			<li>Confirm</li>
+		</ul>
+	</div>
+	<div class="column-layout-bottom">
+		<a class="btn btn-danger btn-block" href="account-left.html">Close</a>
 	</div>
 </div>
 <div class="column-layout-cover"
