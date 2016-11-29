@@ -48,16 +48,12 @@
 }
 
 .process-complete {
-  .process-icon-tick-1 {
-    /* Animation over transition, to run once on load */
-    animation: process-width .3s 1.2s ease forwards;
+  .process-icon-horizontal {
     background-color: @brand-green;
     bottom: 0;
     left: 0;
   }
-  .process-icon-tick-2 {
-    /* Animation over transition, to run once on load */
-    animation: process-height .3s 1.5s ease forwards;
+  .process-icon-vertical {
     background-color: @brand-green;
     top: 100%;
     right: 0;
@@ -68,15 +64,11 @@
 }
 
 .process-failed {
-  .process-icon-cross-1 {
-    /* Animation over transition, to run once on load */
-    animation: process-width .3s 1.2s ease-out forwards;
+  .process-icon-horizontal {
     background-color: @brand-red;
     left: 0;
   }
-  .process-icon-cross-2 {
-    /* Animation over transition, to run once on load */
-    animation: process-height .3s 1.5s ease-out forwards;
+  .process-icon-vertical {
     background-color: @brand-red;
     top: 0;
   }
@@ -93,6 +85,14 @@
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
+  }
+  .process-icon-horizontal {
+    /* Animation over transition, to run once on load */
+    animation: process-width .3s 1.2s ease-out forwards;
+  }
+  .process-icon-vertical {
+    /* Animation over transition, to run once on load */
+    animation: process-height .3s 1.5s ease-out forwards;
   }
 }
 
@@ -122,20 +122,15 @@
       top: (@circle-radius - (@icon-size / 2));
     }
 
-    .process-icon-cross-1  {
-      top: ((@icon-size / 2) - (@icon-stroke / 2));
-      height: @icon-stroke;
-    }
-    .process-icon-cross-2  {
-      left: ((@icon-size / 2) - (@icon-stroke / 2));
-      width: @icon-stroke;
-    }
-
-    .process-icon-tick-1 {
-      height: @icon-stroke;
-    }
-    .process-icon-tick-2 {
-      width: @icon-stroke;
+    &.process-failed {
+      .process-icon-horizontal  {
+        top: ((@icon-size / 2) - (@icon-stroke / 2));
+        height: @icon-stroke;
+      }
+      .process-icon-vertical  {
+        left: ((@icon-size / 2) - (@icon-stroke / 2));
+        width: @icon-stroke;
+      }
     }
 
     &.process-complete {
@@ -144,6 +139,12 @@
         height: (@icon-size - @icon-stroke);
         top: (@icon-size / 2);
         margin-left: (@icon-size / 4);
+      }
+      .process-icon-horizontal {
+        height: @icon-stroke;
+      }
+      .process-icon-vertical {
+        width: @icon-stroke;
       }
     }
   }
