@@ -1,0 +1,254 @@
+@process-lg-radius: 64px;
+@process-lg-stroke: 3px;
+@process-lg-circumference: (pi() * (2 * (@process-lg-radius - 1)));
+@process-lg-icon-size: 64px;
+@process-lg-icon-stroke: 8px;
+
+@process-md-radius: 32px;
+@process-md-circumference: (pi() * (2 * (@process-md-radius - 1)));
+@process-md-stroke: 2.5px;
+@process-md-icon-size: 32px;
+@process-md-icon-stroke: 4px;
+
+@process-sm-radius: 12px;
+@process-sm-circumference: (pi() * (2 * (@process-sm-radius - 1)));
+@process-sm-stroke: 2px;
+@process-sm-icon-size: 12px;
+@process-sm-icon-stroke: 2px;
+
+.process {
+  position: relative;
+  margin: auto;
+}
+
+.process-circle {
+  transform-origin: center center;
+  transition: stroke 1s 0.2s linear;
+  stroke: @brand-light-blue;
+  stroke-opacity: 1;
+  stroke-linecap: round;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.process-icon-container {
+  position: absolute;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+.process-icon-stroke {
+  border-radius: 4px;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  transition: none;
+}
+
+.process-complete {
+  .process-icon-tick-1 {
+    /* Animation over transition, to run once on load */
+    animation: process-width .3s 1.2s ease forwards;
+    background-color: @brand-green;
+    bottom: 0;
+    left: 0;
+  }
+  .process-icon-tick-2 {
+    /* Animation over transition, to run once on load */
+    animation: process-height .3s 1.5s ease forwards;
+    background-color: @brand-green;
+    top: 100%;
+    right: 0;
+  }
+  .process-circle {
+    stroke: @brand-green;
+  }
+}
+
+.process-failed {
+  .process-icon-cross-1 {
+    /* Animation over transition, to run once on load */
+    animation: process-width .3s 1.2s ease-out forwards;
+    background-color: @brand-red;
+    left: 0;
+  }
+  .process-icon-cross-2 {
+    /* Animation over transition, to run once on load */
+    animation: process-height .3s 1.5s ease-out forwards;
+    background-color: @brand-red;
+    top: 0;
+  }
+  .process-circle {
+    stroke: @brand-red;
+  }
+}
+
+.process-complete,
+.process-failed {
+  .process-circle {
+    animation-duration: 1.5s;
+    animation-delay: 1ms; // 1 ms delay prevents small glitch on webkit
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+}
+
+.process-stopped .process-circle {
+  animation: none;
+}
+
+.process-size(@size, @circle-radius, @cirlce-circumference, @circle-stroke, @icon-size, @icon-stroke) {
+  .process-@{size} {
+    width: (@circle-radius * 2);
+
+    svg {
+      width: (@circle-radius * 2);
+      height: (@circle-radius * 2);
+    }
+
+    .process-circle {
+      /* Hide before animation to prevent glitching */
+      stroke-dashoffset: @cirlce-circumference;
+      stroke-dasharray: @cirlce-circumference;
+      stroke-width: @circle-stroke;
+    }
+    .process-icon-container {
+      height: @icon-size;
+      width: @icon-size;
+      left: (@circle-radius - (@icon-size / 2));
+      top: (@circle-radius - (@icon-size / 2));
+    }
+
+    .process-icon-cross-1  {
+      top: ((@icon-size / 2) - (@icon-stroke / 2));
+      height: @icon-stroke;
+    }
+    .process-icon-cross-2  {
+      left: ((@icon-size / 2) - (@icon-stroke / 2));
+      width: @icon-stroke;
+    }
+
+    .process-icon-tick-1 {
+      height: @icon-stroke;
+    }
+    .process-icon-tick-2 {
+      width: @icon-stroke;
+    }
+
+    &.process-complete {
+      .process-icon-container {
+        width: ((@icon-size - @icon-stroke) / 2);
+        height: (@icon-size - @icon-stroke);
+        top: (@icon-size / 2);
+        margin-left: (@icon-size / 4);
+      }
+    }
+  }
+}
+.process-size(sm, @process-sm-radius, @process-sm-circumference, @process-sm-stroke, @process-sm-icon-size, @process-sm-icon-stroke);
+.process-size(md, @process-md-radius, @process-md-circumference, @process-md-stroke, @process-md-icon-size, @process-md-icon-stroke);
+.process-size(lg, @process-lg-radius, @process-lg-circumference, @process-lg-stroke, @process-lg-icon-size, @process-lg-icon-stroke);
+
+.process-sm {
+  .process-circle {
+    animation-name: process-chase-circle-sm;
+   }
+  &.process-complete,
+  &.process-failed {
+    .process-circle {
+      animation-name: process-complete-circle-sm;
+    }
+  }
+}
+.process-md {
+  .process-circle {
+    animation-name: process-chase-circle-md;
+   }
+  &.process-complete,
+  &.process-failed {
+    .process-circle {
+      animation-name: process-complete-circle-md;
+    }
+  }
+}
+.process-lg {
+  .process-circle {
+    animation-name: process-chase-circle-lg;
+   }
+  &.process-complete,
+  &.process-failed {
+    .process-circle {
+      animation-name: process-complete-circle-lg;
+    }
+  }
+}
+
+.complete-circle(@process-circumference) {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: (@process-circumference - 1);
+    stroke-dasharray: @process-circumference;
+  }
+  100% {
+    transform: rotate(360deg);
+    stroke-dashoffset: 0;
+    stroke-dasharray: @process-circumference;
+  }
+}
+
+.chase-circle(@process-circumference) {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: ((3 * @process-circumference) - 1);
+    stroke-dasharray: @process-circumference;
+  }
+  25% {
+    stroke-dashoffset: (@process-circumference - 1);
+    stroke-dasharray: (@process-circumference * .5);
+  }
+  75% {
+    stroke-dashoffset: (@process-circumference - 1);
+    stroke-dasharray: (@process-circumference * .75);
+  }
+  100% {
+    transform: rotate(360deg);
+    stroke-dashoffset: (@process-circumference - 1);
+    stroke-dasharray: @process-circumference;
+  }
+}
+
+@keyframes process-chase-circle-sm {
+  .chase-circle(@process-sm-circumference);
+}
+@keyframes process-complete-circle-sm {
+  .complete-circle(@process-sm-circumference);
+}
+
+@keyframes process-chase-circle-md {
+  .chase-circle(@process-md-circumference);
+}
+@keyframes process-complete-circle-md {
+  .complete-circle(@process-md-circumference);
+}
+
+@keyframes process-chase-circle-lg {
+  .chase-circle(@process-lg-circumference);
+}
+@keyframes process-complete-circle-lg {
+  .complete-circle(@process-lg-circumference);
+}
+
+@keyframes process-width {
+  to {
+    width: 100%;
+  }
+}
+@keyframes process-height {
+  to {
+    top: 0;
+    height: 100%;
+  }
+}
