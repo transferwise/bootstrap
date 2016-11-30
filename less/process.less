@@ -19,6 +19,12 @@
 .process {
   position: relative;
   margin: auto;
+  display: block;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .process-circle {
@@ -31,23 +37,30 @@
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+.process-inverse .process-circle {
+  stroke: @brand-white;
+}
 
 .process-icon-container {
   position: absolute;
   display: inline-block;
   transform: rotate(45deg);
+  height: 50%;
+  width: 50%;
+  left: 25%;
+  top: 25%;
 }
 
-.process-icon-stroke {
+.process-icon-horizontal,
+.process-icon-vertical  {
   border-radius: 4px;
   position: absolute;
   display: block;
   width: 0;
   height: 0;
-  transition: none;
 }
 
-.process-complete {
+.process-success {
   .process-icon-horizontal {
     background-color: @brand-green;
     bottom: 0;
@@ -63,7 +76,7 @@
   }
 }
 
-.process-failed {
+.process-danger {
   .process-icon-horizontal {
     background-color: @brand-red;
     left: 0;
@@ -77,8 +90,8 @@
   }
 }
 
-.process-complete,
-.process-failed {
+.process-success,
+.process-danger {
   .process-circle {
     animation-duration: 1.5s;
     animation-delay: 1ms; // 1 ms delay prevents small glitch on webkit
@@ -88,26 +101,27 @@
   }
   .process-icon-horizontal {
     /* Animation over transition, to run once on load */
-    animation: process-width .3s 1.2s ease-out forwards;
+    animation: process-width .3s 1.2s ease forwards;
   }
   .process-icon-vertical {
     /* Animation over transition, to run once on load */
-    animation: process-height .3s 1.5s ease-out forwards;
+    animation: process-height .3s 1.5s ease forwards;
   }
 }
 
-.process-stopped .process-circle {
-  animation: none;
+.process-stopped {
+  .process-circle {
+    animation: none;
+  }
+  .process-icon-container {
+    display: none;
+  }
 }
 
 .process-size(@size, @circle-radius, @cirlce-circumference, @circle-stroke, @icon-size, @icon-stroke) {
   .process-@{size} {
     width: (@circle-radius * 2);
-
-    svg {
-      width: (@circle-radius * 2);
-      height: (@circle-radius * 2);
-    }
+    height: (@circle-radius * 2);
 
     .process-circle {
       /* Hide before animation to prevent glitching */
@@ -115,14 +129,8 @@
       stroke-dasharray: @cirlce-circumference;
       stroke-width: @circle-stroke;
     }
-    .process-icon-container {
-      height: @icon-size;
-      width: @icon-size;
-      left: (@circle-radius - (@icon-size / 2));
-      top: (@circle-radius - (@icon-size / 2));
-    }
 
-    &.process-failed {
+    &.process-danger {
       .process-icon-horizontal  {
         top: ((@icon-size / 2) - (@icon-stroke / 2));
         height: @icon-stroke;
@@ -133,12 +141,12 @@
       }
     }
 
-    &.process-complete {
+    &.process-success {
       .process-icon-container {
-        width: ((@icon-size - @icon-stroke) / 2);
-        height: (@icon-size - @icon-stroke);
-        top: (@icon-size / 2);
-        margin-left: (@icon-size / 4);
+        // TODO change to percentages so we don't need to redefine for different widths
+        width: ((@icon-size - @icon-stroke) / 2); // 20%
+        height: (@icon-size - @icon-stroke); // 42%
+        left: (3 * (@icon-size / 4)); // 40%
       }
       .process-icon-horizontal {
         height: @icon-stroke;
@@ -157,10 +165,10 @@
   .process-circle {
     animation-name: process-chase-circle-sm;
    }
-  &.process-complete,
-  &.process-failed {
+  &.process-success,
+  &.process-danger {
     .process-circle {
-      animation-name: process-complete-circle-sm;
+      animation-name: process-success-circle-sm;
     }
   }
 }
@@ -168,10 +176,10 @@
   .process-circle {
     animation-name: process-chase-circle-md;
    }
-  &.process-complete,
-  &.process-failed {
+  &.process-success,
+  &.process-danger {
     .process-circle {
-      animation-name: process-complete-circle-md;
+      animation-name: process-success-circle-md;
     }
   }
 }
@@ -179,10 +187,10 @@
   .process-circle {
     animation-name: process-chase-circle-lg;
    }
-  &.process-complete,
-  &.process-failed {
+  &.process-success,
+  &.process-danger {
     .process-circle {
-      animation-name: process-complete-circle-lg;
+      animation-name: process-success-circle-lg;
     }
   }
 }
@@ -224,21 +232,21 @@
 @keyframes process-chase-circle-sm {
   .chase-circle(@process-sm-circumference);
 }
-@keyframes process-complete-circle-sm {
+@keyframes process-success-circle-sm {
   .complete-circle(@process-sm-circumference);
 }
 
 @keyframes process-chase-circle-md {
   .chase-circle(@process-md-circumference);
 }
-@keyframes process-complete-circle-md {
+@keyframes process-success-circle-md {
   .complete-circle(@process-md-circumference);
 }
 
 @keyframes process-chase-circle-lg {
   .chase-circle(@process-lg-circumference);
 }
-@keyframes process-complete-circle-lg {
+@keyframes process-success-circle-lg {
   .complete-circle(@process-lg-circumference);
 }
 
@@ -252,4 +260,23 @@
     top: 0;
     height: 100%;
   }
+}
+
+.btn .process:first-child {
+  margin-left: -12px;
+  margin-right: 12px;
+  float: left;
+}
+.btn-block .process:first-child {
+  position: absolute;
+}
+
+.btn-primary .process-circle,
+.btn-success .process-circle,
+.btn:hover .process-circle,
+.btn:focus .process-circle {
+  stroke: @brand-white;
+}
+.btn[disabled] .process-circle {
+  stroke: @btn-disabled-color;
 }
