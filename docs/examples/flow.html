@@ -29,67 +29,95 @@
 
 	function PageController(SelectOptionsService) {
 		var $ctrl = this;
-	}
 
-	angular
-		.module('ExampleApp')
-		.directive('twProcess', ['$interval', TwProcess]);
-
-	function TwProcess($interval) {
-		return {
-			restrict: 'E',
-			controllerAs: '$ctrl',
-			bindToController: true,
-			scope: {
-				complete: '='
-			},
-			controller: function() {
-				var $ctrl = this;
-				$ctrl.processing = !$ctrl.complete;
-				console.log('processing: ' + $ctrl.processing);
-				var promise = $interval(function() {
-					if ($ctrl.complete) {
-						console.log('finishing: ' + $ctrl.processing);
-						$ctrl.processing = false;
-						//promise.cancel();
-					} else {
-						// TODO just for testing
-						$ctrl.processing = true;
-					}
-				}, 1500);
-			},
-			template:
-			"<div class='tick-container' \
-				ng-class='{ \
-					\"tick-circle-processing\": $ctrl.processing, \
-					\"tick-circle-complete\": !$ctrl.processing \
-				}'> \
-			  <div class='tick-arm-container'> \
-				<div class='tick-arm-1'></div> \
-				<div class='tick-arm-2'></div> \
-			  </div> \
-			  <svg version='1.1' \
-				xmlns='http://www.w3.org/2000/svg' \
-				x='0px' y='0px' \
-				width='136px' height='136px' \
-				viewBox='0 0 136 136' \
-				enable-background='new 0 0 136 136' xml:space='preserve'> \
-				<circle class='tick-circle-animate' \
-				  fill-opacity='0.0' \
-				  stroke-width='3' \
-				  stroke-linejoin='miter' \
-				  stroke-linecap='round' \
-				  stroke-miterlimit='10' \
-				  stroke-opacity='1' \
-				  cx='68' \
-				  cy='68' \
-				  r='63' \
-				  transform='rotate(-90 68 68)'/> \
-			  </svg> \
-			</div>"
+		$ctrl.onStop = function() {
+			$ctrl.swap = true;
+			console.log('onStop');
 		};
 	}
+	/* TTODO his is duplicate of work the WILL appear in styleguide components,
+	Remove at that point */
+	angular
+		.module('ExampleApp')
+		.directive('twProcessTodo', ['$interval', TwProcess]);
 
+
+		function TwProcess() {
+			return {
+				restrict: 'E',
+				controllerAs: '$ctrl',
+				bindToController: true,
+				scope: {
+					state: '=',
+					size: '@',
+					onStop: '&'
+				},
+				controller: ['$scope', '$interval', '$timeout', TwProcessController],
+				template:
+				"<span class='process' \
+					ng-class='{ \
+						\"process-success\": $ctrl.processing === 1, \
+						\"process-danger\": $ctrl.processing === -1, \
+						\"process-stopped\": $ctrl.processing === 0, \
+						\"process-xs\": $ctrl.size === \"xs\", \
+						\"process-sm\": $ctrl.size === \"sm\", \
+						\"process-md\": $ctrl.size === \"md\", \
+						\"process-lg\": $ctrl.size === \"lg\", \
+						\"process-xl\": $ctrl.size === \"xl\" \
+					}'> \
+					<span class='process-icon-container'> \
+						<span class='process-icon-horizontal'></span> \
+						<span class='process-icon-vertical'></span> \
+					</span> \
+					<svg version='1.1' \
+						xmlns='http://www.w3.org/2000/svg' \
+						xml:space='preserve'> \
+						<circle class='process-circle' cx='50%' cy='50%' r='46%' \
+							fill-opacity='0.0' /> \
+					</svg> \
+				</span>"
+			};
+		}
+
+		function TwProcessController($scope, $interval, $timeout) {
+			var $ctrl = this;
+			$ctrl.processing = $ctrl.state;
+
+			// This allows us to cancel the interval when not needed.
+			$scope.$watch('$ctrl.state', function(newVal) {
+				if (($ctrl.processing === -1 ||
+					$ctrl.processing === 0 ||
+					$ctrl.processing === 1) &&
+					($ctrl.state !== -1 &&
+					$ctrl.state !== 0 &&
+					$ctrl.state !== 1)) {
+					// We're stopped and restarting
+					$ctrl.processing = null;
+					$ctrl.createInterval();
+				}
+			});
+
+			$ctrl.createInterval = function() {
+				var promise = $interval(function() {
+					$ctrl.processing = $ctrl.state;
+					if ($ctrl.state === -1 ||
+						$ctrl.state === 0 ||
+						$ctrl.state === 1) {
+						$interval.cancel(promise);
+
+						if ($ctrl.onStop) {
+							if ($ctrl.state === 0) {
+								$ctrl.onStop();
+							} else {
+								$timeout($ctrl.onStop, 1800);
+							}
+						}
+					}
+				}, 1500);
+			};
+
+			$ctrl.createInterval();
+		}
 	</script>
 
 	<script src="js/nav.directive.js"></script>
@@ -125,10 +153,6 @@
 				</div>
 			</div>
 		</div>
-
-		<tw-process complete="ctrl.complete"></tw-process>
-
-		<button class="btn btn-primary" ng-click="ctrl.complete = !ctrl.complete">Complete loader</button>
 
 		<h3 style="margin-top: 800px;">Sequence</h3>
 		<p>Sequence is a flexible component for portraying a sequence of steps.

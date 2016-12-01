@@ -15,7 +15,7 @@
   <div class='bs-example' id='process-basic-examples'>
     <div class='row'>
       <div class='col-sm-4'>
-        <span class='process process-lg process-stopped'>
+        <span class='process process-xl process-stopped'>
           <span class='process-icon-container'>
             <span class='process-icon-horizontal'></span>
             <span class='process-icon-vertical'></span>
@@ -29,7 +29,7 @@
         </span>
       </div>
       <div class='col-sm-4'>
-        <span id='process-success' class='process process-lg process-stopped'>
+        <span id='process-success' class='process process-xl process-stopped'>
           <span class='process-icon-container'>
             <span class='process-icon-horizontal'></span>
             <span class='process-icon-vertical'></span>
@@ -43,7 +43,7 @@
         </span>
       </div>
       <div class='col-sm-4'>
-        <span id='process-danger' class='process process-lg process-stopped'>
+        <span id='process-danger' class='process process-xl process-stopped'>
           <span class='process-icon-container'>
             <span class='process-icon-horizontal'></span>
             <span class='process-icon-vertical'></span>
@@ -67,7 +67,7 @@
     </button>
   </div>
 {% highlight html %}
-<span class='process process-md'>
+<span class='process process-sm'>
   <span class='process-icon-container'>
     <span class='process-icon-horizontal'></span>
     <span class='process-icon-vertical'></span>
@@ -79,21 +79,37 @@
       fill-opacity='0.0' />
   </svg>
 </span>
-<span class='process process-md process-success'>
+<span class='process process-sm process-success'>
   ...
 </span>
-<span class='process process-md process-danger'>
+<span class='process process-sm process-danger'>
   ...
 </span>
 {% endhighlight %}
 
   <h2 id='process-sizes'>Process sizes</h2>
-  <p>Small, medium, and large variants are available for different use cases.
-    Simply add the relevant modifier class <code>.process-sm</code>,
-    <code>.process-md</code>, or <code>.process-lg</code>.</p>
+  <p>Our sized variants are designed to work alongside our circle components.
+      Curenctly we have extras small (xs), small (sm), and extra large variants
+      for different use cases.</p>
+  <p>Simply add the relevant modifier class <code>.process-xs</code>,
+    <code>.process-sm</code>, or <code>.process-xl</code>.</p>
 
   <div class='bs-example' id='process-size-examples'>
     <div class='row'>
+      <div class='col-sm-4'>
+        <span class='process process-xs process-stopped'>
+          <span class='process-icon-container'>
+            <span class='process-icon-horizontal'></span>
+            <span class='process-icon-vertical'></span>
+          </span>
+          <svg version='1.1'
+            xmlns='http://www.w3.org/2000/svg'
+            xml:space='preserve'>
+            <circle class='process-circle' cx='50%' cy='50%' r='45%'
+              fill-opacity='0.0' />
+          </svg>
+        </span>
+      </div>
       <div class='col-sm-4'>
         <span class='process process-sm process-stopped'>
           <span class='process-icon-container'>
@@ -109,21 +125,7 @@
         </span>
       </div>
       <div class='col-sm-4'>
-        <span class='process process-md process-stopped'>
-          <span class='process-icon-container'>
-            <span class='process-icon-horizontal'></span>
-            <span class='process-icon-vertical'></span>
-          </span>
-          <svg version='1.1'
-            xmlns='http://www.w3.org/2000/svg'
-            xml:space='preserve'>
-            <circle class='process-circle' cx='50%' cy='50%' r='45%'
-              fill-opacity='0.0' />
-          </svg>
-        </span>
-      </div>
-      <div class='col-sm-4'>
-        <span class='process process-lg process-stopped'>
+        <span class='process process-xl process-stopped'>
           <span class='process-icon-container'>
             <span class='process-icon-horizontal'></span>
             <span class='process-icon-vertical'></span>
@@ -147,13 +149,13 @@
     </button>
   </div>
 {% highlight html %}
+<span class='process process-xs'>
+  ...
+</span>
 <span class='process process-sm'>
   ...
 </span>
-<span class='process process-md'>
-  ...
-</span>
-<span class='process process-lg'>
+<span class='process process-xl'>
   ...
 </span>
 {% endhighlight %}
@@ -166,7 +168,7 @@
     <div class='col-xs-12 col-sm-6'>
       <button class='btn btn-primary btn-block' id='block-button-process-btn'
         onclick="$('#block-button-process').removeClass('hidden'); setTimeout(function() { $('#block-button-process').addClass('hidden'); }, 2000); ">
-        <span class='process process-sm hidden' id='block-button-process'>
+        <span class='process process-xs hidden' id='block-button-process'>
           <span class='process-icon-container'>
             <span class='process-icon-horizontal'></span>
             <span class='process-icon-vertical'></span>
@@ -184,7 +186,7 @@
     <div class='col-xs-12 col-sm-6'>
       <button class='btn btn-default btn-block' id='disabled-button-process-btn'
         onclick="$('#disabled-button-process-btn').prop('disabled', true); $('#disabled-button-process').removeClass('hidden'); setTimeout(function() { $('#disabled-button-process-btn').removeProp('disabled'); $('#disabled-button-process').addClass('hidden'); }, 2000); ">
-        <span class='process process-sm hidden' id='disabled-button-process'>
+        <span class='process process-xs hidden' id='disabled-button-process'>
           <span class='process-icon-container'>
           <span class='process-icon-horizontal'></span>
           <span class='process-icon-vertical'></span>           </span>
@@ -201,7 +203,7 @@
   </div>
   <button class='btn btn-success' id='inline-button-process-btn'
     onclick="$('#inline-button-process').removeClass('hidden'); setTimeout(function() { $('#inline-button-process').addClass('hidden'); }, 2000); ">
-    <span class='process process-sm hidden' id='inline-button-process'>
+    <span class='process process-xs hidden' id='inline-button-process'>
       <span class='process-icon-container'>
         <span class='process-icon-horizontal'></span>
         <span class='process-icon-vertical'></span>
@@ -219,17 +221,17 @@
 </div>
 {% highlight html %}
 <button class='btn btn-block btn-primary'>
-  <span class='process process-sm'>
+  <span class='process process-xs'>
     ...
   </span>
 </button>
 <button class='btn btn-block btn-default'>
-  <span class='process process-sm'>
+  <span class='process process-xs'>
     ...
   </span>
 </button>
 <button class='btn btn-success'>
-  <span class='process process-sm'>
+  <span class='process process-xs'>
     ...
   </span>
 </button>
@@ -242,7 +244,7 @@
 
   <div class='bs-example' data-example-id='process-inverse-exampels'>
     <div class='bg-info p-a-2'>
-      <span id='process-inverse-example' class='process process-md process-inverse process-stopped'>
+      <span id='process-inverse-example' class='process process-sm process-inverse process-stopped'>
         <span class='process-icon-container'>
           <span class='process-icon-horizontal'></span>
           <span class='process-icon-vertical'></span>
@@ -265,7 +267,7 @@
     </button>
   </div>
 {% highlight html %}
-<span class='process process-inverse process-md'>
+<span class='process process-inverse process-sm'>
   ...
 </span>
 {% endhighlight %}

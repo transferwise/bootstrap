@@ -1,20 +1,33 @@
-@process-lg-radius: 64px;
-@process-lg-stroke: 3px;
+@process-xl-radius: 64px;
+@process-xl-stroke: 3px;
+@process-xl-circumference: (pi() * (2 * (@process-xl-radius - 1)));
+@process-xl-icon-size: 64px;
+@process-xl-icon-stroke: 8px;
+/*
+// Keep these sizes in case we want to add these back in.
+@process-lg-radius: 48px;
+@process-lg-stroke: 2.7px;
 @process-lg-circumference: (pi() * (2 * (@process-lg-radius - 1)));
-@process-lg-icon-size: 64px;
-@process-lg-icon-stroke: 8px;
+@process-lg-icon-size: 48px;
+@process-lg-icon-stroke: 6px;
 
-@process-md-radius: 32px;
+@process-md-radius: 36px;
 @process-md-circumference: (pi() * (2 * (@process-md-radius - 1)));
 @process-md-stroke: 2.5px;
-@process-md-icon-size: 32px;
+@process-md-icon-size: 36px;
 @process-md-icon-stroke: 4px;
-
-@process-sm-radius: 12px;
+*/
+@process-sm-radius: 24px;
 @process-sm-circumference: (pi() * (2 * (@process-sm-radius - 1)));
-@process-sm-stroke: 2px;
-@process-sm-icon-size: 12px;
-@process-sm-icon-stroke: 2px;
+@process-sm-stroke: 2.4px;
+@process-sm-icon-size: 24px;
+@process-sm-icon-stroke: 3px;
+
+@process-xs-radius: 12px;
+@process-xs-circumference: (pi() * (2 * (@process-xs-radius - 1)));
+@process-xs-stroke: 2px;
+@process-xs-icon-size: 12px;
+@process-xs-icon-stroke: 2px;
 
 .process {
   position: relative;
@@ -53,7 +66,6 @@
 
 .process-icon-horizontal,
 .process-icon-vertical  {
-  border-radius: 4px;
   position: absolute;
   display: block;
   width: 0;
@@ -132,13 +144,18 @@
 
     &.process-danger {
       .process-icon-horizontal  {
-        top: ((@icon-size / 2) - (@icon-stroke / 2));
+        top: ((@icon-size - @icon-stroke) / 2);
         height: @icon-stroke;
       }
       .process-icon-vertical  {
-        left: ((@icon-size / 2) - (@icon-stroke / 2));
+        left: ((@icon-size - @icon-stroke) / 2);
         width: @icon-stroke;
       }
+    }
+
+    .process-icon-horizontal,
+    .process-icon-vertical {
+      border-radius: (@icon-stroke / 2);
     }
 
     &.process-success {
@@ -157,10 +174,21 @@
     }
   }
 }
+.process-size(xs, @process-xs-radius, @process-xs-circumference, @process-xs-stroke, @process-xs-icon-size, @process-xs-icon-stroke);
 .process-size(sm, @process-sm-radius, @process-sm-circumference, @process-sm-stroke, @process-sm-icon-size, @process-sm-icon-stroke);
-.process-size(md, @process-md-radius, @process-md-circumference, @process-md-stroke, @process-md-icon-size, @process-md-icon-stroke);
-.process-size(lg, @process-lg-radius, @process-lg-circumference, @process-lg-stroke, @process-lg-icon-size, @process-lg-icon-stroke);
+.process-size(xl, @process-xl-radius, @process-xl-circumference, @process-xl-stroke, @process-xl-icon-size, @process-xl-icon-stroke);
 
+.process-xs {
+  .process-circle {
+    animation-name: process-chase-circle-xs;
+   }
+  &.process-success,
+  &.process-danger {
+    .process-circle {
+      animation-name: process-success-circle-xs;
+    }
+  }
+}
 .process-sm {
   .process-circle {
     animation-name: process-chase-circle-sm;
@@ -172,25 +200,15 @@
     }
   }
 }
-.process-md {
+
+.process-xl {
   .process-circle {
-    animation-name: process-chase-circle-md;
+    animation-name: process-chase-circle-xl;
    }
   &.process-success,
   &.process-danger {
     .process-circle {
-      animation-name: process-success-circle-md;
-    }
-  }
-}
-.process-lg {
-  .process-circle {
-    animation-name: process-chase-circle-lg;
-   }
-  &.process-success,
-  &.process-danger {
-    .process-circle {
-      animation-name: process-success-circle-lg;
+      animation-name: process-success-circle-xl;
     }
   }
 }
@@ -229,6 +247,13 @@
   }
 }
 
+@keyframes process-chase-circle-xs {
+  .chase-circle(@process-xs-circumference);
+}
+@keyframes process-success-circle-xs {
+  .complete-circle(@process-xs-circumference);
+}
+
 @keyframes process-chase-circle-sm {
   .chase-circle(@process-sm-circumference);
 }
@@ -236,19 +261,13 @@
   .complete-circle(@process-sm-circumference);
 }
 
-@keyframes process-chase-circle-md {
-  .chase-circle(@process-md-circumference);
+@keyframes process-chase-circle-xl {
+  .chase-circle(@process-xl-circumference);
 }
-@keyframes process-success-circle-md {
-  .complete-circle(@process-md-circumference);
+@keyframes process-success-circle-xl {
+  .complete-circle(@process-xl-circumference);
 }
 
-@keyframes process-chase-circle-lg {
-  .chase-circle(@process-lg-circumference);
-}
-@keyframes process-success-circle-lg {
-  .complete-circle(@process-lg-circumference);
-}
 
 @keyframes process-width {
   to {
