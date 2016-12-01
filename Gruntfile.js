@@ -471,8 +471,8 @@ module.exports = function (grunt) {
           'Element “tw-date” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “help-modal” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “tw-progress-steps” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
-          'Element “tw-process” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
-          'Element “tw-process” not allowed as child of element “button” in this context. (Suppressing further errors from this subtree.)',
+          'Element “tw-process-todo” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “tw-process-todo” not allowed as child of element “button” in this context. (Suppressing further errors from this subtree.)',
           'Element “topup-form” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “profile-block” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “simple-nav” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)'
