@@ -6,7 +6,7 @@
 
   <div class="bs-example" data-example-id="droppable-alerts">
     <div class="droppable droppable-md">
-      <div class="m-b-panel">
+      <div class="m-b-2">
         <i class="icon icon-upload icon-xxl"></i>
       </div>
       <p class="m-b-2">Drag and drop a .CSV file less than 5MB</p>
@@ -15,7 +15,7 @@
   </div>
 {% highlight html %}
 <div class="droppable droppable-sm">
-  <div class="m-b-panel">
+  <div class="m-b-2">
     <i class="icon icon-upload icon-xxl"></i>
   </div>
   <p class="m-b-2">Drag and drop a .CSV file less than 5MB</p>
@@ -27,34 +27,82 @@
   <p>When the user has a file in position of the droppable component we want to
     signify this to the user, we add a <code>.droppable-active</code> class to
     the component.  Which displays the content of
-    <code>.droppable-active-cover</code>.</p>
+    <code>.droppable-active-cover</code>.
+  <p>During the hover phase we also add <code>.droppable-dropping</code> to gain
+    the relevant hover state.</p>
   <p>Within the cover use an empty div to enable vertical centering.</p>
 
 
 <div class="bs-example" data-example-id="droppable-active-example">
-  <div class="droppable droppable-md droppable-active">
-    <div class="m-b-panel">
-      <i class="icon icon-upload icon-xxl"></i>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="droppable droppable-md droppable-active droppable-dropping">
+        <div class="m-b-2">
+          <i class="icon icon-upload icon-xxl"></i>
+        </div>
+        <div class="droppable-desktop">
+          <p class="m-b-2">Drag and drop a .CSV file less than 5MB</p>
+          <button class="btn btn-primary">Or select file</button>
+        </div>
+        <div class="droppable-mobile">
+          <p class="m-b-2">Upload .CSV file less than 5MB</p>
+          <button class="btn btn-primary">Select file</button>
+        </div>
+        <div class="droppable-active-cover">
+          <div>
+            <h4 class="m-b-2">Drop file to start upload</h4>
+            <div class="circle circle-sm">
+              <i class="icon icon-add"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="droppable-desktop">
-      <p class="m-b-2">Drag and drop a .CSV file less than 5MB</p>
-      <button class="btn btn-primary">Or select file</button>
-    </div>
-    <div class="droppable-mobile">
-      <p class="m-b-2">Upload .CSV file less than 5MB</p>
-      <button class="btn btn-primary">Select file</button>
-    </div>
-    <div class="droppable-active-cover">
-      <div>
-        <h4 class="m-b-2 text-info">Drop file to start upload</h4>
-        <div class="circle circle-sm text-info">
-          <i class="icon icon-add"></i>
+    <div class="col-md-6">
+      <div class="droppable droppable-md droppable-active">
+        <div class="m-b-2">
+          <i class="icon icon-upload icon-xxl"></i>
+        </div>
+        <div class="droppable-desktop">
+          <p class="m-b-2">Drag and drop a .CSV file less than 5MB</p>
+          <button class="btn btn-primary">Or select file</button>
+        </div>
+        <div class="droppable-mobile">
+          <p class="m-b-2">Upload .CSV file less than 5MB</p>
+          <button class="btn btn-primary">Select file</button>
+        </div>
+        <div class="droppable-active-cover">
+          <div>
+            <h4 class="m-b-2">Uploading</h4>
+            <div>
+            <span class='process process-sm'>
+              <span class='process-icon-container'>
+                <span class='process-icon-horizontal'></span>
+                <span class='process-icon-vertical'></span>
+              </span>
+              <svg version='1.1'
+                xmlns='http://www.w3.org/2000/svg'
+                xml:space='preserve'>
+                <circle class='process-circle' cx='50%' cy='50%' r='45%'
+                  fill-opacity='0.0' />
+              </svg>
+            </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 {% highlight html %}
+<div class="droppable droppable-md droppable-active droppable-dropping">
+  ...
+  <div class="droppable-active-cover">
+    <div>
+      ...
+    </div>
+  </div>
+</div>
 <div class="droppable droppable-md droppable-active">
   ...
   <div class="droppable-active-cover">
@@ -75,7 +123,7 @@
 
   <div class="bs-example" data-example-id="droppable-mobile-example">
     <div class="droppable droppable-md">
-      <div class="m-b-panel">
+      <div class="m-b-2">
         <i class="icon icon-upload icon-xxl"></i>
       </div>
       <div class="droppable-desktop">
@@ -90,7 +138,7 @@
   </div>
 {% highlight html %}
 <div class="droppable droppable-md">
-  <div class="m-b-panel">
+  <div class="m-b-2">
     <i class="icon icon-upload icon-xxl"></i>
   </div>
   <div class="droppable-desktop">
@@ -115,7 +163,7 @@
   <div class="row m-b-3">
     <div class="col-sm-6 col-md-4">
       <div class="droppable droppable-sm">
-        <div class="m-b-panel">
+        <div class="m-b-2">
           <i class="icon icon-upload icon-xxl"></i>
         </div>
         <div class="droppable-desktop">
@@ -132,7 +180,7 @@
   <div class="row m-b-3">
     <div class="col-sm-8 col-md-6">
       <div class="droppable droppable-md">
-        <div class="m-b-panel">
+        <div class="m-b-2">
           <i class="icon icon-upload icon-xxl"></i>
         </div>
         <div class="droppable-desktop">
@@ -149,7 +197,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="droppable droppable-lg">
-        <div class="m-b-panel">
+        <div class="m-b-2">
           <i class="icon icon-upload icon-xxl"></i>
         </div>
         <div class="droppable-desktop">

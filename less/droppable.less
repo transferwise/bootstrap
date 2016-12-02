@@ -14,19 +14,19 @@
   display: none;
   width: 100%;
   height: 100%;
-  color: @brand-light-blue !important;
-  background-color: @brand-light-blue-wash;
   align-items: center;
   justify-content: center;
-}
 
-.droppable-active {
-  border: 1px solid @input-border-focus;
-
-  .droppable-active-cover {
+  .droppable-active & {
     display: flex;
+    background-color: @brand-white;
+  }
+  .droppable-dropping & {
+    color: @brand-light-blue !important;
+    background-color: @brand-light-blue-wash;
   }
 }
+
 .droppable-mobile {
   display: block;
 }
@@ -43,6 +43,19 @@
   .droppable-desktop {
     display: block;
   }
+}
+
+.droppable-active {
+  border-style: solid;
+}
+.droppable-dropping {
+  border-color: @input-border-focus;
+  h3, h4, h5, .icon {
+    color: @brand-light-blue;
+  }
+}
+.droppable-active.droppable-dropping {
+  border-style: dashed;
 }
 
 .droppable-size(@size, @padding-mobile, @padding-tablet, @padding-desktop) {

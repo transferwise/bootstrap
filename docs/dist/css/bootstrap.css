@@ -12592,8 +12592,6 @@ a.circle.active:hover {
   display: none;
   width: 100%;
   height: 100%;
-  color: #00b9ff !important;
-  background-color: #d8f1fa;
 
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -12604,14 +12602,16 @@ a.circle.active:hover {
   -ms-flex-pack: center;
           justify-content: center;
 }
-.droppable-active {
-  border: 1px solid #00b9ff;
-}
 .droppable-active .droppable-active-cover {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
+  background-color: #fff;
+}
+.droppable-dropping .droppable-active-cover {
+  color: #00b9ff !important;
+  background-color: #d8f1fa;
 }
 .droppable-mobile {
   display: block;
@@ -12629,6 +12629,21 @@ a.circle.active:hover {
   .droppable-desktop {
     display: block;
   }
+}
+.droppable-active {
+  border-style: solid;
+}
+.droppable-dropping {
+  border-color: #00b9ff;
+}
+.droppable-dropping h3,
+.droppable-dropping h4,
+.droppable-dropping h5,
+.droppable-dropping .icon {
+  color: #00b9ff;
+}
+.droppable-active.droppable-dropping {
+  border-style: dashed;
 }
 .droppable-sm,
 .droppable-sm .droppable-active-cover {
