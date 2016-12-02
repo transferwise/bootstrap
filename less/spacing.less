@@ -74,3 +74,43 @@
 
 .p-t-5 { padding-top: (@spacer-y * 5) !important; }
 .p-b-5 { padding-bottom: (@spacer-y * 5) !important; }
+
+.section,
+.section-lg,
+.footer {
+    padding-top: @spacing-3-mobile;
+    padding-bottom: @spacing-3-mobile;
+}
+@media (min-width: @screen-sm-min) {
+    .section,
+    .section-lg,
+    .footer {
+        padding-top: @spacing-3-tablet;
+        padding-bottom: @spacing-3-tablet;
+    }
+}
+@media (min-width: @screen-lg-min) {
+    .section,
+    .section-lg,
+    .footer {
+        padding-top: @spacing-3-desktop;
+        padding-bottom: @spacing-3-desktop;
+    }
+}
+
+.section-md {
+    padding-top: @spacing-2-mobile;
+    padding-bottom: @spacing-2-mobile;
+}
+@media (min-width: @screen-sm-min) {
+    .section-md {
+        padding-top: @spacing-2-tablet;
+        padding-bottom: @spacing-2-tablet;
+    }
+}
+@media (min-width: @screen-lg-min) {
+    .section-md {
+        padding-top: @spacing-2-desktop;
+        padding-bottom: @spacing-2-desktop;
+    }
+}
