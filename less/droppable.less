@@ -1,0 +1,69 @@
+
+.droppable {
+  position: relative;
+  font-size: @font-size-base;
+  text-align: center;
+  border: 1px solid @input-border;
+  border-radius: @border-radius-base;
+}
+
+.droppable-active-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: @brand-light-blue !important;
+  background-color: @brand-light-blue-wash;
+  align-items: center;
+  justify-content: center;
+}
+
+.droppable-active {
+  border: 1px solid @input-border-focus;
+
+  .droppable-active-cover {
+    display: flex;
+  }
+}
+.droppable-mobile {
+  display: block;
+}
+.droppable-desktop {
+  display: none;
+}
+@media (min-width: @screen-md-min) {
+  .droppable {
+    border-style: dashed;
+  }
+  .droppable-mobile {
+    display: none;
+  }
+  .droppable-desktop {
+    display: block;
+  }
+}
+
+.droppable-size(@size, @padding-mobile, @padding-tablet, @padding-desktop) {
+	.droppable-@{size},
+	.droppable-@{size} .droppable-active-cover {
+	  padding: @padding-mobile @padding-mobile;
+	}
+	@media (min-width: @screen-sm-min) {
+	  .droppable-@{size},
+	  .droppable-@{size} .droppable-active-cover {
+	    padding: @padding-tablet @padding-mobile;
+	  }
+	}
+	@media (min-width: @screen-lg-min) {
+	  .droppable-@{size},
+	  .droppable-@{size} .droppable-active-cover {
+	    padding: @padding-desktop @padding-tablet;
+	  }
+	}
+}
+
+.droppable-size(sm, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
+.droppable-size(md, @spacing-2-mobile, @spacing-2-tablet, @spacing-2-desktop);
+.droppable-size(lg, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
