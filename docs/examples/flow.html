@@ -66,7 +66,7 @@
 	</div>
 	<div class="container-fluid" ng-controller="PageController as ctrl">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-xs-center m-b-0 section-md">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-xs-center m-y-section-2">
 				<h2 ng-if="!ctrl.completed">How much would you like to top up?</h2>
 				<h2 ng-if="ctrl.completed">Great success! Much progress!</h2>
 			</div>
@@ -76,7 +76,7 @@
 				<topup-form
 					on-submit="ctrl.onSubmit()"
 					on-complete="ctrl.onComplete()"></topup-form>
-				<div class="text-xs-center section">
+				<div class="text-xs-center m-y-section-3">
 					&copy; TransferWise 2016
 				</div>
 			</div>
