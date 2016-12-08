@@ -477,7 +477,8 @@ module.exports = function (grunt) {
           'Element “topup-form” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “profile-block” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
           'Element “simple-nav” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
-          'Element “side-nav” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)'
+          'Element “side-nav” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)',
+          'Element “activity-filters” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)'
         ],
         'attr-name-style': false,
         'label-req-for': false,

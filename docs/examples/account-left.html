@@ -86,87 +86,239 @@
 	</script>
 </head>
 <body ng-app="ExampleApp" class="bg-default">
-<div class="column-layout" ng-controller="PageController as ctrl">
-<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}">
-	<div class="column-layout-top">
-		<side-nav></side-nav>
-	</div>
-
-	<div class="column-layout-bottom">
-		<a class="btn btn-success btn-block" href="flow.html">Create</a>
-	</div>
+<div class="top-nav" style="">
+	<simple-nav on-burger-click="ctrl.burgerToggle()"></simple-nav>
 </div>
-<div class="column-layout-main">
-	<div class="m-t-2">
-		<simple-nav on-burger-click="ctrl.burgerToggle()"></simple-nav>
-	</div>
-	<div class="p-t-2 p-b-1 hidden-xs">
-		<div class="container-fluid">
-			<profile-block></profile-block>
+<div class="column-layout" ng-controller="PageController as ctrl">
+	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}">
+		<div class="column-layout-top">
+			<!-- -->
+			<div class="p-y-2 p-x-2">
+				<div class="btn-group btn-block">
+					<button type="button" class="btn btn-success">
+						<span class="hidden-xs hidden-sm hidden-md">Send money</span>
+						<span class="hidden-lg hidden-xl">Send</span>
+					</button>
+					<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						<span class="caret" style="position: absolute; top: 16px; right: 20px;"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href=""><i class="icon icon-send"></i>Send money</a></li>
+						<li class="divider"></li>
+						<li><a href=""><i class="icon icon-request"></i>Request money</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- -->
+			<div class="p-t-1">
+				<side-nav></side-nav>
+			</div>
 		</div>
-	</div>
-	<div class="container-fluid">
-		<next-cards show="1"></next-cards>
 
-		<div class="panel">
-			<div class="panel-heading">
-				<div class="row">
-					<div class="col-md-6 col-lg-8">
-						<h3 class="panel-title">
-							In progress ({{ctrl.activeTransfers.length}})
-						</h3>
-					</div>
-					<div class="col-md-6 col-lg-4 m-b-1">
-						<div class="input-group input-group-sm m-t-1">
-							<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
-							<input type="text" class="form-control" placeholder="Search..." />
-							 <span class="input-group-btn">
-								 <button class="btn btn-sm btn-addon">Go</button>
-							</span>
+		<div class="column-layout-bottom">
+			<div id="carousel-example-generic" class="carousel slide m-a-2" data-ride="carousel" style="margin-top: 560px !important;">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner p-b-2" role="listbox">
+			    <div class="item active">
+			        <div class="media">
+								<div class="media-left text-info">
+									<i class="icon icon-gift icon-xxl"></i>
+								</div>
+								<div class="media-body text-xs-left text-max-width">
+									<h3 class="h5 m-b-0">Earn £50 credit</h3>
+									<p>Give someone a free transfer for up to £500</p>
+								</div>
+							</div>
+			    </div>
+			    <div class="item">
+			        <div class="media">
+								<div class="media-left text-info">
+									<i class="icon icon-request icon-xxl"></i>
+								</div>
+								<div class="media-body text-xs-left text-max-width">
+									<h3 class="h5 m-b-0">Request money</h3>
+									<p>from friends and family and customers</p>
+								</div>
+							</div>
+			    </div>
+			    <div class="item">
+			        <div class="media">
+								<div class="media-left text-info">
+									<i class="icon icon-line-graph icon-xxl"></i>
+								</div>
+								<div class="media-body text-xs-left text-max-width">
+									<h3 class="h5 m-b-0">Rate alerts</h3>
+									<p>sign up no to be alerted when the rate reaches your chosen value</p>
+								</div>
+							</div>
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="margin-top: 128px;">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="margin-top: 128px;">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+			<!--
+			<div class="btn-group btn-block dropup">
+				<button type="button" class="btn btn-success">
+					<span class="hidden-xs hidden-sm hidden-md">Send money</span>
+					<span class="hidden-lg hidden-xl">Send</span>
+				</button>
+				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					<span class="caret rotate180" style="position: absolute; top: 16px; right: 20px;"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu dropdown-menu-lg text-primary p-a-3" role="menu" style="width: 800px; margin-bottom: 64px;">
+					<h3 class="text-primary m-b-2">Create</h3>
+					<div class="row row-equal-height">
+						<div class="col-xs-12 col-sm-6 m-b-0">
+							<div class="tile" tabindex="0" role="button">
+								<div class="tile-icon">
+									<div class="circle circle-lg circle-responsive">
+										<i class="icon icon-send"></i>
+									</div>
+								</div>
+								<div class="tile-text">
+									<h5 class="text-primary">Send money</h5>
+									<p>Send money to a bank account or person</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 m-b-0">
+							<div class="tile" tabindex="0" role="button">
+								<div class="tile-icon">
+									<div class="circle circle-lg circle-responsive">
+										<i class="icon icon-request"></i>
+									</div>
+								</div>
+								<div class="tile-text">
+									<h5 class="text-primary">Request money</h5>
+									<p>Request a specific amount of money from someone</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 m-b-0">
+							<div class="tile" tabindex="0" role="button">
+								<div class="tile-icon">
+									<div class="circle circle-lg circle-responsive">
+										<i class="icon icon-gift"></i>
+									</div>
+								</div>
+								<div class="tile-text">
+									<h5 class="text-primary">Invite friends</h5>
+									<p>Invite friends to earn rewards</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 m-b-0">
+							<div class="tile" tabindex="0" role="button">
+								<div class="tile-icon">
+									<div class="circle circle-lg circle-responsive">
+										<i class="icon icon-line-graph"></i>
+									</div>
+								</div>
+								<div class="tile-text">
+									<h5 class="text-primary">Create rate alert</h5>
+									<p>Be notified when a rate hits a specific value</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<transfer-list
-				transfers="ctrl.activeTransfers"
-				currencies="ctrl.currencies"
-				inactive="false">
-			</transfer-list>
-		</div>
-
-		<div class="panel">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					Recent ({{ctrl.historicTransfers.length}})
-				</h3>
-			</div>
-			<transfer-list
-				transfers="ctrl.historicTransfers"
-				currencies="ctrl.currencies"
-				inactive="true">
-			</transfer-list>
-			<div class="panel-footer">
-				<pagination page="1" total="200"></pagination>
-			</div>
-		</div>
-
-		<div class="text-xs-center section">
-			&copy; TransferWise 2016
+			<!- -->
 		</div>
 	</div>
-</div>
-<div class="column-layout-cover"
-	ng-class="{in: ctrl.open}"
-	ng-click="ctrl.open = !ctrl.open;">
-	<a class="close">&times;</a>
-</div>
-<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
-	<ul class="nav nav-justified nav-inverse">
-		<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
-		<li class="active"><a href="">Activity</a></li>
-		<li><a href="" ng-click="ctrl.open = !ctrl.open">More...</a></li>
-	</ul>
-</div>
+	<div class="column-layout-main">
+
+		<div class="">
+			<div class="container-fluid">
+				<div class="m-t-3 m-b-5">
+					<next-cards show="3"></next-cards>
+				</div>
+
+				<div class="">
+					<profile-block></profile-block>
+				</div>
+
+				<div class="m-t-3 hidden-xl">
+					<activity-filters></activity-filters>
+				</div>
+
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-7 col-md-8 col-xl-9">
+								<h6 class="panel-title">
+									In progress ({{ctrl.activeTransfers.length}})
+								</h6>
+							</div>
+							<div class="col-sm-5 col-md-4 col-xl-3 m-b-1">
+								<div class="input-group input-group-sm m-t-1">
+									<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
+									<input type="text" class="form-control" placeholder="Search..." />
+									 <span class="input-group-btn">
+										 <button class="btn btn-sm btn-addon">Go</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<transfer-list
+						transfers="ctrl.activeTransfers"
+						currencies="ctrl.currencies"
+						inactive="false">
+					</transfer-list>
+				</div>
+
+				<div class="panel">
+					<div class="panel-heading">
+						<h6 class="panel-title">
+							Recent ({{ctrl.historicTransfers.length}})
+						</h6>
+					</div>
+					<transfer-list
+						transfers="ctrl.historicTransfers"
+						currencies="ctrl.currencies"
+						inactive="true">
+					</transfer-list>
+					<div class="panel-footer">
+						<pagination page="1" total="200"></pagination>
+					</div>
+				</div>
+
+				<div class="text-xs-center section">
+					&copy; TransferWise 2016
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column-layout-cover"
+		ng-class="{in: ctrl.open}"
+		ng-click="ctrl.open = !ctrl.open;">
+		<a class="close">&times;</a>
+	</div>
+	<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
+		<ul class="nav nav-justified nav-inverse">
+			<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
+			<li class="active"><a href="">Activity</a></li>
+			<li><a href="" ng-click="ctrl.open = !ctrl.open">More...</a></li>
+		</ul>
+	</div>
 </div>
 </body>
 </html>
