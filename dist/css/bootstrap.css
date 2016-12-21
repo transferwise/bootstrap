@@ -12751,6 +12751,9 @@ a.circle.active:hover {
   height: 100%;
   padding: inherit;
   background-color: #fff;
+  -webkit-transition: -webkit-transform .3s ease;
+       -o-transition:      -o-transform .3s ease;
+          transition:         transform .3s ease;
 
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -12799,9 +12802,9 @@ a.circle.active:hover {
   display: none;
   color: #00b9ff !important;
   background-color: #d8f1fa;
-  -webkit-animation: fade-in .15s 0s linear forwards;
-       -o-animation: fade-in .15s 0s linear forwards;
-          animation: fade-in .15s 0s linear forwards;
+  -webkit-animation: droppable-fade-in .15s 0s linear forwards;
+       -o-animation: droppable-fade-in .15s 0s linear forwards;
+          animation: droppable-fade-in .15s 0s linear forwards;
 }
 .droppable-dropping .droppable-dropping-card {
   display: -webkit-box;
@@ -12811,9 +12814,6 @@ a.circle.active:hover {
 }
 .droppable-processing-card {
   display: none;
-  -webkit-transition: -webkit-transform .3s ease;
-       -o-transition:      -o-transform .3s ease;
-          transition:         transform .3s ease;
 }
 .droppable-processing-card .droppable-card-content {
   opacity: 1;
@@ -12849,10 +12849,6 @@ a.circle.active:hover {
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
-  background-color: #fff;
-  -webkit-transition: -webkit-transform .3s ease;
-       -o-transition:      -o-transform .3s ease;
-          transition:         transform .3s ease;
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
        -o-transform: translateX(100%);
@@ -12973,7 +12969,7 @@ a.circle.active:hover {
     padding: 96px 72px;
   }
 }
-@-webkit-keyframes fade-in {
+@-webkit-keyframes droppable-fade-in {
   from {
     opacity: 0;
   }
@@ -12981,7 +12977,7 @@ a.circle.active:hover {
     opacity: 1;
   }
 }
-@-o-keyframes fade-in {
+@-o-keyframes droppable-fade-in {
   from {
     opacity: 0;
   }
@@ -12989,7 +12985,7 @@ a.circle.active:hover {
     opacity: 1;
   }
 }
-@keyframes fade-in {
+@keyframes droppable-fade-in {
   from {
     opacity: 0;
   }

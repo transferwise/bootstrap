@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: center;
   padding: inherit;
+  transition: transform .3s ease;
 }
 .droppable-card-content {
   max-width: 100%;
@@ -61,7 +62,7 @@
 
 .droppable-dropping-card {
   display: none;
-  animation: fade-in .15s 0s linear forwards;
+  animation: droppable-fade-in .15s 0s linear forwards;
   color: @brand-light-blue !important;
   background-color: @brand-light-blue-wash;
   z-index: 1;
@@ -73,7 +74,6 @@
 // Processing hidden by default
 .droppable-processing-card {
   display: none;
-  transition: transform .3s ease;
   .droppable-card-content {
     opacity: 1;
   }
@@ -100,9 +100,7 @@
 // Completed card translated out and hidden by default
 .droppable-complete-card {
   display: flex;
-  background-color: #fff;
   transform: translateX(100%);
-  transition: transform .3s ease;
   .droppable-card-content {
     opacity: 0;
   }
@@ -199,7 +197,7 @@
 .droppable-size(lg, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
 
 
-@keyframes fade-in {
+@keyframes droppable-fade-in {
   from {
     opacity: 0;
   }
