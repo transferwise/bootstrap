@@ -399,6 +399,7 @@ module.exports = function (grunt) {
           'Element "img" is missing required attribute "src".',
           'Attribute “disabled” not allowed on element “a” at this point.',
           'Attribute "ng-app" not allowed on element "body" at this point.',
+          'Attribute “ng-controller” not allowed on element “body” at this point.',
           'Attribute "ng-controller" not allowed on element "header" at this point.',
           'Attribute “ng-controller” not allowed on element “div” at this point.',
           'Attribute "ng-bind" not allowed on element "span" at this point.',

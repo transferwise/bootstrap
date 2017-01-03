@@ -2,34 +2,24 @@
 
 .column-layout {
   position: relative;
-
-  width: 100%;
-  // top: 0;
-
+  width: calc(100% + 264px);
+  transform: translateX(-264px);
+  transition: transform 0.5s ease, width 0.5s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 .column-layout-left,
 .column-layout-right {
-  position: absolute;;
   width: @column-width;
-  height: 100%;
-  vertical-align: top;
   z-index: 3;
   transition: transform ease 0.5s;
-  top: 0;
+}
 
-
-}
-.column-layout-left {
-  transform: translateX(-@column-width);
-}
-.column-layout-right {
-  right: 0;
-  transform: translateX(@column-width);
-  z-index: 10000;
-}
 .column-layout-left.open,
 .column-layout-right.open {
-  transform: translateX(0);
+  transform: translateX(264px);
 }
 .column-layout-main {
   width: 100%;
@@ -49,36 +39,24 @@
 }
 */
 .column-layout-top {
-  // position: fixed;
-  //top: 0;
+  align-self: flex-start;
   width: @column-width;
 }
 .column-layout-bottom {
-  //position: fixed;
-  bottom: 0;
   width: @column-width;
   padding: 24px;
+  align-self: flex-end;
 }
 @media (min-width: @screen-lg-min) {
   .column-layout {
-    //display: table;
-
-    min-height: 100vh;
-    //flex-direction: column;
-    display: flex;
+    width: 100%;
+    transform: translateX(0);
   }
   .column-layout-left,
   .column-layout-right {
-    position: inherit;
-    //display: table-cell;
-    transform: none;
-    display: flex;
     flex: 0 0 @column-width;
   }
   .column-layout-main {
-    //display: table-cell;
-    vertical-align: top;
-    //width: auto;
     flex-grow: 1;
   }
 }
@@ -102,7 +80,7 @@
 }
 .column-layout-cover .close {
   position: absolute;
-  left: (@column-width + 20px);
+  left: ((2 * @column-width) + 20px);
   top: 31px;
   opacity: 0;
   transition: opacity 0.35s ease;

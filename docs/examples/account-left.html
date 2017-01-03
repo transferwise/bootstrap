@@ -85,11 +85,11 @@
 	})(window.angular);
 	</script>
 </head>
-<body ng-app="ExampleApp" class="bg-default">
+<body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
 <div class="top-nav" style="">
 	<simple-nav on-burger-click="ctrl.burgerToggle()"></simple-nav>
 </div>
-<div class="column-layout" ng-controller="PageController as ctrl">
+<div class="column-layout">
 	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}">
 		<div class="column-layout-top">
 			<!-- -->
