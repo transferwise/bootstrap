@@ -2,8 +2,8 @@
 
 .column-layout {
   position: relative;
-  width: calc(100% + 264px);
-  transform: translateX(-264px);
+  width: calc(100% + @column-width);
+  transform: translateX(-@column-width);
   transition: transform 0.5s ease, width 0.5s ease;
   min-height: 100vh;
   display: flex;
@@ -13,6 +13,7 @@
 .column-layout-left,
 .column-layout-right {
   width: @column-width;
+  min-width: @column-width;
   z-index: 3;
   transition: transform ease 0.5s;
 }
@@ -23,6 +24,7 @@
 }
 .column-layout-main {
   width: 100%;
+  flex-grow: 1;
 }
 /*
 @media (min-width: @screen-sm-min) {
@@ -51,13 +53,6 @@
   .column-layout {
     width: 100%;
     transform: translateX(0);
-  }
-  .column-layout-left,
-  .column-layout-right {
-    flex: 0 0 @column-width;
-  }
-  .column-layout-main {
-    flex-grow: 1;
   }
 }
 .column-layout-cover {
@@ -100,5 +95,11 @@
   // apply to body to prevent background scrolling
   .column-layout-open {
     overflow: hidden;
+  }
+  .column-layout-main {
+    margin-left: @column-width;
+  }
+  .column-layout-left + .column-layout-main {
+    margin-left: 0;
   }
 }

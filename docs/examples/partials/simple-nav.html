@@ -1,7 +1,7 @@
-<nav class="navbar navbar-default m-b-0">
+<nav class="navbar navbar-default m-b-0 simple-nav">
 	<!-- We use the fluid option here to avoid overriding the fixed width of a
 	normal container within the narrow content columns. -->
-	<div class="container-fluid">
+	<div ng-class="{'container': !$ctrl.fluid, 'container-fluid': $ctrl.fluid}">
 		<div class="navbar-header pull-xs-left">
 			<button type="button"
 				class="navbar-toggle visible-xs-block visible-sm-block visible-md-block collapsed"
@@ -12,13 +12,45 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="../"
+			<ul class="nav navbar-nav visible-xs-block visible-sm-block visible-md-block">
+				<li>
+					<a href=""
+						class="p-l-0"
+						ng-click="$ctrl.onBurgerClick && $ctrl.onBurgerClick()"
+						aria-expanded="false">
+						Menu
+					</a>
+				</li>
+			</ul>
+			<!--<a href="../"
 				class="logo-text logo-text-inverse visible-xs-block visible-sm-block visible-md-block"
 				title="TransferWise"></a>
 			<a href="../"
 				class="navbar-brand hidden-xs hidden-sm hidden-md">
 				TransferWise
 			</a>
+			-->
+			<h1 style="margin-top: 12px;" class="hidden-xs hidden-sm hidden-md h3">Activity</h1>
+		</div>
+
+		<!--<div class="navbar-right hidden-lg hidden-xl">-->
+		<div class="navbar-right">
+			<div class="navbar-btn btn-group m-l-3">
+				<button type="button" class="btn btn-success">
+					<span class="hidden-xs" ng-bind="$ctrl.translations[$ctrl.language].send1"></span>
+					<span class="hidden-sm hidden-md hidden-lg hidden-xl" ng-bind="$ctrl.translations[$ctrl.language].send2"></span>
+				</button>
+				<button type="button" class="btn btn-success dropdown-toggle"
+					data-toggle="dropdown" aria-expanded="false">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-xs-right" role="menu">
+					<li><a href=""><i class="icon icon-send"></i>Send money</a></li>
+					<li class="divider"></li>
+					<li><a href=""><i class="icon icon-request"></i>Request money</a></li>
+				</ul>
+			</div>
 		</div>
 
 		<ul class="nav navbar-nav navbar-right pull-xs-right">

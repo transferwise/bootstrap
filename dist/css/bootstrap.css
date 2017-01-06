@@ -5611,6 +5611,7 @@ fieldset[disabled] .btn-addon.active {
 .column-layout-right {
   z-index: 3;
   width: 264px;
+  min-width: 264px;
   -webkit-transition: -webkit-transform ease .5s;
        -o-transition:      -o-transform ease .5s;
           transition:         transform ease .5s;
@@ -5624,6 +5625,11 @@ fieldset[disabled] .btn-addon.active {
 }
 .column-layout-main {
   width: 100%;
+
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 /*
 @media (min-width: @screen-sm-min) {
@@ -5661,19 +5667,6 @@ fieldset[disabled] .btn-addon.active {
         -ms-transform: translateX(0);
          -o-transform: translateX(0);
             transform: translateX(0);
-  }
-  .column-layout-left,
-  .column-layout-right {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 264px;
-        -ms-flex: 0 0 264px;
-            flex: 0 0 264px;
-  }
-  .column-layout-main {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
   }
 }
 .column-layout-cover {
@@ -5720,6 +5713,12 @@ fieldset[disabled] .btn-addon.active {
 @media (max-width: 991px) {
   .column-layout-open {
     overflow: hidden;
+  }
+  .column-layout-main {
+    margin-left: 264px;
+  }
+  .column-layout-left + .column-layout-main {
+    margin-left: 0;
   }
 }
 .fade {

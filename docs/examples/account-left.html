@@ -12,7 +12,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="../dist/js/bootstrap.min.js"></script>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.17/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 
 	<script src="forms.js"></script>
 
@@ -57,10 +57,10 @@
 		]);
 
 		function PageController(TransferService, CurrencyService) {
-			var vm = this;
+			var $ctrl = this;
 
 			CurrencyService.map().then(function(currencies) {
-				vm.currencies = currencies;
+				$ctrl.currencies = currencies;
 			});
 
 			TransferService.list({status: [
@@ -68,64 +68,54 @@
 				"AWAITING_FUNDS",
 				"PROCESSING"
 			]}).then(function(transfers) {
-				vm.activeTransfers = transfers;
+				$ctrl.activeTransfers = transfers;
 			});
 
 			TransferService.list({status: [
 				"COMPLETED",
 				"CANCELLED",
 			]}).then(function(transfers) {
-				vm.historicTransfers = transfers;
+				$ctrl.historicTransfers = transfers;
 			});
 
-			vm.burgerToggle = function() {
-				vm.open = !vm.open;
+			$ctrl.burgerToggle = function() {
+				$ctrl.open = !$ctrl.open;
 			}
+			$ctrl.sideNavToggle = function() {
+				console.log('temp 1: '+ $ctrl.sideNav);
+				$ctrl.sideNav = !$ctrl.sideNav;
+
+				console.log('temp 2: '+ $ctrl.sideNav);
+			}
+			$ctrl.sideNav = true;
 		}
 	})(window.angular);
 	</script>
 </head>
 <body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
-<div class="top-nav" style="">
-	<simple-nav on-burger-click="ctrl.burgerToggle()"></simple-nav>
-</div>
+<nav-bar ng-if="!ctrl.sideNav" fluid="ctrl.sideNav"></nav-bar>
 <div class="column-layout">
-	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}">
+	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}" ng-if="ctrl.sideNav">
 		<div class="column-layout-top">
-			<!-- -->
-			<div class="p-y-2 p-x-2">
-				<div class="btn-group btn-block">
-					<button type="button" class="btn btn-success">
-						<span class="hidden-xs hidden-sm hidden-md">Send money</span>
-						<span class="hidden-lg hidden-xl">Send</span>
-					</button>
-					<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<span class="caret" style="position: absolute; top: 16px; right: 20px;"></span>
-						<span class="sr-only">Toggle Dropdown</span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href=""><i class="icon icon-send"></i>Send money</a></li>
-						<li class="divider"></li>
-						<li><a href=""><i class="icon icon-request"></i>Request money</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- -->
-			<div class="p-t-1">
-				<side-nav></side-nav>
-			</div>
+			<!--
+			<a href="../"
+				class="logo logo-inverse visible-xs-block visible-sm-block visible-md-block logo-3 m-b-3"
+				title="TransferWise"></a>
+			<!- -->
+			<side-nav></side-nav>
 		</div>
 
 		<div class="column-layout-bottom">
+
+			<!--
 			<div id="carousel-example-generic" class="carousel slide m-a-2" data-ride="carousel" style="margin-top: 560px !important;">
-			  <!-- Indicators -->
+
 			  <ol class="carousel-indicators">
 			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 			  </ol>
 
-			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner p-b-2" role="listbox">
 			    <div class="item active">
 			        <div class="media">
@@ -162,7 +152,7 @@
 			    </div>
 			  </div>
 
-			  <!-- Controls -->
+
 			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="margin-top: 128px;">
 			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			    <span class="sr-only">Previous</span>
@@ -172,6 +162,7 @@
 			    <span class="sr-only">Next</span>
 			  </a>
 			</div>
+		-->
 			<!--
 			<div class="btn-group btn-block dropup">
 				<button type="button" class="btn btn-success">
@@ -244,66 +235,80 @@
 		</div>
 	</div>
 	<div class="column-layout-main">
-
-		<div class="">
-			<div class="container-fluid">
-				<div class="m-t-3 m-b-5">
-					<next-cards show="3"></next-cards>
+		<div class="top-nav" ng-if="ctrl.sideNav">
+			<simple-nav on-burger-click="ctrl.burgerToggle()" fluid="ctrl.sideNav"></simple-nav>
+		</div>
+		<div ng-class="{'container': !ctrl.sideNav, 'container-fluid': ctrl.sideNav}">
+			<div class="row">
+				<div class="col-sm-6 col-md-7 col-xl-9">
+					<h1 class="hidden-lg hidden-xl m-t-3 h3">Activity</h1>
 				</div>
-
-				<div class="">
-					<profile-block></profile-block>
+				<div class="col-sm-6 col-md-5 col-xl-3 hidden-lg hidden-xl">
+					<div class="input-group input-group-sm m-t-3">
+						<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
+						<input type="text" class="form-control" placeholder="Search..." />
+						<span class="input-group-btn">
+							 <button class="btn btn-sm btn-primary" ng-click="ctrl.sideNavToggle()">Go</button>
+						</span>
+					</div>
 				</div>
+			</div>
+			<!--<div class="m-t-panel m-b-panel">
+				<next-cards show="2"></next-cards>
+			</div>-->
+			<!--
+			<div class="">
+				<profile-block></profile-block>
+			</div>
+		-->
+			<div class="m-t-3 hidden-xl">
+				<activity-filters></activity-filters>
+			</div>
 
-				<div class="m-t-3 hidden-xl">
-					<activity-filters></activity-filters>
-				</div>
-
-				<div class="panel">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-sm-7 col-md-8 col-xl-9">
-								<h6 class="panel-title">
-									In progress ({{ctrl.activeTransfers.length}})
-								</h6>
-							</div>
-							<div class="col-sm-5 col-md-4 col-xl-3 m-b-1">
-								<div class="input-group input-group-sm m-t-1">
-									<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
-									<input type="text" class="form-control" placeholder="Search..." />
-									 <span class="input-group-btn">
-										 <button class="btn btn-sm btn-addon">Go</button>
-									</span>
-								</div>
+			<div class="panel m-t-2">
+				<div class="panel-heading p-t-0">
+					<div class="row">
+						<div class="col-sm-6 col-md-7 col-xl-9">
+							<h6 class="panel-title">
+								In progress ({{ctrl.activeTransfers.length}})
+							</h6>
+						</div>
+						<div class="col-sm-6 col-md-5 col-xl-3 hidden-xs hidden-sm hidden-md">
+							<div class="input-group input-group-sm m-t-1">
+								<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
+								<input type="text" class="form-control" placeholder="Search..." />
+								<span class="input-group-btn">
+									 <button class="btn btn-sm btn-primary" ng-click="ctrl.sideNavToggle()">Go</button>
+								</span>
 							</div>
 						</div>
 					</div>
-					<transfer-list
-						transfers="ctrl.activeTransfers"
-						currencies="ctrl.currencies"
-						inactive="false">
-					</transfer-list>
 				</div>
+				<transfer-list
+					transfers="ctrl.activeTransfers"
+					currencies="ctrl.currencies"
+					inactive="false">
+				</transfer-list>
+			</div>
 
-				<div class="panel">
-					<div class="panel-heading">
-						<h6 class="panel-title">
-							Recent ({{ctrl.historicTransfers.length}})
-						</h6>
-					</div>
-					<transfer-list
-						transfers="ctrl.historicTransfers"
-						currencies="ctrl.currencies"
-						inactive="true">
-					</transfer-list>
-					<div class="panel-footer">
-						<pagination page="1" total="200"></pagination>
-					</div>
+			<div class="panel">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						Recent ({{ctrl.historicTransfers.length}})
+					</h6>
 				</div>
+				<transfer-list
+					transfers="ctrl.historicTransfers"
+					currencies="ctrl.currencies"
+					inactive="true">
+				</transfer-list>
+				<div class="panel-footer">
+					<pagination page="1" total="200"></pagination>
+				</div>
+			</div>
 
-				<div class="text-xs-center section">
-					&copy; TransferWise 2016
-				</div>
+			<div class="text-xs-center section">
+				&copy; TransferWise 2016
 			</div>
 		</div>
 	</div>
@@ -312,6 +317,7 @@
 		ng-click="ctrl.open = !ctrl.open;">
 		<a class="close">&times;</a>
 	</div>
+	<!--
 	<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
 		<ul class="nav nav-justified nav-inverse">
 			<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
@@ -319,6 +325,7 @@
 			<li><a href="" ng-click="ctrl.open = !ctrl.open">More...</a></li>
 		</ul>
 	</div>
+	-->
 </div>
 </body>
 </html>

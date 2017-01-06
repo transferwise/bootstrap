@@ -3,7 +3,7 @@
 	role="banner"
 	data-spy="affix"
 	data-offset-top="60">
-	<div class="container">
+	<div ng-class="{'container': !$ctrl.fluid, 'container-fluid': $ctrl.fluid}">
 		<div class="navbar-header pull-xs-left">
 			<button class="navbar-toggle collapsed" type="button"
 				data-toggle="collapse"
