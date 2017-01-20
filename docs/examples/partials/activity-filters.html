@@ -1,34 +1,52 @@
 <div class="row">
-	<div class="col-sm-6 col-lg-3 m-b-2">
-		<tw-select options="[{value:'all',label:'All'}]"
-			ng-model="$ctrl.type"
-			ng-required="true"></tw-select>
+	<div class="col-sm-8 col-lg-9 m-b-2" ng-if="!$ctrl.searching">
+		<div class="btn-toolbar btn-toolbar-sm">
+			<button class="btn btn-success btn-sm">Send money</button>
+			<button class="btn btn-info btn-sm">Add money</button>
+			<button class="btn btn-info btn-sm">Receive</button>
+		</div>
 	</div>
-	<div class="col-sm-6 col-lg-3 m-b-2">
-		<div class="input-group">
+
+	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+		<tw-select options="$ctrl.activityTypes"
+			ng-model="$ctrl.type"
+			ng-required="true"
+			size="sm"
+			ng-if="$ctrl.size !== 'sm'"></tw-select>
+	</div>
+	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+		<div class="input-group input-group-sm">
 			<span class="input-group-addon">
 				<label class="control-label">From</label>
 			</span>
 			<input class="form-control" value="01 May 2016" />
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-3 m-b-2">
-		<div class="input-group">
+	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+		<div class="input-group input-group-sm">
 			<span class="input-group-addon">
 				<label class="control-label">To</label>
 			</span>
 			<input class="form-control" value="22 May 2016" />
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-3 m-b-2">
-		<div class="input-group">
+
+	<div class="col-lg-3 m-b-2" ng-class="{'col-sm-6': $ctrl.searching, 'col-sm-4': !$ctrl.searching}">
+		<div class="input-group input-group-sm">
+
+			<input id="search-input" class="form-control" placeholder="Search..." ng-focus="$ctrl.searching = true" />
 			<span class="input-group-addon">
-				<i class="icon icon-search"></i>
+				<i class="icon icon-search" ng-if="!$ctrl.searching"></i>
+				<a href="" ng-click="$ctrl.searching = false;" ng-if="$ctrl.searching">
+					<i class="icon icon-close"></i>
+				</a>
 			</span>
-			<input class="form-control" placeholder="Search..." />
-			<span class="input-group-btn">
-				<button class="btn btn-addon">Go</button>
-			</span>
+			<!--<span class="input-group-btn">
+				<button class="btn btn-primary" ng-click="$ctrl.onSizeSwitch()">Go</button>
+			</span>-->
 		</div>
+		<!--
+		<button class="btn btn-primary btn-md btn-block" ng-click="$ctrl.onSizeSwitch()">Search</button>
+		-->
 	</div>
 </div>

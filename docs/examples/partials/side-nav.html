@@ -1,47 +1,33 @@
 
 
-<div class="p-x-panel p-y-2">
-	<!--
+<div class="p-x-panel brand-section">
+
 	<a href="../"
-		class="logo logo-inverse visible-xs-block visible-sm-block visible-md-block logo-3"
+		class="logo navbar-logo logo-inverse"
 		title="TransferWise"></a>
 
-	<div class="btn-group btn-block hidden-xs hidden-sm hidden-md">
-	-->
-	<a href="../"
-		class="logo logo-inverse m-t-1 m-b-2 visible-xs-block visible-sm-block visible-md-block visible-lg-block visible-xl-block logo-3"
-		title="TransferWise"></a>
-
-	<div class="btn-group btn-block hidden-xs hidden-sm hidden-md hidden-lg hidden-xl">
-		<button type="button" class="btn btn-success">
-			<span class="hidden-xs hidden-sm hidden-md">Send money</span>
-			<span class="hidden-lg hidden-xl">Send</span>
-		</button>
-		<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			<span class="caret" style="position: absolute; top: 16px; right: 20px;"></span>
-			<span class="sr-only">Toggle Dropdown</span>
-		</button>
-		<ul class="dropdown-menu" role="menu">
-			<li><a href=""><i class="icon icon-send"></i>Send money</a></li>
-			<li class="divider"></li>
-			<li><a href=""><i class="icon icon-request"></i>Request money</a></li>
-		</ul>
-	</div>
 </div>
+<!--
+<div class="p-x-panel p-b-2">
+	<button class="btn btn-success btn-block">Send money</button>
+</div>
+-->
 
 <ul class="nav nav-stacked nav-inverse m-b-1">
 	<li class="active"><a href="">Activity</a></li>
 	<li><a href="">Balances</a></li>
 	<li><a href="">History</a></li>
 	<li><a href="">Recipients</a></li>
-	<li><a href="">Invite Friends</a></li>
+	<li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
+	<li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
 </ul>
 
 
+
 <!--
-<div class="p-x-3 m-t-4">
+<div class="p-x-panel m-t-4">
 	<a href="flow.html" class="pull-xs-right text-inverse">top up</a>
-	<h4 class="m-b-2">Balance</h4>
+	<h4 class="m-b-2">Balances</h4>
 </div>
 <ul class="nav nav-stacked nav-inverse m-b-2">
 	<li><a href="">GBP <span class="pull-xs-right">£1,234.56</span></a></li>

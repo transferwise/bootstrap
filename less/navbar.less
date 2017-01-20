@@ -165,8 +165,13 @@
   float: left;
   padding: @navbar-padding-vertical @navbar-padding-horizontal (@navbar-padding-vertical - 3px);
   font-size: @font-size-large;
-  line-height: @line-height-computed;
+  line-height: @navbar-line-height;
   height: @navbar-height;
+
+  margin-top: 12px;
+  margin-right: 10px;
+  height: 24px;
+  width: 118px;
 
   &:hover,
   &:focus {
@@ -234,13 +239,17 @@
 
 .navbar-nav {
   > li > a {
-    padding: (@line-height-computed / 2) @navbar-padding-horizontal;
-    line-height: @line-height-computed;
+    padding: 4px @navbar-padding-horizontal;
+    line-height: @navbar-line-height;
     outline-offset: -1px;
 
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
         padding-left: 12px;
         padding-right: 12px;
+    }
+
+    &.dropdown-toggle {
+      height: (@navbar-line-height + (2 * @navbar-padding-vertical));
     }
   }
   > li.divider {
@@ -269,16 +278,13 @@
         }
     }
 
-    > li > a {
-        color: @nav-link-color;
-    }
-
     > li.divider {
       display: block;
       .nav-divider(@dropdown-divider-bg);
     }
 
     > li > a {
+      color: @nav-link-color;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -460,7 +466,7 @@
       color: @navbar-default-link-color;
 
       @media (min-width: @grid-float-breakpoint) {
-          border-bottom: 3px solid transparent;
+        border-bottom: 3px solid transparent;
       }
 
       &:hover,
@@ -657,10 +663,6 @@
 .navbar-inverse .navbar-brand {
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    margin-top: 10px;
-    margin-right: 10px;
-    height: 16px;
-    width: 118px;
 
     color: transparent;
 
@@ -792,7 +794,8 @@
     padding-bottom: 3px;
 
     .caret {
-        margin-top: -16px;
+      vertical-align: top;
+      line-height: @navbar-line-height;
     }
 
     .text-ellipses,
@@ -856,4 +859,43 @@
         background-color: @navbar-collapse-bg;
         border-bottom-color: transparent;
     }
+}
+
+
+.navbar-title {
+  float: left;
+  font-size: 22px;
+  line-height: 30px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+.navbar-logo {
+  width: 127px;
+  height: 22px;
+  margin-top: 13px;
+  margin-bottom: 21px;
+}
+
+.nav-toolbar {
+  padding-top: 16px;
+  padding-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e6e8;
+}
+@media (min-width: @screen-sm-min) {
+  .nav-toolbar.affix {
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    margin-top: 0;
+    border-top: 0;
+  }
+  .nav-toolbar.affix + .container-fluid {
+    margin-top: 64px !important;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .nav-toolbar.affix {
+    width: calc(100% - 264px);
+  }
 }

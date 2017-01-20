@@ -68,7 +68,7 @@
     &:hover,
     &:focus {
       background-color: @nav-link-hover-bg;
-      border-color: @link-color;
+      // border-color: @link-color;
     }
   }
 
@@ -155,7 +155,8 @@
     float: none;
 
     > a {
-      padding-left: 24px;
+      border-left: 3px solid transparent;
+      padding-left: 21px;
       padding-right: 24px;
       transition: color .2s ease-in-out;
       .glyphicon {
@@ -164,6 +165,11 @@
       }
       &:active {
         transition: none;
+      }
+
+      @media (min-width: @screen-lg-min) {
+        padding-right: 32px;
+        padding-left: 29px !important;
       }
     }
 

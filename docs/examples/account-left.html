@@ -18,6 +18,37 @@
 
 	<script>
 	angular.module('ExampleApp', ['tw.styleguide-components']);
+
+	function triggerPopover(id, options) {
+		$('.popover').remove();
+		$('#featureCover').remove();
+
+		$('#' + id).popover(options);
+		$('body').append('<div id="featureCover" class="column-layout-cover feature-tour-cover in" style="display: block;" onclick="hideCover(\''+id+'\')"></div>');
+	}
+	function triggerInvitePopover() {
+		triggerPopover('inviteFriends', {
+			trigger: 'click',
+			title: 'Did you know?',
+			content: 'By inviting your friends you can earn free transfers. Invite 3 friends to earn £50 off your fees.',
+			html: false,
+			placement: 'right',
+			container: 'body'
+		});
+	}
+	function triggerTwoFactorPopover() {
+		triggerPopover('twoFactor', {
+			trigger: 'click',
+			title: 'Secure your account',
+			content: 'You can now make your account more secure using 2 factor authentication <a href="">Learn more</a>.',
+			html: true,
+			placement: 'right'
+		});
+	}
+	function hideCover(id) {
+		$('#featureCover').remove();
+		$('#' + id).popover('destroy');
+	}
 	</script>
 
 	<script src="js/transfers.service.js"></script>
@@ -29,6 +60,8 @@
 	<script src="js/side-nav.directive.js"></script>
 	<script src="js/start-new.directive.js"></script>
 	<script src="js/next-cards.directive.js"></script>
+	<script src="js/calculator-inline.directive.js"></script>
+	<script src="js/activity-filters.directive.js"></script>
 	<script src="js/transfer-list.directive.js"></script>
 	<script src="js/transfer-history-table.directive.js"></script>
 	<script src="js/transfer-description.directive.js"></script>
@@ -45,6 +78,7 @@
 
 
 	<script src="//transferwise.github.io/styleguide-components/dist/js/styleguide-components.js"></script>
+	<link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
 
 	<script>
 	(function(angular) {
@@ -80,12 +114,27 @@
 
 			$ctrl.burgerToggle = function() {
 				$ctrl.open = !$ctrl.open;
-			}
+			};
+			$ctrl.filterToggle = function() {
+				$ctrl.showFilters = !$ctrl.showFilters;
+				window.setTimeout(function() {
+					console.log("focus");
+					if ($ctrl.showFilters) {
+						$('#search-input').focus();
+					}
+				}, 200);
+			};
+			$ctrl.showFilters = true;
 			$ctrl.sideNavToggle = function() {
-				console.log('temp 1: '+ $ctrl.sideNav);
 				$ctrl.sideNav = !$ctrl.sideNav;
-
-				console.log('temp 2: '+ $ctrl.sideNav);
+			};
+			$ctrl.sizeToggle = function() {
+				console.log('size');
+				if ($ctrl.size === 'sm') {
+					$ctrl.size = 'md';
+				} else {
+					$ctrl.size = 'sm';
+				}
 			}
 			$ctrl.sideNav = true;
 		}
@@ -97,148 +146,44 @@
 <div class="column-layout">
 	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}" ng-if="ctrl.sideNav">
 		<div class="column-layout-top">
-			<!--
-			<a href="../"
-				class="logo logo-inverse visible-xs-block visible-sm-block visible-md-block logo-3 m-b-3"
-				title="TransferWise"></a>
-			<!- -->
 			<side-nav></side-nav>
 		</div>
-
+		<!--
 		<div class="column-layout-bottom">
-
-			<!--
-			<div id="carousel-example-generic" class="carousel slide m-a-2" data-ride="carousel" style="margin-top: 560px !important;">
-
-			  <ol class="carousel-indicators">
-			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			  </ol>
-
-			  <div class="carousel-inner p-b-2" role="listbox">
-			    <div class="item active">
-			        <div class="media">
-								<div class="media-left text-info">
-									<i class="icon icon-gift icon-xxl"></i>
-								</div>
-								<div class="media-body text-xs-left text-max-width">
-									<h3 class="h5 m-b-0">Earn £50 credit</h3>
-									<p>Give someone a free transfer for up to £500</p>
-								</div>
-							</div>
-			    </div>
-			    <div class="item">
-			        <div class="media">
-								<div class="media-left text-info">
-									<i class="icon icon-request icon-xxl"></i>
-								</div>
-								<div class="media-body text-xs-left text-max-width">
-									<h3 class="h5 m-b-0">Request money</h3>
-									<p>from friends and family and customers</p>
-								</div>
-							</div>
-			    </div>
-			    <div class="item">
-			        <div class="media">
-								<div class="media-left text-info">
-									<i class="icon icon-line-graph icon-xxl"></i>
-								</div>
-								<div class="media-body text-xs-left text-max-width">
-									<h3 class="h5 m-b-0">Rate alerts</h3>
-									<p>sign up no to be alerted when the rate reaches your chosen value</p>
-								</div>
-							</div>
-			    </div>
-			  </div>
-
-
-			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="margin-top: 128px;">
-			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			    <span class="sr-only">Previous</span>
-			  </a>
-			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="margin-top: 128px;">
-			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			    <span class="sr-only">Next</span>
-			  </a>
-			</div>
-		-->
-			<!--
-			<div class="btn-group btn-block dropup">
-				<button type="button" class="btn btn-success">
-					<span class="hidden-xs hidden-sm hidden-md">Send money</span>
-					<span class="hidden-lg hidden-xl">Send</span>
-				</button>
-				<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-					<span class="caret rotate180" style="position: absolute; top: 16px; right: 20px;"></span>
-					<span class="sr-only">Toggle Dropdown</span>
-				</button>
-				<div class="dropdown-menu dropdown-menu-lg text-primary p-a-3" role="menu" style="width: 800px; margin-bottom: 64px;">
-					<h3 class="text-primary m-b-2">Create</h3>
-					<div class="row row-equal-height">
-						<div class="col-xs-12 col-sm-6 m-b-0">
-							<div class="tile" tabindex="0" role="button">
-								<div class="tile-icon">
-									<div class="circle circle-lg circle-responsive">
-										<i class="icon icon-send"></i>
-									</div>
-								</div>
-								<div class="tile-text">
-									<h5 class="text-primary">Send money</h5>
-									<p>Send money to a bank account or person</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 m-b-0">
-							<div class="tile" tabindex="0" role="button">
-								<div class="tile-icon">
-									<div class="circle circle-lg circle-responsive">
-										<i class="icon icon-request"></i>
-									</div>
-								</div>
-								<div class="tile-text">
-									<h5 class="text-primary">Request money</h5>
-									<p>Request a specific amount of money from someone</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 m-b-0">
-							<div class="tile" tabindex="0" role="button">
-								<div class="tile-icon">
-									<div class="circle circle-lg circle-responsive">
-										<i class="icon icon-gift"></i>
-									</div>
-								</div>
-								<div class="tile-text">
-									<h5 class="text-primary">Invite friends</h5>
-									<p>Invite friends to earn rewards</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 m-b-0">
-							<div class="tile" tabindex="0" role="button">
-								<div class="tile-icon">
-									<div class="circle circle-lg circle-responsive">
-										<i class="icon icon-line-graph"></i>
-									</div>
-								</div>
-								<div class="tile-text">
-									<h5 class="text-primary">Create rate alert</h5>
-									<p>Be notified when a rate hits a specific value</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!- -->
+			<dl>
+				<dt>Free transfers</dt>
+				<dd class="m-b-1">2</dd>
+				<dt>Fee credit</dt>
+				<dd class="m-b-0">$100 USD</dd>
+			</dl>
 		</div>
+		-->
 	</div>
 	<div class="column-layout-main">
-		<div class="top-nav" ng-if="ctrl.sideNav">
-			<simple-nav on-burger-click="ctrl.burgerToggle()" fluid="ctrl.sideNav"></simple-nav>
+		<simple-nav
+			ng-if="ctrl.sideNav"
+			on-burger-click="ctrl.burgerToggle()"
+			on-filter-click="ctrl.filterToggle()"
+			fluid="ctrl.sideNav"></simple-nav>
+
+		<div class="nav-toolbar hidden-xs" data-spy="affix" data-offset-top="66">
+			<div class="container-fluid m-l-0">
+				<!--
+				<div class="p-b-1">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Send</a></li>
+						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Recieve</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Top up</a></li>
+						<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Search</a></li>
+					</ul>
+				</div>
+				-->
+				<activity-filters class="fade-in" ng-if="ctrl.showFilters" size="{{ctrl.size}}" on-size-switch="ctrl.sizeToggle()"></activity-filters>
+				<calculator-inline class="fade-in" ng-if="!ctrl.showFilters" size="{{ctrl.size}}"></calculator-inline>
+			</div>
 		</div>
-		<div ng-class="{'container': !ctrl.sideNav, 'container-fluid': ctrl.sideNav}">
+
+		<div ng-class="{'container': !ctrl.sideNav, 'container-fluid': ctrl.sideNav}" class="p-t-2 m-l-0">
 			<div class="row">
 				<div class="col-sm-6 col-md-7 col-xl-9">
 					<h1 class="hidden-lg hidden-xl m-t-3 h3">Activity</h1>
@@ -253,27 +198,29 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="m-t-panel m-b-panel">
+			<!-- -->
+			<div class="m-t-1 m-b-3">
 				<next-cards show="2"></next-cards>
-			</div>-->
-			<!--
-			<div class="">
-				<profile-block></profile-block>
 			</div>
-		-->
-			<div class="m-t-3 hidden-xl">
-				<activity-filters></activity-filters>
-			</div>
+			<!-- -->
 
-			<div class="panel m-t-2">
-				<div class="panel-heading p-t-0">
+			<div class="panel m-b-2">
+				<div class="panel-heading p-t-0  p-b-0">
 					<div class="row">
 						<div class="col-sm-6 col-md-7 col-xl-9">
 							<h6 class="panel-title">
 								In progress ({{ctrl.activeTransfers.length}})
 							</h6>
 						</div>
-						<div class="col-sm-6 col-md-5 col-xl-3 hidden-xs hidden-sm hidden-md">
+						<div class="col-sm-6 col-md-5 col-xl-3 hidden-xs hidden-sm hidden-md text-xs-right">
+							<!--
+							<button class="btn btn-info"
+								ng-if="!ctrl.showFilters"
+								ng-click="ctrl.showFilters = true">
+								<i class="icon icon-search"></i>Advanced search
+							</button>
+						-->
+							<!--
 							<div class="input-group input-group-sm m-t-1">
 								<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
 								<input type="text" class="form-control" placeholder="Search..." />
@@ -281,6 +228,7 @@
 									 <button class="btn btn-sm btn-primary" ng-click="ctrl.sideNavToggle()">Go</button>
 								</span>
 							</div>
+							-->
 						</div>
 					</div>
 				</div>
@@ -292,7 +240,7 @@
 			</div>
 
 			<div class="panel">
-				<div class="panel-heading">
+				<div class="panel-heading p-b-0">
 					<h6 class="panel-title">
 						Recent ({{ctrl.historicTransfers.length}})
 					</h6>

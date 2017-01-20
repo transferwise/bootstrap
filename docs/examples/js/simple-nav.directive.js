@@ -9,7 +9,7 @@
 			bindToController: true,
 			controller: function() {
 				var $ctrl = this;
-				
+
 				// TODO duplicated from other nav, make service
 				$ctrl.translations = {
 					"en": {
@@ -38,6 +38,7 @@
 			restrict: 'E',
 			scope: {
 				onBurgerClick: '&',
+				onFilterClick: '&',
 				fluid: '='
 			},
 			templateUrl: 'partials/simple-nav.html'
