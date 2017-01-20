@@ -57,63 +57,13 @@
 }
 
 
-.simple-nav {
-  background-color: #37517e;
-  border-bottom: 1px solid #e2e6e8;
-}
-@media (min-width: 576px) {
-  .simple-nav > li > a {
-    font-size: 16px !important;
-  }
-  .simple-nav {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-}
-@media (min-width: 992px) {
-  .simple-nav {
-    background-color: #fff;
-  }
-}
-@media (max-width: 991px) {
-  .simple-nav .nav > li > a {
-    color: #fff !important;
-  }
-}
-
-@media (max-width: 430px) {
-  .navbar-default .profile-name .text-ellipsis {
-    width: 120px;
-  }
-}
-
 /*
-@media (max-width: 575px) {
-  .simple-nav .profile-name .text-ellipsis {
-    width: 24px;
-    text-overflow: unset;
-  }
-}
-.profile-name .text-ellipsis {
-  min-width: 40px;
-}
-*/
-
-.bg-primary .nav .active {
-  background-color: #2e4369;
-}
-
 .btn-addon {
   color: #2e4369;
   background-color: #fff;
   border-color: #d3d5d8;
 }
-
-.brand-section {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
+*/
 .popover-title {
   color: #2e4369 !important;
 }

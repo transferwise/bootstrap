@@ -192,7 +192,7 @@
 .navbar-toggle {
   position: relative;
   float: left;
-  padding: 9px 0px;
+  padding: 9px 0;
   .navbar-vertical-align(34px);
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
@@ -204,6 +204,16 @@
   // styles to `:focus`.
   &:focus {
     outline: 0;
+  }
+
+  font-size: @font-size-base;
+  font-weight: @font-weight-semi-bold;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: #fff;
+
+  .icon-bar:first-child {
+    margin-top: 1px;
   }
 
   // Bars
@@ -239,13 +249,13 @@
 
 .navbar-nav {
   > li > a {
-    padding: 4px @navbar-padding-horizontal;
+    padding: @navbar-padding-vertical @navbar-padding-horizontal;
     line-height: @navbar-line-height;
     outline-offset: -1px;
 
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-        padding-left: 12px;
-        padding-right: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
     &.dropdown-toggle {
@@ -257,7 +267,9 @@
   }
 
   @media (max-width: @grid-float-breakpoint-max) {
-    border-bottom: 1px solid @brand-smoke-plus-20;
+    .navbar-collapse & {
+      border-bottom: 1px solid @brand-smoke-plus-20;
+    }
 
     // Dropdowns get custom display when collapsed
     .navbar-collapse-flatten {
@@ -885,7 +897,7 @@
 @media (min-width: @screen-sm-min) {
   .nav-toolbar.affix {
     top: 0;
-    z-index: 10000;
+    z-index: @zindex-navbar;
     width: 100%;
     margin-top: 0;
     border-top: 0;
@@ -898,4 +910,37 @@
   .nav-toolbar.affix {
     width: calc(100% - 264px);
   }
+}
+
+// TODO this is a hack with no docs
+.simple-nav {
+  background-color: @brand-navy;
+}
+@media (min-width: @screen-sm-min) {
+  .simple-nav > li > a {
+    font-size: @font-size-base !important;
+  }
+  .simple-nav {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .simple-nav {
+    background-color: #fff;
+    border-bottom: 1px solid @brand-smoke-plus-10;
+  }
+}
+@media (max-width: @screen-md-max) {
+  .simple-nav .nav > li > a {
+    color: #fff;
+    &:focus,
+    &:hover,
+    &:active {
+      color: @link-color;
+    }
+  }
+}
+.simple-nav .profile-name .text-ellipsis {
+  max-width: 280px;
 }
