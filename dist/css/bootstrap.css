@@ -5592,8 +5592,6 @@ fieldset[disabled] .btn-addon.active {
   }
 }
 .column-layout {
-  position: absolute;
-  top: 0;
   width: 100%;
 }
 .column-layout-left,
