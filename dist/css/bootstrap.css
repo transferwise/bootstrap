@@ -1651,6 +1651,9 @@ a.text-inverse:focus {
 .bg-default {
   background-color: #f2f5f7 !important;
 }
+.bg-focus {
+  background-color: #fff;
+}
 .jumbotron,
 .bg-primary {
   color: #f2f5f7;
@@ -1937,19 +1940,9 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 768px) {
-  .container {
-    width: 744px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 964px;
-  }
-}
 @media (min-width: 1200px) {
   .container {
-    width: 1164px;
+    max-width: 1164px;
   }
 }
 .container-fluid {
@@ -1957,6 +1950,22 @@ pre code {
   padding-left: 12px;
   margin-right: auto;
   margin-left: auto;
+}
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+@media (min-width: 576px) {
+  .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
 }
 .row {
   margin-right: -12px;
@@ -5717,24 +5726,9 @@ fieldset[disabled] .btn-addon.active {
   max-height: 100vh;
   overflow-y: auto;
 }
+.column-layout-main .container,
 .column-layout-main .container-fluid {
-  max-width: 1164px;
-  padding-right: 16px;
-  padding-left: 16px;
-}
-@media (min-width: 576px) {
-  .column-layout-main .container-fluid {
-    max-width: 1180px;
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-}
-@media (min-width: 992px) {
-  .column-layout-main .container-fluid {
-    max-width: 1196px;
-    padding-right: 32px;
-    padding-left: 32px;
-  }
+  max-width: 1176px;
 }
 .column-layout-brand {
   padding: 4px 24px;
@@ -5744,6 +5738,10 @@ fieldset[disabled] .btn-addon.active {
     padding-right: 32px;
     padding-left: 32px;
   }
+}
+body > .column-layout {
+  height: 100vh;
+  min-height: 100vh;
 }
 .fade {
   opacity: 0;
@@ -6094,10 +6092,6 @@ tbody.collapse.in {
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
-.btn-toolbar {
-  margin-right: -4px;
-  margin-left: -4px;
-}
 .btn-toolbar:before,
 .btn-toolbar:after {
   display: table;
@@ -6118,7 +6112,7 @@ tbody.collapse.in {
 .btn-toolbar .btn-group,
 .btn-toolbar .input-group {
   width: 100%;
-  margin: 0 4px 16px 4px;
+  margin-bottom: 16px;
 }
 .btn-toolbar .btn-group .btn,
 .btn-toolbar .input-group .btn {
@@ -6126,48 +6120,78 @@ tbody.collapse.in {
   margin: 0 0 0 -1px;
 }
 @media (min-width: 992px) {
+  .btn-toolbar {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
   .btn-toolbar .btn,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left;
     width: auto;
+    margin-right: 4px;
     margin-bottom: 0;
+    margin-left: 4px;
   }
 }
 @media (min-width: 576px) {
+  .btn-toolbar.btn-toolbar-sm {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
   .btn-toolbar.btn-toolbar-sm .btn,
   .btn-toolbar.btn-toolbar-sm .btn-group,
   .btn-toolbar.btn-toolbar-sm .input-group {
     float: left;
     width: auto;
+    margin-right: 4px;
     margin-bottom: 0;
+    margin-left: 4px;
   }
 }
 @media (min-width: 768px) {
+  .btn-toolbar.btn-toolbar-md {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
   .btn-toolbar.btn-toolbar-md .btn,
   .btn-toolbar.btn-toolbar-md .btn-group,
   .btn-toolbar.btn-toolbar-md .input-group {
     float: left;
     width: auto;
+    margin-right: 4px;
     margin-bottom: 0;
+    margin-left: 4px;
   }
 }
 @media (min-width: 992px) {
+  .btn-toolbar.btn-toolbar-lg {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
   .btn-toolbar.btn-toolbar-lg .btn,
   .btn-toolbar.btn-toolbar-lg .btn-group,
   .btn-toolbar.btn-toolbar-lg .input-group {
     float: left;
     width: auto;
+    margin-right: 4px;
     margin-bottom: 0;
+    margin-left: 4px;
   }
 }
 @media (min-width: 1200px) {
+  .btn-toolbar.btn-toolbar-xl {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
   .btn-toolbar.btn-toolbar-xl .btn,
   .btn-toolbar.btn-toolbar-xl .btn-group,
   .btn-toolbar.btn-toolbar-xl .input-group {
     float: left;
     width: auto;
+    margin-right: 4px;
     margin-bottom: 0;
+    margin-left: 4px;
   }
 }
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
@@ -7596,6 +7620,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   margin-bottom: 21px;
 }
 .nav-toolbar {
+  position: inherit !important;
   padding-top: 16px;
   padding-bottom: 0;
   background-color: #fff;
@@ -7603,12 +7628,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 @media (min-width: 576px) {
   .nav-toolbar.affix {
+    position: fixed !important;
     top: 0;
     z-index: 1000;
     width: 100%;
     margin-top: 0;
     border-top: 0;
   }
+  .nav-toolbar.affix + .container,
   .nav-toolbar.affix + .container-fluid {
     margin-top: 64px !important;
   }

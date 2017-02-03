@@ -112,22 +112,10 @@
   overflow-y: auto;
 }
 
+.column-layout-main .container,
 .column-layout-main .container-fluid {
-  max-width: 1164px;
-  padding-right: 16px;
-  padding-left: 16px;
-
-  @media (min-width: @screen-sm-min) {
-    max-width: 1180px;
-    padding-right: 24px;
-    padding-left: 24px;
-
-  }
-  @media (min-width: @screen-lg-min) {
-    max-width: 1196px;
-    padding-right: 32px;
-    padding-left: 32px;
-  }
+  // ensures we use the full width on default mac screen
+  max-width: 1176px;
 }
 
 .column-layout-brand {
@@ -138,4 +126,9 @@
     padding-left: 32px;
     padding-right: 32px;
   }
+}
+
+body > .column-layout {
+  min-height: 100vh;
+  height: 100vh;
 }

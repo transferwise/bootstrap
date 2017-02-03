@@ -34,27 +34,29 @@
 
 
 .expand-toolbar() {
+  margin-left: -4px; // Offset the first child's margin
+  margin-right: -4px; // Offset the first child's margin
+
   .btn,
   .btn-group,
   .input-group {
     width: auto;
     margin-bottom: 0;
     float: left;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
 // Optional: Group multiple button groups together for a toolbar
 .btn-toolbar {
-  margin-left: -4px; // Offset the first child's margin
-  margin-right: -4px; // Offset the first child's margin
-
   .clearfix();
 
   .btn,
   .btn-group,
   .input-group {
     width: 100%;
-    margin: 0 4px 16px 4px;
+    margin-bottom: 16px;
   }
 
   .btn-group .btn,

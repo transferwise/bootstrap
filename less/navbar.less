@@ -893,6 +893,7 @@
   padding-bottom: 0;
   background-color: #fff;
   border-bottom: 1px solid #e2e6e8;
+  position: inherit !important;
 }
 @media (min-width: @screen-sm-min) {
   .nav-toolbar.affix {
@@ -901,7 +902,9 @@
     width: 100%;
     margin-top: 0;
     border-top: 0;
+    position: fixed !important;
   }
+  .nav-toolbar.affix + .container,
   .nav-toolbar.affix + .container-fluid {
     margin-top: 64px !important;
   }
