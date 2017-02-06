@@ -32,14 +32,20 @@
 					}
 				}
 				$ctrl.language = "en";
+
+				$ctrl.toggleNav = function() {
+					$ctrl.showNav = !$ctrl.showNav;
+					if ($ctrl.onBurgerClick) {
+						$ctrl.onBurgerClick();
+					}
+				}
 			},
 			controllerAs: '$ctrl',
 			replace: false,
 			restrict: 'E',
 			scope: {
 				onBurgerClick: '&',
-				onFilterClick: '&',
-				fluid: '='
+				showSearch: '='
 			},
 			templateUrl: 'partials/simple-nav.html'
 		}

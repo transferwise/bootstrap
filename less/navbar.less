@@ -429,9 +429,9 @@
 // Declared after the navbar components to ensure more specificity on the margins.
 
 @media (min-width: @grid-float-breakpoint) {
-  .navbar-left  { .pull-left(); }
+  .navbar-left  { .pull-xs-left(); }
   .navbar-right {
-    .pull-right();
+    .pull-xs-right();
 
     ~ .navbar-right {
       margin-right: 0;
@@ -876,10 +876,13 @@
 
 .navbar-title {
   float: left;
-  font-size: 22px;
   line-height: 30px;
   margin-top: 13px;
   margin-bottom: 13px;
+
+  @media (min-width: @screen-lg-min) {
+    font-weight: @font-weight-bold;
+  }
 }
 .navbar-logo {
   width: 127px;
@@ -888,44 +891,83 @@
   margin-bottom: 21px;
 }
 
+@nav-toolbar-height: 64px;
+
 .nav-toolbar {
   padding-top: 16px;
   padding-bottom: 0;
   background-color: #fff;
   border-bottom: 1px solid #e2e6e8;
-  position: inherit !important;
-}
-@media (min-width: @screen-sm-min) {
-  .nav-toolbar.affix {
+
+  h1 {
+    line-height: 32px;
+  }
+  .close {
+    text-decoration: none;
+    height: 32px;
+  }
+
+  &.affix {
     top: 0;
     z-index: @zindex-navbar;
     width: 100%;
     margin-top: 0;
     border-top: 0;
-    position: fixed !important;
-  }
-  .nav-toolbar.affix + .container,
-  .nav-toolbar.affix + .container-fluid {
-    margin-top: 64px !important;
+    position: fixed;
   }
 }
+
+.nav-toolbar.affix + .container,
+.nav-toolbar.affix + .container-fluid {
+  margin-top: @nav-toolbar-height !important;
+}
+
 @media (min-width: @screen-lg-min) {
-  .nav-toolbar.affix {
+  .column-layout .nav-toolbar.affix {
     width: calc(100% - 264px);
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .affix-cancel-xs {
+    position: relative !important;
+  }
+  .nav-toolbar.affix-cancel-xs + .container,
+  .nav-toolbar.affix-cancel-xs + .container-fluid {
+    margin-top: 0 !important;
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .affix-cancel-sm {
+    position: relative !important;
+  }
+  .nav-toolbar.affix-cancel-sm + .container,
+  .nav-toolbar.affix-cancel-sm + .container-fluid {
+    margin-top: 0 !important;
   }
 }
 
 // TODO this is a hack with no docs
 .simple-nav {
   background-color: @brand-navy;
+  .navbar-nav > li > a {
+    padding-top: (@navbar-padding-vertical + 4px);
+    padding-bottom: (@navbar-padding-vertical + 1px);
+  }
+  .navbar-header {
+    padding-top: 4px;
+  }
+  .navbar-nav > li > a.dropdown-toggle {
+    height: @nav-toolbar-height;
+  }
+  .navbar-right li > a {
+    // HACK - better to make things only collapse if inside collapse
+    float: right;
+  }
 }
 @media (min-width: @screen-sm-min) {
-  .simple-nav > li > a {
+  .simple-nav .navbar-nav > li > a {
     font-size: @font-size-base !important;
-  }
-  .simple-nav {
-    padding-top: 4px;
-    padding-bottom: 4px;
   }
 }
 @media (min-width: @screen-lg-min) {
@@ -935,7 +977,7 @@
   }
 }
 @media (max-width: @screen-md-max) {
-  .simple-nav .nav > li > a {
+  .simple-nav .navbar-nav > li > a {
     color: #fff;
     &:focus,
     &:hover,

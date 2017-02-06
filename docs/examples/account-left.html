@@ -115,27 +115,11 @@
 			$ctrl.burgerToggle = function() {
 				$ctrl.open = !$ctrl.open;
 			};
-			$ctrl.filterToggle = function() {
-				$ctrl.showFilters = !$ctrl.showFilters;
-				window.setTimeout(function() {
-					console.log("focus");
-					if ($ctrl.showFilters) {
-						$('#search-input').focus();
-					}
-				}, 200);
-			};
-			$ctrl.showFilters = true;
+			$ctrl.showSearch = false;
+
 			$ctrl.sideNavToggle = function() {
 				$ctrl.sideNav = !$ctrl.sideNav;
 			};
-			$ctrl.sizeToggle = function() {
-				console.log('size');
-				if ($ctrl.size === 'sm') {
-					$ctrl.size = 'md';
-				} else {
-					$ctrl.size = 'sm';
-				}
-			}
 			$ctrl.sideNav = true;
 		}
 	})(window.angular);
@@ -163,27 +147,20 @@
 		<simple-nav
 			ng-if="ctrl.sideNav"
 			on-burger-click="ctrl.burgerToggle()"
-			on-filter-click="ctrl.filterToggle()"
-			fluid="ctrl.sideNav"></simple-nav>
+			show-search="ctrl.showSearch"></simple-nav>
 
-		<div class="nav-toolbar" data-spy="affix" data-offset-top="66">
+		<div class="nav-toolbar" data-spy="affix" data-offset-top="66" ng-class="{
+				'affix-cancel-xs': ctrl.showSearch,
+				'affix-cancel-sm': ctrl.showSearch
+			}">
 			<div class="container m-l-0">
-				<!--
-				<div class="p-b-1">
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Send</a></li>
-						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Recieve</a></li>
-						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Top up</a></li>
-						<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Search</a></li>
-					</ul>
-				</div>
-				-->
-				<activity-filters class="fade-in" ng-if="ctrl.showFilters" size="{{ctrl.size}}" on-size-switch="ctrl.sizeToggle()"></activity-filters>
-				<calculator-inline class="fade-in" ng-if="!ctrl.showFilters" size="{{ctrl.size}}"></calculator-inline>
+				<activity-filters show-search="ctrl.showSearch"></activity-filters>
+				<!-- <calculator-inline></calculator-inline> -->
 			</div>
 		</div>
 
-		<div class=" container p-t-2 m-l-0">
+		<div class="container p-t-2 m-l-0">
+			<!--
 			<div class="row">
 				<div class="col-sm-6 col-md-7 col-xl-9">
 					<h1 class="hidden-lg hidden-xl m-t-3 h3">Activity</h1>
@@ -198,7 +175,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- -->
+			-->
 			<div class="m-t-1 m-b-3">
 				<next-cards show="2"></next-cards>
 			</div>
@@ -213,22 +190,7 @@
 							</h6>
 						</div>
 						<div class="col-sm-6 col-md-5 col-xl-3 hidden-xs hidden-sm hidden-md text-xs-right">
-							<!--
-							<button class="btn btn-info"
-								ng-if="!ctrl.showFilters"
-								ng-click="ctrl.showFilters = true">
-								<i class="icon icon-search"></i>Advanced search
-							</button>
-						-->
-							<!--
-							<div class="input-group input-group-sm m-t-1">
-								<span class="input-group-addon"><i class="icon icon-search m-r-0"></i></span>
-								<input type="text" class="form-control" placeholder="Search..." />
-								<span class="input-group-btn">
-									 <button class="btn btn-sm btn-primary" ng-click="ctrl.sideNavToggle()">Go</button>
-								</span>
-							</div>
-							-->
+						
 						</div>
 					</div>
 				</div>
@@ -265,15 +227,6 @@
 		ng-click="ctrl.open = !ctrl.open;">
 		<a class="close">&times;</a>
 	</div>
-	<!--
-	<div class="navbar navbar-fixed-bottom bg-primary visible-xs visible-sm p-x-1">
-		<ul class="nav nav-justified nav-inverse">
-			<li><button class="navbar-btn btn btn-sm btn-block btn-success">Create</button></li>
-			<li class="active"><a href="">Activity</a></li>
-			<li><a href="" ng-click="ctrl.open = !ctrl.open">More...</a></li>
-		</ul>
-	</div>
-	-->
 </div>
 </body>
 </html>

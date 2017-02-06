@@ -36,37 +36,6 @@
 /* End account page */
 
 
-
-.list-group:hover .list-group-item:not(.active) .media {
-  opacity: .95;
-}
-.list-group:hover .list-group-item:hover .media {
-  opacity: 1;
-}
-
-.list-group:hover .list-group-item:not(.active) {
-  margin-right: 0;
-  margin-left: 0;
-  background-color: #fbfcfd; /*#F8FAFB;*/
-}
-.list-group-inactive:hover .list-group-item:not(.active) {
-  background-color: #f2f5f7;
-}
-.list-group:hover .list-group-item:hover {
-  background-color: #fff;
-}
-
-
-/*
-.btn-addon {
-  color: #2e4369;
-  background-color: #fff;
-  border-color: #d3d5d8;
-}
-*/
-.popover-title {
-  color: #2e4369 !important;
-}
 .feature-tour-cover {
   z-index: 100;
 }

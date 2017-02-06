@@ -1,13 +1,10 @@
 <nav class="navbar navbar-default m-b-0 simple-nav">
-	<!-- We use the fluid option here to avoid overriding the fixed width of a
-	normal container within the narrow content columns. -->
 	<div class="container m-l-0">
 		<div class="navbar-header pull-xs-left">
 			<button type="button"
-				class="navbar-toggle visible-xs-block visible-sm-block visible-md-block collapsed"
-				ng-click="$ctrl.onBurgerClick && $ctrl.onBurgerClick()"
-				aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
+				class="navbar-toggle visible-xs-block visible-sm-block visible-md-block"
+				ng-click="$ctrl.toggleNav()"
+				aria-expanded="{{$ctrl.showNav}}">
 				<span class="pull-xs-left">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -15,77 +12,10 @@
 				</span>
 				<span class="pull-xs-left m-l-1">Menu</span>
 			</button>
-			<!--<a href="../"
-				class="logo-text logo-text-inverse visible-xs-block visible-sm-block visible-md-block"
-				title="TransferWise"></a>
-			<a href="../"
-				class="navbar-brand hidden-xs hidden-sm hidden-md">
-				TransferWise
-			</a>
-			-->
-			<h1 class="navbar-title hidden-xs hidden-sm hidden-md">Activity</h1>
+			<h1 class="navbar-title hidden-xs hidden-sm hidden-md h3">Activity</h1>
 		</div>
 
-		<!--<div class="navbar-right hidden-lg hidden-xl">-->
-		<!--
-		<div class="navbar-right">
-			<div class="navbar-btn btn-group m-l-3">
-				<button type="button" class="btn btn-success">
-					<span class="hidden-xs" ng-bind="$ctrl.translations[$ctrl.language].send1"></span>
-					<span class="hidden-sm hidden-md hidden-lg hidden-xl" ng-bind="$ctrl.translations[$ctrl.language].send2"></span>
-				</button>
-				<button type="button" class="btn btn-success dropdown-toggle"
-					data-toggle="dropdown" aria-expanded="false">
-					<span class="caret"></span>
-					<span class="sr-only">Toggle Dropdown</span>
-				</button>
-				<ul class="dropdown-menu dropdown-menu-xs-right" role="menu">
-					<li><a href=""><i class="icon icon-send"></i>Send money</a></li>
-					<li class="divider"></li>
-					<li><a href=""><i class="icon icon-request"></i>Request money</a></li>
-				</ul>
-			</div>
-		</div>
-		-->
-		<!--
-		<form class="navbar-form navbar-left" role="search">
-			<div class="input-group search-group" style="margin-top: -8px; ">
-				<span class="input-group-addon"><i class="icon icon-search icon-3"></i></span>
-				<input type="text" class="form-control" placeholder="Search" ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;">
-				<span class="input-group-addon" ng-if="$ctrl.filterOn"><a class="" ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;"><span class="close">&times;</span></a></span>
-			</div>
-		</form>
-	-->
-		<!--
-		<ul class="nav navbar-nav m-l-2">
-			<li>
-				<a href="" class="p-x-1" role="button"
-					ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;">
-					<span
-						class="m-r-2 hidden-xs hidden-sm" style="margin-left: 4px;">Send</span>
-				</a>
-			</li>
-			<li>
-				<a href="" class="p-x-1" role="button"
-					ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;">
-					<span
-						class="m-r-2 hidden-xs hidden-sm" style="margin-left: 4px;">Top up</span>
-				</a>
-			</li>
-			<li>
-				<a href="" class="p-x-1" role="button" ng-class="{'text-info': $ctrl.filterOn, 'text-muted': !$ctrl.filterOn}"
-					ng-if="$ctrl.onFilterClick"
-					ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;">
-					<i class="icon icon-search m-r-0" ng-if="!$ctrl.filterOn"></i><i
-						class="icon icon-close m-r-0" ng-if="$ctrl.filterOn"></i><span
-						class="m-r-2 hidden-xs hidden-sm" style="margin-left: 4px;">Search</span>
-				</a>
-			</li>
-		</ul>
-		-->
-
-
-		<ul class="nav navbar-nav navbar-right pull-xs-right">
+		<ul class="nav navbar-nav pull-xs-right">
 			<li class="dropdown pull-xs-right">
 				<a href="" class="dropdown-toggle profile-name p-l-1 p-r-0"
 					data-toggle="dropdown" role="button"
@@ -93,9 +23,12 @@
 					<span class="text-ellipsis"
 						title="Jonathan Smith-Henry">
 						<!--<i class="icon icon-profile m-r-1"></i>-->
-						<img src="../assets/img/mike.jpg" class="circle circle-sm" alt="Mike" /><span class="hidden-xs m-l-1">Jonathan Smith-Henry Smith-Henry</span>
+						<img src="../assets/img/mike.jpg" class="circle circle-sm" alt="Mike"
+						/><span class="hidden-xs m-l-1">
+							Jonathan Smith-Henry Smith-Henry
+						</span>
 					</span>
-					<span class="caret hidden-xs"></span>
+					<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-md dropdown-menu-xs-right" role="menu">
 					<li class="p-a-2">
@@ -128,19 +61,20 @@
 			<li class="dropdown pull-xs-right">
 				<a href="" class="dropdown-toggle p-x-1"
 					data-toggle="dropdown" role="button"
-					aria-expanded="false">
-					<i class="icon icon-notification m-r-0"></i><span class="m-l-1 m-r-2 hidden-xs hidden-sm hidden-md hidden-lg hidden-xl">Notifications</span>
+					aria-expanded="false"
+					title="Show notifications">
+					<i class="icon icon-notification m-r-0"></i>
 				</a>
 			</li>
-			<!--
-			<li class="dropdown pull-xs-right" ng-class="{'active': $ctrl.filterOn}">
-				<a href="" class="dropdown-toggle p-x-1" role="button"
-					ng-if="$ctrl.onFilterClick"
-					ng-click="$ctrl.onFilterClick(); $ctrl.filterOn = !$ctrl.filterOn;">
-					<i class="icon icon-search m-r-0" ng-if="!$ctrl.filterOn"></i><i class="icon icon-close m-r-0" ng-if="$ctrl.filterOn"></i><span class="m-l-1 m-r-2 hidden-xs hidden-sm">Search</span>
+			<li class="hidden-lg hidden-xl pull-xs-right"
+				ng-class="{active: $ctrl.showSearch}">
+				<a href="" class="p-x-1" role="button"
+					aria-expanded="{{$ctrl.showSearch}}"
+					title="Show search options"
+					ng-click="$ctrl.showSearch = !$ctrl.showSearch">
+					<i class="icon icon-search m-r-0"></i>
 				</a>
 			</li>
-			-->
 		</ul>
 	</div>
 </nav>

@@ -1,20 +1,36 @@
 <div class="row">
-	<div class="col-sm-8 col-lg-9 m-b-0" ng-if="!$ctrl.searching">
-		<div class="btn-toolbar btn-toolbar-sm">
+	<div class="col-xs-6 col-sm-3 hidden-lg hidden-xl" ng-if="!$ctrl.showSearch">
+		<h1 class="h3">Activity</h1>
+	</div>
+	<div class="col-xs-6 col-sm-9 m-b-2" ng-if="!$ctrl.showSearch">
+		<div class="btn-toolbar btn-toolbar-sm hidden-xs pull-xs-right pull-lg-none">
 			<button class="btn btn-success btn-sm">Send money</button>
 			<button class="btn btn-info btn-sm">Add money</button>
-			<button class="btn btn-info btn-sm">Receive</button>
+			<button class="btn btn-info btn-sm m-b-0">Receive</button>
+		</div>
+
+		<div class="btn-group visible-xs-inline-block pull-xs-right">
+			<button type="button" class="btn btn-success btn-sm dropdown-toggle"
+				data-toggle="dropdown" aria-expanded="false">
+				Get started <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-xs-right" role="menu">
+				<li><a href="#"><i class="icon icon-send"></i>Send money</a></li>
+				<li><a href="#"><i class="icon icon-add"></i>Add money</a></li>
+				<li><a href="#"><i class="icon icon-request"></i>Receive</a></li>
+			</ul>
 		</div>
 	</div>
 
-	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+	<div class="col-sm-6 col-md-3 m-b-2" ng-if="$ctrl.showSearch">
 		<tw-select options="$ctrl.activityTypes"
 			ng-model="$ctrl.type"
 			ng-required="true"
 			size="sm"
+			hide-icon="true"
 			ng-if="$ctrl.size !== 'sm'"></tw-select>
 	</div>
-	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+	<div class="col-sm-6 col-md-3 m-b-2" ng-if="$ctrl.showSearch">
 		<div class="input-group input-group-sm">
 			<span class="input-group-addon">
 				<label class="control-label">From</label>
@@ -22,7 +38,7 @@
 			<input class="form-control" value="01 May 2016" />
 		</div>
 	</div>
-	<div class="col-sm-6 col-lg-3 m-b-2 slide-in" ng-if="$ctrl.searching">
+	<div class="col-sm-6 col-md-3 m-b-2" ng-if="$ctrl.showSearch">
 		<div class="input-group input-group-sm">
 			<span class="input-group-addon">
 				<label class="control-label">To</label>
@@ -31,22 +47,34 @@
 		</div>
 	</div>
 
-	<div class="col-lg-3 m-b-2" ng-class="{'col-sm-6': $ctrl.searching, 'col-sm-4': !$ctrl.searching}">
-		<div class="input-group input-group-sm">
+	<div class="col-md-3 m-b-2"
+		ng-class="{
+			'col-sm-6': $ctrl.showSearch,
+			'col-sm-4': !$ctrl.showSearch,
+			'hidden-xs': !$ctrl.showSearch,
+			'hidden-sm': !$ctrl.showSearch,
+			'hidden-md': !$ctrl.showSearch
+		}">
+		<div class="media">
+			<div class="media-body">
+				<div class="input-group input-group-sm">
+					<input id="search-input" class="form-control" placeholder="Search..."
+						ng-focus="$ctrl.showSearch = true" />
+					<span class="input-group-addon" ng-if="!$ctrl.showSearch">
+						<i class="icon icon-search"></i>
+					</span>
+					<span class="input-group-btn hidde-lg hidde-xl" ng-if="$ctrl.showSearch">
+						<button class="btn btn-sm btn-primary">Go</button>
+					</span>
+				</div>
+			</div>
 
-			<input id="search-input" class="form-control" placeholder="Search..." ng-focus="$ctrl.searching = true" />
-			<span class="input-group-addon">
-				<i class="icon icon-search" ng-if="!$ctrl.searching"></i>
-				<a href="" ng-click="$ctrl.searching = false;" ng-if="$ctrl.searching">
-					<i class="icon icon-close"></i>
+			<div class="media-right fade-in p-l-1" ng-if="$ctrl.showSearch">
+				<a href="" class="h3 close m-b-0"
+					ng-click="$ctrl.showSearch = false;" title="Close search options">
+					<i class="icon icon-close icon-3"></i>
 				</a>
-			</span>
-			<!--<span class="input-group-btn">
-				<button class="btn btn-primary" ng-click="$ctrl.onSizeSwitch()">Go</button>
-			</span>-->
+			</div>
 		</div>
-		<!--
-		<button class="btn btn-primary btn-md btn-block" ng-click="$ctrl.onSizeSwitch()">Search</button>
-		-->
 	</div>
 </div>

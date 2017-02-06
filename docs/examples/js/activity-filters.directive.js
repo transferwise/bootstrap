@@ -19,7 +19,7 @@
 			replace: true,
 			restrict: 'E',
 			scope: {
-				onSizeSwitch: '&',
+				showSearch: '=',
 				size: '@'
 			},
 			templateUrl: 'partials/activity-filters.html'
