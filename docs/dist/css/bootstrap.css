@@ -11996,8 +11996,13 @@ a.circle.active:hover {
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 25px;
-  font-size: 16px;
+  font-size: 14px;
   border-color: #e2e6e8;
+}
+@media (min-width: 768px) {
+  .sequence {
+    font-size: 16px;
+  }
 }
 .sequence:before {
   position: absolute;
@@ -12014,8 +12019,13 @@ a.circle.active:hover {
 .sequence > li {
   position: relative;
   display: block;
-  line-height: 32px;
+  line-height: 24px;
   border-color: #e2e6e8;
+}
+@media (min-width: 768px) {
+  .sequence > li {
+    line-height: 32px;
+  }
 }
 .sequence > li > a {
   display: block;
@@ -12042,7 +12052,7 @@ a.circle.active:hover {
   display: block;
   width: 8px;
   height: 8px;
-  margin-top: 12px;
+  margin-top: 8px;
   margin-left: -27px;
   content: "";
   border-color: inherit;
@@ -12050,6 +12060,11 @@ a.circle.active:hover {
   border-width: 4px;
   border-radius: 50%;
   outline: 0;
+}
+@media (min-width: 768px) {
+  .sequence > li:before {
+    margin-top: 12px;
+  }
 }
 .sequence > li:after {
   position: absolute;
@@ -12102,7 +12117,12 @@ a.circle.active:hover {
   border-color: #00b9ff;
 }
 .sequence > .active:after {
-  height: 16px;
+  height: 12px;
+}
+@media (min-width: 768px) {
+  .sequence > .active:after {
+    height: 16px;
+  }
 }
 .sequence > .active:first-child:after {
   height: 0;
@@ -12130,7 +12150,12 @@ a.circle.active:hover {
   margin-top: 0;
 }
 .sequence-top .active:first-child:after {
-  height: 32px;
+  height: 28px;
+}
+@media (min-width: 768px) {
+  .sequence-top .active:first-child:after {
+    height: 32px;
+  }
 }
 .sequence-bottom:before {
   height: -webkit-calc(100% - 16px);
@@ -12223,7 +12248,7 @@ a.circle.active:hover {
 }
 .sequence-icon {
   position: absolute;
-  top: 4px;
+  top: 0;
   z-index: 2;
   display: block;
   width: 24px;
@@ -12237,6 +12262,11 @@ a.circle.active:hover {
   border-style: solid;
   border-width: 1px;
   border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .sequence-icon {
+    top: 4px;
+  }
 }
 .sequence-inverse .sequence-icon {
   background-color: #37517e;
@@ -12252,7 +12282,12 @@ a.circle.active:hover {
   border-color: #00a4df;
 }
 .sequence li:first-child .sequence-icon {
-  top: 20px;
+  top: 16px;
+}
+@media (min-width: 768px) {
+  .sequence li:first-child .sequence-icon {
+    top: 20px;
+  }
 }
 .sequence-table {
   display: table;
