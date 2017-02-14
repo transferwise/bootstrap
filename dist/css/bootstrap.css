@@ -5843,7 +5843,7 @@ tbody.collapse.in {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 104px;
   padding: 8px;
   margin: 0;
   font-size: 16px;
@@ -5856,6 +5856,11 @@ tbody.collapse.in {
   border-radius: 3px;
   -webkit-box-shadow: 0 20px 66px 0 rgba(34, 48, 73, .2);
           box-shadow: 0 20px 66px 0 rgba(34, 48, 73, .2);
+}
+@media (min-width: 576px) {
+  .dropdown-menu {
+    min-width: 160px;
+  }
 }
 .dropdown-menu .divider {
   height: 1px;
@@ -6394,9 +6399,14 @@ tbody.collapse.in {
   right: 0;
 }
 .btn-group.btn-block .btn.dropdown-toggle {
-  padding-right: 48px;
+  padding-right: 40px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media (min-width: 576px) {
+  .btn-group.btn-block .btn.dropdown-toggle {
+    padding-right: 48px;
+  }
 }
 .btn-group.btn-block .btn.btn-sm.dropdown-toggle {
   padding-right: 33px;
@@ -6580,6 +6590,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon a {
   text-decoration: none;
+}
+.input-group-addon:empty {
+  width: 3px;
+  padding: 0 !important;
 }
 .form-group-lg .input-lg,
 .form-group-lg .input-group {
@@ -9719,11 +9733,13 @@ button.close {
 }
 .tooltip-inner {
   max-width: 200px;
-  padding: 3px 8px;
-  color: #fff;
+  padding: 8px 16px;
+  color: #37517e;
   text-align: center;
-  background-color: #37517e;
+  background-color: #fff;
   border-radius: 3px;
+  -webkit-box-shadow: 0 1px 28px 0 rgba(34, 48, 73, .2);
+          box-shadow: 0 1px 28px 0 rgba(34, 48, 73, .2);
 }
 .tooltip-arrow {
   position: absolute;
@@ -9737,56 +9753,28 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #37517e;
-}
-.tooltip.top-left .tooltip-arrow {
-  right: 5px;
-  bottom: 0;
-  margin-bottom: -5px;
-  border-width: 5px 5px 0;
-  border-top-color: #37517e;
-}
-.tooltip.top-right .tooltip-arrow {
-  bottom: 0;
-  left: 5px;
-  margin-bottom: -5px;
-  border-width: 5px 5px 0;
-  border-top-color: #37517e;
+  border-top-color: #fff;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #37517e;
+  border-right-color: #fff;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #37517e;
+  border-left-color: #fff;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #37517e;
-}
-.tooltip.bottom-left .tooltip-arrow {
-  top: 0;
-  right: 5px;
-  margin-top: -5px;
-  border-width: 0 5px 5px;
-  border-bottom-color: #37517e;
-}
-.tooltip.bottom-right .tooltip-arrow {
-  top: 0;
-  left: 5px;
-  margin-top: -5px;
-  border-width: 0 5px 5px;
-  border-bottom-color: #37517e;
+  border-bottom-color: #fff;
 }
 [data-toggle=tooltip]:not(.btn) {
   cursor: pointer;

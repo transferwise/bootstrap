@@ -44,6 +44,7 @@
 			replace: false,
 			restrict: 'E',
 			scope: {
+				title: '@',
 				onBurgerClick: '&',
 				showSearch: '='
 			},

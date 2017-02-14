@@ -150,6 +150,11 @@
   a {
     text-decoration: none;
   }
+  &:empty {
+    padding: 0 !important;
+    // We still need the empty addon to provide border radius
+    width: @border-radius-base; 
+  }
 }
 
 .form-group-lg .input-lg,

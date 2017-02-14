@@ -326,9 +326,13 @@
     }
     .btn {
       &.dropdown-toggle {
-        padding-right: 48px;
+        padding-right: 40px;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media (min-width: @screen-sm-min) {
+          padding-right: 48px;
+        }
       }
       &.btn-sm.dropdown-toggle {
         padding-right: 33px;
