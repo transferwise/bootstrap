@@ -4701,20 +4701,20 @@ fieldset[disabled] .btn-success.active {
 .btn-info:focus,
 .btn-info.focus {
   color: #fff;
-  background-color: #6f8691;
-  border-color: #6f8691;
+  background-color: #00b9ff;
+  border-color: #00b9ff;
 }
 .btn-info:hover {
   color: #fff;
-  background-color: #6f8691;
-  border-color: #6f8691;
+  background-color: #00b9ff;
+  border-color: #00b9ff;
 }
 .btn-info:active,
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #fff;
-  background-color: #5d7079;
-  border-color: #5d7079;
+  background-color: #008ec0;
+  border-color: #008ec0;
 }
 .btn-info:active:hover,
 .btn-info.active:hover,
@@ -4726,8 +4726,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active.focus,
 .open > .dropdown-toggle.btn-info.focus {
   color: #fff;
-  background-color: #5d7079;
-  border-color: #5d7079;
+  background-color: #008ec0;
+  border-color: #008ec0;
 }
 .btn-info:active,
 .btn-info.active,
@@ -5632,10 +5632,6 @@ fieldset[disabled] .btn-addon.active {
        -o-transform: translateX(264px);
           transform: translateX(264px);
 }
-.column-layout-left,
-.column-layout-right {
-  z-index: 1060;
-}
 .column-layout-left.open,
 .column-layout-right.open {
   -webkit-transform: translateX(0);
@@ -5678,21 +5674,6 @@ fieldset[disabled] .btn-addon.active {
     vertical-align: top;
   }
 }
-.column-layout-cover {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1055;
-  display: block;
-  width: 0;
-  height: 0;
-  cursor: pointer;
-  background-color: #37517e;
-  opacity: 0;
-  -webkit-transition: opacity .35s ease;
-       -o-transition: opacity .35s ease;
-          transition: opacity .35s ease;
-}
 .column-layout-cover.in {
   width: 100%;
   height: 100%;
@@ -5723,6 +5704,25 @@ fieldset[disabled] .btn-addon.active {
 @media (max-width: 991px) {
   .column-layout-open {
     overflow: hidden;
+  }
+  .column-layout-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1055;
+    display: block;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    background-color: #37517e;
+    opacity: 0;
+    -webkit-transition: opacity .35s ease;
+         -o-transition: opacity .35s ease;
+            transition: opacity .35s ease;
+  }
+  .column-layout-left,
+  .column-layout-right {
+    z-index: 1060;
   }
 }
 .column-layout-left,
