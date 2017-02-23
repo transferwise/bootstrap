@@ -52,6 +52,11 @@
 		}
 	})(window.angular);
 	</script>
+	<style>
+	.sequence-icon {
+		display: none;
+	}
+	</style>
 </head>
 <body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
 <nav-bar ng-if="!ctrl.sideNav" fluid="ctrl.sideNav"></nav-bar>
@@ -69,7 +74,7 @@
 			show-search="ctrl.showSearch"></simple-nav>
 
 		<div class="container m-l-0">
-			<ul class="sequence sequence-bottom sequence-lg m-l-2">
+			<ul class="sequence sequence-bottom sequence-info sequence-hollow sequence-lg m-l-2">
 				<li>
 					<span class="sequence-icon"><i class="icon icon-check"></i></span>
 					<p class="text-max-width">Your £10 is converted to Euros</p>
@@ -84,12 +89,12 @@
 		</div>
 		<div class="bg-focus ">
 			<div class="container m-l-0">
-				<ul class="sequence sequence-top sequence-bottom sequence-lg m-l-2">
+				<ul class="sequence sequence-top sequence-bottom sequence-info sequence-lg m-l-2">
 					<li class="active">
 						<div class="sequence-icon sequence-icon-lg">3</div>
 						<h2 class="m-b-2">Waiting for your £10 payment</h2>
 						<div>
-							<h4>Haven't sent anything yet?</h4>
+							<h5>Haven't sent anything yet?</h5>
 							<p class="small text-max-width">
 								No problem. Hit the button below to pay for your transfer.
 							</p>
@@ -108,9 +113,9 @@
 			</div>
 		</div>
 		<div class="container m-l-0">
-			<ul class="sequence sequence-top sequence-lg m-l-2">
+			<ul class="sequence sequence-top sequence-hollow sequence-lg m-l-2">
 				<li class="sequence-item-no-pip">
-					<h5 class="m-b-0">Title title title</h5>
+					<h5>What happens when your payment arrives?</h5>
 				</li>
 				<li>
 					<span class="sequence-icon">4</span>
