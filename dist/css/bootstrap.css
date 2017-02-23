@@ -12126,8 +12126,12 @@ a.circle.active:hover {
 .sequence > li .h1,
 .sequence > li .h2,
 .sequence > li .h3,
-.sequence > li .h4 {
+.sequence > li .h4,
+.sequence > li .btn-toolbar {
   margin-bottom: 16px;
+}
+.sequence > li:last-child p:last-child {
+  padding-bottom: 0;
 }
 .sequence > li:before {
   position: absolute;
