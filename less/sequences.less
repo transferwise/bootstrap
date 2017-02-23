@@ -196,14 +196,16 @@
     p {
       margin-bottom: 0;
       padding-bottom: 8px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      .text-max-width();
     }
 
     h1, h2, h3, h4, .h1, .h2, .h3, .h4, .btn-toolbar {
       margin-bottom: 16px;
-    }
-
-    &:last-child p:last-child {
-      padding-bottom: 0;
     }
 
     &:before {

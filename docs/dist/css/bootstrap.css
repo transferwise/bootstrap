@@ -12116,8 +12116,12 @@ a.circle.active:hover {
   color: #00a4df;
 }
 .sequence > li p {
+  max-width: 600px;
   padding-bottom: 8px;
   margin-bottom: 0;
+}
+.sequence > li p:last-child {
+  padding-bottom: 0;
 }
 .sequence > li h1,
 .sequence > li h2,
@@ -12129,9 +12133,6 @@ a.circle.active:hover {
 .sequence > li .h4,
 .sequence > li .btn-toolbar {
   margin-bottom: 16px;
-}
-.sequence > li:last-child p:last-child {
-  padding-bottom: 0;
 }
 .sequence > li:before {
   position: absolute;
