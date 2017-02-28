@@ -53,9 +53,11 @@
 	})(window.angular);
 	</script>
 	<style>
+	/*
 	.sequence-icon {
 		display: none;
 	}
+	*/
 	</style>
 </head>
 <body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
@@ -72,9 +74,33 @@
 			title="£10 to Stephen Pole"
 			on-burger-click="ctrl.burgerToggle()"
 			show-search="ctrl.showSearch"></simple-nav>
+		<!--
+		<div class="bg-primary">
+			<div class="container p-t-4 p-b-5 clearfix">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-8">
+						<h2>Example title</h2>
+						<p class="m-b-0 small">Some more stuff here</p>
+						<p class="m-b-0 small">Occasionally a third line</p>
 
+						<p class="m-t-2 m-b-0">
+							<strong class="text-warning">
+								Verification problem
+							</strong>
+							You need to verify
+						</p>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4 p-t-1">
+						<a href="" class="btn btn-primary pull-sm-right">
+							Button!
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
 		<div class="container m-l-0">
-			<ul class="sequence sequence-bottom sequence-info sequence-hollow sequence-lg m-l-2">
+			<ul class="sequence sequence-bottom sequence-hollow sequence-lg m-l-2">
 				<li>
 					<span class="sequence-icon"><i class="icon icon-check"></i></span>
 					<span class="pull-xs-right small">6hrs ago</span>
@@ -91,9 +117,9 @@
 		</div>
 		<div class="bg-focus ">
 			<div class="container m-l-0">
-				<ul class="sequence sequence-top sequence-bottom sequence-info sequence-lg m-l-2">
+				<ul class="sequence sequence-top sequence-bottom sequence-lg m-l-2">
 					<li class="active">
-						<div class="sequence-icon sequence-icon-lg">3</div>
+						<div class="sequence-icon sequence-icon-lg"><i class="icon icon-alert text-warning"></i></div>
 						<h2 class="m-b-2">Waiting for your £10 payment</h2>
 						<div>
 							<h5>Haven't sent anything yet?</h5>

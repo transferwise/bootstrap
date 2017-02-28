@@ -11987,9 +11987,16 @@ a.circle.active:hover {
   border-color: #e2e6e8;
 }
 .sequence:before {
-  height: -webkit-calc(100% - 40px);
-  height:         calc(100% - 40px);
-  margin-top: 20px;
+  height: -webkit-calc(100% - 24px);
+  height:         calc(100% - 24px);
+  margin-top: 12px;
+}
+@media (min-width: 768px) {
+  .sequence:before {
+    height: -webkit-calc(100% - 32px);
+    height:         calc(100% - 32px);
+    margin-top: 16px;
+  }
 }
 .sequence > li:first-child {
   margin-top: 16px;
@@ -12003,6 +12010,9 @@ a.circle.active:hover {
     padding-bottom: 4px;
   }
 }
+.sequence > li:before {
+  margin-top: 8px;
+}
 .sequence > li:first-child:after {
   height: -webkit-calc(100% - 16px);
   height:         calc(100% - 16px);
@@ -12013,17 +12023,23 @@ a.circle.active:hover {
   height:         calc(100% - 16px);
 }
 .sequence > .active:after {
-  height: 14px;
+  height: 12px;
 }
 @media (min-width: 768px) {
   .sequence > .active:after {
-    height: 18px;
+    height: 16px;
   }
 }
 .sequence.sequence-top:before {
-  height: -webkit-calc(100% - 20px);
-  height:         calc(100% - 20px);
+  height: -webkit-calc(100% - 12px);
+  height:         calc(100% - 12px);
   margin-top: 0;
+}
+@media (min-width: 768px) {
+  .sequence.sequence-top:before {
+    height: -webkit-calc(100% - 16px);
+    height:         calc(100% - 16px);
+  }
 }
 .sequence.sequence-top > li:first-child {
   padding-top: 20px;
@@ -12040,8 +12056,14 @@ a.circle.active:hover {
   height: 32px;
 }
 .sequence.sequence-bottom:before {
-  height: -webkit-calc(100% - 20px);
-  height:         calc(100% - 20px);
+  height: -webkit-calc(100% - 12px);
+  height:         calc(100% - 12px);
+}
+@media (min-width: 768px) {
+  .sequence.sequence-bottom:before {
+    height: -webkit-calc(100% - 16px);
+    height:         calc(100% - 16px);
+  }
 }
 .sequence.sequence-bottom > li:last-child {
   padding-bottom: 20px;
@@ -12049,12 +12071,6 @@ a.circle.active:hover {
 }
 .sequence.sequence-bottom > li:last-child:after {
   height: 100%;
-}
-.sequence.sequence-bottom > .active:after {
-  height: 16px;
-}
-.sequence.sequence-bottom > .active:first-child:after {
-  height: 32px;
 }
 .sequence.sequence-bottom > .active:last-child:after {
   height: 16px;
@@ -12066,7 +12082,7 @@ a.circle.active:hover {
   height: 100%;
 }
 .sequence .sequence-icon {
-  top: 4px;
+  top: 0;
 }
 @media (min-width: 768px) {
   .sequence .sequence-icon {
@@ -12149,7 +12165,6 @@ a.circle.active:hover {
   display: block;
   width: 8px;
   height: 8px;
-  margin-top: 8px;
   content: "";
   border-color: inherit;
   border-style: solid;
@@ -12209,14 +12224,6 @@ a.circle.active:hover {
 .sequence-top > li:first-child:after {
   height: 100%;
   margin-top: 0;
-}
-.sequence-top > .active:first-child:after {
-  height: 28px;
-}
-@media (min-width: 768px) {
-  .sequence-top > .active:first-child:after {
-    height: 32px;
-  }
 }
 .sequence-bottom > li:last-child:after {
   height: 100%;
@@ -12306,11 +12313,6 @@ a.circle.active:hover {
   font-size: 16px;
   line-height: 23px;
 }
-@media (min-width: 768px) {
-  .sequence-icon {
-    top: 4px;
-  }
-}
 .sequence-inverse .sequence-icon {
   background-color: #37517e;
   border-color: #fff;
@@ -12323,9 +12325,6 @@ a.circle.active:hover {
 .sequence a:focus .sequence-icon {
   color: #00a4df;
   border-color: #00a4df;
-}
-.sequence-top li:first-child .sequence-icon {
-  top: 20px;
 }
 .sequence-table {
   display: table;
@@ -12427,15 +12426,18 @@ a.circle.active:hover {
     margin-left: -67px;
   }
   .sequence-lg:before {
-    height: -webkit-calc(100% - 72px);
-    height:         calc(100% - 72px);
-    margin-top: 36px;
+    height: -webkit-calc(100% - 24px);
+    height:         calc(100% - 24px);
+    margin-top: 12px;
   }
   .sequence-lg > li:first-child {
     margin-top: 24px;
   }
   .sequence-lg > li:last-child {
     margin-bottom: 24px;
+  }
+  .sequence-lg > li:before {
+    margin-top: 8px;
   }
   .sequence-lg > li:first-child:after {
     height: -webkit-calc(100% - 24px);
@@ -12447,11 +12449,11 @@ a.circle.active:hover {
     height:         calc(100% - 24px);
   }
   .sequence-lg > .active:after {
-    height: 18px;
+    height: 12px;
   }
   .sequence-lg.sequence-top:before {
-    height: -webkit-calc(100% - 36px);
-    height:         calc(100% - 36px);
+    height: -webkit-calc(100% - 12px);
+    height:         calc(100% - 12px);
     margin-top: 0;
   }
   .sequence-lg.sequence-top > li:first-child {
@@ -12469,8 +12471,8 @@ a.circle.active:hover {
     height: 48px;
   }
   .sequence-lg.sequence-bottom:before {
-    height: -webkit-calc(100% - 36px);
-    height:         calc(100% - 36px);
+    height: -webkit-calc(100% - 12px);
+    height:         calc(100% - 12px);
   }
   .sequence-lg.sequence-bottom > li:last-child {
     padding-bottom: 36px;
@@ -12478,12 +12480,6 @@ a.circle.active:hover {
   }
   .sequence-lg.sequence-bottom > li:last-child:after {
     height: 100%;
-  }
-  .sequence-lg.sequence-bottom > .active:after {
-    height: 24px;
-  }
-  .sequence-lg.sequence-bottom > .active:first-child:after {
-    height: 48px;
   }
   .sequence-lg.sequence-bottom > .active:last-child:after {
     height: 24px;
@@ -12495,7 +12491,14 @@ a.circle.active:hover {
     height: 100%;
   }
   .sequence-lg .sequence-icon {
-    top: 12px;
+    top: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .sequence-lg:before {
+    height: -webkit-calc(100% - 48px);
+    height:         calc(100% - 48px);
+    margin-top: 24px;
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
@@ -12506,7 +12509,19 @@ a.circle.active:hover {
 }
 @media (min-width: 768px) and (min-width: 768px) {
   .sequence-lg > .active:after {
-    height: 22px;
+    height: 24px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .sequence-lg.sequence-top:before {
+    height: -webkit-calc(100% - 24px);
+    height:         calc(100% - 24px);
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .sequence-lg.sequence-bottom:before {
+    height: -webkit-calc(100% - 24px);
+    height:         calc(100% - 24px);
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {

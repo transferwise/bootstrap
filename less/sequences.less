@@ -1,156 +1,10 @@
-@sequence-item-spacing: 4px;
-@sequence-item-spacing-lg: 12px;
-@sequence-margin-lg: 24px;
-@sequence-outside-spacing: (@sequence-margin + @sequence-item-spacing);
-@sequence-outside-spacing-lg: (@sequence-margin-lg + @sequence-item-spacing-lg);
-@sequence-spacing-horizontal-lg: 48px;
-@sequence-icon-size-md: 32px;
-@sequence-icon-size-lg: 40px;
-
-
-.sequence-vertical-spacing(
-  @sequence-outside-spacing,
-  @sequence-margin,
-  @sequence-item-spacing,
-  @sequence-step-height,
-  @sequence-step-height-small,
-  @sequence-icon-size
-) {
-  @total-margin: (@sequence-outside-spacing * 2);
-  @pip-offset: (@sequence-item-spacing + (@sequence-step-height-small / 2));
-
-  &:before {
-    height: calc(100% - @total-margin);
-    margin-top: @sequence-outside-spacing;
-  }
-  > li {
-    &:first-child {
-      margin-top: @sequence-margin;
-    }
-    &:last-child {
-      margin-bottom: @sequence-margin;
-    }
-    @media (min-width: @screen-md-min) {
-      padding-top: @sequence-item-spacing;
-      padding-bottom: @sequence-item-spacing;
-    }
-    &:first-child:after {
-      margin-top: @pip-offset; //@sequence-outside-spacing;
-      height: calc(100% - @pip-offset);
-    }
-    &:last-child:after {
-      height: calc(100% - @pip-offset);
-    }
-  }
-  > .active:after {
-    height: ((@sequence-step-height-small / 2) + (@sequence-item-spacing / 2));
-    @media (min-width: @screen-md-min) {
-      // TODO seems wrong
-      height: ((@sequence-step-height / 2) + (@sequence-item-spacing / 2));
-    }
-  }
-
-  &.sequence-top {
-    &:before {
-      height: calc(100% - @sequence-outside-spacing);
-      margin-top: 0;
-    }
-    > li:first-child {
-      padding-top: @sequence-outside-spacing;
-      margin-top: 0;
-
-      &:after {
-        height: 100%;
-        margin-top: 0;
-      }
-      .sequence-icon {
-        top: (((@sequence-step-height-small / 2) - (@sequence-icon-size / 2)) + @sequence-outside-spacing);
-      }
-    }
-    > .active:first-child:after {
-      height: (@sequence-margin + @sequence-item-spacing + (@sequence-step-height-small / 2));
-    }
-  }
-  &.sequence-bottom {
-    &:before {
-      height: calc(100% - @sequence-outside-spacing);
-    }
-    > li:last-child {
-      padding-bottom: @sequence-outside-spacing;
-      margin-bottom: 0;
-      &:after {
-        height: 100%;
-      }
-
-    }
-    > .active {
-      &:after {
-        height: (@sequence-item-spacing + (@sequence-step-height-small / 2));
-      }
-      &:first-child:after {
-        height: (@sequence-margin + @sequence-item-spacing + (@sequence-step-height-small / 2));
-      }
-      &:last-child:after {
-        height: (@sequence-item-spacing + (@sequence-step-height-small / 2));
-      }
-      &:first-child:last-child:after {
-        height: (@sequence-margin + @sequence-item-spacing + (@sequence-step-height-small / 2));
-      }
-    }
-  }
-  &.sequence-top.sequence-bottom {
-    &:before {
-      height: 100%;
-    }
-    > li:first-child:after {
-      //height: (@sequence-margin + @sequence-item-spacing + (@sequence-step-height-small / 2));
-    }
-  }
-
-  .sequence-icon {
-    top: @sequence-item-spacing;
-
-    @media (min-width: @screen-md-min) {
-      top: ((@sequence-step-height-small / 2) - (@sequence-icon-size / 2) + @sequence-item-spacing);
-    }
-  }
-}
-
-.sequence-horizontal-spacing(
-  @sequence-item-padding,
-  @sequence-pip-size,
-  @sequence-icon-sm,
-  @sequence-icon-md,
-  @sequence-icon-lg
-) {
-  padding-left: @sequence-item-padding;
-  > li {
-    &:before {
-      margin-left: (-@sequence-item-padding - (@sequence-pip-size / 2) + 1px);
-    }
-    &:after {
-      left: -@sequence-item-padding;
-    }
-  }
-  .sequence-icon {
-    margin-left: (-@sequence-item-padding - (@sequence-icon-sm / 2) + 1px);
-  }
-  .sequence-icon-md {
-    margin-left: (-@sequence-item-padding - (@sequence-icon-md / 2) + 1px);
-  }
-  .sequence-icon-lg {
-    margin-left: (-@sequence-item-padding - (@sequence-icon-lg / 2) + 1px);
-  }
-}
 
 
 .sequence {
   .sequence-vertical-spacing(
-    @sequence-outside-spacing,
     @sequence-margin,
     @sequence-item-spacing,
     @sequence-step-height,
-    @sequence-step-height-small,
     @sequence-icon-size
   );
   .sequence-horizontal-spacing(
@@ -185,7 +39,7 @@
 
   > li {
     display: block;
-    line-height: @sequence-step-height-small;
+    line-height: @sequence-step-height;
     position: relative;
     border-color: @sequence-border;
 
@@ -226,8 +80,6 @@
       position: absolute;
       width: @sequence-pip-size;
       height: @sequence-pip-size;
-      // TODO this should be in vertical mixin
-      margin-top: ((@sequence-step-height-small / 2) - (@sequence-pip-size / 2));
       border-radius: 50%;
       z-index: 2;
       border-width: (@sequence-pip-size / 2);
@@ -296,13 +148,6 @@
   > li:first-child:after {
     margin-top: 0;
     height: 100%;
-  }
-  > .active:first-child:after {
-    height: ((@sequence-step-height-small / 2) + @sequence-margin);
-
-    @media (min-width: @screen-md-min) {
-      height: ((@sequence-step-height / 2) + @sequence-margin);
-    }
   }
 }
 
@@ -407,10 +252,6 @@
     line-height: (@sequence-icon-size - 1px);
   }
 
-  @media (min-width: @screen-md-min) {
-    top: ((@sequence-step-height-small / 2) - (@sequence-icon-size / 2) + @sequence-item-spacing);
-  }
-
   .sequence-inverse & {
     background-color: @sequence-inverse-bg;
     border-color: #FFF;
@@ -424,10 +265,6 @@
   .sequence a:focus & {
     color: @link-hover-color;
     border-color: @link-hover-color;
-  }
-
-  .sequence-top li:first-child & {
-    top: (((@sequence-step-height-small / 2) - (@sequence-icon-size / 2)) + @sequence-outside-spacing);
   }
 }
 
@@ -519,11 +356,9 @@
       @sequence-icon-size-lg
     );
     .sequence-vertical-spacing(
-      @sequence-outside-spacing-lg,
       @sequence-margin-lg,
       @sequence-item-spacing-lg,
       @sequence-step-height,
-      @sequence-step-height-small,
       @sequence-icon-size
     );
   }
