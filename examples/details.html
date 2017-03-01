@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details Page Example</title>
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+	<link type="text/css" rel="stylesheet"
+		href="../dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="scratch.css" />
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../dist/js/bootstrap.min.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+	<script src="forms.js"></script>
+
+	<script>
+	angular.module('ExampleApp', ['tw.styleguide-components']);
+	</script>
+
+	<script src="js/nav.directive.js"></script>
+	<script src="js/simple-nav.directive.js"></script>
+	<script src="js/side-nav.directive.js"></script>
+	<script src="js/footer.directive.js"></script>
+
+
+	<script src="//transferwise.github.io/styleguide-components/dist/js/styleguide-components.js"></script>
+	<link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
+
+	<script>
+	(function(angular) {
+
+		angular.module('ExampleApp')
+		.controller('PageController', [
+			PageController
+		]);
+
+		function PageController() {
+			var $ctrl = this;
+
+			$ctrl.burgerToggle = function() {
+				$ctrl.open = !$ctrl.open;
+			};
+			$ctrl.showSearch = false;
+
+			$ctrl.sideNavToggle = function() {
+				$ctrl.sideNav = !$ctrl.sideNav;
+			};
+			$ctrl.sideNav = true;
+		}
+	})(window.angular);
+	</script>
+	<style>
+	/*
+	.sequence-icon {
+		display: none;
+	}
+	*/
+	</style>
+</head>
+<body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
+<nav-bar ng-if="!ctrl.sideNav" fluid="ctrl.sideNav"></nav-bar>
+<div class="column-layout">
+	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}" ng-if="ctrl.sideNav">
+		<div class="column-layout-top">
+			<side-nav></side-nav>
+		</div>
+	</div>
+	<div class="column-layout-main">
+		<simple-nav
+			ng-if="ctrl.sideNav"
+			title="£10 to Stephen Pole"
+			on-burger-click="ctrl.burgerToggle()"
+			show-search="ctrl.showSearch"></simple-nav>
+		<!--
+		<div class="bg-primary">
+			<div class="container p-t-4 p-b-5 clearfix">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-8">
+						<h2>Example title</h2>
+						<p class="m-b-0 small">Some more stuff here</p>
+						<p class="m-b-0 small">Occasionally a third line</p>
+
+						<p class="m-t-2 m-b-0">
+							<strong class="text-warning">
+								Verification problem
+							</strong>
+							You need to verify
+						</p>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-4 p-t-1">
+						<a href="" class="btn btn-primary pull-sm-right">
+							Button!
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+		<div class="container m-l-0">
+
+			<p class="m-t-2 m-b-0">
+				<strong class="text-warning">
+					Verification problem
+				</strong>
+				You need to verify
+			</p>
+			<ul class="sequence sequence-bottom sequence-hollow sequence-lg m-l-2">
+				<li>
+					<span class="sequence-icon"><i class="icon icon-check"></i></span>
+					<span class="pull-xs-right small">6hrs ago</span>
+					<p>Your £10 is converted to Euros</p>
+					<p class="small">The mid-market rate is <strong>£1 -> €1.18057</strong>, so
+						<strong>Stephen Pole would get €11.75</strong>.</p>
+				</li>
+				<li>
+					<span class="sequence-icon"><i class="icon icon-check"></i></span>
+					<span class="pull-xs-right small">2hrs ago</span>
+					Euros are transferred to Stephen Pole.
+				</li>
+			</ul>
+		</div>
+		<div class="bg-focus ">
+			<div class="container m-l-0">
+				<ul class="sequence sequence-top sequence-bottom sequence-lg m-l-2">
+					<li class="active">
+						<div class="sequence-icon sequence-icon-lg"><i class="icon icon-alert text-warning"></i></div>
+						<h2 class="m-b-2">Waiting for your £10 payment</h2>
+						<div>
+							<h5>Haven't sent anything yet?</h5>
+							<p class="small">
+								No problem. Hit the button below to pay for your transfer.
+							</p>
+							<div class="btn-toolbar btn-toolbar-sm">
+								<button class="btn btn-success">Pay for my transfer</button>
+								<button class="btn btn-default">I've sent the money</button>
+							</div>
+							<p class="small">
+								We'll let you know by email the moment your money reaches us.
+								This can take somewhere between a few hours to a couple of days.
+								Your bank should be able to tell you how long this bank transfer
+								will take.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container m-l-0">
+			<ul class="sequence sequence-top sequence-hollow sequence-lg m-l-2">
+				<li class="sequence-item-no-pip">
+					<h5>What happens when your payment arrives?</h5>
+				</li>
+				<li>
+					<span class="sequence-icon">4</span>
+					<p class="">Your £10 is converted to Euros</p>
+					<p class="small">
+						The mid-market rate is <strong>£1 -> €1.18057</strong>, so
+						<strong>Stephen Pole would get €11.75</strong>.</p>
+					<p class="small">You can
+						<a href="" data-toggle="modal" data-target="#rateLimitModal">
+							set a rate limit
+						</a> if you prefer.</p>
+				</li>
+				<li>
+					<span class="sequence-icon">5</span>
+					<p>Euros are transferred to Stephen Pole.</p>
+				</li>
+			</ul>
+			<button class="btn btn-danger">Cancel transfer</button>
+		</div>
+
+		<div class="modal" id="rateLimitModal">
+			<div class="modal-dialog">
+				<div class="modal-content modal-lg">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title ">
+							Adjust rate limit
+						</h4>
+						<p class="small m-b-0">
+							Currently the rate is &pound;1 <i class="icon icon-right-arrow"></i> $1.2345
+						</p>
+					</div>
+					<div class="modal-body">
+						<p>
+							You're protected from a 3% rate drop by default. Here you can select
+							a smaller percentage, but conversion might take longer (and isn't
+							guaranteed). This doesn't fix a rate. Exposing your money to market
+							conditions for a long time is risky.
+						</p>
+
+						<h5 class="page-header">Adjust the rate limit for your transfer</h5>
+						<div class="row">
+							<div class="col-md-6">
+								<tw-select ng-model="rateLimit" options="[]"></tw-select>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="checkbox">
+										<label>
+											<tw-checkbox ng-model="agree"></tw-checkbox>
+											I know what I am doing
+
+											<span class="pull-xs-right">
+												<a href="https://transferwise.com/support/customer/portal/articles/2075193-what-does-a-rate-limit-do-"
+													target="_blank">Help
+												</a>
+											</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<a href="" class="btn btn-primary btn-block">
+									Confirm rate
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column-layout-cover"
+		ng-class="{in: ctrl.open}"
+		ng-click="ctrl.open = !ctrl.open;">
+		<a class="close">&times;</a>
+	</div>
+</div>
+</body>
+</html>
