@@ -158,6 +158,10 @@
 					<p class="small">
 						The mid-market rate is <strong>£1 -> €1.18057</strong>, so
 						<strong>Stephen Pole would get €11.75</strong>.</p>
+					<p class="small">You can
+						<a href="" data-toggle="modal" data-target="#rateLimitModal">
+							set a rate limit
+						</a> if you prefer.</p>
 				</li>
 				<li>
 					<span class="sequence-icon">5</span>
@@ -165,6 +169,63 @@
 				</li>
 			</ul>
 			<button class="btn btn-danger">Cancel transfer</button>
+		</div>
+
+		<div class="modal" id="rateLimitModal">
+			<div class="modal-dialog">
+				<div class="modal-content modal-lg">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title ">
+							Adjust rate limit
+						</h4>
+						<p class="small m-b-0">
+							Currently the rate is &pound;1 <i class="icon icon-right-arrow"></i> $1.2345
+						</p>
+					</div>
+					<div class="modal-body">
+						<p>
+							You're protected from a 3% rate drop by default. Here you can select
+							a smaller percentage, but conversion might take longer (and isn't
+							guaranteed). This doesn't fix a rate. Exposing your money to market
+							conditions for a long time is risky.
+						</p>
+
+						<h5 class="page-header">Adjust the rate limit for your transfer</h5>
+						<div class="row">
+							<div class="col-md-6">
+								<tw-select ng-model="rateLimit" options="[]"></tw-select>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<div class="checkbox">
+										<label>
+											<tw-checkbox ng-model="agree"></tw-checkbox>
+											I know what I am doing
+
+											<span class="pull-xs-right">
+												<a href="https://transferwise.com/support/customer/portal/articles/2075193-what-does-a-rate-limit-do-"
+													target="_blank">Help
+												</a>
+											</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<a href class="btn btn-primary btn-block">
+									Confirm rate
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="column-layout-cover"
