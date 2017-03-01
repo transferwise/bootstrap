@@ -12128,17 +12128,17 @@ a.circle.active:hover {
 .sequence > li > a {
   display: block;
   font-weight: 500;
-  color: #37517e;
+  color: #00b9ff;
   text-decoration: none;
   outline-offset: -1px;
 }
 .sequence > li > a:hover,
 .sequence > li > a:focus {
-  color: #00b9ff;
+  color: #00a4df;
   text-decoration: none;
 }
 .sequence > li > a:active {
-  color: #00a4df;
+  color: #008ec0;
 }
 .sequence > li p {
   max-width: 600px;
@@ -12186,11 +12186,9 @@ a.circle.active:hover {
 .sequence .sequence-item-no-pip:before {
   display: none;
 }
-.sequence > .active {
-  font-weight: 600;
-}
 .sequence > .active > a {
-  color: #00b9ff;
+  font-weight: 600;
+  color: #2e4369;
   text-decoration: none;
 }
 .sequence > .active > a:hover,
@@ -12218,6 +12216,10 @@ a.circle.active:hover {
 .sequence > .active ~ li:after {
   width: 0;
 }
+.sequence a {
+  font-weight: 500;
+  text-decoration: none;
+}
 .sequence-top.sequence-bottom:before {
   height: 100%;
 }
@@ -12235,6 +12237,9 @@ a.circle.active:hover {
   border-color: #253655;
 }
 .sequence-inverse > li > a {
+  color: #fff;
+}
+.sequence-inverse > .active > a {
   color: #fff;
 }
 .sequence-inverse > .active ~ li {

@@ -47,15 +47,15 @@
       display: block;
       text-decoration: none;
       font-weight: @font-weight-normal;
-      color: @link-secondary-color;
+      color: @link-color;
       outline-offset: -1px;
       &:hover,
       &:focus {
         text-decoration: none;
-        color: @link-secondary-hover-color;
+        color: @link-hover-color;
       }
       &:active {
-        color: @link-secondary-active-color;
+        color: @link-active-color;
       }
     }
 
@@ -105,11 +105,10 @@
   }
 
   > .active {
-    font-weight: @font-weight-semi-bold;
-
     > a {
       text-decoration: none;
-      color: @link-color;
+      color: @headings-color;
+      font-weight: @font-weight-semi-bold;
       &:hover,
       &:focus {
         text-decoration: none;
@@ -137,6 +136,10 @@
         width: 0;
       }
     }
+  }
+  a {
+    text-decoration: none;
+    font-weight: @font-weight-normal;
   }
 }
 
@@ -166,6 +169,9 @@
     }
   }
   > .active {
+    > a {
+      color: #FFF;
+    }
     ~ li {
       border-color: @sequence-inverse-border;
     }
