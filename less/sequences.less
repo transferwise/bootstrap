@@ -27,16 +27,6 @@
     font-size: @font-size-base;
   }
 
-  &:before {
-    content: " ";
-    width: @sequence-line-width;
-    left: 0;
-    position: absolute;
-    border-width: (@sequence-line-width / 2);
-    border-style: solid;
-    border-color: inherit;
-  }
-
   > li {
     display: block;
     line-height: @sequence-step-height;
@@ -323,36 +313,28 @@
     }
   }
 
-
-
-  @pip-offset-small: ((@sequence-step-height / 2) + @sequence-margin);
   @pip-offset-table: ((@sequence-step-height / 2) + @sequence-margin);
-
-  // We don't need to account for ul margin as it's not part of height
-  @space-outside-pips-small: ((@sequence-margin * 2) + @sequence-step-height);
   @space-outside-pips-table: ((@sequence-margin * 2) + @sequence-step-height);
+  // Sequence table uses a different approach to the left hand line.
   &:before {
-    height: ~"calc(100% - @{space-outside-pips-small})";
-    margin-top: @pip-offset-small;
-    display: block;
+    content: " ";
+    width: @sequence-line-width;
+    left: 0;
+    position: absolute;
+    border-width: (@sequence-line-width / 2);
+    border-style: solid;
+    border-color: inherit;
 
-    @media (min-width: @screen-md-min) {
-      height: ~"calc(100% - @{space-outside-pips-table})";
-      margin-top: @pip-offset-table;
-    }
+    height: ~"calc(100% - @{space-outside-pips-table})";
+    margin-top: @pip-offset-table;
+    display: block;
   }
   &.sequence-top:before {
-    height: ~"calc(100% - @{pip-offset-small})";
+    height: ~"calc(100% - @{pip-offset-table})";
     margin-top: 0;
-    @media (min-width: @screen-md-min) {
-      height: ~"calc(100% - @{pip-offset-table})";
-    }
   }
   &.sequence-bottom:before {
-    height: ~"calc(100% - @{pip-offset-small})";
-    @media (min-width: @screen-md-min) {
-      height: ~"calc(100% - @{pip-offset-table})";
-    }
+    height: ~"calc(100% - @{pip-offset-table})";
   }
   &.sequence-top.sequence-bottom:before {
     height: 100%;
