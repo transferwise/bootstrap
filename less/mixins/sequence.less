@@ -93,6 +93,11 @@
 }
 
 
+// The line for the active item needs to be the active colour before the 'pip' and
+// the inactive colour afterwards.  This is tricky because we don't know the height.
+// However, we can achieve this with one element by using a gradient with a hard
+// transition between colours at the right point.  We need several variants to cover
+// our large and inverse options.
 .sequence-variant(
   @color,
   @pip-offset,
