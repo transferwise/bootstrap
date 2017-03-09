@@ -8616,7 +8616,7 @@ a.list-group-item-danger:hover {
   background-color: #fff;
 }
 .panel-heading {
-  padding: 16px 16px;
+  padding: 16px 16px 8px 16px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -8637,7 +8637,7 @@ a.list-group-item-danger:hover {
     margin-bottom: 24px;
   }
   .panel-heading {
-    padding: 16px 0;
+    padding: 16px 0 8px 0;
   }
   .panel-body {
     padding: 24px;
@@ -9167,11 +9167,6 @@ a.list-group-item-danger:hover {
   .panel {
     margin-right: 0;
     margin-left: 0;
-  }
-}
-@media (min-width: 576px) and (max-width: 767px) {
-  .panel-heading {
-    padding: 16px 0;
   }
 }
 .embed-responsive {
