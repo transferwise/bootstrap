@@ -121,6 +121,12 @@
 				$ctrl.sideNav = !$ctrl.sideNav;
 			};
 			$ctrl.sideNav = true;
+
+			$ctrl.actionButtons = [
+				{label: 'Send money', icon: 'icon-send', primary: true},
+				{label: 'Add money', icon: 'icon-add'},
+				{label: 'Receive', icon: 'icon-request'}
+			];
 		}
 	})(window.angular);
 	</script>
@@ -155,7 +161,14 @@
 				'affix-cancel-sm': ctrl.showSearch
 			}">
 			<div class="container m-l-0">
-				<activity-filters show-search="ctrl.showSearch"></activity-filters>
+
+				<activity-filters
+					title="Activity"
+					buttons="ctrl.actionButtons"
+					button-summary="Get started"
+					searchable="true"
+					filters-active="ctrl.showSearch">
+				</activity-filters>
 				<!-- <calculator-inline></calculator-inline> -->
 			</div>
 		</div>

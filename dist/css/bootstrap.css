@@ -7640,14 +7640,18 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .navbar-title {
   float: left;
-  margin-top: 13px;
-  margin-bottom: 13px;
-  line-height: 30px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 32px;
 }
 @media (min-width: 992px) {
   .navbar-title {
     font-weight: 800;
   }
+}
+.navbar-subtitle {
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 .navbar-logo {
   width: 127px;
