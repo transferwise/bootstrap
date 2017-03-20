@@ -310,6 +310,15 @@ module.exports = function (grunt) {
         ],
         dest: 'docs/dist/'
       },
+      assets: {
+        expand: true,
+        flatten: true,
+        src: [
+          'bower_components/angular/angular.js',
+          'bower_components/styleguide-components/dist/js/styleguide-components.js'
+        ],
+        dest: 'docs/assets/js/'
+      },
       iconfonts: {
         expand: true,
         flatten: true,

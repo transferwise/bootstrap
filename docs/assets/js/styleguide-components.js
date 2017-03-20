@@ -98,7 +98,7 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         }
         function explodeDateModel(date) {
             var dateObj = "string" == typeof date ? new Date(date) : date;
-            vm.day = dateObj.getDate(), vm.month = dateObj.getMonth(), vm.year = dateObj.getFullYear();
+            vm.day = dateObj.getUTCDate(), vm.month = dateObj.getUTCMonth(), vm.year = dateObj.getUTCFullYear();
         }
         function validDate(date) {
             return validDateObject(date) || validDateString(date);
@@ -162,7 +162,7 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
             return "string" == typeof value && !isNaN(Number(vm.month));
         }
         function combineDate() {
-            var date = new Date(Date.UTC(Number(vm.year), Number(vm.month), Number(vm.day)));
+            var date = new Date(Number(vm.year), Number(vm.month), Number(vm.day), 12, 0, 0);
             return date.setFullYear(vm.year), date;
         }
         function updateDateModelAndValidationClasses() {
@@ -174,8 +174,8 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
             } else ngModel.$setViewValue(dateObj);
         }
         function adjustLastDay() {
-            var month = (Number(vm.day), Number(vm.month)), year = Number(vm.year), lastUTCDateForMonthAndYear = new Date(Date.UTC(year, month + 1, 0));
-            lastUTCDateForMonthAndYear.getUTCDate();
+            var day = Number(vm.day), month = Number(vm.month), year = Number(vm.year), lastUTCDateForMonthAndYear = new Date(year, month + 1, 0, 12, 0, 0), lastUTCDayForMonthAndYear = lastUTCDateForMonthAndYear.getUTCDate();
+            day > lastUTCDayForMonthAndYear && (vm.day = parseInt(lastUTCDayForMonthAndYear, 10));
         }
         var ngModel, vm = this, initialisedWithDate = !1;
         vm.updateDateModelAndValidationClasses = updateDateModelAndValidationClasses, vm.explodeDateModel = explodeDateModel, 
@@ -345,7 +345,7 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         });
     }
     angular.module("tw.form-components").directive("twDate", TwDateDirective);
-    var daySectionTemplate = " \t\t<label class='sr-only' for='day-{{::uniqueId}}'>Day</label> \t\t<input type='number' \t\t\tname='day' \t\t\tid='day-{{::uniqueId}}' \t\t\tclass='form-control tw-date-day' \t\t\tng-model='vm.day' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tplaceholder='DD' \t\t\tmin='1' \t\t\tng-min='1' \t\t\tng-disabled='vm.dateDisabled' \t\t\tng-required='vm.dateRequired' \t\t\ttw-focusable />", monthSectionTemplate = "  \t\t<label class='sr-only' for='month-{{::uniqueId}}'>Month</label>\t\t<tw-select \t\t\tname='month' \t\t\tclass='tw-date-month' \t\t\tid='month-{{::uniqueId}}' \t\t\tng-model='vm.month' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tng-required='vm.dateRequired' \t\t\tng-disabled='vm.dateDisabled' \t\t\toptions='vm.dateMonths'> \t\t</tw-select>", yearSectionTemplate = " \t\t<label class='sr-only' for='year-{{::uniqueId}}'>Year</label> \t\t<input type='number' \t\t\tid='year-{{::uniqueId}}' \t\t\tname='year' \t\t\tclass='form-control tw-date-year' \t\t\tplaceholder='YYYY' \t\t\tng-model='vm.year' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tng-min='vm.dateRange.min.getFullYear()' \t\t\tng-max='vm.dateRange.max.getFullYear()' \t\t\tmaxlength='4' \t\t\tng-maxlength='4' \t\t\tng-disabled='vm.dateDisabled' \t\t\tng-required='vm.dateRequired' \t\t\ttw-focusable />", templateAsString = " \t\t<div class='row'> \t\t\t<div class='col-sm-5 tw-date-month-column' ng-if='vm.monthBeforeDay'>" + monthSectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-3 tw-date-day-column'>" + daySectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-5 tw-date-month-column' ng-if='!vm.monthBeforeDay'>" + monthSectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-4 tw-date-year-column'>" + yearSectionTemplate + " \t\t\t</div> \t\t</div>";
+    var daySectionTemplate = " \t\t<label class='sr-only'>Day</label> \t\t<input type='number' \t\t\tname='day' \t\t\tclass='form-control tw-date-day' \t\t\tng-model='vm.day' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tplaceholder='DD' \t\t\tmin='1' \t\t\tng-min='1' \t\t\tng-disabled='vm.dateDisabled' \t\t\tng-required='vm.dateRequired' \t\t\ttw-focusable />", monthSectionTemplate = "  \t\t<label class='sr-only'>Month</label>\t\t<tw-select \t\t\tname='month' \t\t\tclass='tw-date-month' \t\t\tng-model='vm.month' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tng-required='vm.dateRequired' \t\t\tng-disabled='vm.dateDisabled' \t\t\toptions='vm.dateMonths'> \t\t</tw-select>", yearSectionTemplate = " \t\t<label class='sr-only'>Year</label> \t\t<input type='number' \t\t\tname='year' \t\t\tclass='form-control tw-date-year' \t\t\tplaceholder='YYYY' \t\t\tng-model='vm.year' \t\t\tng-change='vm.updateDateModelAndValidationClasses()' \t\t\tng-min='vm.dateRange.min.getFullYear()' \t\t\tng-max='vm.dateRange.max.getFullYear()' \t\t\tmaxlength='4' \t\t\tng-maxlength='4' \t\t\tng-disabled='vm.dateDisabled' \t\t\tng-required='vm.dateRequired' \t\t\ttw-focusable />", templateAsString = " \t\t<div class='row'> \t\t\t<div class='col-sm-5 tw-date-month-column' ng-if='vm.monthBeforeDay'>" + monthSectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-3 tw-date-day-column'>" + daySectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-5 tw-date-month-column' ng-if='!vm.monthBeforeDay'>" + monthSectionTemplate + " \t\t\t</div> \t\t\t<div class='col-sm-4 tw-date-year-column'>" + yearSectionTemplate + " \t\t\t</div> \t\t</div>";
 }(window.angular), function(angular) {
     function TwDynamicFormControl() {
         return {
@@ -628,18 +628,17 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
     }
     function TwSelectController($element, $scope, $transclude, $timeout) {
         function responsiveClasses(value) {
-            if ("boolean" == typeof value && value) return "hidden";
-            if (value.toLowerCase && "true" === value.toLowerCase()) return "hidden";
             var classes = "", validBreakpoints = {
                 xs: !0,
                 sm: !0,
                 md: !0,
                 lg: !0,
                 xl: !0
-            }, breakpoints = value.split(",");
-            return breakpoints.forEach(function(breakpoint) {
+            }, breakpoints = [];
+            return "boolean" == typeof value && value ? "hidden" : value && value.toLowerCase && "true" === value.toLowerCase() ? "hidden" : (value && (breakpoints = value.split(",")), 
+            breakpoints.forEach(function(breakpoint) {
                 validBreakpoints[breakpoint] && (classes += "hidden-" + breakpoint + " ");
-            }), classes;
+            }), classes);
         }
         function circleClasses(responsiveOption) {
             var classes = $ctrl.responsiveClasses(responsiveOption), secondaryClasses = $ctrl.responsiveClasses($ctrl.hideSecondary);
@@ -840,25 +839,25 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
     }
     function TwUploadDroppableController() {
         var $ctrl = this;
-        $ctrl.dragCounter = 0, $ctrl.isActive = !1, $ctrl.onManualUpload = function() {
-            $ctrl.onUpload && "function" == typeof $ctrl.onUpload && $ctrl.onUpload(angular.element(document.querySelector("#file-upload"))[0].files[0]);
-        }, $ctrl.onDrop = function(file) {
-            $ctrl.onUpload && "function" == typeof $ctrl.onUpload && $ctrl.onUpload(file), $ctrl.isActive = !1, 
-            $ctrl.dropCounter = 0;
+        $ctrl.dragCounter = 0, $ctrl.isActive = !1, $ctrl.onManualUpload = function(event) {
+            $ctrl.onUpload && "function" == typeof $ctrl.onUpload && $ctrl.onUpload(angular.element(document.querySelector("#file-upload"))[0].files[0], event);
+        }, $ctrl.onDrop = function(file, event) {
+            $ctrl.onUpload && "function" == typeof $ctrl.onUpload && $ctrl.onUpload(file, event), 
+            $ctrl.isActive = !1, $ctrl.dropCounter = 0;
         }, $ctrl.onDragChange = function(enter) {
             enter ? ($ctrl.dragCounter++, 1 === $ctrl.dragCounter && ($ctrl.isActive = !0)) : ($ctrl.dragCounter--, 
             0 === $ctrl.dragCounter && ($ctrl.isActive = !1));
         };
     }
     function TwUploadDroppableLink(scope, element, attr) {
-        element[0].addEventListener("dragenter", function(evt) {
-            evt.preventDefault(), scope.$ctrl.onDragChange(!0), scope.$apply();
-        }, !1), element[0].addEventListener("dragover", function(evt) {
-            evt.preventDefault();
-        }, !1), element[0].addEventListener("dragleave", function(evt) {
-            evt.preventDefault(), scope.$ctrl.onDragChange(!1), scope.$apply();
-        }, !1), element[0].addEventListener("drop", function(evt) {
-            evt.preventDefault(), scope.$ctrl.onDrop(evt.dataTransfer.files[0]), scope.$apply();
+        element[0].addEventListener("dragenter", function(event) {
+            event.preventDefault(), scope.$ctrl.onDragChange(!0), scope.$apply();
+        }, !1), element[0].addEventListener("dragover", function(event) {
+            event.preventDefault();
+        }, !1), element[0].addEventListener("dragleave", function(event) {
+            event.preventDefault(), scope.$ctrl.onDragChange(!1), scope.$apply();
+        }, !1), element[0].addEventListener("drop", function(event) {
+            event.preventDefault(), scope.$ctrl.onDrop(event.dataTransfer.files[0]), scope.$apply();
         }, !1);
     }
     function TwFileSelectDirective() {
@@ -875,8 +874,8 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         };
     }
     function TwFileSelectLink(scope, element) {
-        element.on("change", function() {
-            scope.$ctrl.onUserInput && "function" == typeof scope.$ctrl.onUserInput && scope.$ctrl.onUserInput();
+        element.on("change", function(event) {
+            scope.$ctrl.onUserInput && "function" == typeof scope.$ctrl.onUserInput && scope.$ctrl.onUserInput(event);
         });
     }
     angular.module("tw.form-components").directive("twFileSelect", TwFileSelectDirective).controller("TwUploadDroppableController", TwUploadDroppableController).directive("twUploadDroppable", TwUploadDroppableDirective);
@@ -978,12 +977,12 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         checkForTranscludedContent($transclude, $ctrl), $scope.$watch("$ctrl.icon", function() {
             $ctrl.viewIcon = $ctrl.icon ? $ctrl.icon : "upload";
         }), ($ctrl.processingText || $ctrl.successText || $ctrl.failureText) && (!$ctrl.processingText || !$ctrl.successText || !$ctrl.failureText)) throw new Error("Supply all of processing, success, and failure text, or supply none.");
-        $ctrl.onManualUpload = function() {
+        $ctrl.onManualUpload = function(event) {
             var file = angular.element($element[0].querySelector(".tw-droppable-input"))[0].files[0];
-            $ctrl.fileDropped(file);
-        }, $ctrl.fileDropped = function(file) {
+            $ctrl.fileDropped(file, event);
+        }, $ctrl.fileDropped = function(file, event) {
             return reset(), isImage = file.type && file.type.indexOf("image") > -1, $ctrl.fileName = file.name, 
-            $ctrl.isProcessing = !0, $ctrl.processingState = null, triggerHandler($ctrl.onStart, file), 
+            $ctrl.isProcessing = !0, $ctrl.processingState = null, triggerHandler($ctrl.onStart, file, evt), 
             isSizeValid(file, $ctrl.maxSize) ? isTypeValid(file, $ctrl.accept) ? void ($ctrl.httpOptions ? $q.all([ asyncPost(file), asyncFileRead(file) ]).then(function(response) {
                 showDataImage(response[1]);
             }).then(asyncSuccess)["catch"](asyncFailure) : asyncFileRead(file).then(showDataImage).then(asyncSuccess)["catch"](asyncFailure)) : ($ctrl.isWrongType = !0, 
@@ -1009,7 +1008,8 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         }, !1), element[0].addEventListener("dragleave", function(event) {
             event.preventDefault(), scope.$ctrl.onDragChange(!1), scope.$apply();
         }, !1), element[0].addEventListener("drop", function(event) {
-            event.preventDefault(), scope.$ctrl.fileDropped(event.dataTransfer.files[0]), scope.$apply();
+            event.preventDefault(), scope.$ctrl.fileDropped(event.dataTransfer.files[0], event), 
+            scope.$apply();
         }, !1);
     }
     function triggerHandler(method, argument) {
@@ -1034,8 +1034,8 @@ angular.module("tw.styleguide-components", ['tw.form-validation', 'tw.form-styli
         };
     }
     function TwFileInputLink(scope, element) {
-        element.on("change", function() {
-            scope.$ctrl.onUserInput && "function" == typeof scope.$ctrl.onUserInput && scope.$ctrl.onUserInput();
+        element.on("change", function(event) {
+            scope.$ctrl.onUserInput && "function" == typeof scope.$ctrl.onUserInput && scope.$ctrl.onUserInput(event);
         });
     }
     angular.module("tw.form-components").directive("twFileInput", TwFileInputDirective).controller("twUploadController", TwUploadController).directive("twUpload", TwUploadDirective);
