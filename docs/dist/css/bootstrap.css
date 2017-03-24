@@ -1713,7 +1713,7 @@ a.text-inverse:focus {
 .page-header {
   padding-bottom: 16px;
   margin: 0 0 32px;
-  border-bottom: 1px solid #d3d5d8;
+  border-bottom: 1px solid #e2e6e8;
 }
 .page-header:not(:first-child) {
   margin-top: 32px;
@@ -7094,6 +7094,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 8px 16px;
   line-height: 40px;
   outline-offset: -1px;
+  -webkit-transition: color ease .15s;
+       -o-transition: color ease .15s;
+          transition: color ease .15s;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-nav > li > a {
@@ -11505,7 +11508,7 @@ a.circle[style]:hover {
 .navbar-nav > li > a .circle {
   width: 40px;
   height: 40px;
-  line-height: 38px;
+  line-height: 40px;
 }
 .circle,
 .circle-sm {
