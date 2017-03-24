@@ -1710,6 +1710,10 @@ a.text-inverse:focus {
 .bg-info .strong {
   color: #fff;
 }
+.jumbotron,
+.bg-primary {
+  color: #d8f1fa;
+}
 .page-header {
   padding-bottom: 16px;
   margin: 0 0 32px;
