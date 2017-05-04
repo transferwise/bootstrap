@@ -18,9 +18,9 @@
   margin-left: 13px;
   background-color: #00a4df;
   border-radius: 2px;
-          -webkit-transition: margin ease .15s;
-               -o-transition: margin ease .15s;
-                  transition: margin ease .15s;
+  -webkit-transition: margin ease .15s;
+       -o-transition: margin ease .15s;
+          transition: margin ease .15s;
 }
 .list-group-item:hover .pips {
   margin-top: 10px;
@@ -56,19 +56,19 @@
 
 
 .nav-tour-cover {
-  z-index: 1060;
   position: fixed;
-  display: block;
   top: 0;
   left: 0;
+  z-index: 1060;
+  display: block;
   width: 100vw;
   height: 100vh;
-  opacity: 0.7;
-  -webkit-transition: opacity 0.35s ease;
-       -o-transition: opacity 0.35s ease;
-          transition: opacity 0.35s ease;
-  background-color: #253655;
   cursor: pointer;
+  background-color: #253655;
+  opacity: .7;
+  -webkit-transition: opacity .35s ease;
+       -o-transition: opacity .35s ease;
+          transition: opacity .35s ease;
 }
 @media (min-width: 992px) {
   .nav-tour-cover {
@@ -79,11 +79,11 @@
 @media (max-width: 991px) {
   .popover-modal {
     position: fixed;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
     width: 272px;
     margin: 32px auto !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
   }
   .popover-modal .arrow {
     display: none;
