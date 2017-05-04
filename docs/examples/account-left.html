@@ -26,70 +26,12 @@
 			// undo the default ('!')
 			//$locationProvider.hashPrefix('');
 		});
-	/*
-	function triggerPopover(id, options) {
-		$('.popover').remove();
-		$('#navTourCover').remove();
 
-		var target = $('#' + id);
-		if (target.length) {
-			console.log(options);
-			target.popover(options);
-
-			var navTourCover = " \
-				<div id='navTourCover' \
-					class='nav-tour-cover in' \
-					style='display: block;' \
-					onclick='hideCover(\""+id+"\")'></div>";
-
-			$('body').append(navTourCover);
-		}
-	}
-	var navTourTemplate = " \
-		<div class='popover popover-modal' role='tooltip'> \
-			<div class='arrow'></div> \
-			<h3 class='popover-title'></h3> \
-			<div class='popover-content'></div> \
-		</div>";
-
-	function triggerInvitePopover() {
-		var id = 'inviteFriends';
-		var title = 'Did you know? <a href="" class="close text-no-decoration" onclick="hideCover(\''+id+'\')">&times;</a>';
-		var content = '<div class="embed-responsive embed-responsive-4by3"><img class="popover-image" src="/assets/img/css2-bg.jpg" /></div>' +
-			'By inviting your friends you can earn free transfers. Invite 3 friends to earn £50 off your fees.';
-
-		triggerPopover(id, {
-			trigger: 'click focus',
-			title: title,
-			content: content,
-			html: true,
-			placement: 'right',
-			container: 'body',
-			template: navTourTemplate
-		});
-	}
-	function triggerTwoFactorPopover() {
-		triggerPopover('twoFactor', {
-			trigger: 'click',
-			title: 'Secure your account',
-			content: '<img class="popover-image" src="/assets/img/css2-bg.jpg" />' +
-				'You can now make your account more secure using 2 factor authentication <a href="">Learn more</a>.',
-			html: true,
-			placement: 'right'
-		});
-	}
-	function hideCover(id) {
-		console.log(id);
-		$('#navTourCover').remove();
-		$('#' + id).popover('destroy');
-	}
-	*/
 	</script>
 
 	<script src="js/transfers.service.js"></script>
 	<script src="js/currencies.service.js"></script>
 	<script src="js/nav-tour.service.js"></script>
-
 	<script src="js/one-click.directive.js"></script>
 	<script src="js/nav.directive.js"></script>
 	<script src="js/top-nav.directive.js"></script>
