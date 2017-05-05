@@ -198,6 +198,8 @@
     <li><a href="#tables-condensed">Condensed table</a></li>
     <li><a href="#tables-contextual-classes">Contextual classes</a></li>
     <li><a href="#tables-responsive">Responsive tables</a></li>
+    <li><a href="#tables-calendar">Calendar tables</a></li>
+    <li><a href="#tables-description-list">Description list tables</a></li>
   </ul>
 </li>
 <li>
@@ -1790,6 +1792,18 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
           <td>Column content</td>
           <td>Column content</td>
         </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td>Column content</td>
+          <td>Column content</td>
+          <td>Column content</td>
+        </tr>
+        <tr class="default">
+          <th scope="row">11</th>
+          <td>Column content</td>
+          <td>Column content</td>
+          <td>Column content</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -1800,6 +1814,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"warning"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"default"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/tr&gt;</span>
 
 <span class="c">&lt;!-- On cells (`td` or `th`) --&gt;</span>
 <span class="nt">&lt;tr&gt;</span>
@@ -1808,6 +1823,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"warning"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"danger"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
   <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"default"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/td&gt;</span>
 <span class="nt">&lt;/tr&gt;</span></code></pre></div>
 
   <div class="alert alert-warning" id="callout-tables-context-accessibility">
@@ -1939,6 +1955,150 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span><span class="nt">&gt;</span>
     ...
   <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h2 id="tables-calendar">Calendar tables</h2>
+  <p>Used for rendering the days in a month, or months in a year.</p>
+
+  <div class="bs-example" data-example-id="calendar-table">
+    <table class="table table-bordered table-condensed table-calendar">
+      <thead>
+        <tr>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="" disabled="true">1</a></td>
+          <td><a href="" class="active">2</a></td>
+          <td><a href="">3</a></td>
+          <td><a href="">4</a></td>
+          <td><a href="">5</a></td>
+          <td><a href="">6</a></td>
+          <td><a href="">7</a></td>
+        </tr>
+        <tr>
+          <td><a href="">8</a></td>
+          <td><a href="">9</a></td>
+          <td><a href="">10</a></td>
+          <td><a href="">11</a></td>
+          <td><a href="">12</a></td>
+          <td><a href="">13</a></td>
+          <td><a href="">14</a></td>
+        </tr>
+        <tr>
+          <td><a href="">15</a></td>
+          <td><a href="">16</a></td>
+          <td><a href="">17</a></td>
+          <td><a href="">18</a></td>
+          <td><a href="">19</a></td>
+          <td><a href="">20</a></td>
+          <td><a href="">21</a></td>
+        </tr>
+        <tr>
+          <td><a href="">22</a></td>
+          <td><a href="">23</a></td>
+          <td><a href="">24</a></td>
+          <td><a href="">25</a></td>
+          <td><a href="">26</a></td>
+          <td><a href="">27</a></td>
+          <td><a href="">28</a></td>
+        </tr>
+        <tr>
+          <td><a href="">29</a></td>
+          <td><a href="">30</a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-calendar table-bordered table-condensed"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Mon<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Tue<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>Wed<span class="nt">&lt;/th&gt;</span>
+      ...
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">disabled</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+      ...
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre></div>
+
+
+  <h2 id="tables-description-list">Description list tables</h2>
+  <p>A mobile first table variant that uses description lists within cards on
+    mobile widths (xs and sm grid widths), and regular table styles when wider.</p>
+  <p>The description list tables can be used with the other table modifier
+    classes: <code>.table-bordered</code>, <code>.table-striped</code>,
+    <code>.table-hover</code>, <code>.table-condensed</code>.  You may also wrap
+    the table in a <code>.table-responsive</code> in case your table may not fit
+    on tablet widths.</p>
+
+  <div class="bs-example" data-example-id="description-list-table">
+    <div class="table table-bordered" role="grid">
+      <div class="thead" role="rowgroup">
+        <ol role="row">
+          <li role="columnheader">Heading 1</li>
+          <li role="columnheader">Heading 2</li>
+          <li role="columnheader">Heading 3</li>
+        </ol>
+      </div>
+      <div class="tbody" role="rowgroup">
+        <dl role="row">
+          <dt>Heading 1</dt>
+          <dd role="gridcell">Text 1</dd>
+          <dt>Heading 2</dt>
+          <dd role="gridcell">Text 2</dd>
+          <dt>Heading 3</dt>
+          <dd role="gridcell">Text 3</dd>
+        </dl>
+        <dl role="row">
+          <dt>Heading 1</dt>
+          <dd role="gridcell">Text 1</dd>
+          <dt>Heading 2</dt>
+          <dd role="gridcell">Text 2</dd>
+          <dt>Heading 3</dt>
+          <dd role="gridcell">Text 3</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table table-bordered"</span> <span class="na">role=</span><span class="s">"grid"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"thead"</span> <span class="na">role=</span><span class="s">"rowgroup"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ol</span> <span class="na">role=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"columnheader"</span><span class="nt">&gt;</span>Heading 1<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"columnheader"</span><span class="nt">&gt;</span>Heading 2<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"columnheader"</span><span class="nt">&gt;</span>Heading 3<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tbody"</span> <span class="na">role=</span><span class="s">"rowgroup"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dl</span> <span class="na">role=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>Heading 1<span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd</span> <span class="na">role=</span><span class="s">"gridcell"</span><span class="nt">&gt;</span>Text 1<span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>Heading 2<span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd</span> <span class="na">role=</span><span class="s">"gridcell"</span><span class="nt">&gt;</span>Text 2<span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>Heading 3<span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd</span> <span class="na">role=</span><span class="s">"gridcell"</span><span class="nt">&gt;</span>Text 3<span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+    <span class="nt">&lt;dl</span> <span class="na">role=</span><span class="s">"row"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/dl&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 </div>
 
