@@ -3476,13 +3476,14 @@ fieldset {
 legend {
   display: block;
   width: 100%;
-  padding: 0;
-  margin-bottom: 24px;
-  font-size: 16px;
-  line-height: inherit;
-  color: #4a5860;
+  padding: 32px 0 16px 0;
+  margin-bottom: 32px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2e4369;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #d3d5d8;
 }
 label {
   display: inline-block;
@@ -3643,6 +3644,9 @@ input[type="search"] {
 }
 .form-group label {
   margin-bottom: 2px;
+}
+.row-equal-height > [class*="col-"] > .form-group {
+  width: 100%;
 }
 .radio,
 .checkbox {
