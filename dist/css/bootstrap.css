@@ -5958,7 +5958,7 @@ fieldset[disabled] .btn-addon.active {
 }
 .column-layout-main .container {
   max-width: 1176px;
-  margin-left: 0 !important;
+  margin-left: 0;
 }
 .column-layout-brand {
   padding: 4px 24px;
@@ -11060,10 +11060,6 @@ address {
 .footer {
   background-color: #f2f5f7;
 }
-.footer .icon {
-  margin: 0 5px 0 5px;
-  font-size: 50px !important;
-}
 .footer h5 a {
   font-weight: inherit;
   color: inherit !important;
@@ -11072,7 +11068,7 @@ address {
   font-weight: normal;
   text-decoration: none;
 }
-.footer .link-icon:hover {
+.footer .icon-xxl:hover {
   text-decoration: none;
 }
 blockquote footer {
