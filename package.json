@@ -31,6 +31,7 @@
     "url": "https://github.com/transferwise/bootstrap/blob/master/LICENSE"
   },
   "devDependencies": {
+    "@transferwise/components": "^0.2.1",
     "btoa": "~1.1.2",
     "glob": "~5.0.5",
     "grunt": "~0.4.5",
@@ -62,7 +63,13 @@
     "markdown-it": "^4.2.1",
     "npm-shrinkwrap": "^200.4.0",
     "time-grunt": "^1.2.0",
-    "transferwise-iconfont": "git://github.com/transferwise/iconfont.git"
+    "transferwise-iconfont": "git://github.com/transferwise/iconfont.git",
+    "autoprefixer": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-less": "^3.3.2",
+    "gulp-postcss": "^7.0.0"
   },
   "engines": {
     "node": ">=0.10.1"

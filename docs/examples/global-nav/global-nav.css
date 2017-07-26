@@ -1,0 +1,122 @@
+.foldout {
+  position: absolute;
+  top: 76px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+@media (min-width: 768px) {
+  .foldout {
+    display: block;
+  }
+}
+.foldout-body {
+  border-radius: 3px;
+  background: #fff;
+  max-width: 1164px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.foldout-body:before {
+  content: "";
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 3px;
+  background: white;
+  position: absolute;
+  top: 0;
+  right: 400px;
+}
+@media (max-width: 1200px) {
+  .foldout-body {
+    margin: 0 32px;
+  }
+}
+@media (max-width: 992px) {
+  .foldout-body {
+    margin: 0 24px;
+  }
+}
+.foldout-nav {
+  padding: 50px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.foldout-nav [class^="col-"] {
+  padding-left: 24px;
+}
+.foldout-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.foldout-nav a {
+  font-weight: normal;
+  color: #6f8691;
+}
+.icon.foldout-nav-icon {
+  font-size: 2.5em;
+  color: #00b9ff;
+  opacity: .4;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+a.foldout-nav-link {
+  color: #00b9ff;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+}
+a.foldout-nav-link .icon-right {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+.foldout-featured {
+  background: #f2f5f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #2e4369;
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  padding: 50px 24px;
+}
+.foldout-featured-heading {
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "Averta", "Avenir W02", "Avenir", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #2e4369;
+  margin-bottom: 24px;
+}
+.foldout-featured-image {
+  margin-bottom: 24px;
+}

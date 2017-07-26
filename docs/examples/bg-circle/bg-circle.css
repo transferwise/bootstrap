@@ -1,0 +1,217 @@
+.bg-circle {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-circle:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 120%;
+  padding-bottom: 120%;
+  content: "";
+  background: #263753;
+  border-radius: 500rem;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+/*Sizes*/
+
+.bg-circle-xs:before {
+  width: 25%;
+  padding-bottom: 25%;
+}
+
+.bg-circle-sm:before {
+  width: 50%;
+  padding-bottom: 50%;
+}
+
+.bg-circle-lg:before {
+  width: 200%;
+  padding-bottom: 200%;
+}
+
+.bg-circle-xl:before {
+  width: 400%;
+  padding-bottom: 400%;
+}
+
+
+/*Positions (center). Uses -c sufix*/
+
+.bg-circle-top-c:before {
+  top: 0;
+}
+
+.bg-circle-right-c:before {
+  right: -50%;
+  left: inherit;
+}
+
+.bg-circle-left-c:before {
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.bg-circle-bottom-c:before {
+  top: inherit;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+       -o-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+
+/*Positions (box edge)*/
+
+.bg-circle-top:before {
+  top: 0;
+  -webkit-transform: translate(-50%, -4%);
+      -ms-transform: translate(-50%, -4%);
+       -o-transform: translate(-50%, -4%);
+          transform: translate(-50%, -4%);
+}
+
+.bg-circle-right:before {
+  right: 0;
+  left: inherit;
+  -webkit-transform: translate(4%, -50%);
+      -ms-transform: translate(4%, -50%);
+       -o-transform: translate(4%, -50%);
+          transform: translate(4%, -50%);
+}
+
+.bg-circle-left:before {
+  left: 0;
+  -webkit-transform: translate(-4%, -50%);
+      -ms-transform: translate(-4%, -50%);
+       -o-transform: translate(-4%, -50%);
+          transform: translate(-4%, -50%);
+}
+
+.bg-circle-bottom:before {
+  top: inherit;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 4%);
+      -ms-transform: translate(-50%, 4%);
+       -o-transform: translate(-50%, 4%);
+          transform: translate(-50%, 4%);
+}
+
+
+/*Combinations*/
+
+.bg-circle-top.bg-circle-left:before {
+  -webkit-transform: translate(-4%, -4%);
+      -ms-transform: translate(-4%, -4%);
+       -o-transform: translate(-4%, -4%);
+          transform: translate(-4%, -4%);
+}
+
+.bg-circle-top.bg-circle-right:before {
+  -webkit-transform: translate(4%, -4%);
+      -ms-transform: translate(4%, -4%);
+       -o-transform: translate(4%, -4%);
+          transform: translate(4%, -4%);
+}
+
+.bg-circle-bottom.bg-circle-left:before {
+  -webkit-transform: translate(-4%, 4%);
+      -ms-transform: translate(-4%, 4%);
+       -o-transform: translate(-4%, 4%);
+          transform: translate(-4%, 4%);
+}
+
+.bg-circle-bottom.bg-circle-right:before {
+  -webkit-transform: translate(4%, 4%);
+      -ms-transform: translate(4%, 4%);
+       -o-transform: translate(4%, 4%);
+          transform: translate(4%, 4%);
+}
+
+
+/*Not simetric center for big headings*/
+
+.bg-circle-center:before {
+  left: 0;
+  -webkit-transform: translate(-35%, 0%);
+      -ms-transform: translate(-35%, 0%);
+       -o-transform: translate(-35%, 0%);
+          transform: translate(-35%, 0%);
+}
+
+
+/*---------*/
+
+.bg-clip {
+  overflow: hidden;
+}
+
+
+/*Only for example visualization purposes*/
+
+.section {
+  padding-bottom: 160px;
+}
+
+.text-highlight {
+  color: #00b9ff;
+}
+
+.bg-circle h1, .bg-circle h3 {
+  color: #00b9ff;
+}
+
+.box-dashed {
+  border: 2px dashed #999;
+}
+
+.box-dashed-show.bg-circle {
+  z-index: inherit;
+}
+
+.box-dashed-show.bg-circle:before {
+  z-index: -1;
+}
+
+.m-b-10 {
+  margin-bottom: 80px !important;
+}
+
+.m-b-20 {
+  margin-bottom: 160px !important;
+}
+
+.m-b-30 {
+  margin-bottom: 240px !important;
+}
+
+.m-b-40 {
+  margin-bottom: 360px !important;
+}
+
+.m-b-70 {
+  margin-bottom: 560px !important;
+}
+
+.m-b-80 {
+  margin-bottom: 640px !important;
+}
+
+.m-b-100 {
+  margin-bottom: 800px !important;
+}
+
+.m-b-130 {
+  margin-bottom: 1040px !important;
+}

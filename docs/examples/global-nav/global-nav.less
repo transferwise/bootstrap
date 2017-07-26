@@ -1,0 +1,121 @@
+@import "./bower_components/bootstrap/less/variables.less";
+@import "./bower_components/bootstrap/less/iconfont/variables.less";
+@foldout-border-radius: 3px;
+@foldout-vertical-padding: 50px;
+
+.foldout {
+  position: absolute;
+  top: @navbar-height + 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  @media (min-width: @screen-md) {
+    display: block;
+  }
+
+}
+
+.foldout-body {
+  border-radius: @foldout-border-radius;
+  background: @brand-white;
+  max-width: @container-xlarge-desktop;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    transform: rotate(-45deg);
+    width: 50px;
+    height: 50px;
+    border-top-right-radius: 3px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 400px;
+  }
+
+  @media (max-width: @screen-xl) {
+    margin: 0 @spacing-1-desktop;
+  }
+  @media (max-width: @screen-lg) {
+    margin: 0 @spacing-1-tablet;
+  }
+}
+
+.foldout-nav {
+  padding: @foldout-vertical-padding @grid-gutter-width;
+  display: flex;
+  justify-content: space-between;
+
+  [class^="col-"] {
+    padding-left: @grid-gutter-width;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    font-weight: normal;
+    color: @brand-grey-plus-10;
+
+
+  }
+}
+.icon.foldout-nav-icon{
+  font-size: 2.5em;
+  color:@brand-light-blue;
+  opacity: .4;
+  margin-bottom: @spacer * 3;
+  display: inline-block;
+
+}
+a.foldout-nav-link {
+  color: @brand-light-blue;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+      white-space: nowrap;
+
+  .icon-right {
+    transform: scale(0.7);
+
+  }
+}
+.foldout-featured {
+  background: @gray-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: @brand-blue;
+  text-align: center;
+  border-radius: 0 @foldout-border-radius @foldout-border-radius 0;
+  padding: @foldout-vertical-padding @grid-gutter-width;
+}
+
+.foldout-featured-heading {
+  font-size: @font-size-h2;
+  line-height: @line-height-h2;
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  color: @brand-navy-minus-10;
+  margin-bottom: @spacer * 3;
+}
+
+.foldout-featured-image {
+  margin-bottom: @spacer * 3;
+}
+//link styles
+
+a {
+  &.chevron-down {}
+
+  &.chevron-right {}
+}

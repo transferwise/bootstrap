@@ -1,0 +1,62 @@
+.bg-curve {
+  width: 100%;
+  height: auto;
+  /*background: #F1F5F7;*/
+  /*position: relative;*/
+  color: white;
+}
+
+.bg-curve:before {
+  position: absolute;
+  z-index: -1;
+  width: 110%;
+  /*height: 100%;*/
+  max-width: 1800px;
+  height: auto;
+  max-height: 1800px;
+  padding-bottom: 110%;
+  content: "";
+  background: pink;
+  border-radius: 50%;
+  /*top: 0;
+  left: 0;*/
+  /*right: 0;
+  bottom: 0;*/
+  -webkit-transform: translate(0,-50vw);
+      -ms-transform: translate(0,-50vw);
+       -o-transform: translate(0,-50vw);
+          transform: translate(0,-50vw);
+}
+
+
+.bg-curve-left:before {
+  -webkit-transform: translate(-50vw,0);
+      -ms-transform: translate(-50vw,0);
+       -o-transform: translate(-50vw,0);
+          transform: translate(-50vw,0);
+}
+.bg-curve-right:before {
+  -webkit-transform: translate(50vw,0);
+      -ms-transform: translate(50vw,0);
+       -o-transform: translate(50vw,0);
+          transform: translate(50vw,0);
+}
+.bg-curve-bottom:before {
+  bottom: 0;
+  background: red;
+  -webkit-transform: translate(0,0);
+      -ms-transform: translate(0,0);
+       -o-transform: translate(0,0);
+          transform: translate(0,0);
+}
+
+
+
+.has-shadow {
+  -webkit-box-shadow: 0 0 40px 20px rgba(38, 55, 83, .1);
+          box-shadow: 0 0 40px 20px rgba(38, 55, 83, .1);
+}
+
+.img-debug {
+  max-width: 100%;
+}
