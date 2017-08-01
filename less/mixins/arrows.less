@@ -1,0 +1,27 @@
+.arrow(@size: 10px) {
+  position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    left: 20px;
+    top: -5px;
+    transform: rotate(45deg);
+    background-color: inherit;
+  }
+
+  &.arrow-center:before {
+    left: 50%;
+    margin-left: -5px;
+  }
+  &.arrow-right:before {
+    left: auto;
+    right: 20px;
+  }
+  &.arrow-bottom:before {
+    top: auto;
+    bottom: -5px;
+  }
+}

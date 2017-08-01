@@ -1656,11 +1656,11 @@ a.text-info:focus {
   color: #00a4df;
 }
 .text-warning {
-  color: #ffa600 !important;
+  color: #df8700 !important;
 }
 a.text-warning:hover,
 a.text-warning:focus {
-  color: #df8700;
+  color: #c07500;
 }
 .text-danger {
   color: #f53636 !important;
@@ -3510,6 +3510,7 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
+  margin-bottom: 4px;
 }
 label,
 .secondary {
@@ -3675,7 +3676,6 @@ input[type="search"] {
   position: relative;
   display: block;
   margin-top: 0;
-  margin-bottom: 12px;
 }
 .radio label,
 .checkbox label {
@@ -3684,6 +3684,10 @@ input[type="search"] {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: 12px;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
@@ -3868,7 +3872,131 @@ select[multiple].input-lg {
   height: 32px;
   line-height: 32px;
 }
-.has-success .help-block,
+.focus .control-label {
+  color: #00b9ff;
+}
+.focus .form-control,
+.focus .input-group-addon,
+.focus .btn-input {
+  border-color: #00b9ff;
+}
+.focus .form-control:hover,
+.focus .input-group-addon:hover,
+.focus .btn-input:hover {
+  border-color: #00b9ff;
+}
+.help-block,
+.error-messages {
+  padding: 4px 16px 3px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 24px;
+  border-style: solid;
+  border-width: 0;
+  border-radius: 3px;
+  -webkit-transition: border .15s ease-in-out, background-color .15s ease-in-out;
+       -o-transition: border .15s ease-in-out, background-color .15s ease-in-out;
+          transition: border .15s ease-in-out, background-color .15s ease-in-out;
+}
+.help-block a,
+.error-messages a {
+  color: inherit;
+}
+/*
+[tw-focusable] ~ .help-block { // ???
+  display: none;
+}
+*/
+.help-block {
+  position: relative;
+  display: none;
+  color: #6f8691;
+  background-color: #f2f5f7;
+  border-color: #d3d5d8;
+}
+.has-focus .help-block,
+.focus .help-block,
+:focus ~ .help-block {
+  display: block;
+  border-color: #00b9ff;
+}
+.help-block:before {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.help-block.arrow-center:before {
+  left: 50%;
+  margin-left: -5px;
+}
+.help-block.arrow-right:before {
+  right: 20px;
+  left: auto;
+}
+.help-block.arrow-bottom:before {
+  top: auto;
+  bottom: -5px;
+}
+.form-group .alert,
+.form-group .help-block {
+  padding: 4px 16px 3px;
+  margin-top: -2px;
+  margin-bottom: 0;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-group .radio ~ .alert,
+.form-group .checkbox ~ .alert,
+.form-group.detach-feedback .alert,
+.form-group.detach-feedback .help-block {
+  margin-top: 12px;
+  border-width: 0;
+  border-radius: 3px;
+}
+.form-group .alert-info,
+.form-group .alert-success,
+.form-group .alert-warning,
+.form-group .alert-danger {
+  display: none;
+}
+/*
+.form-group .alert {
+  margin-top: -14px;
+}
+*/
+.has-focus .alert-info,
+.has-warning .alert-warning,
+.has-success .alert-success,
+.has-error .alert-danger {
+  display: block;
+}
+.has-success {
+  /*
+  &:hover, &:focus, &:active {
+    .help-block,
+    .warning-block,
+    .error-block,
+    .error-messages, // TODO for backwards compatibility, would like to remove.
+    .form-control,
+    .btn-input,
+    .input-group-addon {
+      border-color: @border-hover !important;
+    }
+  }
+  */
+}
 .has-success .control-label,
 .has-success .radio,
 .has-success .checkbox,
@@ -3877,27 +4005,180 @@ select[multiple].input-lg {
 .has-success.radio label,
 .has-success.checkbox label,
 .has-success.radio-inline label,
-.has-success.checkbox-inline label {
-  color: #28b862;
+.has-success.checkbox-inline label,
+.has-success .radio label,
+.has-success .checkbox label,
+.has-success .radio-inline label,
+.has-success .checkbox-inline label,
+.has-success .input-group-addon {
+  color: #28b862 !important;
+  border-color: #28b862 !important;
 }
 .has-success .form-control,
 .has-success .btn-input {
-  border-color: #28b862;
+  border-color: #28b862 !important;
 }
-.has-success .form-control:hover,
-.has-success .btn-input:hover,
-.has-success .form-control:focus,
-.has-success .btn-input:focus {
-  border-color: #1d8547;
-}
-.has-success .input-group-addon {
-  color: #28b862;
-  border-color: #28b862;
+.has-success:hover .form-control,
+.has-success:focus .form-control,
+.has-success:hover .radio label,
+.has-success:focus .radio label,
+.has-success:hover .checkbox label,
+.has-success:focus .checkbox label,
+.has-success:hover.radio label,
+.has-success:focus.radio label,
+.has-success:hover.checkbox label,
+.has-success:focus.checkbox label,
+.has-success:hover .btn-input,
+.has-success:focus .btn-input,
+.has-success:hover .input-group-addon,
+.has-success:focus .input-group-addon,
+.has-success:hover .help-block,
+.has-success:focus .help-block,
+.has-success:hover .alert,
+.has-success:focus .alert {
+  border-color: #1d8547 !important;
 }
 .has-success .form-control-feedback {
   color: #28b862;
 }
-.has-warning .help-block,
+.has-success .radio > label:not(.disabled),
+.has-success .checkbox > label:not(.disabled) {
+  color: #2e4369;
+  border-color: #28b862;
+}
+.has-success .radio .tw-checkbox-button,
+.has-success .checkbox .tw-checkbox-button,
+.has-success .radio .tw-radio-button,
+.has-success .checkbox .tw-radio-button {
+  border-color: #28b862;
+}
+.has-focus,
+.focus {
+  /*
+  &:hover, &:focus, &:active {
+    .help-block,
+    .warning-block,
+    .error-block,
+    .error-messages, // TODO for backwards compatibility, would like to remove.
+    .form-control,
+    .btn-input,
+    .input-group-addon {
+      border-color: @border-hover !important;
+    }
+  }
+  */
+}
+.has-focus .control-label,
+.focus .control-label,
+.has-focus .radio,
+.focus .radio,
+.has-focus .checkbox,
+.focus .checkbox,
+.has-focus .radio-inline,
+.focus .radio-inline,
+.has-focus .checkbox-inline,
+.focus .checkbox-inline,
+.has-focus.radio label,
+.focus.radio label,
+.has-focus.checkbox label,
+.focus.checkbox label,
+.has-focus.radio-inline label,
+.focus.radio-inline label,
+.has-focus.checkbox-inline label,
+.focus.checkbox-inline label,
+.has-focus .radio label,
+.focus .radio label,
+.has-focus .checkbox label,
+.focus .checkbox label,
+.has-focus .radio-inline label,
+.focus .radio-inline label,
+.has-focus .checkbox-inline label,
+.focus .checkbox-inline label,
+.has-focus .input-group-addon,
+.focus .input-group-addon {
+  color: #00b9ff !important;
+  border-color: #00b9ff !important;
+}
+.has-focus .form-control,
+.focus .form-control,
+.has-focus .btn-input,
+.focus .btn-input {
+  border-color: #00b9ff !important;
+}
+.has-focus:hover .form-control,
+.focus:hover .form-control,
+.has-focus:focus .form-control,
+.focus:focus .form-control,
+.has-focus:hover .radio label,
+.focus:hover .radio label,
+.has-focus:focus .radio label,
+.focus:focus .radio label,
+.has-focus:hover .checkbox label,
+.focus:hover .checkbox label,
+.has-focus:focus .checkbox label,
+.focus:focus .checkbox label,
+.has-focus:hover.radio label,
+.focus:hover.radio label,
+.has-focus:focus.radio label,
+.focus:focus.radio label,
+.has-focus:hover.checkbox label,
+.focus:hover.checkbox label,
+.has-focus:focus.checkbox label,
+.focus:focus.checkbox label,
+.has-focus:hover .btn-input,
+.focus:hover .btn-input,
+.has-focus:focus .btn-input,
+.focus:focus .btn-input,
+.has-focus:hover .input-group-addon,
+.focus:hover .input-group-addon,
+.has-focus:focus .input-group-addon,
+.focus:focus .input-group-addon,
+.has-focus:hover .help-block,
+.focus:hover .help-block,
+.has-focus:focus .help-block,
+.focus:focus .help-block,
+.has-focus:hover .alert,
+.focus:hover .alert,
+.has-focus:focus .alert,
+.focus:focus .alert {
+  border-color: #00a4df !important;
+}
+.has-focus .form-control-feedback,
+.focus .form-control-feedback {
+  color: #00b9ff;
+}
+.has-focus .radio > label:not(.disabled),
+.focus .radio > label:not(.disabled),
+.has-focus .checkbox > label:not(.disabled),
+.focus .checkbox > label:not(.disabled) {
+  color: #2e4369;
+  border-color: #00b9ff;
+}
+.has-focus .radio .tw-checkbox-button,
+.focus .radio .tw-checkbox-button,
+.has-focus .checkbox .tw-checkbox-button,
+.focus .checkbox .tw-checkbox-button,
+.has-focus .radio .tw-radio-button,
+.focus .radio .tw-radio-button,
+.has-focus .checkbox .tw-radio-button,
+.focus .checkbox .tw-radio-button {
+  border-color: #00b9ff;
+}
+.has-warning {
+  /*
+  &:hover, &:focus, &:active {
+    .help-block,
+    .warning-block,
+    .error-block,
+    .error-messages, // TODO for backwards compatibility, would like to remove.
+    .form-control,
+    .btn-input,
+    .input-group-addon {
+      border-color: @border-hover !important;
+    }
+  }
+  */
+}
 .has-warning .control-label,
 .has-warning .radio,
 .has-warning .checkbox,
@@ -3906,27 +4187,68 @@ select[multiple].input-lg {
 .has-warning.radio label,
 .has-warning.checkbox label,
 .has-warning.radio-inline label,
-.has-warning.checkbox-inline label {
-  color: #ffa600;
+.has-warning.checkbox-inline label,
+.has-warning .radio label,
+.has-warning .checkbox label,
+.has-warning .radio-inline label,
+.has-warning .checkbox-inline label,
+.has-warning .input-group-addon {
+  color: #ffa600 !important;
+  border-color: #ffa600 !important;
 }
 .has-warning .form-control,
 .has-warning .btn-input {
-  border-color: #ffa600;
+  border-color: #ffa600 !important;
 }
-.has-warning .form-control:hover,
-.has-warning .btn-input:hover,
-.has-warning .form-control:focus,
-.has-warning .btn-input:focus {
-  border-color: #df8700;
-}
-.has-warning .input-group-addon {
-  color: #ffa600;
-  border-color: #ffa600;
+.has-warning:hover .form-control,
+.has-warning:focus .form-control,
+.has-warning:hover .radio label,
+.has-warning:focus .radio label,
+.has-warning:hover .checkbox label,
+.has-warning:focus .checkbox label,
+.has-warning:hover.radio label,
+.has-warning:focus.radio label,
+.has-warning:hover.checkbox label,
+.has-warning:focus.checkbox label,
+.has-warning:hover .btn-input,
+.has-warning:focus .btn-input,
+.has-warning:hover .input-group-addon,
+.has-warning:focus .input-group-addon,
+.has-warning:hover .help-block,
+.has-warning:focus .help-block,
+.has-warning:hover .alert,
+.has-warning:focus .alert {
+  border-color: #df8700 !important;
 }
 .has-warning .form-control-feedback {
   color: #ffa600;
 }
-.has-error .help-block,
+.has-warning .radio > label:not(.disabled),
+.has-warning .checkbox > label:not(.disabled) {
+  color: #2e4369;
+  border-color: #ffa600;
+}
+.has-warning .radio .tw-checkbox-button,
+.has-warning .checkbox .tw-checkbox-button,
+.has-warning .radio .tw-radio-button,
+.has-warning .checkbox .tw-radio-button {
+  border-color: #ffa600;
+}
+.has-error {
+  /*
+  &:hover, &:focus, &:active {
+    .help-block,
+    .warning-block,
+    .error-block,
+    .error-messages, // TODO for backwards compatibility, would like to remove.
+    .form-control,
+    .btn-input,
+    .input-group-addon {
+      border-color: @border-hover !important;
+    }
+  }
+  */
+}
 .has-error .control-label,
 .has-error .radio,
 .has-error .checkbox,
@@ -3935,39 +4257,58 @@ select[multiple].input-lg {
 .has-error.radio label,
 .has-error.checkbox label,
 .has-error.radio-inline label,
-.has-error.checkbox-inline label {
-  color: #f53636;
+.has-error.checkbox-inline label,
+.has-error .radio label,
+.has-error .checkbox label,
+.has-error .radio-inline label,
+.has-error .checkbox-inline label,
+.has-error .input-group-addon {
+  color: #f53636 !important;
+  border-color: #f53636 !important;
 }
 .has-error .form-control,
 .has-error .btn-input {
-  border-color: #f53636;
+  border-color: #f53636 !important;
 }
-.has-error .form-control:hover,
-.has-error .btn-input:hover,
-.has-error .form-control:focus,
-.has-error .btn-input:focus {
-  border-color: #cf3131;
-}
-.has-error .input-group-addon {
-  color: #f53636;
-  border-color: #f53636;
+.has-error:hover .form-control,
+.has-error:focus .form-control,
+.has-error:hover .radio label,
+.has-error:focus .radio label,
+.has-error:hover .checkbox label,
+.has-error:focus .checkbox label,
+.has-error:hover.radio label,
+.has-error:focus.radio label,
+.has-error:hover.checkbox label,
+.has-error:focus.checkbox label,
+.has-error:hover .btn-input,
+.has-error:focus .btn-input,
+.has-error:hover .input-group-addon,
+.has-error:focus .input-group-addon,
+.has-error:hover .help-block,
+.has-error:focus .help-block,
+.has-error:hover .alert,
+.has-error:focus .alert {
+  border-color: #cf3131 !important;
 }
 .has-error .form-control-feedback {
   color: #f53636;
+}
+.has-error .radio > label:not(.disabled),
+.has-error .checkbox > label:not(.disabled) {
+  color: #2e4369;
+  border-color: #f53636;
+}
+.has-error .radio .tw-checkbox-button,
+.has-error .checkbox .tw-checkbox-button,
+.has-error .radio .tw-radio-button,
+.has-error .checkbox .tw-radio-button {
+  border-color: #f53636;
 }
 .has-feedback label ~ .form-control-feedback {
   top: 24px;
 }
 .has-feedback label.sr-only ~ .form-control-feedback {
   top: 0;
-}
-.help-block {
-  display: block;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #829ca9;
 }
 @media (min-width: 576px) {
   .form-inline .form-group {
@@ -4056,6 +4397,10 @@ select[multiple].input-lg {
     padding-top: 8px;
     font-size: 14px;
   }
+}
+.radio,
+.checkbox {
+  border-color: #d3d5d8;
 }
 .radio > label,
 .checkbox > label {
@@ -4378,24 +4723,44 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
 .form-group .radio-lg .input-replacement {
   top: 23px;
 }
-.radio.has-success > label .input-replacement,
-.checkbox.has-success > label .input-replacement,
-.radio.has-success > label:hover .input-replacement,
-.checkbox.has-success > label:hover .input-replacement {
-  border-color: #2ed06e;
+/*
+.radio,
+.checkbox {
+    &.has-focus,
+    &.has-info {
+        > label,
+        > label:hover {
+            .input-replacement {
+                border-color: @state-info-border;
+            }
+        }
+    }
+    &.has-success {
+        > label,
+        > label:hover {
+            .input-replacement {
+                border-color: @state-success-border;
+            }
+        }
+    }
+    &.has-warning {
+        > label,
+        > label:hover {
+            .input-replacement {
+                border-color: @state-warning-border;
+            }
+        }
+    }
+    &.has-error {
+        > label,
+        > label:hover {
+            .input-replacement {
+                border-color: @state-danger-border;
+            }
+        }
+    }
 }
-.radio.has-warning > label .input-replacement,
-.checkbox.has-warning > label .input-replacement,
-.radio.has-warning > label:hover .input-replacement,
-.checkbox.has-warning > label:hover .input-replacement {
-  border-color: #ffa600;
-}
-.radio.has-error > label .input-replacement,
-.checkbox.has-error > label .input-replacement,
-.radio.has-error > label:hover .input-replacement,
-.checkbox.has-error > label:hover .input-replacement {
-  border-color: #f53636;
-}
+*/
 .disabled .checkbox > label:hover .input-replacement,
 .checkbox.disabled > label:hover .input-replacement,
 .disabled .radio > label:hover .input-replacement,
@@ -4488,19 +4853,6 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
     margin-bottom: 12px;
   }
 }
-:not(.has-error).focus .control-label {
-  color: #00b9ff;
-}
-:not(.has-error).focus .form-control,
-:not(.has-error).focus .input-group-addon,
-:not(.has-error).focus .btn-input {
-  border-color: #00b9ff;
-}
-:not(.has-error).focus .form-control:hover,
-:not(.has-error).focus .input-group-addon:hover,
-:not(.has-error).focus .btn-input:hover {
-  border-color: #00b9ff;
-}
 @media (min-width: 576px) {
   fieldset .form-group:nth-of-type(odd) {
     clear: left;
@@ -4540,21 +4892,6 @@ fieldset[disabled] .checkbox label input[type=checkbox] + .input-replacement > s
   background-color: #f2f5f7;
   border-color: #00b9ff;
 }
-.checkbox.has-success > label:not(.disabled),
-.radio.has-success > label:not(.disabled) {
-  color: #2e4369;
-  border-color: #28b862;
-}
-.checkbox.has-warning > label:not(.disabled),
-.radio.has-warning > label:not(.disabled) {
-  color: #2e4369;
-  border-color: #ffa600;
-}
-.checkbox.has-error > label:not(.disabled),
-.radio.has-error > label:not(.disabled) {
-  color: #2e4369;
-  border-color: #f53636;
-}
 .checkbox[disabled] label,
 .radio[disabled] label,
 .checkbox[readonly] label,
@@ -4587,11 +4924,6 @@ fieldset[disabled] .radio label,
   font-size: 14px;
   color: #829ca9;
 }
-/* If a radio group has an error all section are invalid */
-.has-error .radio > label {
-  color: #2e4369;
-  border-color: #f53636;
-}
 .disabled .checkbox > label,
 .checkbox.disabled > label,
 .disabled .radio > label,
@@ -4604,11 +4936,43 @@ fieldset[disabled] .radio label,
   border-color: #e2e6e8;
 }
 .error-messages {
+  position: relative;
   display: none;
-  margin-top: 4px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   color: #f53636;
+  background-color: #ffdfdf;
+}
+.error-messages:before {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.error-messages.arrow-center:before {
+  left: 50%;
+  margin-left: -5px;
+}
+.error-messages.arrow-right:before {
+  right: 20px;
+  left: auto;
+}
+.error-messages.arrow-bottom:before {
+  top: auto;
+  bottom: -5px;
+}
+.form-group .error-messages {
+  margin-top: 12px;
+  border-width: 0;
+  border-radius: 3px;
 }
 .has-error .error-messages {
   display: block;
@@ -4647,6 +5011,24 @@ fieldset[disabled] .radio label,
 .ng-invalid-week ~ .error-messages > .error-week,
 .ng-invalid-month ~ .error-messages > .error-month,
 .ng-invalid-datetimelocal ~ .error-messages > .error-datetimelocal {
+  display: block;
+}
+.ng-invalid-required ~ .alert-danger > .error-required,
+.ng-invalid-pattern ~ .alert-danger > .error-pattern,
+.ng-invalid-minlength ~ .alert-danger > .error-minlength,
+.ng-invalid-maxlength ~ .alert-danger > .error-maxlength,
+.ng-invalid-min ~ .alert-danger > .error-min,
+.ng-invalid-max ~ .alert-danger > .error-max,
+.ng-invalid-async ~ .alert-danger > .error-async,
+.ng-invalid-number ~ .alert-danger > .error-number,
+.ng-invalid-date ~ .alert-danger > .error-date,
+.ng-invalid-time ~ .alert-danger > .error-time,
+.ng-invalid-datetime ~ .alert-danger > .error-datetime,
+.ng-invalid-email ~ .alert-danger > .error-email,
+.ng-invalid-url ~ .alert-danger > .error-url,
+.ng-invalid-week ~ .alert-danger > .error-week,
+.ng-invalid-month ~ .alert-danger > .error-month,
+.ng-invalid-datetimelocal ~ .alert-danger > .error-datetimelocal {
   display: block;
 }
 .form-control-placeholder {
@@ -6327,16 +6709,15 @@ tbody.collapse.in {
 .btn-group-vertical > .btn {
   position: relative;
   float: left;
-}
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active {
-  z-index: 2;
+  /*
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+    */
 }
 .btn-group .btn + .btn,
 .btn-group .btn + .btn-group,
@@ -8404,6 +8785,7 @@ a.thumbnail.active {
   -webkit-filter: brightness(50%);
 }
 .alert {
+  position: relative;
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 3px;
@@ -8421,6 +8803,32 @@ a.thumbnail.active {
 }
 .alert p + p {
   margin-top: 8px;
+}
+.alert:before {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.alert.arrow-center:before {
+  left: 50%;
+  margin-left: -5px;
+}
+.alert.arrow-right:before {
+  right: 20px;
+  left: auto;
+}
+.alert.arrow-bottom:before {
+  top: auto;
+  bottom: -5px;
 }
 @media (min-width: 576px) {
   .alert {
@@ -8490,7 +8898,7 @@ a.thumbnail.active {
   color: #00a4df;
 }
 .alert-warning {
-  color: #ffa600;
+  color: #df8700;
   background-color: #fff3dd;
   border-color: #ffa600;
 }
@@ -8500,7 +8908,7 @@ a.thumbnail.active {
 .alert-warning .close,
 .alert-warning .alert-link,
 .alert-warning .icon {
-  color: #ffa600;
+  color: #df8700;
 }
 .alert-warning hr {
   border-top-color: #ffa600;
@@ -8511,7 +8919,7 @@ a.thumbnail.active {
 .alert-warning .alert-link:focus,
 .alert-warning .close:hover,
 .alert-warning .close:focus {
-  color: #df8700;
+  color: #c07500;
 }
 .alert-danger {
   color: #f53636;
@@ -8536,6 +8944,10 @@ a.thumbnail.active {
 .alert-danger .close:hover,
 .alert-danger .close:focus {
   color: #cf3131;
+}
+.alert-sm {
+  padding: 4px 16px;
+  font-size: 14px;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -8842,19 +9254,19 @@ a.list-group-item-info:hover {
   color: #00b9ff;
 }
 .list-group-item-warning {
-  border-left: 3px solid #ffa600;
+  border-left: 3px solid #df8700;
 }
 .list-group-item.list-group-item-warning {
   background-color: #fff;
 }
 .list-group-item-warning .list-group-item-text {
-  color: #ffa600;
+  color: #df8700;
 }
 a.list-group-item-warning {
-  color: #ffa600;
+  color: #df8700;
 }
 a.list-group-item-warning:hover {
-  color: #ffa600;
+  color: #df8700;
 }
 .list-group-item-danger {
   border-left: 3px solid #f53636;
@@ -9323,7 +9735,7 @@ a.list-group-item-danger:hover {
   border-color: #ffa600 !important;
 }
 .panel-warning > .panel-heading {
-  color: #ffa600;
+  color: #df8700;
   border-color: #ffa600;
 }
 .panel-warning > .panel-heading + .panel-collapse > .panel-body {
@@ -9331,7 +9743,7 @@ a.list-group-item-danger:hover {
 }
 .panel-warning > .panel-heading .badge {
   color: #fff;
-  background-color: #ffa600;
+  background-color: #df8700;
 }
 .panel-warning > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ffa600;
@@ -9906,7 +10318,7 @@ button.close {
 }
 .tile-warning .icon,
 .tile-warning a {
-  color: #ffa600;
+  color: #df8700;
 }
 .tile-warning:hover:not(.tile-disabled) {
   border-color: #ffa600;

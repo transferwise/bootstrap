@@ -1,28 +1,29 @@
 .radio,
 .checkbox {
-    > label {
-      position: relative;
-      padding-left: 48px;
+  border-color: @input-border;
+  > label {
+    position: relative;
+    padding-left: 48px;
 
-      &:active:hover {
-        border-color: @input-border-focus;
-
-        input[type=radio],
-        input[type=checkbox] {
-          + .input-replacement {
-            border-color: @input-border-focus;
-          }
-        }
-      }
+    &:active:hover {
+      border-color: @input-border-focus;
 
       input[type=radio],
       input[type=checkbox] {
-        display: block;
-        position: absolute;
-        top: 13px;
-        left: 40px;
+        + .input-replacement {
+          border-color: @input-border-focus;
+        }
       }
     }
+
+    input[type=radio],
+    input[type=checkbox] {
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: 40px;
+    }
+  }
 }
 
 .tw-checkbox-button {
@@ -156,6 +157,8 @@
     }
   }
 }
+
+
 
 .checkbox {
   &.disabled label,
@@ -328,14 +331,23 @@
         }
     }
 }
-
+/*
 .radio,
 .checkbox {
+    &.has-focus,
+    &.has-info {
+        > label,
+        > label:hover {
+            .input-replacement {
+                border-color: @state-info-border;
+            }
+        }
+    }
     &.has-success {
         > label,
         > label:hover {
             .input-replacement {
-                border-color: @brand-green;
+                border-color: @state-success-border;
             }
         }
     }
@@ -343,7 +355,7 @@
         > label,
         > label:hover {
             .input-replacement {
-                border-color: @brand-orange;
+                border-color: @state-warning-border;
             }
         }
     }
@@ -351,11 +363,12 @@
         > label,
         > label:hover {
             .input-replacement {
-                border-color: @brand-red;
+                border-color: @state-danger-border;
             }
         }
     }
 }
+*/
 
 .disabled .checkbox,
 .checkbox.disabled,
