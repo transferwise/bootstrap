@@ -38,7 +38,7 @@
   vertical-align: middle;
   text-align: center;
 
-  transition: all 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out;
 
   .tw-checkbox-check {
     width: 20px;
@@ -47,6 +47,11 @@
     margin: 0;
     display: none;
     color: @brand-white;
+  }
+
+  .checkbox:hover &,
+  &:hover {
+    border-color: @input-border-hover;
   }
 
   &:focus,
@@ -69,7 +74,7 @@
 
   &[disabled] {
     background-color: @input-bg-disabled;
-    border-color: @input-border-disabled;
+    border-color: @input-border-disabled !important;
     cursor: @cursor-disabled;
 
     .tw-checkbox-check {
@@ -91,8 +96,6 @@
   }
 }
 
-
-
 .tw-radio-button {
   width: 24px;
   height: 24px;
@@ -105,6 +108,8 @@
   padding: 0;
   vertical-align: middle;
 
+  transition: border 0.15s ease-in-out;
+
   .tw-radio-check {
     border-radius: 50%;
     text-align: center;
@@ -112,6 +117,11 @@
     height: 0px;
     margin: 0 0 0 11px;
     transition: all 0.15s ease-in-out;
+  }
+
+  .radio:hover &,
+  &:hover {
+    border-color: @input-border-hover;
   }
 
   &:focus,
@@ -136,7 +146,7 @@
   }
   &[disabled] {
     background-color: @input-bg-disabled;
-    border-color: @input-border-disabled;
+    border-color: @input-border-disabled !important;
     cursor: @cursor-disabled;
 
     .tw-radio-check {
@@ -157,8 +167,6 @@
     }
   }
 }
-
-
 
 .checkbox {
   &.disabled label,
@@ -184,7 +192,6 @@
   vertical-align: bottom;
 }
 
-
 .form-horizontal {
   .checkbox,
   .radio {
@@ -195,188 +202,3 @@
     }
   }
 }
-
-
-
-
-/* Deprecate below */
-
-.radio,
-.checkbox {
-    > label {
-      &:not(.focus):hover .input-replacement {
-          border-color: @input-border-hover;
-      }
-
-      .replaced {
-          display: none;
-      }
-
-      input[type=radio] + .input-replacement,
-      input[type=radio] + .input-replacement + .disabled-replacement {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-      }
-
-      input[type=radio]:checked,
-      input[type=checkbox]:checked {
-        + .input-replacement {
-          border-color: @input-border-focus;
-        }
-      }
-      input[type=checkbox]:checked {
-        + .input-replacement {
-          background-color: @input-border-focus;
-        }
-      }
-
-      input[type=radio] + .input-replacement > span,
-      input[type=radio] + .input-replacement + .disabled-replacement > span  {
-        margin: 11px;
-        border-radius: 50%;
-      }
-
-      input[type=radio]:checked + .input-replacement > span,
-      input[type=radio]:checked + .input-replacement + .disabled-replacement > span  {
-        width: 12px;
-        height: 12px;
-        margin: 5px;
-        display: block;
-        background-color: @input-border-focus;
-      }
-      input[type=checkbox]:checked + .input-replacement > span,
-      input[type=checkbox]:checked + .input-replacement + .disabled-replacement > span {
-        display: block;
-      }
-    }
-
-    &[disabled],
-    &[readonly],
-    fieldset[disabled] &,
-    &.disabled,
-    &.readonly {
-      label {
-        input[type=radio],
-        input[type=checkbox] {
-          + .input-replacement {
-            display: none;
-            border-color: @input-border-disabled;
-
-            > span {
-                background-color: @input-border-disabled;
-            }
-          }
-        }
-      }
-    }
-
-}
-.form-group {
-    .input-replacement {
-        border: 1px solid @input-border;
-        background: @brand-white;
-        width: 22px;
-        height: 22px;
-        border-radius: @border-radius-base;
-
-        position: absolute;
-        display: inline-block;
-        top: 11px;
-        left: 14px;
-        padding: 0;
-        vertical-align: middle;
-
-        .transition(all 0.15s ease-in-out);
-
-        > span {
-            text-align: center;
-            width: 0px;
-            height: 0px;
-            margin: 12px 0 0 12px;
-            .transition(all 0.15s ease-in-out);
-        }
-        > .glyphicon {
-            width: 20px;
-            height: 20px;
-            line-height: 18px;
-            margin: 0;
-            display: none;
-            color: @brand-white;
-        }
-
-        &:focus,
-        &:active {
-            border-color: @input-border-focus;
-            outline: none;
-        }
-    }
-    .disabled-replacement {
-        border-color: @input-border-disabled;
-        display: none;
-
-        > span {
-            background-color: @input-border-disabled;
-        }
-    }
-    .disabled .disabled-replacement,
-    [disabled] + .input-replacement + .disabled-replacement {
-        display: block;
-    }
-
-    .checkbox-lg,
-    .radio-lg {
-        .input-replacement {
-            top: 23px;
-        }
-    }
-}
-/*
-.radio,
-.checkbox {
-    &.has-focus,
-    &.has-info {
-        > label,
-        > label:hover {
-            .input-replacement {
-                border-color: @state-info-border;
-            }
-        }
-    }
-    &.has-success {
-        > label,
-        > label:hover {
-            .input-replacement {
-                border-color: @state-success-border;
-            }
-        }
-    }
-    &.has-warning {
-        > label,
-        > label:hover {
-            .input-replacement {
-                border-color: @state-warning-border;
-            }
-        }
-    }
-    &.has-error {
-        > label,
-        > label:hover {
-            .input-replacement {
-                border-color: @state-danger-border;
-            }
-        }
-    }
-}
-*/
-
-.disabled .checkbox,
-.checkbox.disabled,
-.disabled .radio,
-.radio.disabled {
-    > label:hover .input-replacement {
-        border-color: @input-border-disabled;
-    }
-}
-
-/* Deprecate above */

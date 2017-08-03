@@ -469,7 +469,8 @@ input[type="checkbox"] {
 }
 
 // Focus state
-.focus {
+.focus,
+.has-focus {
     .control-label {
         color: @brand-light-blue;
     }
@@ -577,18 +578,18 @@ input[type="checkbox"] {
 
 // Feedback states
 .has-success {
-  .form-control-validation(@state-success-text; @state-success-text; @state-success-text-hover; @state-success-bg);
+  .form-control-validation(@state-success-text; @state-success-border; @state-success-border-hover; @state-success-bg);
 }
 .has-focus,
 .focus // TODO legacy, remove.
 {
-  .form-control-validation(@state-info-text; @state-info-text; @state-info-text-hover; @brand-smoke-plus-20);
+  .form-control-validation(@state-info-text; @state-info-border; @state-info-border-hover; @brand-smoke-plus-20);
 }
 .has-warning {
-  .form-control-validation(@brand-orange; @brand-orange; @state-warning-text; @state-warning-bg);
+  .form-control-validation(@state-warning-text; @state-warning-border; @state-warning-border-hover; @state-warning-bg);
 }
 .has-error {
-  .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-text-hover; @state-danger-bg);
+  .form-control-validation(@state-danger-text; @state-danger-border; @state-danger-border-hover; @state-danger-bg);
 }
 
 
@@ -951,7 +952,8 @@ input[type="checkbox"] {
   background-color: @state-danger-bg;
   font-size: @font-size-small;
   line-height: 24px;
-  .arrow(10px);
+
+  .arrow-pointer(@alert-arrow-width);
 
   .form-group & {
     border-radius: @border-radius-base;
