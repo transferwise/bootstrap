@@ -4,6 +4,8 @@
 // and successes.
 
 .form-control-validation(@text-color: #555; @border-color: #ccc; @border-hover: #aaa; @background-color: #f5f5f5) {
+  border-color: @border-color !important;
+
   // Color the label and help text
   .control-label,
   .radio,
@@ -20,12 +22,14 @@
   .checkbox-inline label,
   .input-group-addon {
     color: @text-color !important;
-    border-color: @border-color !important;
+    //border-color: @border-color !important;
+    border-color: inherit; // TODO can move these inherits outs of mixin
   }
   // Set the border and box shadow on specific inputs to match
   .form-control,
   .btn-input {
-    border-color: @border-color !important;
+    // border-color: @border-color !important;
+    border-color: inherit;
   }
 
   &:hover,

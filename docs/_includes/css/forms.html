@@ -769,46 +769,144 @@
 
 
   <h2 id="forms-control-validation">Validation states</h2>
-  <p>Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+  <p>Bootstrap includes validation styles for error, warning, and success states
+    on form controls. To use, add <code>.has-warning</code>,
+    <code>.has-error</code>, or <code>.has-success</code> to the parent element.
+    Any <code>.control-label</code> and <code>.form-control</code> within that
+    element will receive the validation styles.</p>
 
   <div class="alert alert-warning" id="callout-form-validation-state-accessibility">
     <h4>Conveying validation state to assistive technologies and colorblind users</h4>
-    <p>Using these validation styles to denote the state of a form control only provides a visual, color-based indication, which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.</p>
-    <p>Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the form control's <code>&lt;label&gt;</code> text itself (as is the case in the following code example), include a <a href="../components/#icons">icon</a> (with appropriate alternative text using the <code>.sr-only</code> class - see the <a href="../components/#icons-examples">icon examples</a>), or by providing an additional <a href="#forms-help-text">help text</a> block. Specifically for assistive technologies, invalid form controls can also be assigned an <code>aria-invalid="true"</code> attribute.</p>
+    <p>Using these validation styles to denote the state of a form control only
+      provides a visual, color-based indication, which will not be conveyed to
+      users of assistive technologies - such as screen readers - or to colorblind
+      users.</p>
+    <p>Ensure that an alternative indication of state is also provided. For
+      instance, you can include a hint about state in the form control's
+      <code>&lt;label&gt;</code> text itself (as is the case in the following
+      code example), include a <a href="../components/#icons">icon</a> (with
+      appropriate alternative text using the <code>.sr-only</code> class -
+      see the <a href="../components/#icons-examples">icon examples</a>), or by
+      providing an additional <a href="#forms-help-text">help text</a> block.
+      Specifically for assistive technologies, invalid form controls can also
+      be assigned an <code>aria-invalid="true"</code> attribute.</p>
   </div>
-
-  <p class="text-warning">
-    Help blocks only show when the form group <code>.has-focus</code>.
-  </p>
 
   <div class="bs-example" data-example-id="form-validation-states">
     <form>
       <div class="form-group has-focus">
-        <label class="control-label" for="inputInfo1">Input with help-block</label>
+        <label class="control-label" for="inputFocus1">Input with has-focus</label>
+        <input type="text" class="form-control" id="inputFocus1">
+      </div>
+      <div class="form-group has-info">
+        <label class="control-label" for="inputInfo1">Input with has-info</label>
         <input type="text" class="form-control" id="inputInfo1">
-        <div class="help-block">Help block</div>
+      </div>
+      <div class="form-group has-success">
+        <label class="control-label" for="inputSuccess1">Input with has-success</label>
+        <input type="text" class="form-control" id="inputSuccess1">
+      </div>
+      <div class="form-group has-warning">
+        <label class="control-label" for="inputWarning1">Input with has-warning</label>
+        <input type="text" class="form-control" id="inputWarning1">
+      </div>
+      <div class="form-group has-error">
+        <label class="control-label" for="inputError1">Input with has-error</label>
+        <input type="text" class="form-control" id="inputError1" aria-invalid="true">
+      </div>
+    </form>
+  </div><!-- /.bs-example -->
+{% highlight html %}
+<div class="form-group has-focus">
+  <label class="control-label" for="inputHelp1">
+    Input with help-block
+  </label>
+  <input type="text" class="form-control" id="inputHelp1" />
+</div>
+<div class="form-group has-info">
+  <label class="control-label" for="inputInfo1">
+    Input with has-info
+  </label>
+  <input type="text" class="form-control" id="inputInfo1" />
+</div>
+<div class="form-group has-success">
+  <label class="control-label" for="inputSuccess1">
+    Input with has-success
+  </label>
+  <input type="text" class="form-control" id="inputSuccess1" />
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="inputWarning1">
+    Input with has-warning
+  </label>
+  <input type="text" class="form-control" id="inputWarning1" />
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="inputError1">
+    Input with has-error
+  </label>
+  <input type="text" class="form-control" id="inputError1"
+    aria-invalid="true" />
+</div>
+{% endhighlight %}
+
+
+  <h3 id="form-validation-messaging">Validation messaging</h3>
+  <p>Combine validation states with alerts to provide a lock up between messaging
+    and state.</p>
+
+  <p>Only the matching alert is shown at any time, so for
+    example, if your form-group <code>.has-warning</code> only the
+    <code>.alert-warning</code> will be visible.</p>
+
+  <p>A special <code>.alert-focus</code> is available for the
+    <code>.has-focus</code> state.</p>
+
+  <div class="bs-example" data-example-id="form-validation-states">
+    <form>
+      <div class="form-group has-focus">
+        <label class="control-label" for="inputFocus3">Input with focus block</label>
+        <input type="text" class="form-control" id="inputFocus3"
+          aria-describedby="focusFeedback3" />
+        <div id="focusFeedback3">
+          <div class="alert alert-focus">Focus block</div>
+          <div class="alert alert-info">Info block</div>
+          <div class="alert alert-warning">Warning block</div>
+          <div class="alert alert-danger">Danger block</div>
+        </div>
+      </div>
+      <div class="form-group has-info">
+        <label class="control-label" for="inputInfo3">Input with info block</label>
+        <input type="text" class="form-control" id="inputInfo3"
+          aria-describedby="infoFeedback3">
+        <div class="alert alert-info" id="infoFeedback3">Info block</div>
       </div>
       <!--
       <div class="form-group has-success">
-        <label class="control-label" for="inputSuccess1">Input with success</label>
-        <input type="text" class="form-control" id="inputSuccess1">
-        <div class="alert alert-success">Success block</div>
+        <label class="control-label" for="inputSuccess2">Input with success</label>
+        <input type="text" class="form-control" id="inputSuccess2"
+          aria-describedby="successFeedback2" />
+        <div class="alert alert-success" id="successFeedback2">Success block</div>
       </div>
-      -->
+    -->
       <div class="form-group has-warning">
-        <label class="control-label" for="inputWarning1">Input with warning</label>
+        <label class="control-label" for="inputWarning3">Input with warning</label>
         <div class="input-group">
           <span class="input-group-addon">$</span>
-          <input type="text" class="form-control" id="inputWarning1">
+          <input type="text" class="form-control" id="inputWarning3"
+            aria-describedby="warningFeedback3" />
           <span class="input-group-addon">.00</span>
         </div>
-        <div class="alert alert-warning">Warning block</div>
+        <div class="alert alert-warning" id="warningFeedback3">Warning block</div>
       </div>
       <div class="form-group has-error">
-        <label class="control-label">Input with error</label>
+        <label class="control-label" for="inputDanger3">Input with error</label>
         <div class="btn-group btn-block">
-          <button type="button" class="btn btn-input dropdown-toggle"
-            data-toggle="dropdown" aria-expanded="false">
+          <button type="button" id="inputDanger3"
+            class="btn btn-input dropdown-toggle"
+            data-toggle="dropdown"
+            aria-expanded="false"
+            aria-describedby="errorFeedback3">
             <span class="form-control-placeholder">Select an option...</span>
             <span class="caret"></span>
           </button>
@@ -818,30 +916,43 @@
             <li><a href="#">Option 3</a></li>
           </ul>
         </div>
-        <div class="alert alert-danger">Error block</div>
+        <div class="alert alert-danger" id="errorFeedback3">Error block</div>
       </div>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<div class="form-group has-focus">
-  <label class="control-label" for="inputFocus1">Input with help block</label>
-  <input type="text" class="form-control" id="inputFocus1"
-    aria-describedby="focus-feedback">
-  <div class="help-block" id="focus-feedback">Help block</div>
+<div class="form-group has-info">
+  <label class="control-label" for="inputInfo">
+    Input with info block
+  </label>
+  <input type="text" class="form-control" id="inputInfo"
+    aria-describedby="infoFeedback">
+  <div class="alert alert-info" id="infoFeedback">
+    Info block
+  </div>
 </div>
 
 <div class="form-group has-warning">
-  <label class="control-label" for="inputWarning1">Input with warning</label>
-  <input type="text" class="form-control" id="inputWarning1"
-    aria-describedby="warning-feedback">
-  <div class="alert alert-warning" id="warning-feedback">Warning block</div>
+  <label class="control-label" for="inputWarning">
+    Input with warning
+  </label>
+  <input type="text" class="form-control" id="inputWarning"
+    aria-describedby="warningFeedback">
+  <div class="alert alert-warning" id="warningFeedback">
+    Warning block
+  </div>
 </div>
 
 <div class="form-group has-error">
-  <label class="control-label" for="inputError1">Input with error</label>
+  <label class="control-label" for="inputError1">
+    Input with error
+  </label>
   <div class="btn-group btn-block"
-    aria-describedby="error-feedback">...</div>
-  <div class="alert alert-danger" id="error-feedback">Error block</div>
+    aria-describedby="errorFeedback"
+    aria-invalid="true">...</div>
+  <div class="alert alert-danger" id="errorFeedback">
+    Error block
+  </div>
 </div>
 {% endhighlight %}
 <!--
@@ -869,7 +980,7 @@
           <button class="btn btn-addon">Go</button>
         </div>
       </div>
-      <div class="help-block" id="detached-help-feedback">Help block</div>
+      <div class="help-block" id="detached-help-feedback">Detached focus block</div>
     </div>
 
     <div class="form-group has-error detach-feedback">
@@ -886,7 +997,7 @@
           <input type="text" class="form-control">
         </div>
       </div>
-      <div class="alert alert-danger arrow" id="detached-error-feedback">Error block</div>
+      <div class="alert alert-danger arrow" id="detached-error-feedback">Detached error alert</div>
     </div>
 
   </form>
@@ -901,7 +1012,7 @@
       <button class="btn btn-addon">Go</button>
     </div>
   </div>
-  <div class="help-block" id="detached-help-feedback">Help block</div>
+  <div class="alert alert-focus" id="detached-help-feedback">Detached focus block</div>
 </div>
 
 <div class="form-group has-error detach-feedback">
@@ -918,7 +1029,7 @@
       <input type="text" class="form-control">
     </div>
   </div>
-  <div class="alert alert-danger arrow" id="detached-error-feedback">Alert danger</div>
+  <div class="alert alert-danger arrow" id="detached-error-feedback">Detached error alert</div>
 </div>
 
 {% endhighlight %}
@@ -1015,7 +1126,7 @@
   <div class="alert alert-danger">Error block</div>
 </div>
 {% endhighlight %}
-
+<!--
   <h3>With optional icons</h3>
   <p>You can also add optional feedback icons with the addition of <code>.has-feedback</code> and the right icon.</p>
   <p><strong class="text-danger">Feedback icons only work with textual <code>&lt;input class="form-control"&gt;</code> elements.</strong></p>
@@ -1217,6 +1328,7 @@
   <span id="inputGroupSuccess4Status" class="sr-only">(success)</span>
 </div>
 {% endhighlight %}
+-->
 
 
   <h2 id="forms-control-sizes">Control sizing</h2>

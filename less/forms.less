@@ -508,71 +508,14 @@ input[type="checkbox"] {
     color: inherit;
   }
 }
-/*
-[tw-focusable] ~ .help-block { // ???
-  display: none;
-}
-*/
 
 .help-block {
-  display: none;
   color: @brand-grey-plus-10;
   border-color: @input-border;
   background-color: @brand-smoke-plus-20;
 
-  .has-focus &,
-  .focus &,
-  :focus ~ & {
-    display: block;
-    border-color: @input-border-focus;
-  }
-
   .arrow(10px);
 }
-
-
-.form-group {
-  .alert,
-  .help-block
-  {
-    padding: 4px 16px 3px;
-    margin-top: -2px;
-    border-style: solid;
-    border-width: 0 1px 1px 1px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-bottom: 0;
-  }
-
-  .radio ~ .alert,
-  .checkbox ~ .alert,
-  &.detach-feedback .alert,
-  &.detach-feedback .help-block {
-    border-width: 0;
-    margin-top: 12px;
-    border-radius: 3px;
-  }
-
-  .alert-info,
-  .alert-success,
-  .alert-warning,
-  .alert-danger {
-    display: none;
-  }
-}
-/*
-.form-group .alert {
-  margin-top: -14px;
-}
-*/
-
-.has-focus .alert-info,
-.has-warning .alert-warning,
-.has-success .alert-success,
-.has-error .alert-danger {
-  display: block;
-}
-
 
 
 
@@ -580,8 +523,9 @@ input[type="checkbox"] {
 .has-success {
   .form-control-validation(@state-success-text; @state-success-border; @state-success-border-hover; @state-success-bg);
 }
+.focus, // TODO legacy, remove.
 .has-focus,
-.focus // TODO legacy, remove.
+.has-info
 {
   .form-control-validation(@state-info-text; @state-info-border; @state-info-border-hover; @brand-smoke-plus-20);
 }
@@ -952,7 +896,7 @@ input[type="checkbox"] {
   background-color: @state-danger-bg;
   font-size: @font-size-small;
   line-height: 24px;
-
+  position: relative;
   .arrow-pointer(@alert-arrow-width);
 
   .form-group & {
