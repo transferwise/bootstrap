@@ -31,7 +31,7 @@
 		</div>
 	</div>
 	<div class="" ng-if="$ctrl.transfer.status !== 'COMPLETED' && $ctrl.transfer.status !== 'CANCELLED'">
-		<ul class="sequence sequence-hollow sequence-pulse m-l-1"
+		<ul class="sequence sequence-hollow sequence-pulse sequence-animate m-l-1"
 			ng-class="{
 				'sequence-info': $ctrl.transfer.status !== 'PAUSED' && $ctrl.transfer.status !== 'AWAITING_FUNDS',
 				'sequence-warning': $ctrl.transfer.status === 'AWAITING_FUNDS',

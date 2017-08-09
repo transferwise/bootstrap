@@ -110,3 +110,56 @@
   width: 100%;
   margin: 0;
 }
+
+@media (min-width: 768px) {
+  .sequence-date {
+    position: absolute;
+    top: 4px;
+    left: -130px;
+  }
+  .sequence-date-variant {
+    padding-left: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .sequence-date {
+    float: right;
+    font-weight: bold;
+  }
+}
+
+.decision {
+  padding: 24px 12px 24px 0;
+  cursor: pointer;
+  border-top: 1px solid #e2e6e8;
+  border-bottom: 1px solid #e2e6e8;
+}
+.decision + .decision {
+  margin-top: -1px;
+}
+
+label:hover .tw-checkbox-button,
+label:hover .tw-radio-button {
+  border-color: #00b9ff;
+}
+.decision dd:last-child {
+  margin-bottom: 0;
+}
+.decision dl {
+  margin-top: 8px;
+}
+
+@media (max-width: 479px) {
+  .decision .media-left {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .decision {
+    padding: 24px 24px 24px 22px;
+    border-left: 2px solid #fff;
+  }
+  .decision:hover {
+    border-left-color: #00b9ff;
+  }
+}
