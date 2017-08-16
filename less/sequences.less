@@ -372,7 +372,7 @@
 
 @speed-per-item: 0.3s;
 @speed-per-pulse: 3s;
-
+/*
 .sequence-pulse .active:before {
   box-shadow: 0 0 0 rgba(0, 185, 255, 0.3);
   animation: sequence-pulse-info 3s infinite;
@@ -385,6 +385,7 @@
   box-shadow: 0 0 0 rgba(245, 54, 54, 0.3);
   animation: sequence-pulse-danger 3s infinite;
 }
+*/
 
 .sequence-animate {
   > li:after {
@@ -398,6 +399,9 @@
   }
   &.sequence-warning {
     .sequence-animation-variant('warning');
+  }
+  &.sequence-success {
+    .sequence-animation-variant('success');
   }
   &.sequence-danger {
     .sequence-animation-variant('danger');
@@ -440,6 +444,17 @@
   }
   100% {
     box-shadow: 0 0 0 0 rgba(255, 166, 0, 0);
+  }
+}
+@keyframes sequence-pulse-success {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 208, 110, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(26, 208, 110, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(226, 208, 110, 0);
   }
 }
 @keyframes sequence-pulse-danger {

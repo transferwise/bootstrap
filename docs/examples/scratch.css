@@ -114,11 +114,16 @@
 @media (min-width: 768px) {
   .sequence-date {
     position: absolute;
-    top: 4px;
+    font-size: 12px;
+    top: 2px;
     left: -130px;
   }
   .sequence-date-variant {
     padding-left: 100px;
+  }
+  .sequence-lg .sequence-date {
+    top: 8px;
+    left: -154px;
   }
 }
 @media (max-width: 767px) {
@@ -162,4 +167,8 @@ label:hover .tw-radio-button {
   .decision:hover {
     border-left-color: #00b9ff;
   }
+}
+
+.sequence > .active {
+  padding-bottom: 24px;
 }
