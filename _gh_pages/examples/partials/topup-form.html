@@ -1,0 +1,69 @@
+<form ng-if="!$ctrl.complete" ng-submit="$ctrl.submit()">
+	<div class="form-group form-group-lg">
+		<label class="control-label">Top up</label>
+		<div class="input-group input-group-lg" ng-init="$ctrl.currency1 = 'usd'">
+			<input type="text" class="form-control"
+				value="1,000"
+				placeholder=".input-group" />
+			<span class="input-group-btn currency-select">
+				<tw-select options="$ctrl.currencies" tw-focusable
+					ng-model="$ctrl.currency1"
+					ng-required="true"
+					filter="Search for currency / country"
+					size="lg"
+					inverse="true"
+					dropdown-right="xs"
+					dropdown-width="lg"
+					hide-note="true">
+				</tw-select>
+			</span>
+		</div>
+	</div>
+	<div class="form-group" ng-if="$ctrl.currency1 !== 'usd'">
+		<label class="control-label">You don't have a {{$ctrl.currency1 | uppercase}} balance</label>
+		<div class="radio" ng-init="$ctrl.action = 'open'">
+			<label>
+				<tw-radio name="radio1" ng-model="$ctrl.action" ng-value="'open'" tw-focusable></tw-radio>
+				Open a {{$ctrl.currency1 | uppercase}} balance
+			</label>
+		</div>
+		<div class="radio m-b-0">
+			<label>
+				<tw-radio name="radio1" ng-model="$ctrl.action" ng-value="'convert'" tw-focusable></tw-radio>
+				Convert to USD balance
+			</label>
+		</div>
+		<fees-sequence
+			ng-if="$ctrl.action === 'convert'"
+			expand="$ctrl.showFees">
+		</fees-sequence>
+		<div class="form-group form-group-lg" ng-if="$ctrl.action === 'convert'">
+			<label class="control-label">You get</label>
+			<div class="input-group input-group-lg">
+				<input type="text" class="form-control" value="1,234.56" />
+				<span class="input-group-addon">
+					USD
+				</span>
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-success btn-block" type="submit"
+		ng-disabled="$ctrl.processing">
+		<tw-process size="xs" ng-if="$ctrl.processing"></tw-process>
+		Pay £1,000 {{$ctrl.currency1 | uppercase}}
+	</button>
+</form>
+<div ng-if="$ctrl.complete">
+	<tw-process state="1" size="xl"></tw-process>
+	<p class="text-xs-center" style="margin-top: 64px;">Your transfer of <strong>$1,000</strong> to Diana is on it's way and is
+		expected to reach her bank accounts today.  We have sent you a receipt
+		via email.</p>
+	<div class="row">
+		<div class="col-md-6">
+			<button class="btn btn-default btn-block">Share</button>
+		</div>
+		<div class="col-md-6">
+			<button class="btn btn-primary btn-block">Track transfer</button>
+		</div>
+	</div>
+</div>

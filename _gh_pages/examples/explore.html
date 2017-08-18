@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explore Page Example</title>
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+	<link type="text/css" rel="stylesheet"
+		href="../dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet"
+		href="http://transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
+
+	<script src="../assets/js/jquery.js"></script>
+	<script src="../assets/js/angular.js"></script>
+	<script src="../assets/js/styleguide-components.js"></script>
+
+	<script src="../dist/js/bootstrap.min.js"></script>
+
+	<script>
+	angular.module('ExampleApp', ['tw.styleguide-components']);
+	</script>
+
+	<script src="js/nav.directive.js"></script>
+	<script src="js/select-options.service.js"></script>
+	<script src="js/next-cards.directive.js"></script>
+	<script src="js/repeat-transfer.directive.js"></script>
+	<script src="js/footer.directive.js"></script>
+
+	<script>
+	(function(angular) {
+
+		angular.module('ExampleApp')
+		.controller('PageController', [
+			'SelectOptionsService',
+			PageController
+		]);
+
+		function PageController(SelectOptionsService) {
+			var $ctrl = this;
+			$ctrl.options = SelectOptionsService;
+
+			$ctrl.currencies = [
+				{header: 'Popular currencies'},
+				{value: 'eur', label: 'EUR', note: 'Euro', currency: 'EUR'},
+				{value: 'gbp', label: 'GBP', note: 'Great British Pound', currency: 'GBP'},
+				{value: 'usd', label: 'USD', note: 'United States Dollar', currency: 'USD'},
+				{header: 'All currencies'},
+				{value: 'aud', label: 'AUD', note: 'Australian Dollar', currency: 'AUD'},
+				{value: 'jpy', label: 'JPY', note: 'Japanses Yen', currency: 'JPY'}
+			];
+
+			$ctrl.currencySelectConfig = {
+				inverse: true,
+				hideNote: true,
+				dropdownRight: 'xs',
+				dropdownSize: 'lg',
+				buttonSize: 'lg'
+			};
+		}
+	})(window.angular);
+	</script>
+
+	<style>
+	body {
+		background-color: #f2f5f7;
+	}
+
+	.currency-select .tw-select-selected .tw-select-note {
+		display: none;
+	}
+	</style>
+</head>
+<body ng-app="ExampleApp">
+	<nav-bar></nav-bar>
+	<div class="container" ng-controller="PageController as ctrl">
+		<div class="form-group hidden-lg hidden-xl m-t-3">
+			<div class="btn-group btn-block">
+				<button type="button" class="btn btn-input dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+					<span class="icon icon-profile m-r-1"></span>Form example <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#form-example">
+						<span class="icon icon-profile"></span>Form example</a>
+					</li>
+					<li><a href="#review-example">
+						<span class="icon icon-id"></span>Review example</a>
+					</li>
+					<li><a href="#list-example">
+						<span class="icon icon-menu"></span>List example
+						<span class="badge m-l-2">3</span></a>
+					</li>
+					<li><a href="#table-example">
+						<span class="icon icon-money"></span>Table example</a>
+					</li>
+					<li><a href="#tile-example">
+						<span class="icon icon-camera"></span>Tile example</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-9 col-lg-push-3">
+				<div class="panel" id="form-example">
+					<div class="panel-heading">
+						<button class="btn btn-sm btn-default pull-xs-right">Example</button>
+						<h3 class="panel-title">Panel title</h3>
+					</div>
+					<div class="panel-body">
+						<div class="alert alert-danger alert-dismissible fade in">
+							<button type="button" class="close"
+								data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<div class="media">
+								<div class="media-left text-info">
+									<i class="icon icon-alert icon-xxl"></i>
+								</div>
+								<div class="media-body text-xs-left text-max-width">
+									<h5>Sorry, there was an error</h5>
+									<p>This is how it will appear in <strong>real pages</strong>.</p>
+									<p><a href="">Click here</a></p>
+								</div>
+							</div>
+						</div>
+						<form name="testForm">
+							<fieldset class="row">
+								<div class="form-group col-md-6">
+									<label class="control-label">Label for input</label>
+									<input class="form-control" placeholder="Always use placeholders" tw-focusable  />
+								</div>
+								<div class="form-group col-md-6">
+									<label>Sentence case labels</label>
+									<input class="form-control" placeholder="Sentence case placeholders" tw-focusable  />
+									<div class="help-block">Short help text</div>
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Disabled state</label>
+									<input class="form-control" placeholder="Placeholder" tw-focusable
+									 	value="Example" disabled />
+								</div>
+								<div class="form-group col-md-6 has-error">
+									<label class="control-label">Error state</label>
+									<input class="form-control" placeholder="Placeholder" tw-focusable
+										value="Invalid" />
+									<div class="error-messages">
+										<div>Error messages appear beneath</div>
+									</div>
+								</div>
+								<div class="form-group col-md-6 col-md-offset-6">
+									<label class="control-label">Date controls</label>
+									<tw-date ng-model="ctrl.date" tw-focusable></tw-date>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Fieldset legend</legend>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group has-error">
+											<label class="control-label">Currency input</label>
+											<div class="input-group">
+												<span class="input-group-addon">
+													$
+												</span>
+												<input type="number" class="form-control text-xs-right" tw-focusable />
+												<span class="input-group-addon">
+													USD
+												</span>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">Label separate fieldset</label>
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="icon icon-search"></i>
+												</span>
+												<input type="number" class="form-control" placeholder="Search..." tw-focusable />
+												<span class="input-group-btn">
+													<button class="btn btn-addon">Go</button>
+												</span>
+											</div>
+											<div class="help-block">Help text here!</div>
+										</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label>Textareas match two inputs</label>
+										<textarea class="form-control" placeholder="Always use placeholders" tw-focusable></textarea>
+									</div>
+								</div>
+							</fieldset>
+							<fieldset class="row">
+								<div class="form-group col-md-6">
+									<label>Selection of checkboxes</label>
+									<div class="checkbox">
+										<label ng-init="checkbox1 = true">
+											<tw-checkbox ng-model="checkbox1" tw-focusable></tw-checkbox>
+											Option description
+										</label>
+									</div>
+									<div class="checkbox">
+										<label>
+											<tw-checkbox ng-model="checkbox2" tw-focusable></tw-checkbox>
+											Sentence case
+										</label>
+									</div>
+									<div class="checkbox disabled">
+										<label>
+											<tw-checkbox ng-model="checkbox3" ng-disabled="true" tw-focusable></tw-checkbox>
+											Sentence case
+										</label>
+									</div>
+								</div>
+
+								<div class="form-group col-md-6">
+									<label>Selection of radio buttons</label>
+									<div class="radio" ng-init="radio1 = 1">
+										<label>
+											<tw-radio name="radio1" ng-model="radio1" ng-value="1" tw-focusable></tw-radio>
+											Option description
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<tw-radio name="radio1" ng-model="radio1" ng-value="2" tw-focusable></tw-radio>
+											Sentence case
+										</label>
+									</div>
+									<div class="radio disabled">
+										<label>
+											<tw-radio name="radio1" ng-model="radio1" ng-value="3" ng-disabled="true" tw-focusable></tw-radio>
+											Sentence case
+										</label>
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+									<label>Label separate fieldset</label>
+									<input class="form-control" placeholder="Example" tw-focusable  />
+								</div>
+								<div class="form-group col-md-6">
+									<label>Label separate fieldset</label>
+									<tw-select options="ctrl.options.months" tw-focusable
+										ng-model="ctrl.month"></tw-select>
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Phone number</label>
+									<div class="row">
+										<div class="col-sm-5" ng-init="ctrl.countryCode === '44'">
+											<tw-select options="ctrl.options.countryCodes" tw-focusable
+												ng-model="ctrl.countryCode"
+												ng-required="true"></tw-select>
+										</div>
+										<div class="col-sm-7">
+											<input type="number" class="form-control" placeholder="8 digits" tw-focusable />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group col-md-6">
+									<label class="control-label">Input group</label>
+									<div class="input-group">
+										<span class="input-group-addon">
+											$
+										</span>
+										<input type="number" class="form-control text-xs-right" tw-focusable />
+										<span class="input-group-addon">
+											USD
+										</span>
+									</div>
+								</div>
+							</fieldset>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Detailed select</label>
+										<tw-select options="ctrl.options.accounts" tw-focusable
+											ng-model="ctrl.account"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Detailed label</label>
+										<div class="checkbox checkbox-lg">
+											<label>
+												<tw-checkbox ng-model="checkboxSecondary" tw-focusable></tw-checkbox>
+												Label
+												<small>Subsequent information</small>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group form-group-lg">
+										<label class="control-label">.form-group-lg</label>
+										<div class="input-group input-group-lg">
+											<input type="text" class="form-control" placeholder=".form-control" />
+											<span class="input-group-addon">
+												USD
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group" ng-init="ctrl.currency1 = 'gbp'">
+										<label class="control-label">Detailed select</label>
+										<tw-select options="ctrl.options.currencies" tw-focusable
+											placeholder="Choose a currency..."
+											ng-model="ctrl.currency1"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group form-group-lg">
+										<label class="control-label">.form-group-lg</label>
+										<div class="input-group input-group-lg">
+											<input type="text" class="form-control" placeholder=".input-group" />
+											<span class="input-group-addon input-lg">
+												<i class="icon icon-lock"></i>
+											</span>
+											<span class="input-group-btn currency-select" ng-init="ctrl.currency = 'eur'">
+												<tw-select options="ctrl.currencies" tw-focusable
+													ng-model="ctrl.currency"
+													ng-required="true"
+													size="lg"
+													inverse="true"
+													dropdown-right="xs"
+													dropdown-width="lg"
+													hide-note="true"></tw-select>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input class="form-control input-lg" placeholder=".input-lg" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group form-group-lg">
+										<label class="control-label">
+											.form-group-lg
+										</label>
+										<input class="form-control input-lg" placeholder=".input-lg" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<div class="input-group input-group-lg">
+											<span class="input-group-addon">
+												$
+											</span>
+											<input class="form-control text-xs-right" placeholder=".input-group-lg" />
+											<span class="input-group-btn">
+												<button class="btn btn-addon">Update</button>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<button class="btn btn-lg btn-block btn-primary m-b-3">Large button</button>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Detailed select</label>
+										<tw-select options="ctrl.options.notes" tw-focusable
+											ng-model="ctrl.note"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Icon select</label>
+										<tw-select options="ctrl.options.icons" tw-focusable
+											ng-model="ctrl.icon"
+											ng-required="true"></tw-select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label">Icon select</label>
+										<tw-select options="ctrl.options.icons" tw-focusable
+											ng-model="ctrl.icon"
+											ng-required="true"
+											size="lg"></tw-select>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group input-group-lg">
+										<label class="control-label">Circle select</label>
+										<tw-select options="ctrl.options.circles" tw-focusable
+											ng-model="ctrl.circle"
+											ng-required="true"
+											size="lg"></tw-select>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="row m-b-3">
+							<div class="col-sm-6">
+								<button class="btn btn-default btn-block">Send to Facebook</button>
+							</div>
+							<div class="col-sm-6">
+								<button class="btn btn-primary btn-block">Send by email</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Icon and flag buttons</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn-sm .icon
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn .icon
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="icon icon-globe"></i>.btn-lg .icon
+								</button>
+							</div>
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn-sm .currency-flag
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn .currency-flag
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp"></i>.btn-lg .currency-flag
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn-sm .icon
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn .icon
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="icon icon-globe pull-xs-left"></i>.btn-lg .icon
+								</button>
+							</div>
+							<div class="col-md-6 m-b-3">
+								<button class="btn btn-sm btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn-sm .currency-flag
+								</button>
+								<button class="btn btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn .currency-flag
+								</button>
+								<button class="btn btn-lg btn-default btn-block">
+									<i class="currency-flag currency-flag-gbp pull-xs-left"></i>.btn-lg .currency-flag
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Quick transfer</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<div class="form-group form-group-lg m-b-0">
+									<label class="control-label">You send</label>
+									<div class="input-group input-group-lg" ng-init="ctrl.currency1 = 'usd'">
+										<input type="text" class="form-control"
+											value="1,000"
+											placeholder=".input-group" />
+										<span class="input-group-btn currency-select">
+											<tw-select options="ctrl.currencies" tw-focusable
+												ng-model="ctrl.currency1"
+												ng-required="true"
+												filter="Search for currency / country"
+												size="lg"
+												inverse="true"
+												dropdown-right="xs"
+												dropdown-width="lg"
+												hide-note="true"></tw-select>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 m-b-3">
+								<label class="sr-only">Detailed select</label>
+								<tw-select options="ctrl.options.accounts" tw-focusable
+									ng-model="ctrl.account"
+									ng-required="true"></tw-select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 m-b-3">
+								<div class="form-group form-group-lg m-b-0">
+									<label class="control-label">You receive</label>
+									<div class="input-group input-group-lg" ng-init="ctrl.currency2 = 'gbp'">
+										<input type="text" class="form-control"
+											value="1,000"
+											placeholder=".input-group" />
+										<span class="input-group-addon">
+											<i class="icon icon-lock"></i>
+										</span>
+										<span class="input-group-btn currency-select">
+											<tw-select options="ctrl.currencies" tw-focusable
+												ng-model="ctrl.currency2"
+												ng-required="true"
+												filter="Search for currency / country"
+												size="lg"
+												inverse="true"
+												dropdown-right="xs"
+												dropdown-width="lg"
+												hide-note="true"></tw-select>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<button class="btn btn-success btn-block">Create transfer</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel" id="review-example">
+					<div class="panel-heading">
+						<h3 class="panel-title">Personal information</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<dl class="col-sm-6">
+								<dt>First name</dt>
+								<dd>John</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>Last name</dt>
+								<dd>Smith</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>Date of birth</dt>
+								<dd>01 January 1970</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>Phone number</dt>
+								<dd>+44 7123456789</dd>
+							</dl>
+						</div>
+
+						<h4 class="page-header">Address information</h4>
+						<div class="row">
+							<dl class="col-sm-6">
+								<dt>Street Address</dt>
+								<dd>7 Random Avenue</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>City</dt>
+								<dd>London</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>Country</dt>
+								<dd>United Kingdom</dd>
+							</dl>
+							<dl class="col-sm-6">
+								<dt>Post code</dt>
+								<dd>N1 1AB</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="panel" id="list-example">
+					<div class="panel-heading">
+						<h3 class="panel-title">List Group</h3>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="media">
+								<div class="media-left">
+									<div class="circle circle-responsive circle-inverse">AG</div>
+								</div>
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-8">
+											<h5 class="media-heading">Al Green</h5>
+											300 GBP to EUR<br />
+											When I request GBP, I receive it to this account
+										</div>
+										<div class="col-md-4">
+											<div class="btn-group btn-group-sm pull-md-right">
+												<button type="button" class="btn btn-default">Send money</button>
+												<button type="button" class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown" aria-expanded="false">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="">Send money</a></li>
+													<li class="divider"></li>
+													<li><a href="">Request money</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="list-group-item">
+							<div class="media">
+								<div class="media-left">
+									<div class="circle circle-responsive circle-inverse">AP</div>
+								</div>
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-8">
+											<h5 class="media-heading">Ann Peebles</h5>
+											250 USD to GBP<br />
+											When I request USD, I receive it to this account
+										</div>
+										<div class="col-md-4">
+											<div class="btn-group btn-group-sm pull-md-right">
+												<button type="button" class="btn btn-default">Send money</button>
+												<button type="button" class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown" aria-expanded="false">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="">Send money</a></li>
+													<li class="divider"></li>
+													<li><a href="">Request money</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="list-group-item">
+							<h5 class="m-b-0">
+								List group item heading
+							</h5>
+						</li>
+
+						<li class="list-group-item">
+							<div class="media">
+								<div class="media-left">
+									<img class="media-object circle circle-responsive" src="/assets/img/mike.jpg" alt="...">
+								</div>
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-8">
+											<h5 class="media-heading">Jean Knight</h5>
+											<dl class="dl-horizontal">
+												<dt>Type</dt>
+												<dd>Personal</dd>
+
+												<dt>Sort code</dt>
+												<dd>01-23-45</dd>
+
+												<dt>Account number</dt>
+												<dd>012345678</dd>
+											</dl>
+										</div>
+										<div class="col-md-4">
+											<div class="btn-group btn-group-sm pull-md-right">
+												<button type="button" class="btn btn-default">Send money</button>
+												<button type="button" class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown" aria-expanded="false">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="">Send money</a></li>
+													<li class="divider"></li>
+													<li><a href="">Request money</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="list-group-item">
+							<div class="media">
+								<div class="media-left">
+									<img class="media-object circle circle-responsive" src="/assets/img/mike.jpg" alt="...">
+								</div>
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-8">
+											<h5 class="media-heading">Jean Knight</h5>
+											<dl class="dl-horizontal">
+												<dt>Type</dt>
+												<dd>Personal</dd>
+
+												<dt>Sort code</dt>
+												<dd>01-23-45</dd>
+
+												<dt>Account number</dt>
+												<dd>012345678</dd>
+											</dl>
+										</div>
+										<div class="col-md-4">
+											<div class="btn-group btn-group-sm pull-md-right">
+												<button type="button" class="btn btn-default">Send money</button>
+												<button type="button" class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown" aria-expanded="false">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="">Send money</a></li>
+													<li class="divider"></li>
+													<li><a href="">Request money</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+
+						<li class="list-group-item">
+							<div class="media">
+								<div class="media-left">
+									<div class="media-object circle circle-responsive circle-inverse">
+										<i class="icon icon-card"></i>
+									</div>
+								</div>
+								<div class="media-body">
+									<div class="row">
+										<div class="col-md-8">
+											<h5 class="media-heading">Jean Knight</h5>
+											<dl class="dl-horizontal">
+												<dt>Type</dt>
+												<dd>Personal</dd>
+
+												<dt>Sort code</dt>
+												<dd>01-23-45</dd>
+
+												<dt title="Really really really long label">Really really really long label</dt>
+												<dd>012345678</dd>
+											</dl>
+										</div>
+										<div class="col-md-4">
+											<div class="btn-group btn-group-sm pull-md-right">
+												<button type="button" class="btn btn-default">Send money</button>
+												<button type="button" class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown" aria-expanded="false">
+													<span class="caret"></span>
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="">Send money</a></li>
+													<li class="divider"></li>
+													<li><a href="">Request money</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+
+					</ul>
+				</div>
+
+				<div class="panel" id="table-example">
+					<div class="panel-heading">
+						<h3 class="panel-title">Table</h3>
+					</div>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th><a href="">Sorted <div class="caret"></div></a></th>
+									<th><a href="">Sortable</a></th>
+									<th>Non Sortable</th>
+									<th class="text-xs-right"><a href="">Numeric Sortable</a></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Table row</td>
+									<td>Column 2</td>
+									<td>Column 3</td>
+									<td class="text-xs-right">1000.00</td>
+								</tr>
+								<tr>
+									<td>Table row</td>
+									<td>Column 2</td>
+									<td>Column 3</td>
+									<td class="text-xs-right">100.00</td>
+								</tr>
+								<tr>
+									<td>Table row</td>
+									<td>Column 2</td>
+									<td>Column 3</td>
+									<td class="text-xs-right">10.00</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel" id="tile-example">
+					<div class="panel-heading">
+						<h3 class="panel-title">Tiles</h3>
+					</div>
+					<div class="panel-body">
+						<div class="tile-row">
+							<div class="tile-container col-xs-12 col-sm-6 col-md-4">
+								<div class="tile" role="button" tabindex="0">
+									<div class="tile-icon">
+										<div class="circle circle-lg circle-responsive">
+											<i class="icon icon-card"></i>
+										</div>
+									</div>
+									<div class="tile-text">
+										<h5>Credit Card</h5>
+										<p>Visa and Mastercard are supported</p>
+										<hr />
+										<p>&plus;&pound;1 card fee</p>
+									</div>
+								</div>
+							</div>
+							<div class="tile-container col-xs-12 col-sm-6 col-md-4">
+								<div class="tile" role="button" tabindex="0">
+									<div class="tile-icon">
+										<div class="circle circle-lg circle-responsive">
+											<i class="icon icon-bank"></i>
+										</div>
+									</div>
+									<div class="tile-text">
+										<h5>Bank Transfer</h5>
+										<p>Send the money from your Internet Banking</p>
+										<hr />
+										<p>1 day slower</p>
+									</div>
+								</div>
+							</div>
+							<div class="tile-container col-xs-12 col-sm-6 col-md-4">
+								<div class="tile" role="button" tabindex="0">
+									<div class="tile-ribbon-benefit">Faster</div>
+									<div class="tile-icon">
+										<div class="circle circle-lg circle-responsive">
+											<i class="icon icon-card"></i>
+										</div>
+									</div>
+									<div class="tile-text">
+										<h5>Debit Card</h5>
+										<p>Visa and Mastercard are supported</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-lg-pull-9">
+				<div class="nav hidden-sm hidden-xs hidden-md m-t-3">
+					<h3 class="m-b-0">Jonathan Smith-Henry</h3>
+					<hr class="m-t-3" />
+					<p class="small">Your customer number is P123456</p>
+					<hr />
+					<ul class="nav nav-stacked">
+						<li class="active"><a href="#form-example">
+							<span class="icon icon-profile"></span>Form example</a>
+						</li>
+						<li><a href="#review-example">
+							<span class="icon icon-id"></span>Review example</a>
+						</li>
+						<li><a href="#list-example">
+							<span class="icon icon-menu"></span>List example <span class="badge m-l-2">3</span></a>
+						</li>
+						<li><a href="#table-example">
+							<span class="icon icon-money"></span>Table example</a>
+						</li>
+						<li><a href="#tile-example">
+							<span class="icon icon-camera"></span>Tile example</a>
+						</li>
+					</ul>
+				</div>
+				<div class="m-t-3">
+					<h5 class="page-header">Verification</h5>
+					<p class="small">
+						Some copy here about why you should verify your account goes
+						in this space right here <a href="">Learn more</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer-example></footer-example>
+</body>
+
+</html>

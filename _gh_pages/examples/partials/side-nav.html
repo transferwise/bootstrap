@@ -1,0 +1,42 @@
+
+
+<div class="column-layout-brand">
+	<a href="../"
+		class="logo navbar-logo logo-inverse"
+		title="TransferWise"></a>
+</div>
+
+<ul class="nav nav-stacked nav-inverse m-b-1">
+	<li ng-class="{'active': $ctrl.active === 'activity' || !$ctrl.active}">
+		<a href="account-left.html">Activity</a>
+	</li>
+	<li ng-class="{'active': $ctrl.active === 'balances'}">
+		<a href="">Balances</a>
+	</li>
+	<li ng-class="{'active': $ctrl.active === 'history'}">
+		<a href="">History</a>
+	</li>
+	<li ng-class="{'active': $ctrl.active === 'recipients'}">
+		<a href="recipients.html">Recipients</a>
+	</li>
+	<li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
+	<li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
+</ul>
+
+
+
+<!--
+<div class="p-x-panel m-t-4">
+	<a href="flow.html" class="pull-xs-right text-inverse">top up</a>
+	<h4 class="m-b-2">Balances</h4>
+</div>
+<ul class="nav nav-stacked nav-inverse m-b-2">
+	<li><a href="">GBP <span class="pull-xs-right">£1,234.56</span></a></li>
+	<li><a href="">USD <span class="pull-xs-right">$12,345.67</span></a></li>
+	<li><a href="">EUR <span class="pull-xs-right">€123,456.78</span></a></li>
+</ul>
+
+<ul class="nav nav-stacked nav-inverse">
+	<li><a href="">Order a card</a></li>
+</ul>
+-->

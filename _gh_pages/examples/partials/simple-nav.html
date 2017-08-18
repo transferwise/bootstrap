@@ -1,0 +1,88 @@
+<nav class="navbar navbar-default m-b-0 simple-nav">
+	<div class="container m-l-0">
+		<div class="navbar-header pull-xs-left">
+			<button type="button"
+				class="navbar-toggle visible-xs-inline-block visible-sm-inline-block visible-md-inline-block"
+				ng-click="$ctrl.toggleNav()"
+				aria-expanded="{{$ctrl.showNav}}">
+				<span class="pull-xs-left m-r-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</span>
+			</button>
+			<h1 class="navbar-title"
+				ng-class="{'m-b-0': $ctrl.subtitle}"
+				title="{{$ctrl.title}}" data-placement="bottom" tw-tool-tip>
+				{{$ctrl.title}}
+				<!--<i class="icon icon-left-arrow text-info icon-xxl"></i> April'17 invoices-->
+			</h1>
+			<p class="navbar-subtitle" ng-if="$ctrl.subtitle">{{$ctrl.subtitle}}</p>
+		</div>
+
+		<ul class="nav navbar-nav pull-xs-right">
+			<li class="dropdown pull-xs-right">
+				<a href="" class="dropdown-toggle profile-name p-l-1 p-r-0"
+					data-toggle="dropdown" role="button" id="profileSelect"
+					aria-expanded="false">
+					<span class="text-ellipsis"
+						title="Jonathan Smith-Henry">
+						<!--<i class="icon icon-profile m-r-1"></i>-->
+						<img src="../assets/img/mike.jpg" class="circle circle-sm" alt="Mike"
+						/><span class="hidden-xs hidden-sm m-l-1">
+							Jonathan Smith-Henry Smith-Henry
+						</span>
+					</span>
+					<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-md dropdown-menu-xs-right" role="menu">
+					<li class="p-a-2">
+						<div class="media">
+							<div class="media-left">
+								<div class="circle circle-sm circle-inverse">MM</div>
+							</div>
+							<div class="media-body">
+								<h5 class="text-primary text-ellipsis m-b-0">
+									Jonathan.Smith-Henry@longdomain.com
+								</h5>
+								<div class="small text-muted">Customer no. 1234567</div>
+								<a href="" class="small">View personal profile</a>
+							</div>
+						</div>
+					</li>
+					<li class="divider"></li>
+					<li class="p-t-1 p-b-1">
+						<a href="" class="text-ellipses">
+							<div class="circle circle-xs circle-inverse pull-left">
+								T
+							</div>Use as TransferWise
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li><a href="settings.html"><i class="icon icon-setting"></i>Settings</a></li>
+					<li><a href=""><i class="icon icon-logout"></i>Logout</a></li>
+				</ul>
+			</li>
+			<li class="dropdown pull-xs-right">
+				<a href="" class="dropdown-toggle p-x-1"
+					data-toggle="dropdown" role="button"
+					aria-expanded="false"
+					title="Show notifications">
+					<i class="icon icon-notification m-r-0"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-lg dropdown-menu-xs-right" role="menu">
+					<li class="">
+						<a href="">
+							We sent you an email to verify your address...
+						</a>
+					</li>
+					<li class="">
+						<a href="">
+							100 GBP was sent out at 2:48pm
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>

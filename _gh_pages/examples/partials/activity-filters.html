@@ -1,0 +1,142 @@
+<div class="row">
+	<div class="m-b-2"
+		ng-class="{
+			'col-xs-6': $ctrl.searchable,
+			'col-xs-12': !$ctrl.searchable,
+			'col-sm-8': $ctrl.searchable,
+			'col-md-9': $ctrl.searchable
+		}"
+		ng-if="!$ctrl.filtersActive">
+
+		<div class="btn-toolbar btn-toolbar-sm">
+			<!-- Single full width button for mobile -->
+			<div ng-if="$ctrl.buttons.length > 1"
+				class="btn-group btn-block visible-xs-block m-b-0">
+				<button type="button"
+					class="btn btn-sm btn-block dropdown-toggle"
+					ng-class="{
+						'btn-success': $ctrl.buttons[0].primary || $ctrl.buttons[0].type === 'success',
+						'btn-primary': !$ctrl.buttons[0].primary && $ctrl.buttons[0].type !== 'success',
+					}"
+					data-toggle="dropdown" aria-expanded="false">
+					{{$ctrl.buttonSummary}} <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-lg" role="menu">
+					<li ng-repeat="button in $ctrl.buttons track by $index">
+						<a ng-href="{{button.url ? button.url : ''}}">
+							<i class="icon {{button.icon}}"></i>{{button.label}}
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Expanded buttons when wide enough -->
+			<button class="btn btn-sm"
+				ng-repeat="button in $ctrl.buttons track by $index"
+				ng-class="{
+					'btn-info': !button.type || button.type === 'info',
+					'btn-success': button.type === 'success',
+					'btn-default': button.type === 'default',
+					'btn-warning': button.type === 'warning',
+					'btn-danger': button.type === 'danger',
+					'btn-primary': button.type === 'primary',
+					'hidden-xs': $ctrl.buttons.length !== 1,
+					'hidden-sm': $index > 0 && $ctrl.buttons.length !== 2,
+					'hidden-md': $index > 1 && $ctrl.buttons.length !== 3,
+					'hidden-lg': $index > 1 && $ctrl.buttons.length !== 3,
+					'hidden-xl': $index > 2 && $ctrl.buttons.length !== 4,
+				}">
+				{{button.label}}
+			</button>
+
+			<!-- Collapsed dropdown button when we have too many -->
+			<div ng-if="$ctrl.buttons.length > 1" class="btn-group m-b-0"
+				ng-class="{
+					'btn-block': $ctrl.buttons.length > 1,
+					'visible-sm-inline-block': $ctrl.buttons.length > 2,
+					'visible-md-inline-block': $ctrl.buttons.length > 3,
+					'visible-lg-inline-block': $ctrl.buttons.length > 3,
+					'visible-xl-inline-block': $ctrl.buttons.length > 4
+				}">
+				<button type="button"
+					class="btn btn-sm btn-info btn-block dropdown-toggle"
+					data-toggle="dropdown" aria-expanded="false">
+					{{$ctrl.buttonSummary}} <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-lg" role="menu">
+					<li ng-repeat="button in $ctrl.buttons track by $index"
+						ng-class="{
+							'hidden-sm': $index < 1,
+							'hidden-md': $index < 2,
+							'hidden-lg': $index < 2,
+							'hidden-xl': $index < 3
+						}">
+						<a ng-href="{{button.url ? button.url : ''}}">
+							<i class="icon {{button.icon}}"></i>{{button.label}}
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="col-md-3 m-b-2"
+		ng-if="$ctrl.searchable"
+		ng-class="{
+			'col-xs-6': !$ctrl.filtersActive,
+			'col-sm-4': !$ctrl.filtersActive,
+			'col-xs-12': $ctrl.filtersActive,
+			'col-sm-6': $ctrl.filtersActive,
+			'col-sm-push-6': $ctrl.filtersActive,
+			'col-md-push-9': $ctrl.filtersActive
+		}">
+		<div class="media">
+			<div class="media-body">
+				<div class="input-group input-group-sm">
+					<input id="search-input" class="form-control"
+						placeholder="Search..."
+						ng-model="$ctrl.search"
+						ng-focus="$ctrl.filtersActive = true" />
+					<span class="input-group-addon" ng-if="!$ctrl.filtersActive">
+						<i class="icon icon-search"></i>
+					</span>
+					<span class="input-group-btn hidde-lg hidde-xl" ng-if="$ctrl.filtersActive">
+						<button class="btn btn-sm btn-primary">Go</button>
+					</span>
+				</div>
+			</div>
+
+			<div class="media-right fade-in p-l-1" ng-if="$ctrl.filtersActive">
+				<a href="" class="h3 close m-b-0"
+					ng-click="$ctrl.filtersActive = false;" title="Close search options">
+					<i class="icon icon-close icon-3"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 col-sm-pull-6 col-md-pull-3 m-b-2" ng-if="$ctrl.filtersActive">
+		<tw-select options="$ctrl.activityTypes"
+			ng-model="$ctrl.type"
+			ng-required="true"
+			size="sm"
+			hide-icon="true"
+			ng-if="$ctrl.size !== 'sm'"></tw-select>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 col-md-pull-3 m-b-2" ng-if="$ctrl.filtersActive">
+		<tw-date-lookup
+			placeholder="Start date..."
+			ng-model="$ctrl.startDate"
+			ng-max="$ctrl.endDate"
+			size="sm">
+		</tw-date-lookup>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-3 col-md-pull-3 m-b-2" ng-if="$ctrl.filtersActive">
+		<tw-date-lookup
+			placeholder="End date..."
+			ng-model="$ctrl.endDate"
+			ng-min="$ctrl.startDate"
+			size="sm">
+		</tw-date-lookup>
+	</div>
+</div>

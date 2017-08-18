@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flow Example</title>
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+	<link type="text/css" rel="stylesheet"
+		href="../dist/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet"
+		href="http://transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
+
+	<link type="text/css" rel="stylesheet"
+		href="scratch.css" />
+
+	<script src="../assets/js/jquery.js"></script>
+	<script src="../assets/js/angular.js"></script>
+	<script src="../assets/js/styleguide-components.js"></script>
+	<script src="../dist/js/bootstrap.min.js"></script>
+
+	<script>
+	angular.module('ExampleApp', ['tw.styleguide-components'])
+		.controller('PageController', [
+			'$timeout',
+			'SelectOptionsService',
+			PageController
+		]);
+
+	function PageController($timeout, SelectOptionsService) {
+		var $ctrl = this;
+
+		$ctrl.onStop = function() {
+			$ctrl.swap = true;
+			console.log('onStop');
+		};
+
+		$ctrl.onSubmit = function() {
+
+		};
+		$ctrl.onComplete = function() {
+			console.log('complete');
+			$ctrl.completed = true;
+		};
+	}
+	</script>
+
+	<script src="js/nav.directive.js"></script>
+	<script src="js/simple-nav.directive.js"></script>
+	<script src="js/one-click.directive.js"></script>
+	<script src="js/select-options.service.js"></script>
+	<script src="js/topup-form.directive.js"></script>
+	<script src="js/fees-sequence.directive.js"></script>
+	<script src="js/calculator-full.directive.js"></script>
+	<script src="js/footer.directive.js"></script>
+	<script src="js/progress.directive.js"></script>
+
+	<script src="forms.js"></script>
+	<style>
+	.col-xl-3.col-sm-6 {
+		margin-bottom: 0;
+	}
+	</style>
+</head>
+<body ng-app="ExampleApp">
+<div class="column-layout">
+	<div class="column-layout-main">
+		<div class="m-t-2">
+			<simple-nav></simple-nav>
+		</div>
+		<div class="container-fluid" ng-controller="PageController as ctrl">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-xs-center m-y-section-2">
+					<h2 ng-if="!ctrl.completed">How much would you like to top up?</h2>
+					<h2 ng-if="ctrl.completed">Great success! Much progress!</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-6 col-xl-offset-3 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+					<topup-form
+						on-submit="ctrl.onSubmit()"
+						on-complete="ctrl.onComplete()"></topup-form>
+					<div class="m-t-panel">
+						<calculator-full ></calculator-full>
+					</div>
+
+					<h3 class="page-header">Directors</h3>
+					<dl>
+						<dt>Heading 1</dt>
+						<dd>Text</dd>
+						<dt>Heading 2</dt>
+						<dd>Text</dd>
+					</dl>
+					<div class="table-responsive">
+						<div class="table table-bordered table-md">
+							<div class="thead">
+								<ol>
+									<li>Heading 1</li>
+									<li>Heading 2</li>
+									<li></li>
+								</ol>
+							</div>
+							<div class="tbody">
+								<dl>
+									<dt>Heading 1</dt>
+									<dd>Text</dd>
+									<dt>Heading 2</dt>
+									<dd>Text</dd>
+									<dd>
+										<a href="" class="text-no-decoration"><i class="icon icon-edit icon-md m-r-0"></i></a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>Heading 1</dt>
+									<dd>
+										<input value="test" class="form-control input-sm" />
+									</dd>
+									<dt>Heading 2</dt>
+									<dd>
+										<input value="test" class="form-control input-sm" />
+									</dd>
+									<dd style="white-space: nowrap;">
+										<button class="btn btn-success btn-sm"><i class="icon icon-check m-r-0"></i></button>
+										<button class="btn btn-danger btn-sm"><i class="icon icon-close m-r-0"></i></button>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="table-responsive table-bordered">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Heading 1</th>
+									<th>Heading 2</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Text</td>
+									<td>Text</td>
+									<td>
+										<a href="" class="text-no-decoration"><i class="icon icon-edit icon-md m-r-0"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td><input value="test" class="form-control input-sm" /></td>
+									<td><input value="test" class="form-control input-sm" /></td>
+									<td style="white-space: nowrap;">
+										<button class="btn btn-success btn-sm"><i class="icon icon-check m-r-0"></i></button>
+										<button class="btn btn-danger btn-sm"><i class="icon icon-close m-r-0"></i></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+					<div class="text-xs-center m-y-section-3">
+						&copy; TransferWise 2016
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="column-layout-right bg-default" ng-class="{open: open}">
+		<div class="column-layout-top">
+			<ul class="sequence sequence-primary sequence-hollow m-t-4">
+				<li>
+					<p class="m-b-0">Complete profile</p>
+				</li>
+				<li>
+					<p class="m-b-0">Choose recipient</p>
+				</li>
+				<li class="active">
+					<h5 class="m-b-0">Pay in</h5>
+					<p class="m-b-0 p-b-1 small">Choose how you would like to pay</p>
+				</li>
+				<li>Confirm</li>
+			</ul>
+		</div>
+		<div class="column-layout-bottom">
+			<a class="btn btn-danger btn-block" href="account-left.html">Close</a>
+		</div>
+	</div>
+	<div class="column-layout-cover"
+		ng-class="{in: open}"
+		ng-click="open = !open;">
+		<a class="close">&times;</a>
+	</div>
+</div>
+</body>
+
+</html>
