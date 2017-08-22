@@ -1,9 +1,5 @@
 /*!
-<<<<<<< Updated upstream
- * Bootstrap v5.6.5 (http://bootstrap.transferwise.com)
-=======
  * Bootstrap v5.8.0 (http://bootstrap.transferwise.com)
->>>>>>> Stashed changes
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
@@ -12116,8 +12112,6 @@ a.circle.active:hover {
 .btn .circle-sm:first-child {
   margin-right: 12px;
 }
-<<<<<<< Updated upstream
-=======
 .circle-bg {
   position: relative;
 }
@@ -12256,7 +12250,6 @@ a.circle.active:hover {
   position: relative;
   z-index: -1;
 }
->>>>>>> Stashed changes
 .logo,
 .logo-primary,
 .navbar .navbar-brand {
@@ -13364,7 +13357,6 @@ a.circle.active:hover {
   }
 }
 @keyframes sequencePulseInfo {
-<<<<<<< Updated upstream
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 185, 255, .3);
             box-shadow: 0 0 0 0 rgba(0, 185, 255, .3);
@@ -13394,37 +13386,6 @@ a.circle.active:hover {
 }
 @-o-keyframes sequencePulseWarning {
   0% {
-=======
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 185, 255, .3);
-            box-shadow: 0 0 0 0 rgba(0, 185, 255, .3);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 0 16px rgba(0, 185, 255, 0);
-            box-shadow: 0 0 0 16px rgba(0, 185, 255, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0, 185, 255, 0);
-            box-shadow: 0 0 0 0 rgba(0, 185, 255, 0);
-  }
-}
-@-webkit-keyframes sequencePulseWarning {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
-            box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 0 16px rgba(255, 166, 0, 0);
-            box-shadow: 0 0 0 16px rgba(255, 166, 0, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 166, 0, 0);
-            box-shadow: 0 0 0 0 rgba(255, 166, 0, 0);
-  }
-}
-@-o-keyframes sequencePulseWarning {
-  0% {
->>>>>>> Stashed changes
     box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
   }
   50% {
@@ -13435,7 +13396,6 @@ a.circle.active:hover {
   }
 }
 @keyframes sequencePulseWarning {
-<<<<<<< Updated upstream
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
             box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
@@ -13465,37 +13425,6 @@ a.circle.active:hover {
 }
 @-o-keyframes sequencePulseDanger {
   0% {
-=======
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
-            box-shadow: 0 0 0 0 rgba(255, 166, 0, .3);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 0 16px rgba(255, 166, 0, 0);
-            box-shadow: 0 0 0 16px rgba(255, 166, 0, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 166, 0, 0);
-            box-shadow: 0 0 0 0 rgba(255, 166, 0, 0);
-  }
-}
-@-webkit-keyframes sequencePulseDanger {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(245, 54, 54, .3);
-            box-shadow: 0 0 0 0 rgba(245, 54, 54, .3);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 0 16px rgba(245, 54, 54, 0);
-            box-shadow: 0 0 0 16px rgba(245, 54, 54, 0);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(245, 54, 54, 0);
-            box-shadow: 0 0 0 0 rgba(245, 54, 54, 0);
-  }
-}
-@-o-keyframes sequencePulseDanger {
-  0% {
->>>>>>> Stashed changes
     box-shadow: 0 0 0 0 rgba(245, 54, 54, .3);
   }
   50% {
@@ -13782,8 +13711,6 @@ a.circle.active:hover {
   -webkit-animation-name: process-success-circle-xl;
        -o-animation-name: process-success-circle-xl;
           animation-name: process-success-circle-xl;
-<<<<<<< Updated upstream
-=======
 }
 @-webkit-keyframes process-chase-circle-xs {
   0% {
@@ -13826,106 +13753,6 @@ a.circle.active:hover {
     stroke-dasharray: 51.83627878px;
   }
   100% {
-    -o-transform: rotate(360deg);
-       transform: rotate(360deg);
-
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 69.11503838px;
-  }
->>>>>>> Stashed changes
-}
-@-webkit-keyframes process-chase-circle-xs {
-  0% {
-    -webkit-transform: rotate(0deg);
-<<<<<<< Updated upstream
-=======
-         -o-transform: rotate(0deg);
->>>>>>> Stashed changes
-            transform: rotate(0deg);
-
-    stroke-dashoffset: 206.34511514px;
-    stroke-dasharray: 69.11503838px;
-  }
-  25% {
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 34.55751919px;
-  }
-  75% {
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 51.83627878px;
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-<<<<<<< Updated upstream
-            transform: rotate(360deg);
-
-=======
-         -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 69.11503838px;
-  }
-}
-@-webkit-keyframes process-success-circle-xs {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 69.11503838px;
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-
-    stroke-dashoffset: 0;
-    stroke-dasharray: 69.11503838px;
-  }
-}
-@-o-keyframes process-success-circle-xs {
-  0% {
-    -o-transform: rotate(0deg);
-       transform: rotate(0deg);
-
->>>>>>> Stashed changes
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 69.11503838px;
-  }
-  100% {
-    -o-transform: rotate(360deg);
-       transform: rotate(360deg);
-
-    stroke-dashoffset: 0;
-    stroke-dasharray: 69.11503838px;
-  }
-}
-@-o-keyframes process-chase-circle-xs {
-  0% {
-<<<<<<< Updated upstream
-    -o-transform: rotate(0deg);
-       transform: rotate(0deg);
-
-    stroke-dashoffset: 206.34511514px;
-=======
-    -webkit-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-
-    stroke-dashoffset: 68.11503838px;
->>>>>>> Stashed changes
-    stroke-dasharray: 69.11503838px;
-  }
-  25% {
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 34.55751919px;
-  }
-  75% {
-    stroke-dashoffset: 68.11503838px;
-    stroke-dasharray: 51.83627878px;
-  }
-  100% {
-<<<<<<< Updated upstream
     -o-transform: rotate(360deg);
        transform: rotate(360deg);
 
@@ -13934,77 +13761,13 @@ a.circle.active:hover {
   }
 }
 @keyframes process-chase-circle-xs {
-=======
-    -webkit-transform: rotate(360deg);
-         -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-
-    stroke-dashoffset: 0;
-    stroke-dasharray: 69.11503838px;
-  }
-}
-@-webkit-keyframes process-chase-circle-sm {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-
-    stroke-dashoffset: 432.5397862px;
-    stroke-dasharray: 144.51326207px;
-  }
-  25% {
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 72.25663103px;
-  }
-  75% {
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 108.38494655px;
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 144.51326207px;
-  }
-}
-@-o-keyframes process-chase-circle-sm {
-  0% {
-    -o-transform: rotate(0deg);
-       transform: rotate(0deg);
-
-    stroke-dashoffset: 432.5397862px;
-    stroke-dasharray: 144.51326207px;
-  }
-  25% {
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 72.25663103px;
-  }
-  75% {
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 108.38494655px;
-  }
-  100% {
-    -o-transform: rotate(360deg);
-       transform: rotate(360deg);
-
-    stroke-dashoffset: 143.51326207px;
-    stroke-dasharray: 144.51326207px;
-  }
-}
-@keyframes process-chase-circle-sm {
->>>>>>> Stashed changes
   0% {
     -webkit-transform: rotate(0deg);
          -o-transform: rotate(0deg);
             transform: rotate(0deg);
 
-<<<<<<< Updated upstream
     stroke-dashoffset: 206.34511514px;
     stroke-dasharray: 69.11503838px;
-=======
-    stroke-dashoffset: 432.5397862px;
-    stroke-dasharray: 144.51326207px;
->>>>>>> Stashed changes
   }
   25% {
     stroke-dashoffset: 68.11503838px;
@@ -14091,17 +13854,12 @@ a.circle.active:hover {
   }
   100% {
     -webkit-transform: rotate(360deg);
-<<<<<<< Updated upstream
-=======
-         -o-transform: rotate(360deg);
->>>>>>> Stashed changes
             transform: rotate(360deg);
 
     stroke-dashoffset: 143.51326207px;
     stroke-dasharray: 144.51326207px;
   }
 }
-<<<<<<< Updated upstream
 @-o-keyframes process-chase-circle-sm {
   0% {
     -o-transform: rotate(0deg);
@@ -14152,8 +13910,6 @@ a.circle.active:hover {
     stroke-dasharray: 144.51326207px;
   }
 }
-=======
->>>>>>> Stashed changes
 @-webkit-keyframes process-success-circle-sm {
   0% {
     -webkit-transform: rotate(0deg);
