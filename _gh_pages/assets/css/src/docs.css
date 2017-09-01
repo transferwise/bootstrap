@@ -1551,5 +1551,5 @@ h4 code {
 
 .bs-example,.panel-body {
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
