@@ -114,9 +114,9 @@
 @media (min-width: 768px) {
   .sequence-date {
     position: absolute;
-    font-size: 12px;
     top: 2px;
     left: -130px;
+    font-size: 12px;
   }
   .sequence-date-variant {
     padding-left: 100px;
