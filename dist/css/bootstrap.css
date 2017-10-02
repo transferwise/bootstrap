@@ -3916,6 +3916,7 @@ select[multiple].input-lg {
 }
 .help-block {
   position: relative;
+  display: block;
   color: #6f8691;
   background-color: #f2f5f7;
   border-color: #d3d5d8;
