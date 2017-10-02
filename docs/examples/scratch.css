@@ -227,3 +227,31 @@
 .has-error .help-block {
   display: none;
 }
+
+
+@media (max-width: 420px) {
+  .dropdown-menu {
+    position: fixed;
+    top: 48px;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  .dropdown-menu:after {
+    content: '×';
+    display: block;
+    top: 12px;
+    right: 15px;
+    font-size: 40px;
+    position: fixed;
+    color: #00b9ff;
+    cursor: pointer;
+  }
+  .dropdown-menu:after:hover {
+    color: #0094cc;
+  }
+}
