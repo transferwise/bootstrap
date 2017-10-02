@@ -27,9 +27,14 @@
   }
   // Set the border and box shadow on specific inputs to match
   .form-control,
-  .btn-input {
-    // border-color: @border-color !important;
-    border-color: inherit;
+  .btn-input,
+  .input-group-addon {
+    border-color: @border-color;
+  }
+
+  .btn-input:focus,
+  .input-group .form-control:focus {
+    border-color: @border-color;
   }
 
   &:hover,
