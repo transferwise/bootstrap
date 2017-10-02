@@ -14551,6 +14551,7 @@ a.circle.active:hover {
 }
 .decision {
   padding: 24px 12px 24px 0;
+  margin-bottom: 0 !important;
   cursor: pointer;
   border-top: 1px solid #e2e6e8;
   border-bottom: 1px solid #e2e6e8;
@@ -14568,15 +14569,16 @@ a.circle.active:hover {
   padding-bottom: 8px;
   color: #00b9ff;
 }
-@media (max-width: 479px) {
-  .decision .media-left {
-    display: none;
-  }
+.decision .media-left {
+  display: none;
 }
 @media (min-width: 480px) {
   .decision {
     padding: 24px 24px 24px 22px;
-    border-left: 2px solid #fff;
+    border-left: 2px solid transparent;
+  }
+  .decision .media-left {
+    display: block;
   }
   .decision:hover {
     border-left-color: #00b9ff;
@@ -14584,7 +14586,7 @@ a.circle.active:hover {
 }
 .decision.disabled {
   cursor: disabled;
-  border-left-color: #fff;
+  border-left-color: transparent;
   opacity: .5;
 }
 .decision:hover .tw-checkbox-button,
