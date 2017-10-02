@@ -3980,6 +3980,7 @@ select[multiple].input-lg {
 .has-success .input-group-addon {
   border-color: #2ed06e;
 }
+.has-success .btn-input:active,
 .has-success .btn-input:focus,
 .has-success .input-group .form-control:focus {
   border-color: #2ed06e;
@@ -4079,6 +4080,9 @@ select[multiple].input-lg {
 .has-info .input-group-addon {
   border-color: #00b9ff;
 }
+.focus .btn-input:active,
+.has-focus .btn-input:active,
+.has-info .btn-input:active,
 .focus .btn-input:focus,
 .has-focus .btn-input:focus,
 .has-info .btn-input:focus,
@@ -4196,6 +4200,7 @@ select[multiple].input-lg {
 .has-warning .input-group-addon {
   border-color: #ffa600;
 }
+.has-warning .btn-input:active,
 .has-warning .btn-input:focus,
 .has-warning .input-group .form-control:focus {
   border-color: #ffa600;
@@ -4259,6 +4264,7 @@ select[multiple].input-lg {
 .has-error .input-group-addon {
   border-color: #f53636;
 }
+.has-error .btn-input:active,
 .has-error .btn-input:focus,
 .has-error .input-group .form-control:focus {
   border-color: #f53636;
