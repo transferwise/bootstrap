@@ -129,6 +129,13 @@
   left: 0;
   z-index: @zindex-navbar-fixed;
   backface-visibility: hidden;
+  background-color: @navbar-collapse-bg;
+
+  .navbar-nav > li > a,
+  .navbar-title,
+  .navbar-text {
+    color: @navbar-inverse-color;
+  }
 
   // Undo the rounded corners
   @media (min-width: @grid-float-breakpoint) {
@@ -138,6 +145,7 @@
 .navbar.affix {
     top: (-1 * @navbar-height);
     border-top-width:  @navbar-height;
+
     transition: border-top-width .2s ease-out,
                 background-color .2s ease-out;
 }
@@ -298,7 +306,7 @@
     }
 
     > li > a {
-      color: @nav-link-color;
+      color: @nav-link-color !important;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -442,15 +450,6 @@
       margin-right: 0;
     }
   }
-}
-
-.navbar.affix {
-    background-color: @navbar-collapse-bg;
-
-    .container,
-    .container-fluid {
-        border-bottom-color: transparent;
-    }
 }
 
 // Alternate navbars
@@ -845,17 +844,22 @@
 
 @media (min-width: @screen-md-min) {
     .navbar + .jumbotron,
-    .navbar + .jumbotron-image {
+    .navbar + .jumbotron-image,
+    .navbar + .jumbotron-image-inverse,
+    .jumbotron-image-adjacent-to-navbar {
         margin-top: (-1 * @navbar-height);
     }
     .navbar.affix + .jumbotron,
-    .navbar.affix + .jumbotron-image {
+    .navbar.affix + .jumbotron-image,
+    .navbar.affix + .jumbotron-image-inverse {
         margin-top: 0px;
     }
 }
 
 .navbar + .jumbotron,
-.navbar + .jumbotron-image > .jumbotron {
+.navbar + .jumbotron-image > .jumbotron,
+.navbar + .jumbotron-image-inverse > .jumbotron,
+.jumbotron-image-adjacent-to-navbar > .jumbotron {
     padding-bottom: 64px;
 
     @media (min-width: @screen-md-min) {
@@ -1033,3 +1037,4 @@
 .simple-nav .profile-name .text-ellipsis {
   max-width: 240px;
 }
+
