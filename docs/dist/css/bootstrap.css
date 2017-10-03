@@ -3977,11 +3977,10 @@ select[multiple].input-lg {
 }
 .has-success .form-control,
 .has-success .btn-input,
-.has-success .input-group-addon {
-  border-color: #2ed06e;
-}
 .has-success .btn-input:active,
 .has-success .btn-input:focus,
+.has-success .btn-input:hover,
+.has-success .input-group-addon,
 .has-success .input-group .form-control:focus {
   border-color: #2ed06e;
 }
@@ -4075,17 +4074,18 @@ select[multiple].input-lg {
 .focus .btn-input,
 .has-focus .btn-input,
 .has-info .btn-input,
-.focus .input-group-addon,
-.has-focus .input-group-addon,
-.has-info .input-group-addon {
-  border-color: #00b9ff;
-}
 .focus .btn-input:active,
 .has-focus .btn-input:active,
 .has-info .btn-input:active,
 .focus .btn-input:focus,
 .has-focus .btn-input:focus,
 .has-info .btn-input:focus,
+.focus .btn-input:hover,
+.has-focus .btn-input:hover,
+.has-info .btn-input:hover,
+.focus .input-group-addon,
+.has-focus .input-group-addon,
+.has-info .input-group-addon,
 .focus .input-group .form-control:focus,
 .has-focus .input-group .form-control:focus,
 .has-info .input-group .form-control:focus {
@@ -4197,11 +4197,10 @@ select[multiple].input-lg {
 }
 .has-warning .form-control,
 .has-warning .btn-input,
-.has-warning .input-group-addon {
-  border-color: #ffa600;
-}
 .has-warning .btn-input:active,
 .has-warning .btn-input:focus,
+.has-warning .btn-input:hover,
+.has-warning .input-group-addon,
 .has-warning .input-group .form-control:focus {
   border-color: #ffa600;
 }
@@ -4261,11 +4260,10 @@ select[multiple].input-lg {
 }
 .has-error .form-control,
 .has-error .btn-input,
-.has-error .input-group-addon {
-  border-color: #f53636;
-}
 .has-error .btn-input:active,
 .has-error .btn-input:focus,
+.has-error .btn-input:hover,
+.has-error .input-group-addon,
 .has-error .input-group .form-control:focus {
   border-color: #f53636;
 }
