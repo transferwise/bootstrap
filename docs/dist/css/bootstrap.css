@@ -10395,6 +10395,12 @@ a[data-toggle=tooltip] {
 .popover.left {
   margin-left: -14px;
 }
+.popover.left-top {
+  margin-left: -14px;
+}
+.popover.right-top {
+  margin-left: 14px;
+}
 .popover:before {
   position: absolute;
   top: -7px;
@@ -10430,6 +10436,17 @@ a[data-toggle=tooltip] {
   top: 50%;
   right: -7px;
   left: auto;
+  margin-top: -7px;
+}
+.popover.left-top:before {
+  top: 29px;
+  right: -7px;
+  left: auto;
+  margin-top: -7px;
+}
+.popover.right-top:before {
+  top: 29px;
+  left: -7px;
   margin-top: -7px;
 }
 .popover-title {

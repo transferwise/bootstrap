@@ -28,6 +28,9 @@
   &.bottom  { margin-top: @popover-arrow-width; }
   &.left    { margin-left: -@popover-arrow-width; }
 
+  &.left-top  { margin-left: -@popover-arrow-width; }
+  &.right-top { margin-left: @popover-arrow-width; }
+
   .arrow-pointer(@popover-arrow-width);
 
   &.top:before {
@@ -52,6 +55,17 @@
     margin-top: (@popover-arrow-width / -2);
     left: auto;
     right: (@popover-arrow-width / -2);
+  }
+  &.left-top:before {
+    top: 29px;
+    margin-top: (@popover-arrow-width / -2);
+    left: auto;
+    right: (@popover-arrow-width / -2);
+  }
+  &.right-top:before {
+    top: 29px;
+    margin-top: (@popover-arrow-width / -2);
+    left: (@popover-arrow-width / -2);
   }
 
   position: absolute;
