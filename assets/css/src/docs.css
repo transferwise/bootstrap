@@ -1519,10 +1519,13 @@ h4 code {
   font-weight: 600;
   line-height: 24px;
 }
+
+/*
 .bs-docs-section > .alert {
   padding: 8px 0;
   background-color: transparent;
 }
+*/
 
 .circle-bg-margin {
   margin-top: 60%;
@@ -1547,9 +1550,4 @@ h4 code {
 
 .box-dashed {
   border: 2px dashed #829ca9;
-}
-
-.bs-example,.panel-body {
-  position: relative;
-  z-index: -1;
 }
