@@ -220,16 +220,6 @@
 }
 */
 
-.help-block-detached,
-.error-messages-detached {
-  border-width: 0 !important;
-}
-
-.has-error .help-block {
-  display: none;
-}
-
-
 @media (max-width: 420px) {
   .dropdown-menu {
     position: fixed;
