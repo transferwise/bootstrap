@@ -3669,7 +3669,8 @@ input[type="search"] {
 .form-group label {
   margin-bottom: 2px;
 }
-.form-group:focus-within .control-label {
+.form-group:focus-within .control-label,
+.form-group:focus-within > label {
   color: #00b9ff;
 }
 .row-equal-height > [class*="col-"] > .form-group {
@@ -3880,20 +3881,12 @@ select[multiple].input-lg {
 .has-focus .control-label {
   color: #00b9ff;
 }
-.focus .form-control,
-.has-focus .form-control,
 .focus .input-group-addon,
-.has-focus .input-group-addon,
-.focus .btn-input,
-.has-focus .btn-input {
+.has-focus .input-group-addon {
   border-color: #00b9ff;
 }
-.focus .form-control:hover,
-.has-focus .form-control:hover,
 .focus .input-group-addon:hover,
-.has-focus .input-group-addon:hover,
-.focus .btn-input:hover,
-.has-focus .btn-input:hover {
+.has-focus .input-group-addon:hover {
   border-color: #00b9ff;
 }
 .help-block,
@@ -3906,9 +3899,9 @@ select[multiple].input-lg {
   border-style: solid;
   border-width: 0;
   border-radius: 3px;
-  -webkit-transition: border .15s ease-in-out, background-color .15s ease-in-out;
-       -o-transition: border .15s ease-in-out, background-color .15s ease-in-out;
-          transition: border .15s ease-in-out, background-color .15s ease-in-out;
+  -webkit-transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
+       -o-transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
+          transition: border-color .15s ease-in-out, background-color .15s ease-in-out;
 }
 .help-block a,
 .error-messages a {
@@ -3955,6 +3948,10 @@ select[multiple].input-lg {
   top: auto;
   bottom: -5px;
 }
+.focus .alert,
+.has-focus .alert {
+  border-color: #00b9ff;
+}
 .has-success {
   border-color: #2ed06e !important;
 }
@@ -3973,7 +3970,7 @@ select[multiple].input-lg {
 .has-success .checkbox-inline label,
 .has-success .input-group-addon {
   color: #28b862 !important;
-  border-color: inherit;
+  border-color: #2ed06e !important;
 }
 .has-success .form-control,
 .has-success .btn-input,
@@ -3981,198 +3978,130 @@ select[multiple].input-lg {
 .has-success .btn-input:focus,
 .has-success .btn-input:hover,
 .has-success .input-group-addon,
-.has-success .input-group .form-control:focus {
-  border-color: #2ed06e;
+.has-success .input-group .form-control:focus,
+.has-success .alert {
+  border-color: #2ed06e !important;
 }
 .has-success:hover .form-control,
-.has-success:focus .form-control,
-.has-success:hover .radio label,
-.has-success:focus .radio label,
-.has-success:hover .checkbox label,
-.has-success:focus .checkbox label,
+.has-success:focus-within .form-control,
 .has-success:hover.radio label,
-.has-success:focus.radio label,
+.has-success:focus-within.radio label,
 .has-success:hover.checkbox label,
-.has-success:focus.checkbox label,
+.has-success:focus-within.checkbox label,
 .has-success:hover .btn-input,
-.has-success:focus .btn-input,
+.has-success:focus-within .btn-input,
 .has-success:hover .input-group-addon,
-.has-success:focus .input-group-addon,
-.has-success:hover .help-block,
-.has-success:focus .help-block,
+.has-success:focus-within .input-group-addon,
+.has-success:hover .input-group .form-control:focus,
+.has-success:focus-within .input-group .form-control:focus,
 .has-success:hover .alert,
-.has-success:focus .alert {
-  border-color: #28b862 !important;
+.has-success:focus-within .alert {
+  border-color: #1d8547 !important;
 }
 .has-success .form-control-feedback {
   color: #28b862;
 }
 .has-success .radio > label:not(.disabled),
-.has-success .checkbox > label:not(.disabled) {
+.has-success.checkbox > label:not(.disabled) {
   color: #2e4369;
   border-color: #2ed06e;
 }
+.has-success .radio > label:hover,
+.has-success.checkbox > label:hover,
+.has-success .radio > label:focus-within,
+.has-success.checkbox > label:focus-within {
+  border-color: #1d8547 !important;
+}
+.has-success .radio > label:hover .tw-checkbox-button,
+.has-success.checkbox > label:hover .tw-checkbox-button,
+.has-success .radio > label:focus-within .tw-checkbox-button,
+.has-success.checkbox > label:focus-within .tw-checkbox-button,
+.has-success .radio > label:hover .tw-radio-button,
+.has-success.checkbox > label:hover .tw-radio-button,
+.has-success .radio > label:focus-within .tw-radio-button,
+.has-success.checkbox > label:focus-within .tw-radio-button {
+  border-color: #1d8547 !important;
+}
 .has-success .radio .tw-checkbox-button,
-.has-success .checkbox .tw-checkbox-button,
+.has-success.checkbox .tw-checkbox-button,
 .has-success .radio .tw-radio-button,
-.has-success .checkbox .tw-radio-button {
+.has-success.checkbox .tw-radio-button {
   border-color: #2ed06e;
 }
-.focus,
-.has-focus,
 .has-info {
   border-color: #00b9ff !important;
 }
-.focus .control-label,
-.has-focus .control-label,
 .has-info .control-label,
-.focus .radio,
-.has-focus .radio,
 .has-info .radio,
-.focus .checkbox,
-.has-focus .checkbox,
 .has-info .checkbox,
-.focus .radio-inline,
-.has-focus .radio-inline,
 .has-info .radio-inline,
-.focus .checkbox-inline,
-.has-focus .checkbox-inline,
 .has-info .checkbox-inline,
-.focus.radio label,
-.has-focus.radio label,
 .has-info.radio label,
-.focus.checkbox label,
-.has-focus.checkbox label,
 .has-info.checkbox label,
-.focus.radio-inline label,
-.has-focus.radio-inline label,
 .has-info.radio-inline label,
-.focus.checkbox-inline label,
-.has-focus.checkbox-inline label,
 .has-info.checkbox-inline label,
-.focus .radio label,
-.has-focus .radio label,
 .has-info .radio label,
-.focus .checkbox label,
-.has-focus .checkbox label,
 .has-info .checkbox label,
-.focus .radio-inline label,
-.has-focus .radio-inline label,
 .has-info .radio-inline label,
-.focus .checkbox-inline label,
-.has-focus .checkbox-inline label,
 .has-info .checkbox-inline label,
-.focus .input-group-addon,
-.has-focus .input-group-addon,
 .has-info .input-group-addon {
   color: #00b9ff !important;
-  border-color: inherit;
+  border-color: #00b9ff !important;
 }
-.focus .form-control,
-.has-focus .form-control,
 .has-info .form-control,
-.focus .btn-input,
-.has-focus .btn-input,
 .has-info .btn-input,
-.focus .btn-input:active,
-.has-focus .btn-input:active,
 .has-info .btn-input:active,
-.focus .btn-input:focus,
-.has-focus .btn-input:focus,
 .has-info .btn-input:focus,
-.focus .btn-input:hover,
-.has-focus .btn-input:hover,
 .has-info .btn-input:hover,
-.focus .input-group-addon,
-.has-focus .input-group-addon,
 .has-info .input-group-addon,
-.focus .input-group .form-control:focus,
-.has-focus .input-group .form-control:focus,
-.has-info .input-group .form-control:focus {
-  border-color: #00b9ff;
+.has-info .input-group .form-control:focus,
+.has-info .alert {
+  border-color: #00b9ff !important;
 }
-.focus:hover .form-control,
-.has-focus:hover .form-control,
 .has-info:hover .form-control,
-.focus:focus .form-control,
-.has-focus:focus .form-control,
-.has-info:focus .form-control,
-.focus:hover .radio label,
-.has-focus:hover .radio label,
-.has-info:hover .radio label,
-.focus:focus .radio label,
-.has-focus:focus .radio label,
-.has-info:focus .radio label,
-.focus:hover .checkbox label,
-.has-focus:hover .checkbox label,
-.has-info:hover .checkbox label,
-.focus:focus .checkbox label,
-.has-focus:focus .checkbox label,
-.has-info:focus .checkbox label,
-.focus:hover.radio label,
-.has-focus:hover.radio label,
+.has-info:focus-within .form-control,
 .has-info:hover.radio label,
-.focus:focus.radio label,
-.has-focus:focus.radio label,
-.has-info:focus.radio label,
-.focus:hover.checkbox label,
-.has-focus:hover.checkbox label,
+.has-info:focus-within.radio label,
 .has-info:hover.checkbox label,
-.focus:focus.checkbox label,
-.has-focus:focus.checkbox label,
-.has-info:focus.checkbox label,
-.focus:hover .btn-input,
-.has-focus:hover .btn-input,
+.has-info:focus-within.checkbox label,
 .has-info:hover .btn-input,
-.focus:focus .btn-input,
-.has-focus:focus .btn-input,
-.has-info:focus .btn-input,
-.focus:hover .input-group-addon,
-.has-focus:hover .input-group-addon,
+.has-info:focus-within .btn-input,
 .has-info:hover .input-group-addon,
-.focus:focus .input-group-addon,
-.has-focus:focus .input-group-addon,
-.has-info:focus .input-group-addon,
-.focus:hover .help-block,
-.has-focus:hover .help-block,
-.has-info:hover .help-block,
-.focus:focus .help-block,
-.has-focus:focus .help-block,
-.has-info:focus .help-block,
-.focus:hover .alert,
-.has-focus:hover .alert,
+.has-info:focus-within .input-group-addon,
+.has-info:hover .input-group .form-control:focus,
+.has-info:focus-within .input-group .form-control:focus,
 .has-info:hover .alert,
-.focus:focus .alert,
-.has-focus:focus .alert,
-.has-info:focus .alert {
-  border-color: #00a4df !important;
+.has-info:focus-within .alert {
+  border-color: #008ec0 !important;
 }
-.focus .form-control-feedback,
-.has-focus .form-control-feedback,
 .has-info .form-control-feedback {
   color: #00b9ff;
 }
-.focus .radio > label:not(.disabled),
-.has-focus .radio > label:not(.disabled),
 .has-info .radio > label:not(.disabled),
-.focus .checkbox > label:not(.disabled),
-.has-focus .checkbox > label:not(.disabled),
-.has-info .checkbox > label:not(.disabled) {
+.has-info.checkbox > label:not(.disabled) {
   color: #2e4369;
   border-color: #00b9ff;
 }
-.focus .radio .tw-checkbox-button,
-.has-focus .radio .tw-checkbox-button,
+.has-info .radio > label:hover,
+.has-info.checkbox > label:hover,
+.has-info .radio > label:focus-within,
+.has-info.checkbox > label:focus-within {
+  border-color: #008ec0 !important;
+}
+.has-info .radio > label:hover .tw-checkbox-button,
+.has-info.checkbox > label:hover .tw-checkbox-button,
+.has-info .radio > label:focus-within .tw-checkbox-button,
+.has-info.checkbox > label:focus-within .tw-checkbox-button,
+.has-info .radio > label:hover .tw-radio-button,
+.has-info.checkbox > label:hover .tw-radio-button,
+.has-info .radio > label:focus-within .tw-radio-button,
+.has-info.checkbox > label:focus-within .tw-radio-button {
+  border-color: #008ec0 !important;
+}
 .has-info .radio .tw-checkbox-button,
-.focus .checkbox .tw-checkbox-button,
-.has-focus .checkbox .tw-checkbox-button,
-.has-info .checkbox .tw-checkbox-button,
-.focus .radio .tw-radio-button,
-.has-focus .radio .tw-radio-button,
+.has-info.checkbox .tw-checkbox-button,
 .has-info .radio .tw-radio-button,
-.focus .checkbox .tw-radio-button,
-.has-focus .checkbox .tw-radio-button,
-.has-info .checkbox .tw-radio-button {
+.has-info.checkbox .tw-radio-button {
   border-color: #00b9ff;
 }
 .has-warning {
@@ -4193,7 +4122,7 @@ select[multiple].input-lg {
 .has-warning .checkbox-inline label,
 .has-warning .input-group-addon {
   color: #df8700 !important;
-  border-color: inherit;
+  border-color: #ffa600 !important;
 }
 .has-warning .form-control,
 .has-warning .btn-input,
@@ -4201,41 +4130,54 @@ select[multiple].input-lg {
 .has-warning .btn-input:focus,
 .has-warning .btn-input:hover,
 .has-warning .input-group-addon,
-.has-warning .input-group .form-control:focus {
-  border-color: #ffa600;
+.has-warning .input-group .form-control:focus,
+.has-warning .alert {
+  border-color: #ffa600 !important;
 }
 .has-warning:hover .form-control,
-.has-warning:focus .form-control,
-.has-warning:hover .radio label,
-.has-warning:focus .radio label,
-.has-warning:hover .checkbox label,
-.has-warning:focus .checkbox label,
+.has-warning:focus-within .form-control,
 .has-warning:hover.radio label,
-.has-warning:focus.radio label,
+.has-warning:focus-within.radio label,
 .has-warning:hover.checkbox label,
-.has-warning:focus.checkbox label,
+.has-warning:focus-within.checkbox label,
 .has-warning:hover .btn-input,
-.has-warning:focus .btn-input,
+.has-warning:focus-within .btn-input,
 .has-warning:hover .input-group-addon,
-.has-warning:focus .input-group-addon,
-.has-warning:hover .help-block,
-.has-warning:focus .help-block,
+.has-warning:focus-within .input-group-addon,
+.has-warning:hover .input-group .form-control:focus,
+.has-warning:focus-within .input-group .form-control:focus,
 .has-warning:hover .alert,
-.has-warning:focus .alert {
-  border-color: #df8700 !important;
+.has-warning:focus-within .alert {
+  border-color: #c07500 !important;
 }
 .has-warning .form-control-feedback {
   color: #df8700;
 }
 .has-warning .radio > label:not(.disabled),
-.has-warning .checkbox > label:not(.disabled) {
+.has-warning.checkbox > label:not(.disabled) {
   color: #2e4369;
   border-color: #ffa600;
 }
+.has-warning .radio > label:hover,
+.has-warning.checkbox > label:hover,
+.has-warning .radio > label:focus-within,
+.has-warning.checkbox > label:focus-within {
+  border-color: #c07500 !important;
+}
+.has-warning .radio > label:hover .tw-checkbox-button,
+.has-warning.checkbox > label:hover .tw-checkbox-button,
+.has-warning .radio > label:focus-within .tw-checkbox-button,
+.has-warning.checkbox > label:focus-within .tw-checkbox-button,
+.has-warning .radio > label:hover .tw-radio-button,
+.has-warning.checkbox > label:hover .tw-radio-button,
+.has-warning .radio > label:focus-within .tw-radio-button,
+.has-warning.checkbox > label:focus-within .tw-radio-button {
+  border-color: #c07500 !important;
+}
 .has-warning .radio .tw-checkbox-button,
-.has-warning .checkbox .tw-checkbox-button,
+.has-warning.checkbox .tw-checkbox-button,
 .has-warning .radio .tw-radio-button,
-.has-warning .checkbox .tw-radio-button {
+.has-warning.checkbox .tw-radio-button {
   border-color: #ffa600;
 }
 .has-error {
@@ -4256,7 +4198,7 @@ select[multiple].input-lg {
 .has-error .checkbox-inline label,
 .has-error .input-group-addon {
   color: #f53636 !important;
-  border-color: inherit;
+  border-color: #f53636 !important;
 }
 .has-error .form-control,
 .has-error .btn-input,
@@ -4264,41 +4206,54 @@ select[multiple].input-lg {
 .has-error .btn-input:focus,
 .has-error .btn-input:hover,
 .has-error .input-group-addon,
-.has-error .input-group .form-control:focus {
-  border-color: #f53636;
+.has-error .input-group .form-control:focus,
+.has-error .alert {
+  border-color: #f53636 !important;
 }
 .has-error:hover .form-control,
-.has-error:focus .form-control,
-.has-error:hover .radio label,
-.has-error:focus .radio label,
-.has-error:hover .checkbox label,
-.has-error:focus .checkbox label,
+.has-error:focus-within .form-control,
 .has-error:hover.radio label,
-.has-error:focus.radio label,
+.has-error:focus-within.radio label,
 .has-error:hover.checkbox label,
-.has-error:focus.checkbox label,
+.has-error:focus-within.checkbox label,
 .has-error:hover .btn-input,
-.has-error:focus .btn-input,
+.has-error:focus-within .btn-input,
 .has-error:hover .input-group-addon,
-.has-error:focus .input-group-addon,
-.has-error:hover .help-block,
-.has-error:focus .help-block,
+.has-error:focus-within .input-group-addon,
+.has-error:hover .input-group .form-control:focus,
+.has-error:focus-within .input-group .form-control:focus,
 .has-error:hover .alert,
-.has-error:focus .alert {
-  border-color: #cf3131 !important;
+.has-error:focus-within .alert {
+  border-color: #b62a18 !important;
 }
 .has-error .form-control-feedback {
   color: #f53636;
 }
 .has-error .radio > label:not(.disabled),
-.has-error .checkbox > label:not(.disabled) {
+.has-error.checkbox > label:not(.disabled) {
   color: #2e4369;
   border-color: #f53636;
 }
+.has-error .radio > label:hover,
+.has-error.checkbox > label:hover,
+.has-error .radio > label:focus-within,
+.has-error.checkbox > label:focus-within {
+  border-color: #b62a18 !important;
+}
+.has-error .radio > label:hover .tw-checkbox-button,
+.has-error.checkbox > label:hover .tw-checkbox-button,
+.has-error .radio > label:focus-within .tw-checkbox-button,
+.has-error.checkbox > label:focus-within .tw-checkbox-button,
+.has-error .radio > label:hover .tw-radio-button,
+.has-error.checkbox > label:hover .tw-radio-button,
+.has-error .radio > label:focus-within .tw-radio-button,
+.has-error.checkbox > label:focus-within .tw-radio-button {
+  border-color: #b62a18 !important;
+}
 .has-error .radio .tw-checkbox-button,
-.has-error .checkbox .tw-checkbox-button,
+.has-error.checkbox .tw-checkbox-button,
 .has-error .radio .tw-radio-button,
-.has-error .checkbox .tw-radio-button {
+.has-error.checkbox .tw-radio-button {
   border-color: #f53636;
 }
 .has-feedback label ~ .form-control-feedback {
@@ -4451,6 +4406,8 @@ select[multiple].input-lg {
 }
 .tw-checkbox-button:focus,
 .tw-checkbox-button.focus,
+.tw-checkbox-button:focus:hover,
+.tw-checkbox-button.focus:hover,
 .tw-checkbox-button:active,
 .tw-checkbox-button.active {
   border-color: #00b9ff;
@@ -4610,6 +4567,9 @@ select[multiple].input-lg {
 .form-control {
   font-weight: 500;
 }
+.form-control:focus {
+  border-color: #00b9ff;
+}
 .form-group {
   position: relative;
   font-size: 14px;
@@ -4697,14 +4657,18 @@ select[multiple].input-lg {
 }
 .checkbox > label:hover,
 .radio > label:hover {
-  background-color: #f2f5f7;
   border-color: #829ca9;
 }
 .checkbox > label.focus,
 .radio > label.focus,
 .checkbox > label.focus:hover,
-.radio > label.focus:hover {
-  background-color: #f2f5f7;
+.radio > label.focus:hover,
+.checkbox > label.has-focus,
+.radio > label.has-focus,
+.checkbox > label.has-focus:hover,
+.radio > label.has-focus:hover,
+.checkbox > label:focus-within,
+.radio > label:focus-within {
   border-color: #00b9ff;
 }
 .checkbox[disabled] label,
@@ -5938,6 +5902,10 @@ fieldset[disabled] .btn-addon.active {
   color: #2e4369;
   background-color: #fff;
 }
+.btn-input-inverse:focus,
+.btn-addon:focus {
+  outline: thin dotted rgba(255, 255, 255, .7);
+}
 /* TODO Remove bootstrap-select rules after checking tw-currency-select */
 .form-group-sm .bootstrap-select .btn-default {
   padding: 4px 12px;
@@ -6888,12 +6856,19 @@ tbody.collapse.in {
   float: left;
   width: 100%;
   margin-bottom: 0;
+  border-color: #d3d5d8;
 }
 .input-group .form-control:not(:first-child) {
   border-left: 0;
 }
 .input-group .form-control:not(:last-child) {
   border-right: 0;
+}
+:hover.input-group .form-control {
+  border-color: #829ca9;
+}
+.input-group .form-control:focus {
+  border-color: #00b9ff;
 }
 .input-group .input-group-addon + .form-control {
   padding-left: 0;
@@ -7079,18 +7054,20 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   margin-left: -1px;
 }
-.input-group .form-control:focus {
-  border-color: #d3d5d8;
-}
-:hover.input-group .form-control:focus {
-  border-color: #829ca9;
-}
 .focus .input-group .form-control,
-.focus .input-group .input-group-addon {
+.has-focus .input-group .form-control,
+.input-group:focus-within .form-control,
+.focus .input-group .input-group-addon,
+.has-focus .input-group .input-group-addon,
+.input-group:focus-within .input-group-addon {
   border-color: #00b9ff;
 }
 :hover.focus .input-group .form-control,
-:hover.focus .input-group .input-group-addon {
+:hover.has-focus .input-group .form-control,
+:hover.input-group:focus-within .form-control,
+:hover.focus .input-group .input-group-addon,
+:hover.has-focus .input-group .input-group-addon,
+:hover.input-group:focus-within .input-group-addon {
   border-color: #00b9ff;
 }
 .has-error .input-group .form-control,
@@ -8708,6 +8685,68 @@ a.thumbnail.active {
   margin-left: 8px;
   color: inherit;
 }
+.form-group .alert {
+  position: relative;
+  padding: 4px 16px 3px;
+  margin-top: -2px;
+  margin-bottom: 0;
+  border-color: #d3d5d8;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-transition: border-color .15s ease-in-out;
+       -o-transition: border-color .15s ease-in-out;
+          transition: border-color .15s ease-in-out;
+}
+.form-group .alert:before {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.form-group .alert.arrow-center:before {
+  left: 50%;
+  margin-left: -5px;
+}
+.form-group .alert.arrow-top:before {
+  top: -5px;
+  bottom: auto;
+}
+.form-group .alert.arrow-left:before {
+  right: auto;
+  left: 20px;
+}
+.form-group .alert.arrow-right:before {
+  right: 20px;
+  left: auto;
+}
+.form-group .alert.arrow-bottom:before {
+  top: auto;
+  bottom: -5px;
+}
+.form-group .radio ~ .alert,
+.form-group .checkbox ~ .alert,
+.form-group .alert-detach {
+  margin-top: 12px;
+  border-width: 0;
+  border-radius: 3px;
+}
+.form-group .alert-focus,
+.form-group .alert-info,
+.form-group .alert-success,
+.form-group .alert-warning,
+.form-group .alert-danger {
+  display: none;
+}
 .alert-success {
   color: #28b862;
   background-color: #d6f5e2;
@@ -8805,77 +8844,37 @@ a.thumbnail.active {
   color: #cf3131;
 }
 .alert-focus {
+  border-color: #d3d5d8;
+}
+.form-group:focus-within .alert-focus,
+input:focus ~ .alert-focus,
+.btn:focus ~ .alert-focus {
+  display: block;
   border-color: #00b9ff;
 }
 .alert-sm {
   padding: 4px 16px;
   font-size: 14px;
 }
-.form-group .alert {
-  position: relative;
-  padding: 4px 16px 3px;
-  margin-top: -2px;
-  margin-bottom: 0;
-  border-style: solid;
-  border-width: 0 1px 1px 1px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.form-group .alert:before {
-  position: absolute;
-  top: -5px;
-  left: 20px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  content: " ";
-  background-color: inherit;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-       -o-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.form-group .alert.arrow-center:before {
-  left: 50%;
-  margin-left: -5px;
-}
-.form-group .alert.arrow-top:before {
-  top: -5px;
-  bottom: auto;
-}
-.form-group .alert.arrow-left:before {
-  right: auto;
-  left: 20px;
-}
-.form-group .alert.arrow-right:before {
-  right: 20px;
-  left: auto;
-}
-.form-group .alert.arrow-bottom:before {
-  top: auto;
-  bottom: -5px;
-}
-.form-group .radio ~ .alert,
-.form-group .checkbox ~ .alert,
-.form-group.detach-feedback .alert,
-.form-group.detach-feedback .help-block {
-  margin-top: 12px;
-  border-width: 0;
-  border-radius: 3px;
-}
-.form-group .alert-focus,
-.form-group .alert-info,
-.form-group .alert-success,
-.form-group .alert-warning,
-.form-group .alert-danger {
-  display: none;
-}
+.focus .alert-focus,
 .has-focus .alert-focus,
 .has-info .alert-info,
 .has-warning .alert-warning,
 .has-success .alert-success,
 .has-error .alert-danger {
   display: block;
+}
+.has-info .alert-focus,
+.has-warning .alert-focus,
+.has-warning .alert-info,
+.has-success .alert-focus,
+.has-success .alert-info,
+.has-success .alert-warning,
+.has-error .alert-focus,
+.has-error .alert-info,
+.has-error .alert-warning,
+.has-error .alert-success {
+  display: none;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {

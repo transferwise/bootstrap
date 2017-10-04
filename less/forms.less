@@ -235,8 +235,11 @@ input[type="search"] {
     margin-bottom: 2px;
   }
 
-  &:focus-within .control-label {
-    color: @control-label-focus;
+  &:focus-within {
+    .control-label,
+    > label {
+      color: @control-label-focus;
+    }
   }
 }
 .row-equal-height > [class*="col-"] > .form-group {
@@ -262,6 +265,7 @@ input[type="search"] {
     font-weight: normal;
     cursor: pointer;
   }
+
 }
 .radio + .radio,
 .checkbox + .checkbox {
@@ -475,17 +479,15 @@ input[type="checkbox"] {
 // Focus state
 .focus,
 .has-focus {
-    .control-label {
-        color: @brand-light-blue;
+  .control-label {
+    color: @brand-light-blue;
+  }
+  .input-group-addon {
+    border-color: @input-border-focus;
+    &:hover {
+      border-color: @input-border-focus;
     }
-    .form-control,
-    .input-group-addon,
-    .btn-input {
-        border-color: @input-border-focus;
-        &:hover {
-            border-color: @input-border-focus;
-        }
-    }
+  }
 }
 
 
@@ -505,7 +507,7 @@ input[type="checkbox"] {
   font-size: @font-size-small;
   line-height: @line-height-computed;
   transition:
-    border 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     background-color 0.15s ease-in-out;
 
   a {
@@ -522,23 +524,45 @@ input[type="checkbox"] {
   .arrow(10px);
 }
 
-
+.focus, // TODO legacy, remove.
+.has-focus {
+  .alert {
+    border-color: @state-info-border;
+  }
+}
 
 // Feedback states
 .has-success {
-  .form-control-validation(@state-success-text; @state-success-border; @state-success-border-hover; @state-success-bg);
+  .form-control-validation(
+    @state-success-text;
+    @state-success-border;
+    @state-success-border-hover;
+    @state-success-bg
+  );
 }
-.focus, // TODO legacy, remove.
-.has-focus,
-.has-info
-{
-  .form-control-validation(@state-info-text; @state-info-border; @state-info-border-hover; @brand-smoke-plus-20);
+.has-info {
+  .form-control-validation(
+    @state-info-text;
+    @state-info-border;
+    @state-info-border-hover;
+    @brand-smoke-plus-20
+  );
 }
 .has-warning {
-  .form-control-validation(@state-warning-text; @state-warning-border; @state-warning-border-hover; @state-warning-bg);
+  .form-control-validation(
+    @state-warning-text;
+    @state-warning-border;
+    @state-warning-border-hover;
+    @state-warning-bg
+  );
 }
 .has-error {
-  .form-control-validation(@state-danger-text; @state-danger-border; @state-danger-border-hover; @state-danger-bg);
+  .form-control-validation(
+    @state-danger-text;
+    @state-danger-border;
+    @state-danger-border-hover;
+    @state-danger-bg
+  );
 }
 
 
@@ -744,6 +768,10 @@ input[type="checkbox"] {
 
 .form-control {
   font-weight: @font-weight-normal;
+
+  &:focus {
+    border-color: @input-border-focus;
+  }
 }
 
 .form-group {
@@ -848,12 +876,13 @@ input[type="checkbox"] {
 
     &:hover {
       border-color: @input-border-hover;
-      background-color: @brand-smoke-plus-20;
     }
     &.focus,
-    &.focus:hover {
+    &.focus:hover,
+    &.has-focus,
+    &.has-focus:hover,
+    &:focus-within {
       border-color: @input-border-focus;
-      background-color: @brand-smoke-plus-20;
     }
   }
 
@@ -971,5 +1000,5 @@ input[type="checkbox"] {
 }
 
 .form-control-placeholder {
-    color: @input-color-placeholder;
+  color: @input-color-placeholder;
 }

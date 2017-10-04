@@ -148,25 +148,30 @@
 						<form name="testForm">
 							<fieldset class="row">
 								<div class="form-group col-md-6"
-									ng-class="{'has-warning': $ctrl.warning, 'has-info': !$ctrl.warning}">
+									ng-class="{ 'has-warning': $ctrl.warning }">
 									<label class="control-label">Card number</label>
-									<input class="form-control" placeholder="The long number on the front of the card"
+									<input class="form-control"
+										placeholder="The long number on the front of the card"
 										ng-model="$ctrl.card"
 										ng-change="$ctrl.isWarning($event)"
 										ng-minlength="16"
 										ng-maxlength="20"
 										ng-keydown="$ctrl.isWarning($event)"
-										tw-focusable tw-validation tw-text-format="**** **** **** **** ****" />
-									<div class="error-messages">
+										tw-focusable
+										tw-validation
+										tw-text-format="**** **** **** **** ****" />
+									<div class="alert alert-danger error-messages">
 										<div class="error-minlength">The card number is too short</div>
 										<div class="error-maxlength">The card number is too long</div>
 									</div>
-									<div class="help-block">
-										<div ng-if="$ctrl.warning">This card may incur extra fees <a href="">Learn more</a></div>
-										<div ng-if="!$ctrl.warning">Card numbers are either <strong>16 or 20 digits</strong> long</div>
+									<div class="alert alert-warning">
+										This card may incur extra fees <a href="">Learn more</a>
+									</div>
+									<div class="alert alert-focus">
+										Card numbers are either <strong>16 or 20 digits</strong> long
 									</div>
 								</div>
-								<div class="form-group col-md-6 has-info">
+								<div class="form-group col-md-6">
 									<label class="control-label">Sentence case labels</label>
 									<input
 										ng-keydown="$ctrl.isWarning($event)"
@@ -188,7 +193,7 @@
 										<div>Error messages appear beneath</div>
 									</div>
 								</div>
-								<div class="form-group col-md-6 col-md-offset-6 has-error feedback-detached">
+								<div class="form-group col-md-6 col-md-offset-6 has-error">
 									<label class="control-label">Date controls</label>
 									<tw-date ng-model="ctrl.date" tw-focusable tw-validation class="ng-invalid-required"
 										ng-max="2017-01-01"
@@ -225,7 +230,7 @@
 													<button class="btn btn-addon">Go</button>
 												</span>
 											</div>
-											<div class="help-block">Help text here!</div>
+											<div class="alert alert-focus alert-detach">Help text here!</div>
 										</div>
 									</div>
 									<div class="form-group col-md-6">

@@ -22,10 +22,9 @@
   .checkbox-inline label,
   .input-group-addon {
     color: @text-color !important;
-    //border-color: @border-color !important;
-    border-color: inherit; // TODO can move these inherits outs of mixin
+    border-color: @border-color !important;
   }
-  
+
   // Set the border and box shadow on specific inputs to match
   .form-control,
   .btn-input,
@@ -33,20 +32,19 @@
   .btn-input:focus,
   .btn-input:hover,
   .input-group-addon,
-  .input-group .form-control:focus {
-    border-color: @border-color;
+  .input-group .form-control:focus,
+  .alert {
+    border-color: @border-color !important;
   }
 
   &:hover,
-  &:focus {
+  &:focus-within {
     .form-control,
-    .radio label,
-    .checkbox label,
     &.radio label,
     &.checkbox label,
     .btn-input,
     .input-group-addon,
-    .help-block,
+    .input-group .form-control:focus,
     .alert {
       border-color: @border-hover !important;
     }
@@ -57,10 +55,22 @@
     color: @text-color;
   }
 
-  .radio, .checkbox {
-    > label:not(.disabled) {
-      border-color: @border-color;
-      color: @input-color;
+  .radio,
+  &.checkbox {
+    > label {
+      &:not(.disabled) {
+        border-color: @border-color;
+        color: @input-color;
+      }
+      &:hover,
+      &:focus-within {
+        border-color: @border-hover !important;
+
+        .tw-checkbox-button,
+        .tw-radio-button {
+          border-color: @border-hover !important;
+        }
+      }
     }
 
     .tw-checkbox-button,

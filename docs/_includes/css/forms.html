@@ -864,16 +864,14 @@
 
   <div class="bs-example" data-example-id="form-validation-states">
     <form>
-      <div class="form-group has-focus">
+      <div class="form-group ">
         <label class="control-label" for="inputFocus3">Input with focus block</label>
         <input type="text" class="form-control" id="inputFocus3"
-          aria-describedby="focusFeedback3" />
-        <div id="focusFeedback3">
-          <div class="alert alert-focus">Focus block</div>
-          <div class="alert alert-info">Info block</div>
-          <div class="alert alert-warning">Warning block</div>
-          <div class="alert alert-danger">Danger block</div>
-        </div>
+          aria-describedby="focusFeedback3" tw-focusable />
+        <div class="alert alert-focus" id="focusFeedback3">Focus block</div>
+        <div class="alert alert-info">Info block</div>
+        <div class="alert alert-warning">Warning block</div>
+        <div class="alert alert-danger">Danger block</div>
       </div>
       <div class="form-group has-info">
         <label class="control-label" for="inputInfo3">Input with info block</label>
@@ -971,24 +969,24 @@
 
 <div class="bs-example" data-example-id="form-validation-states">
   <form>
-    <div class="form-group has-focus detach-feedback">
+    <div class="form-group">
       <label class="control-label">Input with info</label>
       <div class="input-group">
         <input type="text" class="form-control"
-          aria-describedby="detached-help-feedback">
+          aria-describedby="detached-help-feedback" />
         <div class="input-group-btn">
           <button class="btn btn-addon">Go</button>
         </div>
       </div>
-      <div class="help-block" id="detached-help-feedback">Detached focus block</div>
+      <div class="alert alert-focus alert-detach" id="detached-help-feedback">Detached focus block</div>
     </div>
 
-    <div class="form-group has-error detach-feedback">
+    <div class="form-group has-error">
       <label class="control-label">Input with detached error</label>
       <div class="row">
         <div class="col-xs-4">
           <input type="text" class="form-control"
-            aria-describedby="detached-error-feedback">
+            aria-describedby="detached-error-feedback" />
         </div>
         <div class="col-xs-4">
           <input type="text" class="form-control">
@@ -997,7 +995,7 @@
           <input type="text" class="form-control">
         </div>
       </div>
-      <div class="alert alert-danger arrow" id="detached-error-feedback">Detached error alert</div>
+      <div class="alert alert-danger alert-detach arrow" id="detached-error-feedback">Detached error alert</div>
     </div>
 
   </form>
@@ -1012,10 +1010,10 @@
       <button class="btn btn-addon">Go</button>
     </div>
   </div>
-  <div class="alert alert-focus" id="detached-help-feedback">Detached focus block</div>
+  <div class="alert alert-focus alert-detach" id="detached-help-feedback">Detached focus block</div>
 </div>
 
-<div class="form-group has-error detach-feedback">
+<div class="form-group has-error">
   <label class="control-label">Input with detached error</label>
   <div class="row">
     <div class="col-xs-4">
@@ -1029,7 +1027,7 @@
       <input type="text" class="form-control">
     </div>
   </div>
-  <div class="alert alert-danger arrow" id="detached-error-feedback">Detached error alert</div>
+  <div class="alert alert-danger alert-detach arrow" id="detached-error-feedback">Detached error alert</div>
 </div>
 
 {% endhighlight %}
