@@ -10,8 +10,12 @@
 	<li ng-class="{'active': $ctrl.active === 'activity' || !$ctrl.active}">
 		<a href="account-left.html">Activity</a>
 	</li>
-	<li ng-class="{'active': $ctrl.active === 'balances'}">
-		<a href="">Balances</a>
+	<li ng-class="{'active': $ctrl.active === 'balances', 'expand': $ctrl.balancesOpen}">
+		<a href="" ng-click="$ctrl.balancesOpen = !$ctrl.balancesOpen">Balances</a>
+		<ul class="open">
+			<li><a href="">USD <span class="pull-xs-right">1,234.00</span></a></li>
+			<li><a href="">GBP <span class="pull-xs-right">321.00</span></a></li>
+		</ul>
 	</li>
 	<li ng-class="{'active': $ctrl.active === 'history'}">
 		<a href="">History</a>
@@ -20,7 +24,16 @@
 		<a href="recipients.html">Recipients</a>
 	</li>
 	<li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
+	<!--
 	<li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
+	-->
+	<li ng-class="{'expand': $ctrl.settingsOpen}">
+		<a href="settings.html" ng-click="$ctrl.settingsOpen = !$ctrl.settingsOpen">Settings</a>
+		<ul>
+			<li><a href="">20 fucking limits</a></li>
+			<li><a href="">User settings</a></li>
+		</ul>
+	</li>
 </ul>
 
 
