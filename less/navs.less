@@ -188,6 +188,29 @@
         padding-left: (24px - 3px);
       }
     }
+
+    ul {
+      padding: 0;
+      display: none;
+      li {
+        list-style-type: none;
+        a {
+          display: block;
+          border-left: 3px solid transparent;
+          padding: 4px 32px 4px 45px;
+          color: @nav-inverse-link-color;
+          font-weight: normal;
+          font-size: @font-size-small;
+          &:hover,
+          &:focus {
+            color: @nav-inverse-link-hover-color;
+          }
+        }
+      }
+    }
+    &.expand ul {
+      display: block;
+    }
   }
 }
 

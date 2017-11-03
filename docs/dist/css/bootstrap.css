@@ -7230,6 +7230,28 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-left: 21px;
   border-left: 3px solid #00b9ff;
 }
+.nav-stacked > li ul {
+  display: none;
+  padding: 0;
+}
+.nav-stacked > li ul li {
+  list-style-type: none;
+}
+.nav-stacked > li ul li a {
+  display: block;
+  padding: 4px 32px 4px 45px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #dbf0fd;
+  border-left: 3px solid transparent;
+}
+.nav-stacked > li ul li a:hover,
+.nav-stacked > li ul li a:focus {
+  color: #00b9ff;
+}
+.nav-stacked > li.expand ul {
+  display: block;
+}
 .nav-justified {
   width: 100%;
 }
