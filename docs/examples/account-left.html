@@ -58,7 +58,7 @@
 	<script src="js/footer.directive.js"></script>
 
 
-	<script src="//transferwise.github.io/styleguide-components/dist/js/styleguide-components.js"></script>
+	<script src="//transferwise.github.io/styleguide-components/lib/styleguide-components.js"></script>
 	<link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
 
 	<script>
@@ -147,7 +147,7 @@
 <div class="column-layout">
 	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}" ng-if="ctrl.sideNav">
 		<div class="column-layout-top">
-			<side-nav></side-nav>
+			<side-nav active="activity"></side-nav>
 		</div>
 	</div>
 	<div class="column-layout-main">
@@ -165,6 +165,30 @@
 				<next-cards show="2"></next-cards>
 			</div>
 			-->
+
+			<div class="panel m-b-2">
+				<div class="panel-heading">
+					<h6 class="panel-title">Balances</h6>
+				</div>
+				<div class="panel-body p-y-2">
+					<div class="row">
+						<div class="col-sm-6">
+							<h3 class="m-b-0">
+								<a href="balance.html" class="text-no-decoration">
+									1,234.56 <small>GBP</small>
+								</a>
+							</h3>
+						</div>
+						<div class="col-sm-6">
+							<h3 class="m-b-0">
+								<a href="balance.html" class="text-no-decoration">
+									12,345.67 <small>USD</small>
+								</a>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="panel m-b-2">
 				<div class="panel-heading">

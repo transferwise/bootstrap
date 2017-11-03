@@ -297,23 +297,49 @@ strong {
   color: @text-muted;
 }
 .text-primary {
-  .text-emphasis-variant(@brand-navy-minus-10, @brand-navy-minus-20);
+  .text-emphasis-variant(
+    @brand-navy-minus-10,
+    @brand-navy-minus-10,
+    @brand-navy-minus-20
+  );
 }
 .text-success {
-  .text-emphasis-variant(@state-success-text, @state-success-text-hover);
+  .text-emphasis-variant(
+    @state-success-text,
+    @state-success-text-large,
+    @state-success-text-hover
+  );
 }
 .text-info {
-  .text-emphasis-variant(@state-info-text, @state-info-text-hover);
+  .text-emphasis-variant(
+    @state-info-text,
+    @state-info-text-large,
+    @state-info-text-hover
+  );
 }
 .text-warning {
-  .text-emphasis-variant(@state-warning-text, @state-warning-text-hover);
+  .text-emphasis-variant(
+    @state-warning-text,
+    @state-warning-text-large,
+    @state-warning-text-hover
+  );
 }
 .text-danger {
-  .text-emphasis-variant(@state-danger-text, @state-danger-text-hover);
+  .text-emphasis-variant(
+    @state-danger-text,
+    @state-danger-text-large,
+    @state-danger-text-hover
+  );
 }
 .text-inverse {
-  .text-emphasis-variant(@brand-white, @brand-smoke-plus-20);
+  .text-emphasis-variant(
+    @brand-white,
+    @brand-white,
+    @brand-smoke-plus-20
+  );
 }
+
+
 
 .text-ellipsis,
 .text-ellipses {

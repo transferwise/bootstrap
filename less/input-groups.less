@@ -100,12 +100,12 @@
 .input-group-sm > .input-group-btn > .btn {
   .input-sm();
 
-  padding-top: (@padding-small-vertical - 1);
-  padding-bottom: (@padding-small-vertical - 1);
-
   .icon {
     font-size: 20px;
   }
+}
+.input-group-sm > .input-group-addon {
+  line-height: 22px;
 }
 
 
@@ -127,7 +127,7 @@
 // Text input groups
 // -------------------------
 .input-group-addon {
-  padding: @padding-base-vertical @padding-base-horizontal;
+  .input-padding(@padding-base-vertical, @padding-base-horizontal);
   font-size: @input-group-addon-font-size;
   line-height: @input-line-height;
   color: @input-group-color;
@@ -137,10 +137,10 @@
 
   // Sizing - over rule spacing from .input-group-sm/lg
   &.input-sm {
-    padding: @padding-small-vertical @padding-small-horizontal !important;
+    .input-padding-important(@padding-small-vertical, @padding-small-horizontal);
   }
   &.input-lg {
-    padding: @padding-large-vertical @padding-large-horizontal !important;
+    .input-padding-important(@padding-large-vertical, @padding-large-horizontal);
   }
 
   // Nuke default margins from checkboxes and radios to vertically center within.
@@ -153,7 +153,7 @@
     font-size: 24px;
     vertical-align: middle;
     display: inline-block;
-    margin-top: -3px;
+    margin-top: -2px;
     margin-left: -4px;
     margin-right: -5px;
   }
