@@ -72,7 +72,11 @@
 			PageController
 		]);
 
-		function PageController(TransferService, CurrencyService, NavTourService) {
+		function PageController(
+			TransferService,
+			CurrencyService,
+			NavTourService
+		) {
 			var $ctrl = this;
 
 			CurrencyService.map().then(function(currencies) {
@@ -114,6 +118,7 @@
 				,{label: 'Something', icon: 'icon-request'}
 			];
 
+			/*
 			var now = new Date();
 			var after = new Date(now.getTime() + (10 * 1000));
 			NavTourService.addSimpleTour(
@@ -127,7 +132,6 @@
 				//,after
 			);
 
-			/**/
 			NavTourService.addSimpleTour(
 				'profileSelect',
 				'bottom',
@@ -135,9 +139,9 @@
 				'Make sure to choose the correct profile when sending money.',
 				'/assets/img/css2-bg.jpg'
 			);
-			/**/
 
 			NavTourService.checkAndShowTour();
+			*/
 		}
 	})(window.angular);
 	</script>

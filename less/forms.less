@@ -141,8 +141,7 @@ output {
 
   .input-size(
     @input-height-base,
-    @padding-large-vertical,
-    @padding-base-horizontal,
+    @input-padding,
     @input-font-size,
     @input-line-height,
     @input-border-radius
@@ -348,8 +347,7 @@ input[type="checkbox"] {
   background-color: @input-bg-disabled;
   border: 1px solid @input-border-disabled;
   border-radius: @input-border-radius;
-
-  .input-padding(@padding-large-vertical, @padding-base-horizontal);
+  padding: @input-padding;
 
   &.input-lg,
   &.input-sm {
@@ -370,8 +368,7 @@ input[type="checkbox"] {
 .input-sm {
   .input-size(
     @input-height-small;
-    @padding-small-vertical;
-    @padding-small-horizontal;
+    @input-padding-small;
     @input-font-size-small;
     @input-line-height-small;
     @input-border-radius-small
@@ -381,7 +378,7 @@ input[type="checkbox"] {
 .navbar {
   .form-control {
     height: @input-height-small;
-    .input-padding(@padding-small-vertical, @padding-small-horizontal);
+    padding: @input-padding-small;
     font-size: @input-font-size-small;
     line-height: @input-line-height-small;
     border-radius: @input-border-radius-small;
@@ -397,7 +394,7 @@ input[type="checkbox"] {
   .form-control-static {
     height: @input-height-small;
     min-height: (@line-height-computed + @input-font-size-small);
-    padding: (@padding-small-vertical + 1) @padding-small-horizontal;
+    padding: @input-padding-small;
     font-size: @input-font-size-small;
     line-height: @input-line-height-small;
   }
@@ -406,8 +403,7 @@ input[type="checkbox"] {
 .input-lg {
   .input-size(
     @input-height-large;
-    @padding-large-vertical;
-    @padding-large-horizontal;
+    @input-padding-large;
     @input-font-size-large;
     @input-line-height-large;
     @input-border-radius-large
@@ -434,7 +430,7 @@ input[type="checkbox"] {
   .form-control-static {
     height: @input-height-large;
     min-height: (@line-height-computed + @input-font-size-large);
-    .input-padding((@line-height-computed / 2), @padding-large-horizontal);
+    padding: @input-padding-large;
     font-size: @input-font-size-large;
     line-height: @input-line-height-large;
   }
@@ -644,7 +640,7 @@ input[type="checkbox"] {
 
     .control-label {
       margin-bottom: 0;
-      vertical-align: middle;
+      vertical-align: calc(-2px);
     }
 
     // Remove default margin on radios/checkboxes that were used for stacking, and

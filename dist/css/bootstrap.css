@@ -3832,7 +3832,7 @@ select[multiple].input-sm {
 .navbar .form-control-static {
   height: 32px;
   min-height: 38px;
-  padding: 5px 12px;
+  padding: 5px 12px 3px;
   font-size: 14px;
   line-height: 24px;
 }
@@ -4328,7 +4328,8 @@ select[multiple].input-lg {
   }
   .form-inline .control-label {
     margin-bottom: 0;
-    vertical-align: middle;
+    vertical-align: -webkit-calc(-2px);
+    vertical-align:         calc(-2px);
   }
   .form-inline .radio,
   .form-inline .checkbox {
@@ -6298,7 +6299,7 @@ tbody.collapse.in {
 }
 .dropdown-menu > li > a {
   display: block;
-  padding: 12px 16px;
+  padding: 13px 16px 11px;
   clear: both;
   font-weight: normal;
   line-height: 24px;
@@ -6972,8 +6973,7 @@ select[multiple].input-group-lg > .input-group-btn .btn {
   height: auto;
 }
 .input-group-sm > .form-control,
-.input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-addon {
   height: 32px;
   padding: 5px 12px 3px;
   font-size: 14px;
@@ -6981,23 +6981,35 @@ select[multiple].input-group-lg > .input-group-btn .btn {
   border-radius: 3px;
 }
 select.input-group-sm > .form-control,
-select.input-group-sm > .input-group-addon,
-select.input-group-sm > .input-group-btn > .btn {
+select.input-group-sm > .input-group-addon {
   height: 32px;
   line-height: 32px;
 }
 textarea.input-group-sm > .form-control,
 textarea.input-group-sm > .input-group-addon,
-textarea.input-group-sm > .input-group-btn > .btn,
 select[multiple].input-group-sm > .form-control,
-select[multiple].input-group-sm > .input-group-addon,
-select[multiple].input-group-sm > .input-group-btn > .btn {
+select[multiple].input-group-sm > .input-group-addon {
   height: auto;
 }
 .input-group-sm > .form-control .icon,
-.input-group-sm > .input-group-addon .icon,
-.input-group-sm > .input-group-btn > .btn .icon {
+.input-group-sm > .input-group-addon .icon {
   font-size: 20px;
+}
+.input-group-sm > .input-group-btn > .btn {
+  height: 32px;
+  min-height: 32px;
+  padding: 4px 16px 2px;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 2px;
+}
+.input-group-sm > .input-group-btn > .btn .dropdown-menu > li > a {
+  font-size: 14px;
+  line-height: 24px;
+}
+.input-group-sm > .input-group-btn > .btn .btn-loader {
+  -webkit-background-size: 16px 16px;
+          background-size: 16px 16px;
 }
 .input-group-sm > .input-group-addon {
   line-height: 22px;
@@ -7014,7 +7026,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: middle;
 }
 .input-group-addon {
-  padding: 9px 16px 7px;
+  padding: 12px 16px 10px;
   font-size: 16px;
   line-height: 24px;
   color: #a8aaac;
@@ -7023,10 +7035,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid #d3d5d8;
 }
 .input-group-addon.input-sm {
-  padding: 5px 12px 3px !important;
+  padding: 3px 12px !important;
 }
 .input-group-addon.input-lg {
-  padding: 13px 16px 11px !important;
+  padding: 12px 16px 10px !important;
 }
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
@@ -7146,7 +7158,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 8px 24px;
+  padding: 9px 24px 7px;
   font-size: 16px;
   font-weight: 500;
   color: #37517e;
@@ -7499,9 +7511,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: relative;
   float: left;
   padding: 9px 0;
-  margin-top: 11px;
+  margin-top: 12px;
   margin-right: 12px;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -7542,7 +7554,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav > li > a {
-  padding: 8px 16px;
+  padding: 9px 16px 7px;
   line-height: 40px;
   outline-offset: -1px;
   -webkit-transition: color ease .15s;
@@ -7609,8 +7621,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 8px;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     font-size: 14px;
   }
 }
@@ -7667,7 +7678,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-form .control-label {
     margin-bottom: 0;
-    vertical-align: middle;
+    vertical-align: -webkit-calc(-2px);
+    vertical-align:         calc(-2px);
   }
   .navbar-form .radio,
   .navbar-form .checkbox {
@@ -7706,17 +7718,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
 }
 .navbar-btn {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 13px;
+  margin-bottom: 11px;
   font-weight: 600;
 }
 .navbar-btn.btn-sm {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 13px;
+  margin-bottom: 11px;
 }
 .navbar-btn.btn-xs {
-  margin-top: 17px;
-  margin-bottom: 17px;
+  margin-top: 18px;
+  margin-bottom: 16px;
 }
 @media (max-width: 767px) {
   .navbar-btn {
@@ -7724,8 +7736,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-text {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 17px;
+  margin-bottom: 15px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -8337,6 +8349,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   color: #2e4369;
 }
 .pagination-text .btn-group {
+  margin-top: -1px;
   vertical-align: top;
 }
 .pagination-inverse > li > a:hover,
