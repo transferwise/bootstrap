@@ -1632,7 +1632,7 @@ strong {
   font-style: italic !important;
 }
 .text-muted {
-  color: #829ca9;
+  color: #a8aaac !important;
 }
 .text-primary {
   color: #2e4369 !important;
@@ -3119,7 +3119,7 @@ table {
 caption {
   padding-top: 16px;
   padding-bottom: 16px;
-  color: #829ca9;
+  color: #a8aaac;
   text-align: left;
 }
 th {
