@@ -126,7 +126,6 @@
 			var navTourCover = " \
 				<div id='navTourCover' \
 					class='popover-modal-cover' \
-					style='display: block;' \
 					onclick='hideCover(\""+id+"\")'></div>";
 
 			$('body').append(navTourCover);

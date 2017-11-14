@@ -181,21 +181,31 @@
   }
 }
 
+
+@keyframes cover-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .7;
+  }
+}
+
 .popover-modal-cover {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1060;
-  display: block;
+  display: none;
   width: 100vw;
   height: 100vh;
   cursor: pointer;
   background-color: @brand-navy-minus-20;
   opacity: .7;
-  transition: opacity .35s ease;
+  animation: cover-fade-in .35s 0s linear forwards;
 }
-@media (min-width: @screen-lg-min) {
+@media (max-width: @screen-md-max) {
   .popover-modal-cover {
-    opacity: 0;
+    display: block;
   }
 }
