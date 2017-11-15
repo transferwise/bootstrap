@@ -6248,6 +6248,7 @@ tbody.collapse.in {
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
+  font-smooth: auto;
   line-height: 1;
   text-align: center;
   vertical-align: middle;
