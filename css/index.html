@@ -2222,11 +2222,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <div class="bs-example" data-example-id="simple-form-inline">
     <form class="form-inline">
       <div class="form-group">
-        <label for="exampleInputName2">Name</label>
+        <label for="exampleInputName2" class="control-label">Name</label>
         <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail2">Email</label>
+        <label for="exampleInputEmail2" class="control-label">Email</label>
         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
       </div>
       <button type="submit" class="btn btn-default">Send invitation</button>
@@ -2234,11 +2234,11 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   </div><!-- /example -->
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-inline"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputName2"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputName2"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputName2"</span> <span class="na">placeholder=</span><span class="s">"Jane Doe"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail2"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail2"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail2"</span> <span class="na">placeholder=</span><span class="s">"jane.doe@example.com"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Send invitation<span class="nt">&lt;/button&gt;</span>
@@ -3825,7 +3825,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
       of spacing depending on screen width.</li>
     <li><code>section-2</code> classes provide <strong>24px, 48px or 64px</strong>
       of spacing depending on screen width.</li>
-    <li><code>section-3</code> classes provide <strong>48px, 72px or 96px</strong>
+    <li><code>section-3</code>/<code>section</code> classes provide <strong>48px, 72px or 96px</strong>
       of spacing depending on screen width.</li>
   </ul>
   <p>Spacing classes are available for each of the <strong>vertical</strong>
@@ -3871,6 +3871,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   <div class="bs-example bs-example-bg-classes" data-example-id="contextual-backgrounds-helpers">
     <div class="bg-primary p-a-2">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>
     <div class="bg-default p-a-2">Ut semper congue tellus nec molestie.</div>
+    <div class="bg-focus p-a-2">Donec tincidunt magna dapibus sagittis congue. Nunc.</div>
     <div class="bg-info p-a-2">Maecenas sed diam eget risus varius blandit sit amet non magna.</div>
     <!--
     <div class="bg-success p-a-2">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>
@@ -3880,6 +3881,7 @@ To edit settings, press <span class="nt">&lt;kbd&gt;&lt;kbd&gt;</span>ctrl<span 
   </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-primary"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-default"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-focus"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-info"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span></code></pre></div>
   <div class="alert alert-info" id="callout-helper-bg-specificity">
     <h4>Dealing with specificity</h4>
