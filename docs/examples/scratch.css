@@ -207,3 +207,36 @@
 .nav-stacked li.expanded ul {
   display: block;
 }
+
+/*
+.row .balance {
+  background-color: #FFF;
+}
+.row:hover .balance {
+  background-color: #fbfcfd;
+}
+.row .balance:hover {
+  background-color: #FFF;
+}
+*/
+
+
+@media (max-width: 767px) {
+  body.bg-default {
+    background-color: #FFF !important;
+  }
+  .list-group-item {
+    background-color: #FFF !important;
+    border-top: 1px solid #e2e6e8 !important;
+  }
+  .panel {
+    margin-bottom: 0;
+  }
+}
+
+.column-layout-left {
+  height: 100vh;
+}
+.column-layout-left li .caret {
+  margin-top: 4px;
+}

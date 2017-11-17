@@ -1,0 +1,26 @@
+<div class="panel">
+  <div class="panel-heading p-t-0">
+    <h3 class="panel-title h6">My accounts</h3>
+  </div>
+  <accounts-list
+    accounts="$ctrl.ownedAccounts"
+    currencies="$ctrl.currencies">
+  </accounts-list>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <h3 class="panel-title h6">Other recipients</h3>
+  </div>
+  <accounts-list
+    accounts="$ctrl.otherAccounts"
+    currencies="$ctrl.currencies"
+    inactive="true">
+  </accounts-list>
+</div>
+
+<div class="panel">
+  <div class="panel-p-l panel-p-r">
+    <pagination page="1" total="200"></pagination>
+  </div>
+</div>

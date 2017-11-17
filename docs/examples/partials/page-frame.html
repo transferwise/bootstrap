@@ -1,0 +1,37 @@
+<div class="column-layout">
+  <div class="column-layout-left bg-primary" ng-class="{open: $ctrl.open}">
+    <div class="column-layout-top">
+      <side-nav active="{{ $ctrl.page }}"></side-nav>
+    </div>
+  </div>
+  <div class="column-layout-main">
+    <top-nav
+      title="{{ $ctrl.title }}"
+      on-burger-click="$ctrl.burgerToggle()"
+      buttons="$ctrl.actionButtons"
+      button-summary="Actions"
+      searchable="$ctrl.search">
+    </top-nav>
+
+    <div class="container m-l-0 p-t-3">
+      <div ng-transclude></div>
+
+      <div class="text-xs-center section">
+        &copy; TransferWise 2016
+      </div>
+      <div style="position: fixed; left: 264px; bottom: 24px;">
+        <div class="container" style="width: 1176px;">
+          <button class="btn btn-primary pull-right"
+            style="border-radius: 24px; width: 48px; padding: 11px; text-align: center;">
+            ?
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column-layout-cover"
+    ng-class="{in: $ctrl.open}"
+    ng-click="$ctrl.open = !$ctrl.open;">
+    <a class="close">&times;</a>
+  </div>
+</div>

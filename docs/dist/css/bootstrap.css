@@ -9407,7 +9407,7 @@ a.list-group-item-danger:hover {
   background-color: #fff;
 }
 .panel-heading {
-  padding: 16px 16px 8px 16px;
+  padding: 24px 16px 8px 16px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -9430,7 +9430,7 @@ a.list-group-item-danger:hover {
     margin-left: -24px;
   }
   .panel-heading {
-    padding: 16px 24px 8px 24px;
+    padding: 24px 24px 8px 24px;
   }
   .panel-body {
     padding: 24px;
@@ -9445,7 +9445,7 @@ a.list-group-item-danger:hover {
     margin-left: 0;
   }
   .panel-heading {
-    padding: 16px 0 8px 0;
+    padding: 24px 0 8px 0;
   }
 }
 @media (min-width: 992px) {
@@ -9458,14 +9458,6 @@ a.list-group-item-danger:hover {
   }
   .panel-footer {
     padding: 32px;
-  }
-}
-@media (min-width: 768px) {
-  .panel-title {
-    line-height: 48px;
-  }
-  .panel-heading > .btn-sm {
-    margin-top: 8px;
   }
 }
 .panel > .list-group,

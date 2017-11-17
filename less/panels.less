@@ -20,7 +20,7 @@
 
 // Optional heading
 .panel-heading {
-  padding: (@spacing-1-desktop / 2) @spacing-1-mobile 8px @spacing-1-mobile;
+  padding: 24px @spacing-1-mobile 8px @spacing-1-mobile;
 
   > .dropdown .dropdown-toggle {
     color: inherit;
@@ -51,7 +51,7 @@
     margin-right: (-@spacing-1-tablet);
   }
   .panel-heading {
-    padding: (@spacing-1-desktop / 2) @spacing-1-tablet 8px @spacing-1-tablet;
+    padding: 24px @spacing-1-tablet 8px @spacing-1-tablet;
 
   }
   .panel-body {
@@ -67,7 +67,7 @@
     margin-right: 0;
   }
   .panel-heading {
-    padding: (@spacing-1-desktop / 2) 0 8px 0;
+    padding: 24px 0 8px 0;
   }
 }
 @media (min-width: @screen-lg-min) {
@@ -80,16 +80,6 @@
   }
   .panel-footer {
     padding: @spacing-1-desktop;
-  }
-}
-@media (min-width: @screen-md-min) {
-  .panel-title {
-    line-height: (@line-height-computed * 2);
-  }
-  .panel-heading {
-    > .btn-sm {
-      margin-top: 8px;
-    }
   }
 }
 

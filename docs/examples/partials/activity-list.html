@@ -1,0 +1,29 @@
+
+<div class="panel m-b-2">
+  <div class="panel-heading p-t-0">
+    <h6 class="panel-title">
+      In progress ({{ $ctrl.activeTransfers.length }})
+    </h6>
+  </div>
+  <transfer-list
+    transfers="$ctrl.activeTransfers"
+    currencies="$ctrl.currencies"
+    inactive="false">
+  </transfer-list>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <h6 class="panel-title">
+      Recent ({{ $ctrl.historicTransfers.length }})
+    </h6>
+  </div>
+  <transfer-list
+    transfers="$ctrl.historicTransfers"
+    currencies="$ctrl.currencies"
+    inactive="true">
+  </transfer-list>
+  <div class="panel-footer">
+    <pagination page="1" total="200"></pagination>
+  </div>
+</div>

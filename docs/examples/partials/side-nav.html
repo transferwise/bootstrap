@@ -1,70 +1,79 @@
 
 
 <div class="column-layout-brand">
-	<a href="../"
-		class="logo navbar-logo logo-inverse"
-		title="TransferWise"></a>
+  <a href="../"
+    class="logo navbar-logo logo-inverse"
+    title="TransferWise"></a>
 </div>
 
 <ul class="nav nav-stacked nav-inverse m-b-1">
-	<li ng-class="{'active': $ctrl.active === 'activity' || !$ctrl.active}">
-		<a href="account-left.html">Activity</a>
-	</li>
-<<<<<<< HEAD
-	<li ng-class="{'active': $ctrl.active === 'balances', 'expand': $ctrl.balancesOpen}">
-		<a href="" ng-click="$ctrl.balancesOpen = !$ctrl.balancesOpen">Balances</a>
-		<ul class="open">
-			<li><a href="">USD <span class="pull-xs-right">1,234.00</span></a></li>
-			<li><a href="">GBP <span class="pull-xs-right">321.00</span></a></li>
-=======
-	<li ng-class="{
-			'active': $ctrl.active === 'balances',
-			'expanded': $ctrl.active === 'gbp' || $ctrl.balances
-		}">
-		<a href="" ng-click="$ctrl.balances = !$ctrl.balance">Balances <span class="caret pull-xs-right"></span></a>
-		<ul class="nav nav-stacked nav-inverse m-b-2">
-			<li ng-class="{'active': $ctrl.active === 'gbp'}">
-				<a href="" >
-					GBP <span class="pull-xs-right">1,234.56</span>
-				</a>
-			</li>
-			<li><a href="">USD <span class="pull-xs-right">12,345.67</span></a></li>
->>>>>>> master
-		</ul>
-	</li>
-	<li ng-class="{'active': $ctrl.active === 'history'}">
-		<a href="">History</a>
-	</li>
-	<li ng-class="{'active': $ctrl.active === 'recipients'}">
-		<a href="recipients.html">Recipients</a>
-	</li>
-	<li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
-	<!--
-	<li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
-	-->
-	<li ng-class="{'expand': $ctrl.settingsOpen}">
-		<a href="settings.html" ng-click="$ctrl.settingsOpen = !$ctrl.settingsOpen">Settings</a>
-		<ul>
-			<li><a href="">20 fucking limits</a></li>
-			<li><a href="">User settings</a></li>
-		</ul>
-	</li>
+  <li ng-class="{'active': $ctrl.active === 'activity' || !$ctrl.active}">
+    <a href="account.html" ng-if="$ctrl.active !== 'activity'">Activity</a>
+    <a href="account-balance.html" ng-if="$ctrl.active === 'activity'">Activity</a>
+  </li>
+  <li ng-class="{
+      'active': $ctrl.active === 'balances',
+      'expanded': $ctrl.active === 'gbp' || $ctrl.balances
+    }">
+    <a href ng-click="$ctrl.balances = !$ctrl.balances">
+      Balances <span class="caret pull-xs-right"></span>
+    </a>
+    <ul class="nav nav-stacked nav-inverse m-b-2">
+      <li ng-class="{'active': $ctrl.active === 'gbp'}">
+        <a href="balance.html" class="p-l-1">
+          GBP <span class="pull-xs-right">1,234.56</span>
+        </a>
+      </li>
+      <li>
+        <a href="balance.html" class="p-l-1">
+          USD <span class="pull-xs-right">12,345.67</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!--
+  <li ng-class="{'active': $ctrl.active === 'history'}">
+    <a href="">History</a>
+  </li>
+  -->
+  <li ng-class="{
+      'active': $ctrl.active === 'recipients'
+    }">
+    <a href="recipients.html">Recipients</a>
+  </li>
+  <li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
+  <!--
+  <li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
+  -->
+  <li ng-class="{
+      'active': $ctrl.active === 'settings',
+      'expand': $ctrl.settingsOpen
+    }">
+    <a href ng-click="$ctrl.settingsOpen = !$ctrl.settingsOpen">
+      Settings <span class="caret pull-xs-right"></span>
+    </a>
+    <ul class="nav nav-stacked nav-inverse m-b-2">
+      <li><a href="" class="p-l-1">TransferWise card</a></li>
+      <li><a href="settings.html" class="p-l-1">Profile</a></li>
+      <li><a href="" class="p-l-1">Security</a></li>
+    </ul>
+  </li>
 </ul>
 
 
 
 <!--
 <div class="p-x-panel m-t-4">
-	<a href="flow.html" class="pull-xs-right text-inverse">top up</a>
-	<h4 class="m-b-2">Balances</h4>
+  <a href="flow.html" class="pull-xs-right text-inverse">top up</a>
+  <h4 class="m-b-2">Balances</h4>
 </div>
 <ul class="nav nav-stacked nav-inverse m-b-2">
-	<li><a href="">GBP <span class="pull-xs-right">£1,234.56</span></a></li>
-	<li><a href="">USD <span class="pull-xs-right">$12,345.67</span></a></li>
-	<li><a href="">EUR <span class="pull-xs-right">€123,456.78</span></a></li>
+  <li><a href="">GBP <span class="pull-xs-right">£1,234.56</span></a></li>
+  <li><a href="">USD <span class="pull-xs-right">$12,345.67</span></a></li>
+  <li><a href="">EUR <span class="pull-xs-right">€123,456.78</span></a></li>
 </ul>
 
 <ul class="nav nav-stacked nav-inverse">
-	<li><a href="">Order a card</a></li>
+  <li><a href="">Order a card</a></li>
 </ul>
 -->

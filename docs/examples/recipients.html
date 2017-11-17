@@ -1,143 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Recipient Page Example</title>
-	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <title>Recipients</title>
+  <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 
-	<link type="text/css" rel="stylesheet"
-		href="../dist/css/bootstrap.min.css" />
-	<link type="text/css" rel="stylesheet" href="scratch.css" />
+  <link type="text/css" rel="stylesheet"
+    href="../dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="scratch.css" />
 
-	<script src="../assets/js/jquery.js"></script>
-	<script src="../assets/js/angular.js"></script>
-	<script src="../assets/js/styleguide-components.js"></script>
-	<script src="../dist/js/bootstrap.min.js"></script>
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
+  <script src="../assets/js/styleguide-components.js"></script>
 
-	<script src="forms.js"></script>
+  <script src="../dist/js/bootstrap.min.js"></script>
 
-	<script>
-	angular.module('ExampleApp', []);
-	</script>
+  <script src="forms.js"></script>
 
-	<script src="js/accounts.service.js"></script>
-	<script src="js/currencies.service.js"></script>
+  <script src="js/example-app.js"></script>
 
-	<script src="js/nav.directive.js"></script>
-	<script src="js/simple-nav.directive.js"></script>
-	<script src="js/top-nav.directive.js"></script>
-	<script src="js/side-nav.directive.js"></script>
-	<script src="js/activity-filters.directive.js"></script>
-	<script src="js/accounts-list.directive.js"></script>
-	<script src="js/repeat-transfer.directive.js"></script>
-	<script src="js/currency-input.directive.js"></script>
-	<script src="js/pagination.directive.js"></script>
-	<script src="js/footer.directive.js"></script>
+  <script src="js/accounts.service.js"></script>
+  <script src="js/currencies.service.js"></script>
+  <script src="js/recipient-list.js"></script>
+  <script src="js/accounts-list.directive.js"></script>
+  <script src="js/nav-tour.service.js"></script>
+  <script src="js/one-click.directive.js"></script>
+  <script src="js/nav.directive.js"></script>
+  <script src="js/top-nav.directive.js"></script>
+  <script src="js/simple-nav.directive.js"></script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/balance-preview.js"></script>
+  <script src="js/activity-filters.directive.js"></script>
+  <script src="js/transfer-list.directive.js"></script>
+  <script src="js/transfer-description.directive.js"></script>
+  <script src="js/transfer-details.directive.js"></script>
+  <script src="js/repeat-transfer.directive.js"></script>
+  <script src="js/currency-input.directive.js"></script>
+  <script src="js/pagination.directive.js"></script>
+  <script src="js/footer.directive.js"></script>
+  <script src="js/page-frame.js"></script>
 
-	<script>
-	(function(angular) {
+  <style>
+  body {
+    background-color: #f2f5f7;
+  }
 
-		angular.module('ExampleApp')
-		.controller('PageController', [
-			'AccountService',
-			'CurrencyService',
-			PageController
-		]);
-
-		function PageController(AccountService, CurrencyService) {
-			var $ctrl = this;
-
-			CurrencyService.map().then(function(currencies) {
-				$ctrl.currencies = currencies;
-			});
-
-			AccountService.list({isOwned: true}).then(function(accounts) {
-				$ctrl.ownedAccounts = accounts;
-			});
-
-			AccountService.list({isOwned: false}).then(function(accounts) {
-				$ctrl.otherAccounts = accounts;
-			});
-
-			$ctrl.actionButtons = [
-				{label: 'Add recipient', icon: 'icon-profile', type: 'primary'}
-			];
-
-			$ctrl.sideNav = true;
-
-			$ctrl.burgerToggle = function() {
-				$ctrl.open = !$ctrl.open;
-			};
-		}
-	})(window.angular);
-	</script>
-
-	<style>
-	body {
-		background-color: #f2f5f7;
-	}
-
-	.list-group-item > * {
-		margin-left: -2px;
-	}
-	</style>
+  .list-group-item > * {
+    margin-left: -2px;
+  }
+  </style>
 </head>
 <body ng-app="ExampleApp">
-	<div class="column-layout" ng-controller="PageController as ctrl">
-		<div class="column-layout-left bg-primary"
-			ng-class="{open: ctrl.open}"
-			ng-if="ctrl.sideNav">
-			<div class="column-layout-top">
-				<side-nav active="recipients"></side-nav>
-			</div>
-		</div>
-		<div class="column-layout-main">
-			<top-nav
-				ng-if="ctrl.sideNav"
-				title="Recipients"
-				on-burger-click="ctrl.burgerToggle()"
-				buttons="ctrl.actionButtons"
-				button-summary="Options"
-				searchable="true">
-			</top-nav>
-
-			<div class="container m-l-0">
-				<div class="panel">
-					<div class="panel-heading">
-						<h3 class="panel-title h6">My accounts</h3>
-					</div>
-					<accounts-list
-						accounts="ctrl.ownedAccounts"
-						currencies="ctrl.currencies">
-					</accounts-list>
-				</div>
-
-				<div class="panel">
-					<div class="panel-heading">
-						<h3 class="panel-title h6">Other recipients</h3>
-					</div>
-					<accounts-list
-						accounts="ctrl.otherAccounts"
-						currencies="ctrl.currencies"
-						inactive="true">
-					</accounts-list>
-				</div>
-
-				<div class="panel">
-					<div class="panel-p-l panel-p-r">
-						<pagination page="1" total="200"></pagination>
-					</div>
-				</div>
-			</div>
-			<footer-example></footer-example>
-		</div>
-
-		<div class="column-layout-cover"
-			ng-class="{in: ctrl.open}"
-			ng-click="ctrl.open = !ctrl.open;">
-			<a class="close">&times;</a>
-		</div>
-	</div>
+  <page-frame page="recipients" title="Recipients">
+    <recipient-list></recipient-list>
+  </page-frame>
 </body>
 
 </html>

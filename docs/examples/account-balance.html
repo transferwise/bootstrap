@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity</title>
+  <!--<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+  <link type="text/css" rel="stylesheet"
+    href="../dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="scratch.css" />
+
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
+  <script src="../assets/js/styleguide-components.js"></script>
+
+  <script src="../dist/js/bootstrap.min.js"></script>
+
+  <script src="forms.js"></script>
+
+  <script src="js/example-app.js"></script>
+
+  <script src="js/transfers.service.js"></script>
+  <script src="js/currencies.service.js"></script>
+  <script src="js/activity-list.js"></script>
+  <script src="js/nav-tour.service.js"></script>
+  <script src="js/one-click.directive.js"></script>
+  <script src="js/nav.directive.js"></script>
+  <script src="js/top-nav.directive.js"></script>
+  <script src="js/simple-nav.directive.js"></script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/balance-preview.js"></script>
+  <script src="js/activity-filters.directive.js"></script>
+  <script src="js/transfer-list.directive.js"></script>
+  <script src="js/transfer-description.directive.js"></script>
+  <script src="js/transfer-details.directive.js"></script>
+  <script src="js/transfer-type-icon.directive.js"></script>
+  <script src="js/transfer-actions.directive.js"></script>
+  <script src="js/transfer-activity.directive.js"></script>
+  <script src="js/transfer-activity-expanded.directive.js"></script>
+  <script src="js/transfer-status-message.directive.js"></script>
+  <script src="js/money-tracker.directive.js"></script>
+  <script src="js/repeat-transfer.directive.js"></script>
+  <script src="js/currency-input.directive.js"></script>
+  <script src="js/pagination.directive.js"></script>
+  <script src="js/footer.directive.js"></script>
+  <script src="js/page-frame.js"></script>
+
+  <script src="//transferwise.github.io/styleguide-components/lib/styleguide-components.js"></script>
+  <link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
+
+</head>
+<body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
+  <page-frame page="activity" title="Activity" search="true">
+
+    <balance-preview></balance-preview>
+
+    <activity-list></activity-list>
+
+  </page-frame>
+</body>
+</html>

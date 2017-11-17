@@ -1,246 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Account Page Example</title>
-	<!--<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-	<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <title>Activity</title>
+  <!--<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
 
-	<link type="text/css" rel="stylesheet"
-		href="../dist/css/bootstrap.min.css" />
-	<link type="text/css" rel="stylesheet" href="scratch.css" />
+  <link type="text/css" rel="stylesheet"
+    href="../dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="scratch.css" />
 
-	<script src="../assets/js/jquery.js"></script>
-	<script src="../assets/js/angular.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
-	<script src="../assets/js/styleguide-components.js"></script>
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
+  <script src="../assets/js/styleguide-components.js"></script>
 
-	<script src="../dist/js/bootstrap.min.js"></script>
+  <script src="../dist/js/bootstrap.min.js"></script>
 
-	<script src="forms.js"></script>
+  <script src="forms.js"></script>
 
-	<script>
-	angular
-		.module('ExampleApp', ['tw.styleguide-components', 'ngCookies'])
-		.config(function ($locationProvider) {
-			// undo the default ('!')
-			//$locationProvider.hashPrefix('');
-		});
+  <script src="js/example-app.js"></script>
 
-	</script>
+  <script src="js/transfers.service.js"></script>
+  <script src="js/currencies.service.js"></script>
+  <script src="js/activity-list.js"></script>
+  <script src="js/nav-tour.service.js"></script>
+  <script src="js/one-click.directive.js"></script>
+  <script src="js/nav.directive.js"></script>
+  <script src="js/top-nav.directive.js"></script>
+  <script src="js/simple-nav.directive.js"></script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/balance-preview.js"></script>
+  <script src="js/activity-filters.directive.js"></script>
+  <script src="js/transfer-list.directive.js"></script>
+  <script src="js/transfer-description.directive.js"></script>
+  <script src="js/transfer-details.directive.js"></script>
+  <script src="js/transfer-type-icon.directive.js"></script>
+  <script src="js/transfer-actions.directive.js"></script>
+  <script src="js/transfer-activity.directive.js"></script>
+  <script src="js/transfer-activity-expanded.directive.js"></script>
+  <script src="js/transfer-status-message.directive.js"></script>
+  <script src="js/money-tracker.directive.js"></script>
+  <script src="js/repeat-transfer.directive.js"></script>
+  <script src="js/currency-input.directive.js"></script>
+  <script src="js/pagination.directive.js"></script>
+  <script src="js/footer.directive.js"></script>
+  <script src="js/page-frame.js"></script>
 
-	<script src="js/transfers.service.js"></script>
-	<script src="js/currencies.service.js"></script>
-	<script src="js/nav-tour.service.js"></script>
-	<script src="js/one-click.directive.js"></script>
-	<script src="js/nav.directive.js"></script>
-	<script src="js/top-nav.directive.js"></script>
-	<script src="js/simple-nav.directive.js"></script>
-	<script src="js/side-nav.directive.js"></script>
-	<script src="js/start-new.directive.js"></script>
-	<script src="js/next-cards.directive.js"></script>
-	<script src="js/calculator-inline.directive.js"></script>
-	<script src="js/activity-filters.directive.js"></script>
-	<script src="js/transfer-list.directive.js"></script>
-	<script src="js/transfer-history-table.directive.js"></script>
-	<script src="js/transfer-description.directive.js"></script>
-	<script src="js/transfer-details.directive.js"></script>
-	<script src="js/transfer-type-icon.directive.js"></script>
-	<script src="js/transfer-actions.directive.js"></script>
-	<script src="js/transfer-activity.directive.js"></script>
-	<script src="js/transfer-activity-expanded.directive.js"></script>
-	<script src="js/transfer-status-message.directive.js"></script>
-	<script src="js/money-tracker.directive.js"></script>
-	<script src="js/repeat-transfer.directive.js"></script>
-	<script src="js/currency-input.directive.js"></script>
-	<script src="js/pagination.directive.js"></script>
-	<script src="js/profile-block.directive.js"></script>
-	<script src="js/footer.directive.js"></script>
+  <script src="//transferwise.github.io/styleguide-components/lib/styleguide-components.js"></script>
+  <link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
 
-
-	<script src="//transferwise.github.io/styleguide-components/lib/styleguide-components.js"></script>
-	<link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
-
-	<script>
-	(function(angular) {
-
-		angular.module('ExampleApp')
-		.controller('PageController', [
-			'TransferService',
-			'CurrencyService',
-			'NavTourService',
-			PageController
-		]);
-
-		function PageController(
-			TransferService,
-			CurrencyService,
-			NavTourService
-		) {
-			var $ctrl = this;
-
-			CurrencyService.map().then(function(currencies) {
-				$ctrl.currencies = currencies;
-			});
-
-			TransferService.list({status: [
-				"AWAITING_FUNDS",
-				"FUNDED",
-				"PROCESSING",
-				"PAID_OUT",
-				"PAUSED"
-			]}).then(function(transfers) {
-				$ctrl.activeTransfers = transfers;
-			});
-			//	"CONVERTING",
-
-			TransferService.list({status: [
-				"COMPLETED",
-				"CANCELLED",
-			]}).then(function(transfers) {
-				$ctrl.historicTransfers = transfers;
-			});
-
-			$ctrl.burgerToggle = function() {
-				$ctrl.open = !$ctrl.open;
-			};
-			$ctrl.showSearch = false;
-
-			$ctrl.sideNavToggle = function() {
-				$ctrl.sideNav = !$ctrl.sideNav;
-			};
-			$ctrl.sideNav = true;
-
-			$ctrl.actionButtons = [
-				{label: 'Send money', icon: 'icon-send', type: 'success', primary: true}
-				,{label: 'Add money', icon: 'icon-add'}
-				,{label: 'Receive', icon: 'icon-request'}
-				,{label: 'Something', icon: 'icon-request'}
-			];
-
-			/*
-			var now = new Date();
-			var after = new Date(now.getTime() + (10 * 1000));
-			NavTourService.addSimpleTour(
-				'inviteFriends',
-				'right',
-				'Did you know?',
-				'By inviting your friends you can earn free transfers. Invite 3 friends to earn £50 off your fees.',
-				'/assets/img/css2-bg.jpg',
-				'/invite',
-				'Invite now'
-				//,after
-			);
-
-			NavTourService.addSimpleTour(
-				'profileSelect',
-				'bottom',
-				'You now have two profiles',
-				'Make sure to choose the correct profile when sending money.',
-				'/assets/img/css2-bg.jpg'
-			);
-
-			NavTourService.checkAndShowTour();
-			*/
-		}
-	})(window.angular);
-	</script>
 </head>
 <body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
-<nav-bar ng-if="!ctrl.sideNav" fluid="ctrl.sideNav"></nav-bar>
-<div class="column-layout">
-	<div class="column-layout-left bg-primary" ng-class="{open: ctrl.open}" ng-if="ctrl.sideNav">
-		<div class="column-layout-top">
-			<side-nav active="activity"></side-nav>
-		</div>
-	</div>
-	<div class="column-layout-main">
-		<top-nav
-			title="Activity"
-			on-burger-click="ctrl.burgerToggle()"
-			buttons="ctrl.actionButtons"
-			button-summary="Actions"
-			searchable="true">
-		</top-nav>
+  <page-frame page="activity" title="Activity" search="true">
 
-		<div class="container m-l-0">
-			<!--
-			<div class="m-t-1 m-b-3">
-				<next-cards show="2"></next-cards>
-			</div>
-			-->
+    <balance-preview></balance-preview>
 
-			<div class="panel m-b-2">
-				<div class="panel-heading">
-					<h6 class="panel-title">Balances</h6>
-				</div>
-				<div class="panel-body p-y-2">
-					<div class="row">
-						<div class="col-sm-6">
-							<h3 class="m-b-0">
-								<a href="balance.html" class="text-no-decoration">
-									1,234.56 <small>GBP</small>
-								</a>
-							</h3>
-						</div>
-						<div class="col-sm-6">
-							<h3 class="m-b-0">
-								<a href="balance.html" class="text-no-decoration">
-									12,345.67 <small>USD</small>
-								</a>
-							</h3>
-						</div>
-					</div>
-				</div>
-			</div>
+    <activity-list></activity-list>
 
-			<div class="panel m-b-2">
-				<div class="panel-heading">
-					<h6 class="panel-title">
-						In progress ({{ctrl.activeTransfers.length}})
-					</h6>
-				</div>
-				<transfer-list
-					transfers="ctrl.activeTransfers"
-					currencies="ctrl.currencies"
-					inactive="false">
-				</transfer-list>
-			</div>
-
-			<div class="panel">
-				<div class="panel-heading">
-					<h6 class="panel-title">
-						Recent ({{ctrl.historicTransfers.length}})
-					</h6>
-				</div>
-				<transfer-list
-					transfers="ctrl.historicTransfers"
-					currencies="ctrl.currencies"
-					inactive="true">
-				</transfer-list>
-				<div class="panel-footer">
-					<pagination page="1" total="200"></pagination>
-				</div>
-			</div>
-
-			<div class="text-xs-center section">
-				&copy; TransferWise 2016
-			</div>
-			<div style="position: fixed; left: 264px; bottom: 24px;">
-				<div class="container" style="width: 1176px;">
-					<button class="btn btn-primary pull-right"
-						style="border-radius: 24px; width: 48px; padding: 11px; text-align: center;">
-						?
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="column-layout-cover"
-		ng-class="{in: ctrl.open}"
-		ng-click="ctrl.open = !ctrl.open;">
-		<a class="close">&times;</a>
-	</div>
-</div>
+  </page-frame>
 </body>
 </html>
