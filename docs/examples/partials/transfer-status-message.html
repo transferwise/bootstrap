@@ -3,13 +3,12 @@
 		{{$ctrl.statusMessages[$ctrl.transfer.phase][$ctrl.transfer.state]}}
 	</span>
 	<span ng-if="$ctrl.transfer.phase === 'FINISHED'">
-		<span ng-if="$ctrl.transfer.state === 'COMPLETE'"
-			title="{{$ctrl.transfer.completed | date:'dd MMMM yyyy h:mm a'}}">
-			Completed {{$ctrl.transfer.completed | date:"dd MMMM yyyy"}}
+		<span ng-if="$ctrl.transfer.state === 'COMPLETE'">
+			Completed <tw-date-format date="$ctrl.transfer.completed"></tw-date-format>
 		</span>
 		<span ng-if="$ctrl.transfer.state === 'CANCELLED'"
 			title="{{$ctrl.transfer.updated | date:'dd MMMM yyyy h:mm a'}}">
-			Cancelled {{$ctrl.transfer.updated | date:"dd MMMM yyyy"}}
+			Cancelled <tw-date-format date="$ctrl.transfer.updated"></tw-date-format>
 		</span>
 	</span>
 </span>
