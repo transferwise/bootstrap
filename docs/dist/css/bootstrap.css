@@ -9128,11 +9128,6 @@ input:focus ~ .alert-focus,
   -webkit-transition: all ease .15s;
        -o-transition: all ease .15s;
           transition: all ease .15s;
-  /*
-  @media (min-width: @screen-lg-min) {
-    padding: @spacing-1-desktop @spacing-1-desktop @spacing-1-desktop (@spacing-1-desktop - 2px);
-  }
-  */
 }
 .panel-group .list-group-item {
   margin-top: 0;
@@ -9482,8 +9477,16 @@ a.list-group-item-danger:hover {
 .panel > .table caption,
 .panel > .table-responsive > .table caption,
 .panel > .panel-collapse > .table caption {
-  padding-right: 32px;
-  padding-left: 32px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+@media (min-width: 768px) {
+  .panel > .table caption,
+  .panel > .table-responsive > .table caption,
+  .panel > .panel-collapse > .table caption {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 }
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
@@ -9774,12 +9777,6 @@ a.list-group-item-danger:hover {
   .panel-group .panel .panel-heading,
   .panel-group .panel .panel-footer {
     padding: 24px !important;
-  }
-}
-@media (min-width: 992px) {
-  .panel-group .panel .panel-heading,
-  .panel-group .panel .panel-footer {
-    padding: 24px 32px;
   }
 }
 @media (min-width: 768px) {
@@ -11550,11 +11547,6 @@ li .circle {
 @media (min-width: 768px) {
   .footer {
     background-color: #f2f5f7;
-  }
-}
-@media (min-width: 992px) {
-  .footer {
-    padding-top: 32px;
   }
 }
 .navbar .glyphicon,

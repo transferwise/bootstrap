@@ -117,8 +117,13 @@
     margin-bottom: 0;
 
     caption {
-      padding-left: @spacing-1-desktop;
-      padding-right: @spacing-1-desktop;
+      padding-left: @spacing-1-mobile;
+      padding-right: @spacing-1-mobile;
+
+      @media (min-width: @screen-md-min) {
+        padding-left: @spacing-1-tablet;
+        padding-right: @spacing-1-tablet;
+      }
     }
   }
   // Add border top radius for first one
@@ -318,14 +323,7 @@
         }
     }
 }
-@media (min-width: @screen-lg-min) {
-    .panel-group .panel {
-        .panel-heading,
-        .panel-footer {
-            padding: @spacing-1-tablet @spacing-1-desktop;
-        }
-    }
-}
+
 @media (min-width: @screen-md-min) {
     .panel {
       margin-left: 0;
