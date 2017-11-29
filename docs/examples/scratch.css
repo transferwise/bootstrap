@@ -1,7 +1,3 @@
-/* Account page */
-.list-group-item > * {
-  margin-left: -2px;
-}
 
 .pips {
   width: 32px;
@@ -208,20 +204,10 @@
   display: block;
 }
 
+
 /*
-.row .balance {
-  background-color: #FFF;
-}
-.row:hover .balance {
-  background-color: #fbfcfd;
-}
-.row .balance:hover {
-  background-color: #FFF;
-}
-*/
-
-
 @media (max-width: 767px) {
+  body,
   body.bg-default {
     background-color: #fff !important;
   }
@@ -233,6 +219,10 @@
     margin-bottom: 0;
   }
 }
+@media (max-width: 991px) {
+  border-top: 1px solid @list-group-border;
+}
+*/
 .column-layout {
   overflow: hidden;
 }
@@ -241,97 +231,4 @@
 }
 .column-layout-left li .caret {
   margin-top: 4px;
-}
-
-
-.borderless-preview {
-  width: 100%;
-}
-.borderless-preview img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-}
-
-@media (min-width: 768px) {
-  .borderless-desktop {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .1);
-    animation: borderlessDesktopEntry .5s  1s ease-out both;
-  }
-  .borderless-balance {
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
-    animation: borderlessBalanceEntry .5s 1.1s ease-out both;
-  }
-  .borderless-mobile {
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .4);
-    animation: borderlessMobileEntry .5s 1.2s ease-out both;
-  }
-}
-
-
-@media (max-width: 767px) {
-  .borderless-mobile {
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .1);
-    animation: borderlessMobileEntryM .5s  1s ease-out both;
-  }
-  .borderless-balance {
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
-    animation: borderlessBalanceEntryM .5s 1.1s ease-out both;
-  }
-}
-
-@keyframes borderlessDesktopEntry {
-  0% {
-    opacity: 1%;
-    transform: scale(2) translate(300%, 20%);
-  }
-  100% {
-    opacity: 100%;
-    transform: scale(2) translate(32%, 20%);
-  }
-}
-
-@keyframes borderlessBalanceEntry {
-  0% {
-    opacity: 1%;
-    transform: translate(370%, -300%) scale(1.8);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(75%, -300%) scale(1.8);
-  }
-}
-
-@keyframes borderlessMobileEntry {
-  0% {
-    opacity: 1%;
-    transform: translate(-40%, 325%) scale(.6);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(-40%, -27%) scale(.6);
-  }
-}
-
-
-@keyframes borderlessBalanceEntryM {
-  0% {
-    opacity: 1%;
-    transform: translate(400%, 900%) scale(2.8);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(0, 900%) scale(2.8);
-  }
-}
-
-@keyframes borderlessMobileEntryM {
-  0% {
-    opacity: 1%;
-    transform: translateX(300%);
-  }
-  100% {
-    opacity: 100%;
-    transform: translateX(-15%);
-  }
 }

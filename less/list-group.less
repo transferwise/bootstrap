@@ -7,13 +7,16 @@
 //
 // Easily usable on <ul>, <ol>, or <div>.
 
+@list-group-border: @brand-smoke-plus-20;
+@list-group-border-inactive: @brand-smoke-plus-10;
+
 .list-group {
   // No need to set list-style: none; since .list-group-item is block level
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
-  border-left: 1px solid @brand-smoke-plus-20;
-  border-right: 1px solid @brand-smoke-plus-20;
-  border-bottom: 1px solid @brand-smoke-plus-20;
+  border-left: 1px solid @list-group-border;
+  border-right: 1px solid @list-group-border;
+  border-bottom: 1px solid @list-group-border;
 }
 
 // Individual list items
@@ -32,19 +35,22 @@
   transition: all ease @panel-focus-transtion;
 
   .panel-group & {
-    border-top: 1px solid @brand-smoke-plus-20;
+    border-top: 1px solid @list-group-border;
     margin-top: 0;
   }
-}
 
-@media (min-width: @screen-sm-min) {
-  .list-group-item {
+  @media (min-width: @screen-sm-min) {
     padding: @spacing-1-tablet @spacing-1-tablet @spacing-1-tablet (@spacing-1-tablet - 2px);
+
   }
-}
-@media (min-width: @screen-lg-min) {
-  .list-group-item {
+  /*
+  @media (min-width: @screen-lg-min) {
     padding: @spacing-1-desktop @spacing-1-desktop @spacing-1-desktop (@spacing-1-desktop - 2px);
+  }
+  */
+
+  > [role="button"] {
+    margin-left: -2px;
   }
 }
 
@@ -145,9 +151,13 @@ a.list-group-item {
 }
 
 .list-group-inactive {
+  border-left: 1px solid @list-group-border-inactive;
+  border-right: 1px solid @list-group-border-inactive;
+  border-bottom: 1px solid @list-group-border-inactive;
+
   .list-group-item {
     background-color: transparent;
-    border-top: 1px solid @brand-smoke-plus-10;
+    border-top: 1px solid @list-group-border-inactive;
     margin-top: 0;
 
     &:hover,
@@ -239,8 +249,8 @@ a.list-group-item {
       box-shadow: none !important;
     }
     .list-group-inactive .list-group-item.active {
-      border-top: 1px solid @brand-smoke-plus-10;
-      border-bottom: 1px solid @brand-smoke-plus-10;
+      border-top: 1px solid @list-group-border;
+      border-bottom: 1px solid @list-group-border;
     }
 
     .list-group-item.active .collapse {
