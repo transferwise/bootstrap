@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v5.11.1 (http://bootstrap.transferwise.com)
- * Copyright 2011-2017 Twitter, Inc.
+ * Bootstrap v5.12.4 (http://bootstrap.transferwise.com)
+ * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
 
@@ -10175,6 +10175,14 @@ button.close {
 .tile-danger:hover:not(.tile-disabled) {
   border-color: #f53636;
 }
+.amount-currency-select-btn {
+  min-width: 98px;
+}
+@media (min-width: 576px) {
+  .amount-currency-select-btn {
+    min-width: 144px;
+  }
+}
 .modal-open {
   overflow: hidden;
 }
@@ -10425,7 +10433,6 @@ a[data-toggle=tooltip] {
   top: 0;
   left: 0;
   z-index: 1060;
-  display: none;
   width: 276px;
   padding: 18px 24px;
   font-family: "Averta", "Avenir W02", "Avenir", Helvetica, Arial, sans-serif;
@@ -10695,6 +10702,33 @@ button.popover-close {
   .popover-modal-cover {
     display: block;
   }
+}
+.popover-promotion {
+  text-align: center;
+}
+.popover-promotion h3,
+.popover-promotion .h3 {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .popover-promotion h3,
+  .popover-promotion .h3 {
+    font-size: 22px;
+  }
+  .popover-promotion .popover-image {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .popover-promotion .popover-image {
+    width: 65%;
+  }
+}
+/**
+ * Safely raising specificity to 0020
+ */
+.promoted.promoted {
+  color: #00b9ff;
 }
 .carousel {
   position: relative;
