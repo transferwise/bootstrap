@@ -9580,20 +9580,53 @@ a.list-group-item-danger:hover {
 .embed-responsive-4by3 {
   padding-bottom: 75%;
 }
-.well {
+.well-xs {
   min-height: 24px;
   margin-bottom: 24px;
   border-radius: 3px;
   border: solid 1px #e2e6e8;
   padding: 24px;
+  box-shadow: none;
 }
-.well-lg {
-  padding: 24px;
-  border-radius: 3px;
+@media only screen and (min-width: 576px) {
+  .well-sm {
+    min-height: 24px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: solid 1px #e2e6e8;
+    padding: 24px;
+    box-shadow: none;
+  }
 }
-.well-sm {
-  padding: 8px;
-  border-radius: 2px;
+@media only screen and (min-width: 768px) {
+  .well-md {
+    min-height: 24px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: solid 1px #e2e6e8;
+    padding: 24px;
+    box-shadow: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .well-lg {
+    min-height: 24px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: solid 1px #e2e6e8;
+    padding: 24px;
+    box-shadow: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .well-xl {
+    min-height: 24px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: solid 1px #e2e6e8;
+    padding: 24px;
+    box-shadow: none;
+  }
 }
 .close {
   float: right;
