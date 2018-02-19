@@ -146,8 +146,6 @@ th {
   }
 }
 
-
-
 // Zebra-striping
 //
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
@@ -201,7 +199,6 @@ table {
   }
 }
 
-
 // Table backgrounds
 //
 // Exact selectors below required to override `.table-striped` and prevent
@@ -215,7 +212,6 @@ table {
 .table-row-variant(warning; @state-warning-bg; @state-warning-text);
 .table-row-variant(danger; @state-danger-bg; @state-danger-text);
 .table-row-variant(default; @brand-smoke-plus-20; @table-border-color);
-
 
 // Responsive tables
 //
@@ -372,4 +368,143 @@ table {
   > thead > tr > th {
     text-align: center;
   }
+}
+
+// Pricing table
+//
+// Used on borderless price comparison component
+.table-pricing {
+  margin-bottom: (@spacer * 5);
+  thead>tr>th,
+  tbody>tr>th,
+  tbody>tr>td {
+    padding: 12px 24px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  thead>tr {
+    >th {
+      padding: 24px;
+      background: @brand-navy;
+      color: @brand-white;
+      &:first-child {
+        border-top-left-radius: @border-radius-base;
+        text-align: left;
+      }
+      &:last-child {
+        border-top-right-radius: @border-radius-base;
+      }
+    }
+  }
+  tbody>tr {
+    >th {
+      color: @brand-blue;
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+  img {
+    max-width: 80px;
+    max-height: 30px;
+  }
+
+  @media (max-width: 767px) {
+    table-layout: fixed;
+    tbody>tr {
+      >th {
+        border-top: 0;
+        background: @brand-blue;
+        color: @brand-white;
+        text-align: center;
+        &[scope="row"] {
+          border: 0;
+          background: @brand-navy;
+          color: @brand-white;
+          text-align: left;
+        }
+      }
+      >td {
+        border: 0;
+        text-align: right;
+      }
+      &:first-child {
+        >th{
+          &:first-child {
+            border-top-left-radius: @border-radius-base;
+          }
+          &:last-child {
+            border-top-right-radius: @border-radius-base;
+          }
+        }
+      }
+      &:last-child {
+        >th {
+          &:first-child {
+            border-bottom-left-radius: @border-radius-base;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Table featured column
+//
+// Used on borderless price comparison component
+.featured-header-cell {
+	position: relative;
+	background: @brand-blue !important;
+	&:before {
+		position: absolute;
+		top: (-@spacer * 2);
+		left: 0;
+		width: 100%;
+		height: (@spacer * 2);
+		border-top-right-radius: @border-radius-base;
+		border-top-left-radius: @border-radius-base;
+		background: @brand-blue !important;
+		content: "";
+	}
+}
+.featured-cell {
+	position: relative;
+	border: 0 !important;
+	background: @brand-white;
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 15%;
+		width: 70%;
+		height: 2px;
+		background: @gray-base;
+		content: "";
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: -34%;
+		width: 168%;
+		height: 100%;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(34, 48, 72, 0.05) 20%, rgba(255, 255, 255, 0) 21%, rgba(255, 255, 255, 0) 80%, rgba(34, 48, 72, 0.05) 80%, rgba(255, 255, 255, 0) 100%);
+		content: "";
+	}
+}
+tr {
+	&:last-of-type {
+		.featured-cell {
+			&:after {
+				-webkit-clip-path: polygon(-40% 50%, 140% 50%, 140% 250%, -40% 250%);
+				position: absolute;
+				bottom: -16px;
+				left: 0px;
+				width: 100%;
+				height: 32px;
+				border-radius: @border-radius-base;
+				background: @brand-white;
+				box-shadow: 0px 3px 55px 16px rgba(34, 48, 73, .05);
+				clip-path: polygon(-40% 50%, 140% 50%, 140% 250%, -40% 250%);
+				content: "";
+			}
+		}
+	}
 }
