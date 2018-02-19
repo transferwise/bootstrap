@@ -43,7 +43,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-striped">Striped rows</h2>
+  <h2 class="page-subheader" id="tables-striped">Striped rows</h2>
   <p>Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>&lt;tbody&gt;</code>.</p>
   <div class="alert alert-danger" id="callout-tables-striped-ie8">
     <h4>Cross-browser compatibility</h4>
@@ -88,7 +88,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-bordered">Bordered table</h2>
+  <h2 class="page-subheader" id="tables-bordered">Bordered table</h2>
   <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
   <div class="bs-example" data-example-id="bordered-table">
     <table class="table table-bordered">
@@ -129,7 +129,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-hover-rows">Hover rows</h2>
+  <h2 class="page-subheader" id="tables-hover-rows">Hover rows</h2>
   <p>Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.</p>
   <div class="bs-example" data-example-id="hoverable-table">
     <table class="table table-hover">
@@ -170,7 +170,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-condensed">Condensed table</h2>
+  <h2 class="page-subheader" id="tables-condensed">Condensed table</h2>
   <p>Add <code>.table-condensed</code> to make tables more compact by cutting cell padding in half.</p>
   <div class="bs-example" data-example-id="condensed-table">
     <table class="table table-condensed">
@@ -210,7 +210,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-contextual-classes">Contextual classes</h2>
+  <h2 class="page-subheader" id="tables-contextual-classes">Contextual classes</h2>
   <p>Use contextual classes to color table rows or individual cells.</p>
   <div class="table-responsive table-bordered">
     <table class="table table-bordered table-striped">
@@ -378,7 +378,7 @@
     <p>Using color to add meaning to a table row or individual cell only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (the visible text in the relevant table row/cell), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
   </div>
 
-  <h2 id="tables-responsive">Responsive tables</h2>
+  <h2 class="page-subheader" id="tables-responsive">Responsive tables</h2>
   <p>Create responsive tables by wrapping any <code>.table</code> in <code>.table-responsive</code> to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.</p>
 
   <div class="alert alert-danger">
@@ -508,7 +508,7 @@
 </div>
 {% endhighlight %}
 
-  <h2 id="tables-calendar">Calendar tables</h2>
+  <h2 class="page-subheader" id="tables-calendar">Calendar tables</h2>
   <p>Used for rendering the days in a month, or months in a year.</p>
 
   <div class="bs-example" data-example-id="calendar-table">
@@ -595,7 +595,7 @@
 {% endhighlight %}
 
 
-  <h2 id="tables-description-list">Description list tables</h2>
+  <h2 class="page-subheader" id="tables-description-list">Description list tables</h2>
   <p>A mobile first table variant that uses description lists within cards on
     mobile widths (xs and sm grid widths), and regular table styles when wider.</p>
   <p>The description list tables can be used with the other table modifier
@@ -655,4 +655,144 @@
   </div>
 </div>
 {% endhighlight %}
+  <h2 class="page-subheader" id="tables-pricing">Pricing table</h2>
+  <p>Custom table to show pricing data or similar.</p>
+  <p>It has a featured column to highlight the TransferWise option. Use <code>.featured-header-cell</code> for <code>th</code> and <code>.featured-cell</code> for the <code>td</code>s of the column that must be featured.</p>
+
+  <div class="bs-example" data-example-id="tables-pricing">
+    <div class="hidden-xs hidden-sm">
+      <table class="table table-bordered table-pricing">
+        <thead>
+          <tr>
+            <th>Compare the costs</th>
+            <th class="featured-header-cell">TransferWise</th>
+            <th>Provider</th>
+            <th>Provider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Monthly account fees</th>
+            <td class="featured-cell text-success">£0</td>
+            <td>£3.50</td>
+            <td>£3.50</td>
+          </tr>
+          <tr>
+            <th>Send £100 GBP to EUR </th>
+            <td class="featured-cell text-success">£1.15</td>
+            <td>£4.00</td>
+            <td>£4.00</td>
+          </tr>
+          <tr>
+            <th>Convert £100 GBP to EUR</th>
+            <td class="featured-cell text-success">£0.50</td>
+            <td>£4.00</td>
+            <td>£4.00</td>
+          </tr>
+          <tr>
+            <th>Receive £100 in AUD, USD, GBP and EUR</th>
+            <td class="featured-cell text-success">£0</td>
+            <td>£0</td>
+            <td>£0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="visible-xs-block visible-sm-block">
+      <table class="table table-bordered table-pricing">
+        <tbody>
+          <tr>
+            <th colspan="2">Monthly account fees</th>
+          </tr>
+          <tr>
+            <th scope="row">TransferWise</th>
+            <td class="text-success">£0</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£3.50</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£3.50</td>
+          </tr>
+          <tr>
+            <th colspan="2">Send £100 GBP to EUR </th>
+          </tr>
+          <tr>
+            <th scope="row">TransferWise</th>
+            <td class="text-success">£1.15</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£4.00</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£4.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="p-t-4">
+      {% highlight html %}
+      <table class="table table-bordered table-pricing">
+        <thead>
+          <tr>
+            <th>Compare the costs</th>
+            <th class="featured-header-cell">TransferWise</th>
+            <th>Provider</th>
+            <th>Provider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Monthly account fees</th>
+            <td class="featured-cell text-success">£0</td>
+            <td>£3.50</td>
+            <td>£3.50</td>
+          </tr>
+          <tr>
+            <th>Send £100 GBP to EUR </th>
+            <td class="featured-cell text-success">£1.15</td>
+            <td>£4.00</td>
+            <td>£4.00</td>
+          </tr>
+          <tr>
+          ...
+          </tr>
+        </tbody>
+      </table>
+      {% endhighlight %}
+    </div>
+    <h3>The responsive view</h3>
+    <p>Use a double markup to show the pricing table on tablet or mobile.</p>
+    <p>Hide the desktop table with <code>.hidden-xs .hidden-sm</code> and show the responsive option adding <code>.visible-xs-block .visible-sm-block</code> clases.</p>
+
+    {% highlight html %}
+    <div class="visible-xs-block visible-sm-block">
+      <table class="table table-bordered table-pricing">
+        <tbody>
+          <tr>
+            <th colspan="2">Monthly account fees</th>
+          </tr>
+          <tr>
+            <th scope="row">TransferWise</th>
+            <td class="text-success">£0</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£3.50</td>
+          </tr>
+          <tr>
+            <th scope="row">Provider</th>
+            <td>£3.50</td>
+          </tr>
+          ...
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endhighlight %}
+  </div>
 </div>
