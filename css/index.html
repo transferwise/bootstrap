@@ -1408,24 +1408,74 @@
     <dl class="dl-horizontal">
       <dt>Description lists</dt>
       <dd>A description list is perfect for defining terms.</dd>
-      <dt>Euismod</dt>
-      <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-      <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-      <dt>Malesuada porta</dt>
-      <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-      <dt>Felis euismod semper eget lacinia</dt>
-      <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+      <dt>This is a very long title for a value, it's here to demonstrate wrapping.</dt>
+      <dd>Quite cool, no?</dd>
+      <dt>IBAN</dt>
+      <dd>DE89 3704 0044 0532 0130 00</dd>
+      <dt>Recipient gets</dt>
+      <dd>1,000,000 USD</dd>
+      <dt>Sending via</dt>
+      <dd>Slack</dd>
     </dl>
   </div>
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
-  <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
-<span class="nt">&lt;/dl&gt;</span></code></pre></figure>
+
+  <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+  </code></pre></figure>
 
   <div class="alert alert-info" id="callout-type-dl-truncate">
     <h4>Auto-truncating</h4>
     <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
   </div>
+
+  <h4>Horizontal description item</h4>
+  <p>
+    Make terms and descriptions in <code>&lt;dl&gt;</code> line up side-by-side.
+    Has to be used as single items, not in big definition lists.
+    Differs from regular horizontal description, as
+    <ul>
+      <li>it never stacks</li>
+      <li>overflow is not truncated, but wrapped</li>
+      <li>values are right-aligned</li>
+    </ul>
+  </p>
+
+  <div class="bs-example">
+    <dl class="dl-horizontal-item">
+      <dt>Description lists</dt>
+      <dd>A description list is perfect for defining terms.</dd>
+    </dl>
+    <dl class="dl-horizontal-item">
+      <dt>This is a very long title for a value, it's here to demonstrate wrapping.</dt>
+      <dd>Quite cool, no?</dd>
+    </dl>
+    <dl class="dl-horizontal-item">
+      <dt>IBAN</dt>
+      <dd>DE89 3704 0044 0532 0130 00</dd>
+    </dl>
+    <dl class="dl-horizontal-item">
+      <dt>Recipient gets</dt>
+      <dd>1,000,000 USD</dd>
+    </dl>
+    <dl class="dl-horizontal-item">
+      <dt>Sending via</dt>
+      <dd>Slack</dd>
+    </dl>
+  </div>
+
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>...<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>...<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></code></pre></figure>
 
   <h3>Description Columns</h3>
   <p>Use grids to align definitions in columns.</p>
