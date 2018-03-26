@@ -6166,7 +6166,7 @@ body > .column-layout {
   height: 100vh;
   min-height: 100vh;
 }
-.column-layout-left .column-layout-top {
+.bg-primary.column-layout-left .column-layout-top {
   height: 100vh;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iMjY0cHgiIGhlaWdodD0iNTUzcHgiIHZpZXdCb3g9IjAgMCAyNjQgNTUzIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICAgICAgPHRpdGxlPkdyb3VwIDEwPC90aXRsZT4gICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+ICAgIDxkZWZzPjwvZGVmcz4gICAgPGcgaWQ9IlBoYXNlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuNDAwMDAwMDA2Ij4gICAgICAgIDxnIGlkPSJBY3Rpdml0eS1Db3B5LTIyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgLTQ3MS4wMDAwMDApIiBmaWxsPSIjMkU0MzY5Ij4gICAgICAgICAgICA8ZyBpZD0iTGVmdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1MS4wMDAwMDAsIDAuMDAwMDAwKSI+ICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC0xMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC41NzIyNjIsIDQ2OC4wMDAwMDApIj4gICAgICAgICAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJGaWxsLTIiIHBvaW50cz0iMjk1Ljg1NjY3OCAzMDQuNzEwNDIgMjcyLjQ3MTU3NSAzNTguNjQ3OTIgNDEzLjUzOTAzNiAzNTguNjQ3OTIgNDEzLjUzOTAzNiAzMDQuNzEwNDIiPjwvcG9seWdvbj4gICAgICAgICAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJGaWxsLTUiIHBvaW50cz0iMjQ5LjA4NjI5NyA0MTQuNzU0OTIzIDIyNS43MDExOTUgNDY4LjY5MjQyMyA0MTMuNTM4ODYxIDQ2OC42OTI0MjMgNDEzLjUzODg2MSA0MTQuNzU0OTIzIj48L3BvbHlnb24+ICAgICAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iRmlsbC03IiBwb2ludHM9IjIwMi4zMjYyNTMgNTI0Ljc3NTEwNSAxNzguOTQxMTUxIDU3OC43MTI2MDUgNDEzLjU0MDI2MiA1NzguNzEyNjA1IDQxMy41NDAyNjIgNTI0Ljc3NTEwNSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgY3g9IjEyMC40Mjc3MzgiIGN5PSIxMjAiIHI9IjEyMCI+PC9jaXJjbGU+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=);
   background-repeat: no-repeat;
@@ -6175,7 +6175,7 @@ body > .column-layout {
           background-size: 264px auto;
 }
 @media (min-height: 596px) {
-  .column-layout-left .column-layout-top {
+  .bg-primary.column-layout-left .column-layout-top {
     background-position: left bottom;
   }
 }
@@ -7203,19 +7203,6 @@ select[multiple].input-group-sm > .input-group-addon {
 .nav > li > a > img {
   max-width: none;
 }
-.nav-inverse > li > a {
-  color: #dbf0fd;
-}
-.nav-inverse > li > a:hover,
-.nav-inverse > li > a:focus {
-  color: #00b9ff;
-}
-.nav-inverse > li > a:active {
-  color: #00a4df;
-}
-.nav-inverse > li.active > a {
-  background-color: #2e4369;
-}
 .nav-tabs {
   border-bottom: 1px solid #d3d5d8;
 }
@@ -7276,27 +7263,31 @@ select[multiple].input-group-sm > .input-group-addon {
 .nav-stacked > li.active > a,
 .nav-stacked > li.active > a:hover,
 .nav-stacked > li.active > a:focus {
-  padding-left: 21px;
   border-left: 3px solid #00b9ff;
 }
 .nav-stacked > li ul {
   display: none;
   padding: 0;
+  margin-bottom: 16px;
 }
 .nav-stacked > li ul li {
   list-style-type: none;
 }
 .nav-stacked > li ul li a {
   display: block;
-  padding: 4px 32px 4px 45px;
+  padding: 4px 32px 4px 29px;
   font-size: 14px;
   font-weight: normal;
-  color: #dbf0fd;
+  color: #37517e;
   border-left: 3px solid transparent;
 }
 .nav-stacked > li ul li a:hover,
 .nav-stacked > li ul li a:focus {
   color: #00b9ff;
+}
+.nav-stacked > li ul li.active a {
+  background-color: #e2e6e8;
+  border-left-color: #00a4df;
 }
 .nav-stacked > li.expand ul {
   display: block;
@@ -7383,6 +7374,29 @@ select[multiple].input-group-sm > .input-group-addon {
   margin-top: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.nav-inverse > li > a {
+  color: #dbf0fd;
+}
+.nav-inverse > li > a:hover,
+.nav-inverse > li > a:focus {
+  color: #00b9ff;
+}
+.nav-inverse > li > a:active {
+  color: #00a4df;
+}
+.nav-inverse > li.active > a {
+  background-color: #2e4369;
+}
+.nav-inverse > li ul li a {
+  color: #dbf0fd;
+}
+.nav-inverse > li ul li a:hover,
+.nav-inverse > li ul li a:focus {
+  color: #00b9ff;
+}
+.nav-inverse > li ul li.active > a {
+  background-color: #2e4369;
 }
 .navbar {
   position: relative;
@@ -7528,9 +7542,8 @@ select[multiple].input-group-sm > .input-group-addon {
   position: relative;
   float: left;
   padding: 9px 0;
-  margin-top: 12px;
+  margin-top: 9px;
   margin-right: 12px;
-  margin-bottom: 10px;
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -7724,7 +7737,7 @@ select[multiple].input-group-sm > .input-group-addon {
   }
 }
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 12px;
+  margin-top: 56px;
 }
 @media (max-width: 991px) {
   .navbar-collpse .navbar-nav > li > .dropdown-menu {
@@ -9183,11 +9196,7 @@ a.list-group-item:focus {
 }
 .list-group-item.active {
   z-index: 2;
-  margin-top: 24px;
-  margin-bottom: 24px;
   background-color: #fff;
-  -webkit-box-shadow: 0 1px 10px #e2e6e8;
-          box-shadow: 0 1px 10px #e2e6e8;
 }
 .list-group-item.active:first-child {
   margin-top: 1px;
@@ -9200,8 +9209,12 @@ a.list-group-item:focus {
 }
 @media (min-width: 768px) {
   .list-group-item.active {
+    margin-top: 24px;
     margin-right: -12px;
+    margin-bottom: 24px;
     margin-left: -12px;
+    -webkit-box-shadow: 0 1px 10px #e2e6e8;
+            box-shadow: 0 1px 10px #e2e6e8;
   }
   .list-group-item .media-body {
     -webkit-transition: padding ease .15s;
@@ -9406,7 +9419,7 @@ a.list-group-item-danger:hover {
   background-color: #fff;
 }
 .panel-heading {
-  padding: 24px 16px 8px 16px;
+  padding: 8px 16px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -9429,7 +9442,7 @@ a.list-group-item-danger:hover {
     margin-left: -24px;
   }
   .panel-heading {
-    padding: 24px 24px 8px 24px;
+    padding: 8px 24px;
   }
   .panel-body {
     padding: 24px;
@@ -9444,7 +9457,7 @@ a.list-group-item-danger:hover {
     margin-left: 0;
   }
   .panel-heading {
-    padding: 24px 0 8px 0;
+    padding: 8px 0;
   }
 }
 .panel > .list-group,
@@ -11522,6 +11535,10 @@ li .circle {
 .tw-rate-lock-link:focus,
 .tw-rate-lock-link:active {
   color: #7e7f81;
+}
+.tw-date-lookup .dropdown-menu,
+tw-date-lookup .dropdown-menu {
+  min-width: 316px;
 }
 .footer {
   /* TODO deprecate for a.secondary */

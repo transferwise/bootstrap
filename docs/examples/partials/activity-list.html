@@ -1,9 +1,9 @@
 
-<div class="panel m-b-2">
-  <div class="panel-heading p-t-0">
-    <h6 class="panel-title">
+<div class="panel">
+  <div class="panel-heading">
+    <h3 class="panel-title h6">
       In progress ({{ $ctrl.activeTransfers.length }})
-    </h6>
+    </h3>
   </div>
   <transfer-list
     transfers="$ctrl.activeTransfers"
@@ -14,9 +14,9 @@
 
 <div class="panel">
   <div class="panel-heading">
-    <h6 class="panel-title">
+    <h3 class="panel-title h6">
       Recent ({{ $ctrl.historicTransfers.length }})
-    </h6>
+    </h3>
   </div>
   <transfer-list
     transfers="$ctrl.historicTransfers"

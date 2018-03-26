@@ -89,21 +89,6 @@
   }
 }
 
-.nav-inverse {
-  > li > a {
-    color: @nav-inverse-link-color;
-    &:hover,
-    &:focus {
-      color: @nav-inverse-link-hover-color;
-    }
-    &:active {
-      color: @nav-inverse-link-active-color;
-    }
-  }
-  > li.active > a {
-    background-color: @nav-inverse-link-active-bg;
-  }
-}
 
 // Tabs
 // -------------------------
@@ -185,26 +170,31 @@
       &:hover,
       &:focus {
         border-left: 3px solid @brand-light-blue;
-        padding-left: (24px - 3px);
       }
     }
 
     ul {
       padding: 0;
       display: none;
+      margin-bottom: 16px;
+
       li {
         list-style-type: none;
         a {
           display: block;
           border-left: 3px solid transparent;
-          padding: 4px 32px 4px 45px;
-          color: @nav-inverse-link-color;
+          padding: 4px 32px 4px 29px;
           font-weight: normal;
           font-size: @font-size-small;
+          color: @nav-link-color;
           &:hover,
           &:focus {
-            color: @nav-inverse-link-hover-color;
+            color: @nav-link-hover-color;
           }
+        }
+        &.active a {
+          background-color: @nav-link-active-bg;
+          border-left-color: @nav-link-active-color;
         }
       }
     }
@@ -331,4 +321,39 @@
   margin-top: -1px;
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
+}
+
+
+.nav-inverse {
+  > li {
+    > a {
+      color: @nav-inverse-link-color;
+      &:hover,
+      &:focus {
+        color: @nav-inverse-link-hover-color;
+      }
+      &:active {
+        color: @nav-inverse-link-active-color;
+      }
+    }
+
+    &.active > a {
+      background-color: @nav-inverse-link-active-bg;
+    }
+
+    ul {
+      li {
+        a {
+          color: @nav-inverse-link-color;
+          &:hover,
+          &:focus {
+            color: @nav-inverse-link-hover-color;
+          }
+        }
+        &.active > a {
+          background-color: @nav-inverse-link-active-bg;
+        }
+      }
+    }
+  }
 }

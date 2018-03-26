@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card</title>
+  <!--<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+
+  <link type="text/css" rel="stylesheet"
+    href="../dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="scratch.css" />
+
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-cookies.min.js"></script>
+  <script src="../assets/js/styleguide-components.js"></script>
+
+  <script src="../dist/js/bootstrap.min.js"></script>
+
+  <script src="forms.js"></script>
+
+  <script src="js/example-app.js"></script>
+
+  <script src="js/nav.directive.js"></script>
+  <script src="js/nav-tour.service.js"></script>
+  <script src="js/top-nav.directive.js"></script>
+  <script src="js/simple-nav.directive.js"></script>
+  <script src="js/side-nav.js"></script>
+  <script src="js/activity-filters.directive.js"></script>
+  <script src="js/pagination.directive.js"></script>
+  <script src="js/profile-block.directive.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/page-frame.js"></script>
+
+  <script src="//transferwise.github.io/styleguide-components/lib/styleguide-components.js"></script>
+  <link type="text/css" rel="stylesheet" href="//transferwise.github.io/styleguide-components/components/currency-flags/dist/currency-flags.min.css" />
+
+</head>
+<body ng-app="ExampleApp" class="bg-default" ng-controller="PageController as ctrl">
+  <page-frame page="card" title="Card">
+
+    <div class="row" ng-if="ctrl.card !== 'ordered' && ctrl.card !== 'active'">
+      <div class="col-md-4 col-md-push-7 section hidden-xs hidden-sm">
+        <div class="borderless-preview borderless-desktop hidden-xs hidden-sm">
+          <img src="/assets/img/borderless-desktop.png" title="Desktop screenshot" />
+        </div>
+        <div class="borderless-preview borderless-balance">
+          <img src="/assets/img/borderless-eur.png" title="Balance screenshot" />
+        </div>
+        <div class="borderless-preview borderless-mobile">
+          <img src="/assets/img/borderless-mobile.png" title="Mobile screenshot" />
+        </div>
+      </div>
+      <div class="col-xs-6 col-xs-push-3 col-sm-4 col-sm-push-4 hidden-md hidden-lg hidden-xl">
+        <div class="borderless-preview borderless-mobile">
+          <img src="/assets/img/borderless-balances.png" title="Mobile screenshot" />
+        </div>
+        <div class="borderless-preview borderless-balance">
+          <img src="/assets/img/borderless-mobile-balance.png" title="Balance screenshot" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-md-pull-4 col-xl-5 col-xl-pull-3">
+        <div class="section">
+          <h2 class="h1">
+            Get the card<span class="text-info">.</span>
+          </h2>
+          <p class="lead">Spend anywhere without the hidden fees.</p>
+          <ul>
+            <li>Pay in any currency</li>
+            <li>Transparent, low fees.</li>
+            <li>The real exchange rate, guaranteed.</li>
+          </ul>
+          <div class="btn-toolbar btn-toolbar-md">
+            <button class="btn btn-primary" ng-click="ctrl.card = 'ordered'">Get the card</button>
+            <button class="btn btn-info">Learn more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="ctrl.card === 'ordered'">
+      <tw-cards>
+        <tw-card state="info" open="true" ng-if="!ctrl.hasCard">
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Your card is on the way</h5>
+            <p class="list-group-item-text small">You'll need to activate it when it arrives</p>
+          </collapsed>
+          <expanded>
+            <ul class="sequence sequence-hollow sequence-info">
+              <li>You ordered the card</li>
+              <li>We verify your identity</li>
+              <li class="active">Your card should arrive by 20th Feb</li>
+              <li>You activate your card</li>
+            </ul>
+            <button class="btn btn-primary" ng-click="ctrl.card = 'active'">Activate your card</button>
+          </expanded>
+        </tw-card>
+      </tw-cards>
+    </div>
+
+    <div ng-if="ctrl.card === 'active'">
+      <tw-cards>
+        <tw-card state="success" open="true">
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Card details and status</h5>
+            <p class="list-group-item-text small">Card status: active</p>
+          </collapsed>
+          <expanded>
+            <div class="row">
+              <div class="col-sm-6">
+                <dl>
+                  <dt>Card number</dt>
+                  <dd>1234 5678 9012 3456</dd>
+
+                  <dt>Expiry date</dt>
+                  <dd>01/2011</dd>
+                </dl>
+              </div>
+              <div class="col-sm-6">
+                <dl>
+                  <dt>Card network &amp; type</dt>
+                  <dd>Mastercard Debit</dd>
+
+                  <dt>Name on card</dt>
+                  <dd>Mo Khan</dd>
+                </dl>
+              </div>
+            </div>
+          </expanded>
+        </tw-card>
+      </tw-cards>
+      <br />
+      <br />
+
+      <h6 class="m-b-2">Limits &amp; settings</h6>
+      <tw-cards inactive="true">
+        <tw-card>
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>ATM withdrawals</h5>
+            <p class="text-success list-group-item-text small">ATM withdrawals are enabled</p>
+          </collapsed>
+          <expanded>
+            Expanded
+          </expanded>
+        </tw-card>
+        <tw-card>
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Chip and pin payments</h5>
+            <p class="text-success list-group-item-text small">Payments with chip and pin are enabled</p>
+          </collapsed>
+          <expanded>
+            Expanded
+          </expanded>
+        </tw-card>
+        <tw-card>
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Contactless payments</h5>
+            <p class="text-success list-group-item-text small">Contactless payments are enabled</p>
+          </collapsed>
+          <expanded>
+            Expanded
+          </expanded>
+        </tw-card>
+        <tw-card>
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Magstripe payments</h5>
+            <p class="text-success list-group-item-text small">Payments with magstrip are enabled</p>
+          </collapsed>
+          <expanded>
+            Expanded
+          </expanded>
+        </tw-card>
+        <tw-card>
+          <card-icon><span class="icon icon-card"></span></card-icon>
+          <collapsed>
+            <h5>Online payments</h5>
+            <p class="text-success list-group-item-text small">Online payments are enabled</p>
+          </collapsed>
+          <expanded>
+            Expanded
+          </expanded>
+        </tw-card>
+      </tw-cards>
+    </div>
+  </page-frame>
+
+  <style>
+
+  .borderless-preview {
+    width: 100%;
+  }
+  .borderless-preview img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .borderless-desktop {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .1);
+      animation: borderlessDesktopEntry .5s  1s ease-out both;
+    }
+    .borderless-balance {
+      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
+      animation: borderlessBalanceEntry .5s 1.1s ease-out both;
+    }
+    .borderless-mobile {
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, .4);
+      animation: borderlessMobileEntry .5s 1.2s ease-out both;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .borderless-mobile {
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .1);
+      animation: borderlessMobileEntryM .5s  1s ease-out both;
+    }
+    .borderless-balance {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+      animation: borderlessBalanceEntryM .5s 1.1s ease-out both;
+    }
+  }
+
+  @keyframes borderlessDesktopEntry {
+    0% {
+      opacity: 1%;
+      transform: scale(2) translate(300%, 20%);
+    }
+    100% {
+      opacity: 100%;
+      transform: scale(2) translate(32%, 20%);
+    }
+  }
+
+  @keyframes borderlessBalanceEntry {
+    0% {
+      opacity: 1%;
+      transform: translate(370%, -300%) scale(1.8);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(75%, -300%) scale(1.8);
+    }
+  }
+
+  @keyframes borderlessMobileEntry {
+    0% {
+      opacity: 1%;
+      transform: translate(-40%, 325%) scale(.6);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(-40%, -27%) scale(.6);
+    }
+  }
+
+  @keyframes borderlessBalanceEntryM {
+    0% {
+      opacity: 1%;
+      transform: translate(400%, -350%) scale(1.5);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(0, -350%) scale(1.5);
+    }
+  }
+
+  @keyframes borderlessMobileEntryM {
+    0% {
+      opacity: 1%;
+      transform: translate(300%, 15%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(0%, 15%);
+    }
+  }
+  </style>
+</body>
+</html>

@@ -202,7 +202,7 @@
   position: relative;
   float: left;
   padding: 9px 0;
-  .navbar-vertical-align(34px);
+  margin-top: 9px;
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 0;
@@ -283,21 +283,21 @@
 
     // Dropdowns get custom display when collapsed
     .navbar-collapse-flatten {
-        .dropdown-toggle {
-            display: none;
-        }
-        .dropdown-menu {
-          position: static;
-          margin-top: 0;
-          background-color: transparent;
-          border: 0;
-          display: block;
+      .dropdown-toggle {
+          display: none;
+      }
+      .dropdown-menu {
+        position: static;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        display: block;
 
-          float: none;
-          width: 100%;
-          box-shadow: none;
-          padding: 0;
-        }
+        float: none;
+        width: 100%;
+        box-shadow: none;
+        padding: 0;
+      }
     }
 
     > li.divider {
@@ -383,7 +383,7 @@
 
 // Menu position and menu carets
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 12px;
+  margin-top: 56px;
 }
 @media (max-width: @screen-md-max) {
   .navbar-collpse .navbar-nav > li > .dropdown-menu {

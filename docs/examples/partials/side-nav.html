@@ -7,35 +7,59 @@
 </div>
 
 <ul class="nav nav-stacked nav-inverse m-b-1">
-  <li ng-class="{'active': $ctrl.active === 'activity' || !$ctrl.active}">
-    <a href="account.html" ng-if="$ctrl.active !== 'activity'">Activity</a>
-    <a href="account-balance.html" ng-if="$ctrl.active === 'activity'">Activity</a>
+  <li ng-class="{'expanded': $ctrl.active === 'activity' || $ctrl.active === 'gbp'}">
+    <a href="account.html">Activity <!--<span class="caret pull-xs-right"></span>--></a>
+    <!--
+    <ul class="">
+      <li ng-class="{'active': $ctrl.active === 'activity'}">
+        <a href="account.html">
+          All activity
+        </a>
+      </li>
+      <li ng-class="{'active': $ctrl.active === 'gbp'}">
+        <a href="account-balance.html">
+          GBP <span class="pull-xs-right">1,234.56</span>
+        </a>
+      </li>
+      <li>
+        <a href="balance.html">
+          USD <span class="pull-xs-right">12,345.67</span>
+        </a>
+      </li>
+    </ul>-->
   </li>
+
   <li ng-class="{
       'active': $ctrl.active === 'balances',
       'expanded': $ctrl.active === 'gbp' || $ctrl.balances
     }">
     <a href ng-click="$ctrl.balances = !$ctrl.balances">
-      Balances <span class="caret pull-xs-right"></span>
+      Balances <!--<span class="caret pull-xs-right"></span>-->
     </a>
     <ul class="nav nav-stacked nav-inverse m-b-2">
       <li ng-class="{'active': $ctrl.active === 'gbp'}">
-        <a href="balance.html" class="p-l-1">
+        <a href="balance.html">
           GBP <span class="pull-xs-right">1,234.56</span>
         </a>
       </li>
       <li>
-        <a href="balance.html" class="p-l-1">
+        <a href="balance.html">
           USD <span class="pull-xs-right">12,345.67</span>
         </a>
       </li>
     </ul>
   </li>
+
   <!--
   <li ng-class="{'active': $ctrl.active === 'history'}">
     <a href="">History</a>
   </li>
   -->
+  <li id="card" ng-class="{
+      'active': $ctrl.active === 'card'
+    }">
+    <a href="card.html">Card</a>
+  </li>
   <li ng-class="{
       'active': $ctrl.active === 'recipients'
     }">
@@ -44,7 +68,7 @@
   <li><a href="" id="inviteFriends" onclick="triggerInvitePopover()">Invite Friends</a></li>
   <!--
   <li><a href="" id="twoFactor" onclick="triggerTwoFactorPopover()">Secure your account</a></li>
-  -->
+
   <li ng-class="{
       'active': $ctrl.active === 'settings',
       'expand': $ctrl.settingsOpen
@@ -53,11 +77,12 @@
       Settings <span class="caret pull-xs-right"></span>
     </a>
     <ul class="nav nav-stacked nav-inverse m-b-2">
-      <li><a href="" class="p-l-1">TransferWise card</a></li>
-      <li><a href="settings.html" class="p-l-1">Profile</a></li>
-      <li><a href="" class="p-l-1">Security</a></li>
+      <li><a href="">TransferWise card</a></li>
+      <li><a href="settings.html">Profile</a></li>
+      <li><a href="">Security</a></li>
     </ul>
   </li>
+  -->
 </ul>
 
 

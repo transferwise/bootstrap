@@ -115,9 +115,6 @@ a.list-group-item {
   &.active {
     z-index: 2; // Place active items above their siblings for proper border styling
     background-color: @list-group-active-bg;
-    box-shadow: 0 1px 10px @brand-smoke-plus-10;
-    margin-top: @line-height-computed;
-    margin-bottom: @line-height-computed;
 
     &:first-child {
       margin-top: 1px;
@@ -135,6 +132,9 @@ a.list-group-item {
     &.active {
       margin-left: -12px;
       margin-right: -12px;
+      margin-top: @line-height-computed;
+      margin-bottom: @line-height-computed;
+      box-shadow: 0 1px 10px @brand-smoke-plus-10;
     }
 
     .media-body {

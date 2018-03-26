@@ -1,5 +1,5 @@
 <div>
-	<div ng-if="$ctrl.transfer.phase === 'FINISHED' || $ctrl.transfer.status === 'BLOCKED'">
+	<div ng-if="$ctrl.transfer.phase === 'FINISHED'">
 		<div class="row">
 			<dl class="col-sm-6">
 				<dt>Sent to</dt>
@@ -48,7 +48,6 @@
 		transfer="$ctrl.transfer"
 		target-account="$ctrl.targetAccount"
 		ng-if="$ctrl.transfer.phase !== 'FINISHED' &&
-			$ctrl.transfer.state !== 'BLOCKED' &&
 			!($ctrl.transfer.phase === 'INCOMING' &&
 			$ctrl.transfer.state === 'PENDING')"></money-tracker>
 </div>

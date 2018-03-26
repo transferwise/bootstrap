@@ -119,6 +119,48 @@
       <div role="tabpanel" class="tab-pane" id="password">...</div>
       <div role="tabpanel" class="tab-pane" id="twoFactor">...</div>
     </div>
+
+    <tw-cards>
+      <tw-card open="false">
+        <card-icon></card-icon>
+        <collapsed>
+          <h4>Email settings</h4>
+          <p>stephenpole@gmail.com</p>
+        </collapsed>
+        <expanded>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Email address</label>
+                <input type="text" class="form-control" />
+              </div>
+              <button class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </expanded>
+      </tw-card>
+      <tw-card open="false">
+        <card-icon></card-icon>
+        <collapsed>
+          <h4>Language settings</h4>
+          <p>English</p>
+        </collapsed>
+      </tw-card>
+      <tw-card open="false">
+        <card-icon></card-icon>
+        <collapsed>
+          <h4>Change password</h4>
+          <p>********</p>
+        </collapsed>
+      </tw-card>
+      <tw-card open="false">
+        <card-icon></card-icon>
+        <collapsed>
+          <h4>2-step login</h4>
+          <p>Status: <span class="text-success">On (SMS or voice call)</span></p>
+        </collapsed>
+      </tw-card>
+    </tw-cards>
   </page-frame>
 </body>
 </html>

@@ -967,6 +967,8 @@ input[type="checkbox"] {
 .error-maxlength,
 .error-min,
 .error-max,
+.error-minimum,
+.error-maximum,
 .error-async,
 .error-number,
 .error-date,
@@ -985,6 +987,8 @@ input[type="checkbox"] {
 .ng-invalid-maxlength ~ .error-messages > .error-maxlength,
 .ng-invalid-min ~ .error-messages > .error-min,
 .ng-invalid-max ~ .error-messages > .error-max,
+.ng-invalid-min ~ .error-messages > .error-minimum,
+.ng-invalid-max ~ .error-messages > .error-maximum,
 .ng-invalid-async ~ .error-messages > .error-async,
 .ng-invalid-number ~ .error-messages > .error-number,
 .ng-invalid-date ~ .error-messages > .error-date,
@@ -1003,6 +1007,8 @@ input[type="checkbox"] {
 .ng-invalid-maxlength ~ .alert-danger > .error-maxlength,
 .ng-invalid-min ~ .alert-danger > .error-min,
 .ng-invalid-max ~ .alert-danger > .error-max,
+.ng-invalid-min ~ .alert-danger > .error-minimum,
+.ng-invalid-max ~ .alert-danger > .error-maximum,
 .ng-invalid-async ~ .alert-danger > .error-async,
 .ng-invalid-number ~ .alert-danger > .error-number,
 .ng-invalid-date ~ .alert-danger > .error-date,
@@ -1018,4 +1024,8 @@ input[type="checkbox"] {
 
 .form-control-placeholder {
   color: @input-color-placeholder;
+}
+
+tw-field {
+  width: 100%;
 }

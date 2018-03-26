@@ -1,22 +1,56 @@
 <simple-nav
-	title="{{$ctrl.title}}"
-	subtitle="{{$ctrl.subtitle}}"
-	on-burger-click="$ctrl.onMenuClick()">
+  title="{{$ctrl.title}}"
+  subtitle="{{$ctrl.subtitle}}"
+  on-burger-click="$ctrl.onMenuClick()">
 </simple-nav>
+<div class="bg-primary p-b-4 hidden-lg hidden-xl">
+  <div id="balance-carousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h2 class="h1 text-xs-center">All activity</h2>
+      </div>
+      <div class="item">
+        <h2 class="h1 text-xs-center">1,234.56 GBP</h2>
+      </div>
+      <div class="item">
+        <h2 class="h1 text-xs-center">234.56 EUR</h2>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#balance-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#balance-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div style="clear: both"></div>
+</div>
 
 <div ng-if="($ctrl.buttons && $ctrl.buttons.length) || $ctrl.searchable"
-	class="nav-toolbar" data-spy="affix" data-offset-top="{{ $ctrl.subtitle ? '88' : '66' }}"
-	ng-class="{
-		'affix-cancel-xs': $ctrl.showSearch,
-		'affix-cancel-sm': $ctrl.showSearch
-	}">
-	<div class="container m-l-0">
-		<activity-filters
-			buttons="$ctrl.buttons"
-			button-summary="{{$ctrl.buttonSummary}}"
-			searchable="$ctrl.searchable"
-			filters-active="$ctrl.showSearch">
-		</activity-filters>
-	</div>
+  class="nav-toolbar" data-spy="affix" data-offset-top="{{ $ctrl.subtitle ? '88' : '66' }}"
+  ng-class="{
+    'affix-cancel-xs': $ctrl.showSearch,
+    'affix-cancel-sm': $ctrl.showSearch
+  }">
+  <div class="container m-l-0">
+    <activity-filters
+      buttons="$ctrl.buttons"
+      button-summary="{{$ctrl.buttonSummary}}"
+      searchable="$ctrl.searchable"
+      filters-active="$ctrl.showSearch">
+    </activity-filters>
+  </div>
 </div>
 <div class="container"></div>
