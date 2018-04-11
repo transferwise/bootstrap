@@ -101,6 +101,9 @@
   &.dropdown-menu-lg {
     width: 420px;
   }
+  &.dropdown-menu-native {
+    width: 100%;
+  }
 }
 
 // Hover/Focus/Active state
@@ -180,9 +183,25 @@
     animation: showDropdown 0.2s cubic-bezier( 0.6, 0.2, 0.1, 1 ) both;
   }
 
+  // Show the menu
+  > .dropdown-menu-native {
+    display: block;
+    animation: slideIn 0.2s both;
+  }
+
   // Remove the outline when :focus is triggered
   > a {
     outline: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    margin-bottom: -100%;
+  }
+
+  to {
+    margin-top: 0%;
   }
 }
 
@@ -210,6 +229,20 @@
 .dropdown-menu-xs-left {
   left: 0;
   right: auto;
+}
+
+@media (max-width: @screen-sm-min) {
+  .dropdown-menu-native {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    max-width: 100% !important;
+    max-height: 50% !important;
+    min-height: 200px;
+    box-shadow: 0 20px 66px 0 rgba(34, 48, 73, 1);
+    -webkit-box-shadow: 0 20px 66px 0 rgba(34, 48, 73, 1);
+  }
 }
 
 @media (min-width: @screen-sm-min) {

@@ -80,6 +80,26 @@
 </ul>
 {% endhighlight %}
 
+  <h2 id="dropdowns-native">Native</h2>
+  <p>By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent.
+    Add <code>.dropdown-menu-native</code> to a <code>.dropdown-menu</code> to have the menu fixed at the bottom with 100% width on mobile devices.</p>
+
+    <div class="bs-example">
+        <div class="dropdown clearfix">
+          <ul class="dropdown-menu dropdown-menu-native" role="menu">
+            <li role="presentation" class="dropdown-header">Dropdown header</li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      </div><!-- /example -->
+{% highlight html %}
+<ul class="dropdown-menu dropdown-menu-native" role="menu" aria-labelledby="dLabel">
+  ...
+</ul>
+{% endhighlight %}
+
   <h2 id="dropdowns-headers">Headers</h2>
   <p>Add a header to label sections of actions in any dropdown menu.</p>
   <div class="bs-example">
