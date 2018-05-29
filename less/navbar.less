@@ -1313,3 +1313,129 @@
     top: @navbar-secondary-height;
   }
 }
+
+//Foldout
+
+// @foldout-border-radius: 3px;
+@foldout-vertical-padding: 50px;
+
+.navbar-foldout {
+  .nav > li {
+    position: inherit;
+     &.dropdown {
+       &:active,
+       &:focus,
+       &:focus-within,
+       &.focus-within {
+          .dropdown-menu {
+            animation: none;
+          }
+       }
+     }
+
+   .dropdown-menu {
+     max-width: inherit;
+     border-radius: 0;
+     min-height: 340px;
+     width: 100%;
+     animation: none;
+   }
+}
+}
+
+.navbar-foldout-body {
+  // border-radius: @foldout-border-radius;
+  background: @brand-white;
+  max-width: @container-xlarge-desktop;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    transform: rotate(-45deg);
+    width: 50px;
+    height: 50px;
+    border-top-right-radius: 3px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 400px;
+  }
+
+  @media (max-width: @screen-xl) {
+    margin: 0 @spacing-1-desktop;
+  }
+  @media (max-width: @screen-lg) {
+    margin: 0 @spacing-1-tablet;
+  }
+}
+
+.navbar-foldout-nav {
+  padding: @foldout-vertical-padding @grid-gutter-width;
+  display: flex;
+  justify-content: space-between;
+
+  [class^="col-"] {
+    padding-left: @grid-gutter-width;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    font-weight: normal;
+    color: @brand-grey-plus-10;
+
+
+  }
+}
+.icon.navbar-foldout-nav-icon{
+  font-size: 2.5em;
+  color:@brand-light-blue;
+  opacity: .4;
+  margin-bottom: @spacer * 3;
+  display: inline-block;
+
+}
+a.navbar-foldout-nav-link {
+  color: @brand-light-blue;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+      white-space: nowrap;
+
+  .icon-right {
+    transform: scale(0.7);
+
+  }
+}
+.navbar-foldout-featured {
+  background: @gray-base;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: @brand-blue;
+  text-align: center;
+  // border-radius: 0 @foldout-border-radius @foldout-border-radius 0;
+  padding: @foldout-vertical-padding @grid-gutter-width;
+}
+
+.navbar-foldout-featured-heading {
+  font-size: @font-size-h2;
+  line-height: @line-height-h2;
+  font-family: @headings-font-family;
+  font-weight: @headings-font-weight;
+  color: @brand-navy-minus-10;
+  margin-bottom: @spacer * 3;
+}
+
+.navbar-foldout-featured-image {
+  margin-bottom: @spacer * 3;
+}
