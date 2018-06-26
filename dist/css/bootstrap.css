@@ -6473,7 +6473,7 @@ tbody.collapse.in {
   overflow: hidden;
   background-color: #f2f5f7;
 }
-.dropdown-menu > li > a {
+.dropdown-menu li > a {
   display: block;
   padding: 13px 16px 11px;
   clear: both;
@@ -6483,10 +6483,10 @@ tbody.collapse.in {
   white-space: nowrap;
   border-radius: 3px;
 }
-.dropdown-menu > li > a .glyphicon {
+.dropdown-menu li > a .glyphicon {
   top: 2px;
 }
-.dropdown-menu > li > a .secondary {
+.dropdown-menu li > a .secondary {
   display: block;
   white-space: normal;
 }
@@ -8700,124 +8700,140 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     top: 64px;
   }
 }
-.navbar-foldout .nav > li {
+.navbar-foldout > li {
   position: inherit;
 }
-.navbar-foldout .nav > li.dropdown:active .dropdown-menu,
-.navbar-foldout .nav > li.dropdown:focus .dropdown-menu,
-.navbar-foldout .nav > li.dropdown:focus-within .dropdown-menu,
-.navbar-foldout .nav > li.dropdown.focus-within .dropdown-menu {
-  -webkit-animation: none;
-       -o-animation: none;
-          animation: none;
-}
-.navbar-foldout .nav > li .dropdown-menu {
-  width: 100%;
-  max-width: inherit;
-  min-height: 340px;
-  border-radius: 0;
-  -webkit-animation: none;
-       -o-animation: none;
-          animation: none;
-}
-.navbar-foldout-body {
-  position: relative;
+.navbar-foldout > li.dropdown:hover .navbar-foldout-container,
+.navbar-foldout > li.dropdown:active .navbar-foldout-container,
+.navbar-foldout > li.dropdown:focus .navbar-foldout-container,
+.navbar-foldout > li.dropdown:focus-within .navbar-foldout-container,
+.navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
-  max-width: 1164px;
-  margin: auto;
+}
+.navbar-foldout > li.dropdown:hover .dropdown-menu,
+.navbar-foldout > li.dropdown:active .dropdown-menu,
+.navbar-foldout > li.dropdown:focus .dropdown-menu,
+.navbar-foldout > li.dropdown:focus-within .dropdown-menu,
+.navbar-foldout > li.dropdown.focus-within .dropdown-menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  -webkit-animation: none;
+       -o-animation: none;
+          animation: none;
+}
+.navbar-foldout > li.dropdown:hover::before,
+.navbar-foldout > li.dropdown:active::before,
+.navbar-foldout > li.dropdown:focus::before,
+.navbar-foldout > li.dropdown:focus-within::before,
+.navbar-foldout > li.dropdown.focus-within::before {
+  display: block;
+}
+.navbar-foldout > li.dropdown:hover button,
+.navbar-foldout > li.dropdown:active button,
+.navbar-foldout > li.dropdown:focus button,
+.navbar-foldout > li.dropdown:focus-within button,
+.navbar-foldout > li.dropdown.focus-within button {
+  position: relative;
+}
+.navbar-foldout > li.dropdown:hover button::before,
+.navbar-foldout > li.dropdown:active button::before,
+.navbar-foldout > li.dropdown:focus button::before,
+.navbar-foldout > li.dropdown:focus-within button::before,
+.navbar-foldout > li.dropdown.focus-within button::before {
+  position: absolute;
+  top: 50px;
+  right: 22px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background: #fff;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.subnav .navbar-foldout > li.dropdown:hover button::before,
+.subnav .navbar-foldout > li.dropdown:active button::before,
+.subnav .navbar-foldout > li.dropdown:focus button::before,
+.subnav .navbar-foldout > li.dropdown:focus-within button::before,
+.subnav .navbar-foldout > li.dropdown.focus-within button::before {
+  top: 58px;
+}
+.navbar-foldout > li.dropdown::before {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 340px;
+  content: "";
+  background: #fff;
+}
+.subnav .navbar-foldout > li.dropdown::before {
+  top: 64px;
+}
+.navbar-foldout .dropdown-menu {
+  position: relative;
+  top: auto;
+  right: auto;
+  left: auto;
+  width: 100%;
+  padding: 0;
+  color: #5d7079;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.navbar-foldout .dropdown-menu > li a {
+  padding: 0 0 8px;
+  font-size: 14px;
+}
+.navbar-foldout .dropdown-menu > li a.navbar-foldout-title {
+  padding-bottom: 16px;
+  font-weight: bold;
+}
+.navbar-foldout-container {
+  position: absolute;
+  top: 56px;
+  left: -webkit-calc(50% - 1110px / 2);
+  left:         calc(50% - 1110px / 2);
+  z-index: 1001;
+  display: none;
+  width: 100%;
+  max-width: 1110px;
+  min-height: 340px;
   background: #fff;
 
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
 }
-.navbar-foldout-body:before {
-  position: absolute;
-  top: 0;
-  right: 400px;
-  width: 50px;
-  height: 50px;
-  content: "";
-  background: white;
-  border-top-right-radius: 3px;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-       -o-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+.subnav .navbar-foldout-container {
+  top: 64px;
 }
-@media (max-width: 1200px) {
-  .navbar-foldout-body {
-    margin: 0 32px;
-  }
-}
-@media (max-width: 992px) {
-  .navbar-foldout-body {
-    margin: 0 24px;
-  }
-}
-.navbar-foldout-nav {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  padding: 50px 24px;
-
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.navbar-foldout-nav [class^="col-"] {
-  padding-left: 24px;
-}
-.navbar-foldout-nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.navbar-foldout-nav a {
-  font-weight: normal;
-  color: #6f8691;
-}
-.icon.navbar-foldout-nav-icon {
-  display: inline-block;
-  margin-bottom: 8px * 3;
-  font-size: 2.5em;
-  color: #00b9ff;
-  opacity: .4;
-}
-a.navbar-foldout-nav-link {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  font-weight: bold;
-  color: #00b9ff;
-  white-space: nowrap;
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-}
-a.navbar-foldout-nav-link .icon-right {
-  -webkit-transform: scale(.7);
-      -ms-transform: scale(.7);
-       -o-transform: scale(.7);
-          transform: scale(.7);
+.navbar-foldout-link {
+  color: #5d7079;
 }
 .navbar-foldout-featured {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
-  padding: 50px 24px;
   color: #223049;
-  text-align: center;
           flex-direction: column;
   background: #f2f5f7;
 
@@ -8834,16 +8850,21 @@ a.navbar-foldout-nav-link .icon-right {
   -ms-flex-pack: center;
           justify-content: center;
 }
+.navbar-foldout-featured-image {
+  max-width: 350px;
+  height: 340px;
+
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .navbar-foldout-featured-heading {
+  position: absolute;
   margin-bottom: 8px * 3;
   font-family: "Averta", "Avenir W02", "Avenir", Helvetica, Arial, sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 32px;
   color: #2e4369;
-}
-.navbar-foldout-featured-image {
-  margin-bottom: 8px * 3;
 }
 .breadcrumb {
   padding: 8px 0;
