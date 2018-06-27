@@ -8747,7 +8747,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .navbar-foldout > li.dropdown.focus-within button::before {
   position: absolute;
   top: 50px;
-  right: 22px;
+  right: 21px;
   width: 8px;
   height: 8px;
   content: "";
