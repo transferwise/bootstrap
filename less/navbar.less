@@ -1319,7 +1319,7 @@
 @foldout-vertical-padding: 50px;
 @foldout-min-height: 340px;
 @foldout-featured-image-width: 350px;
-@foldout-container-width: 1110px;
+@foldout-container-width: 1200px;
 
 .navbar-foldout {
   > li {
@@ -1396,8 +1396,16 @@
     color: @text-color;
     background: none;
 
-    > li{
-      a{
+    @media (min-width: @screen-xl) {
+      justify-content: space-between;
+    }
+
+    > li {
+      @media (min-width: @screen-xl) {
+        flex: 1;
+      }
+
+      a {
         font-size: @font-size-small;
         padding: 0 0 @spacer;
 
@@ -1411,7 +1419,7 @@
 }
 
 .navbar-foldout-container {
-  left: calc(50% - @foldout-container-width / 2);
+  left: 0;
   top: @navbar-height;
   display: none;
   align-items: center;
@@ -1426,6 +1434,10 @@
   .subnav & {
     top: @navbar-secondary-height;
   }
+
+  @media (min-width: @screen-xl) {
+    left: calc(50% - @foldout-container-width / 2);
+  }
 }
 
 .navbar-foldout-link {
@@ -1433,28 +1445,33 @@
 }
 
 .navbar-foldout-featured {
-  background: @gray-base;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: @brand-blue;
-
+  display: none;
 }
-.navbar-foldout-featured-image {
-  max-width: @foldout-featured-image-width;
-  height: @foldout-min-height;
-  object-fit: cover;
-}
+@media (min-width: @screen-xl) {
+  .navbar-foldout-featured {
+    background: @gray-base;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: @brand-blue;
+  }
 
-.navbar-foldout-featured-heading {
-  font-size: @font-size-h2;
-  line-height: @line-height-h2;
-  font-family: @headings-font-family;
-  font-weight: @headings-font-weight;
-  color: @brand-navy-minus-10;
-  margin-bottom: @spacer * 3;
-  position: absolute;
+  .navbar-foldout-featured-image {
+    max-width: @foldout-featured-image-width;
+    height: @foldout-min-height;
+    object-fit: cover;
+  }
+
+  .navbar-foldout-featured-heading {
+    font-size: @font-size-h2;
+    line-height: @line-height-h2;
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    color: @brand-navy-minus-10;
+    margin-bottom: @spacer * 3;
+    position: absolute;
+  }
 }
 
 // .navbar-foldout-featured-image {

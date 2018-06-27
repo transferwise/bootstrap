@@ -8793,6 +8793,22 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   -ms-flex-pack: distribute;
           justify-content: space-around;
 }
+@media (min-width: 1200px) {
+  .navbar-foldout .dropdown-menu {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-foldout .dropdown-menu > li {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
 .navbar-foldout .dropdown-menu > li a {
   padding: 0 0 8px;
   font-size: 14px;
@@ -8804,12 +8820,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .navbar-foldout-container {
   position: absolute;
   top: 56px;
-  left: -webkit-calc(50% - 1110px / 2);
-  left:         calc(50% - 1110px / 2);
+  left: 0;
   z-index: 1001;
   display: none;
   width: 100%;
-  max-width: 1110px;
+  max-width: 1200px;
   min-height: 340px;
   background: #fff;
 
@@ -8825,46 +8840,57 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .subnav .navbar-foldout-container {
   top: 64px;
 }
+@media (min-width: 1200px) {
+  .navbar-foldout-container {
+    left: -webkit-calc(50% - 1200px / 2);
+    left:         calc(50% - 1200px / 2);
+  }
+}
 .navbar-foldout-link {
   color: #5d7079;
 }
 .navbar-foldout-featured {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  color: #223049;
-          flex-direction: column;
-  background: #f2f5f7;
-
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-          justify-content: center;
+  display: none;
 }
-.navbar-foldout-featured-image {
-  max-width: 350px;
-  height: 340px;
+@media (min-width: 1200px) {
+  .navbar-foldout-featured {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    color: #223049;
+            flex-direction: column;
+    background: #f2f5f7;
 
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.navbar-foldout-featured-heading {
-  position: absolute;
-  margin-bottom: 8px * 3;
-  font-family: "Averta", "Avenir W02", "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 32px;
-  color: #2e4369;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .navbar-foldout-featured-image {
+    max-width: 350px;
+    height: 340px;
+
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .navbar-foldout-featured-heading {
+    position: absolute;
+    margin-bottom: 8px * 3;
+    font-family: "Averta", "Avenir W02", "Avenir", Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #2e4369;
+  }
 }
 .breadcrumb {
   padding: 8px 0;
