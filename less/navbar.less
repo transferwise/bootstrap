@@ -1317,9 +1317,10 @@
 //Foldout
 
 @foldout-vertical-padding: 50px;
-@foldout-min-height: 340px;
+@foldout-min-height: 320px;
 @foldout-featured-image-width: 350px;
 @foldout-container-width: 1100px;
+@foldout-container-padding: 10px;
 
 .navbar-foldout {
   > li {
@@ -1374,7 +1375,8 @@
         top: @navbar-height;
         left: 0;
         width: 100%;
-        height: @foldout-min-height;
+        // height: @foldout-min-height;
+        min-height: (@foldout-min-height + @foldout-container-padding * 2);
         background: @brand-white;
 
         .subnav & {
@@ -1392,7 +1394,6 @@
     width: 100%;
     justify-content: space-around;
     box-shadow: none;
-    padding: 0;
     color: @text-color;
     background: none;
 
@@ -1426,10 +1427,11 @@
   justify-content: center;
   position: absolute;
   width: 100%;
-  min-height: @foldout-min-height;
+  // min-height: (@foldout-min-height + @foldout-container-padding * 2);
   background: @brand-white;
   z-index: 1001;
   max-width: @foldout-container-width;
+  padding: @foldout-container-padding;
 
   .subnav & {
     top: @navbar-secondary-height;
@@ -1449,7 +1451,6 @@
 }
 @media (min-width: @screen-xl) {
   .navbar-foldout-featured {
-    background: @gray-base;
     display: flex;
     flex-direction: column;
     align-items: center;
