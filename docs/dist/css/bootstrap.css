@@ -8824,7 +8824,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   z-index: 1001;
   display: none;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   min-height: 340px;
   background: #fff;
 
@@ -8842,8 +8842,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 @media (min-width: 1200px) {
   .navbar-foldout-container {
-    left: -webkit-calc(50% - 1200px / 2);
-    left:         calc(50% - 1200px / 2);
+    left: -webkit-calc(50% - 1100px / 2);
+    left:         calc(50% - 1100px / 2);
   }
 }
 .navbar-foldout-link {
