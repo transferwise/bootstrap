@@ -7811,6 +7811,20 @@ select[multiple].input-group-sm > .input-group-addon {
 
     -webkit-touch-callout: none;
   }
+  .navbar-nav > li .dropdown-menu {
+    position: relative;
+    float: none;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 12px;
+    margin-top: 0;
+    border-bottom: 1px solid #f2f5f7;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .navbar-nav > li .dropdown-menu .dropdown-header {
+    padding: 9px 16px 7px;
+  }
   .navbar-nav .navbar-collapse-flatten .dropdown-toggle {
     display: none;
   }
@@ -7943,34 +7957,17 @@ select[multiple].input-group-sm > .input-group-addon {
     border-bottom: 1px solid #f2f5f7;
   }
 }
-.navbar-nav > li > .dropdown-menu {
-  margin-top: 56px;
-}
-.navbar-nav > li > .dropdown-menu:before {
-  position: absolute;
-  top: -4px;
-  left: 16px;
-  display: block;
-  width: 8px;
-  height: 8px;
-  content: " ";
-  background-color: inherit;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-       -o-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.navbar-nav > li > .dropdown-menu > li > a {
+.navbar-nav > li .dropdown-menu li > a {
   font-size: 14px;
 }
 @media (max-width: 768px) {
-  .navbar-nav > li > .dropdown-menu > li > a {
+  .navbar-nav > li .dropdown-menu li > a {
     position: relative;
     padding: 9px 16px 7px;
 
     -webkit-touch-callout: none;
   }
-  .navbar-nav > li > .dropdown-menu > li > a .badge {
+  .navbar-nav > li .dropdown-menu li > a .badge {
     position: absolute;
     top: 16px;
     right: 0;
@@ -7981,13 +7978,13 @@ select[multiple].input-group-sm > .input-group-addon {
     text-indent: 264px;
   }
 }
-.navbar-nav > li > .dropdown-menu > .active > a {
+.navbar-nav > li .dropdown-menu > .active > a {
   font-weight: bold;
   color: #00a4df;
   background-color: transparent;
 }
-.navbar-nav > li > .dropdown-menu > .active > a:hover,
-.navbar-nav > li > .dropdown-menu > .active > a:focus {
+.navbar-nav > li .dropdown-menu > .active > a:hover,
+.navbar-nav > li .dropdown-menu > .active > a:focus {
   background-color: #f2f5f7;
 }
 .navbar-nav > li.dropdown:active > a,
@@ -8713,26 +8710,6 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   display: -ms-flexbox;
   display:         flex;
 }
-.navbar-foldout > li.dropdown:hover .dropdown-menu,
-.navbar-foldout > li.dropdown:active .dropdown-menu,
-.navbar-foldout > li.dropdown:focus .dropdown-menu,
-.navbar-foldout > li.dropdown:focus-within .dropdown-menu,
-.navbar-foldout > li.dropdown.focus-within .dropdown-menu {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  -webkit-animation: none;
-       -o-animation: none;
-          animation: none;
-}
-.navbar-foldout > li.dropdown:hover::before,
-.navbar-foldout > li.dropdown:active::before,
-.navbar-foldout > li.dropdown:focus::before,
-.navbar-foldout > li.dropdown:focus-within::before,
-.navbar-foldout > li.dropdown.focus-within::before {
-  display: block;
-}
 .navbar-foldout > li.dropdown:hover button,
 .navbar-foldout > li.dropdown:active button,
 .navbar-foldout > li.dropdown:focus button,
@@ -8763,6 +8740,65 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .subnav .navbar-foldout > li.dropdown:focus-within button::before,
 .subnav .navbar-foldout > li.dropdown.focus-within button::before {
   top: 58px;
+}
+@media (min-width: 768px) {
+  .navbar-foldout > li.dropdown:hover::before,
+  .navbar-foldout > li.dropdown:active::before,
+  .navbar-foldout > li.dropdown:focus::before,
+  .navbar-foldout > li.dropdown:focus-within::before,
+  .navbar-foldout > li.dropdown.focus-within::before {
+    display: block;
+  }
+  .navbar-foldout > li.dropdown:hover .dropdown-menu,
+  .navbar-foldout > li.dropdown:active .dropdown-menu,
+  .navbar-foldout > li.dropdown:focus .dropdown-menu,
+  .navbar-foldout > li.dropdown:focus-within .dropdown-menu,
+  .navbar-foldout > li.dropdown.focus-within .dropdown-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    margin-top: 0;
+    -webkit-animation: none;
+         -o-animation: none;
+            animation: none;
+  }
+  .navbar-foldout > li.dropdown:hover .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:active .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:focus .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:focus-within .navbar-foldout-container,
+  .navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
+    position: absolute;
+    top: 56px;
+    left: -webkit-calc(50% - 1100px / 2);
+    left:         calc(50% - 1100px / 2);
+    z-index: 1001;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 340px;
+    padding: 10px;
+    background: #fff;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .subnav .navbar-foldout > li.dropdown:hover .navbar-foldout-container,
+  .subnav .navbar-foldout > li.dropdown:active .navbar-foldout-container,
+  .subnav .navbar-foldout > li.dropdown:focus .navbar-foldout-container,
+  .subnav .navbar-foldout > li.dropdown:focus-within .navbar-foldout-container,
+  .subnav .navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
+    top: 64px;
+  }
 }
 .navbar-foldout > li.dropdown::before {
   position: absolute;
@@ -8808,42 +8844,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
             flex: 1;
   }
 }
-.navbar-foldout .dropdown-menu > li a {
-  padding: 0 0 8px;
-  font-size: 14px;
-}
 .navbar-foldout .dropdown-menu > li a.navbar-foldout-title {
   padding-bottom: 16px;
   font-weight: bold;
 }
 .navbar-foldout-container {
-  position: absolute;
-  top: 56px;
-  left: 0;
-  z-index: 1001;
   display: none;
-  width: 100%;
-  max-width: 1100px;
-  padding: 10px;
-  background: #fff;
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-          justify-content: center;
-}
-.subnav .navbar-foldout-container {
-  top: 64px;
-}
-@media (min-width: 1200px) {
-  .navbar-foldout-container {
-    left: -webkit-calc(50% - 1100px / 2);
-    left:         calc(50% - 1100px / 2);
-  }
 }
 .navbar-foldout-link {
   color: #5d7079;
