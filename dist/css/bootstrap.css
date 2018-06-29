@@ -8800,6 +8800,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     top: 64px;
   }
 }
+.navbar-foldout > li.dropdown:hover:hover .navbar-foldout-container,
+.navbar-foldout > li.dropdown:active:hover .navbar-foldout-container,
+.navbar-foldout > li.dropdown:focus:hover .navbar-foldout-container,
+.navbar-foldout > li.dropdown:focus-within:hover .navbar-foldout-container,
+.navbar-foldout > li.dropdown.focus-within:hover .navbar-foldout-container {
+  z-index: 1002;
+}
 .navbar-foldout > li.dropdown::before {
   position: absolute;
   top: 56px;
