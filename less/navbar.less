@@ -457,8 +457,9 @@
 // Menu position and menu arrows
 .navbar-nav {
   > li {
-     .dropdown-menu {
-
+    .dropdown-menu {
+      margin-top: @navbar-height;
+      .arrow-pointer(@dropdown-arrow-width);
 
        li > a {
         font-size: @navbar-font-size;

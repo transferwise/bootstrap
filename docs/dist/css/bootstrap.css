@@ -7957,6 +7957,23 @@ select[multiple].input-group-sm > .input-group-addon {
     border-bottom: 1px solid #f2f5f7;
   }
 }
+.navbar-nav > li .dropdown-menu {
+  margin-top: 56px;
+}
+.navbar-nav > li .dropdown-menu:before {
+  position: absolute;
+  top: -4px;
+  left: 16px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 .navbar-nav > li .dropdown-menu li > a {
   font-size: 14px;
 }
