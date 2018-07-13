@@ -8818,7 +8818,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display:         flex;
     width: 100%;
     max-width: 1100px;
-    min-height: 340px;
+    min-height: 300px;
     padding: 10px;
     background: #fff;
 
@@ -8862,7 +8862,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   left: 0;
   display: none;
   width: 100%;
-  min-height: 340px;
+  min-height: 300px;
   content: "";
   background: #fff;
 }
@@ -8898,6 +8898,16 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+}
+.navbar-foldout .dropdown-menu > li a {
+  padding: 0 0 8px;
+}
+@media (min-width: 768px) {
+  .navbar-foldout .dropdown-menu > li a:hover,
+  .navbar-foldout .dropdown-menu > li a:focus {
+    color: #00b9ff;
+    background: none;
   }
 }
 .navbar-foldout .dropdown-menu > li a.navbar-foldout-title {
@@ -8936,8 +8946,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
             justify-content: center;
   }
   .navbar-foldout-featured-image {
-    max-width: 350px;
-    height: 320px;
+    max-width: 360px;
+    height: 280px;
 
     -o-object-fit: cover;
        object-fit: cover;

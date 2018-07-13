@@ -1453,9 +1453,15 @@
       }
 
       a {
-        // font-size: @font-size-small;
-        // padding: 0 0 @spacer;
+        padding: 0 0 @spacer;
 
+        @media (min-width: @grid-float-breakpoint) {
+          &:hover,
+          &:focus {
+            background: none;
+            color: @link-color;
+          }
+        }
         &.navbar-foldout-title {
           font-weight: bold;
           padding-bottom: (@spacer * 2);
@@ -1465,7 +1471,7 @@
   }
 }
 
-.navbar-foldout-container{
+.navbar-foldout-container {
   display: none;
 }
 
