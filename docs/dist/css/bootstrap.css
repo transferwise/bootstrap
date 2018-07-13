@@ -7872,7 +7872,6 @@ select[multiple].input-group-sm > .input-group-addon {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-bottom: 6px;
     font-size: 14px;
   }
 }
@@ -8233,7 +8232,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 @media (min-width: 768px) {
   .navbar-inverse .navbar-nav > li > a {
-    border-bottom: 3px solid transparent;
+    border-bottom: 0;
   }
 }
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -8699,15 +8698,25 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     background-color: #2e4369;
     border-top: none;
   }
+<<<<<<< HEAD
+=======
+  .subnav .navbar-btn {
+    margin-top: 17px;
+    margin-bottom: 15px;
+  }
+>>>>>>> Align items
   .subnav .navbar-nav > li > a {
     padding-top: 13px;
   }
   .subnav .navbar-nav > li > button {
     height: 64px;
+<<<<<<< HEAD
   }
   .subnav .navbar-btn,
   .subnav .navbar-brand {
     margin-top: 16px;
+=======
+>>>>>>> Align items
   }
   .subnav-menu {
     position: absolute;
@@ -8734,29 +8743,49 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .navbar-foldout > li.dropdown.focus-within button {
   position: relative;
 }
+.navbar-foldout > li.dropdown:hover button:before,
+.navbar-foldout > li.dropdown:active button:before,
+.navbar-foldout > li.dropdown:focus button:before,
+.navbar-foldout > li.dropdown:focus-within button:before,
+.navbar-foldout > li.dropdown.focus-within button:before {
+  position: absolute;
+  top: -4px;
+  left: 16px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  content: " ";
+  background-color: inherit;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 .navbar-foldout > li.dropdown:hover button::before,
 .navbar-foldout > li.dropdown:active button::before,
 .navbar-foldout > li.dropdown:focus button::before,
 .navbar-foldout > li.dropdown:focus-within button::before,
 .navbar-foldout > li.dropdown.focus-within button::before {
-  position: absolute;
-  top: 50px;
-  right: 21px;
-  width: 8px;
-  height: 8px;
-  content: "";
+  top: 52px;
+  right: 18px;
+  left: auto;
   background: #fff;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-       -o-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+}
+@media (min-width: 992px) {
+  .navbar-foldout > li.dropdown:hover button::before,
+  .navbar-foldout > li.dropdown:active button::before,
+  .navbar-foldout > li.dropdown:focus button::before,
+  .navbar-foldout > li.dropdown:focus-within button::before,
+  .navbar-foldout > li.dropdown.focus-within button::before {
+    right: 21px;
+  }
 }
 .subnav .navbar-foldout > li.dropdown:hover button::before,
 .subnav .navbar-foldout > li.dropdown:active button::before,
 .subnav .navbar-foldout > li.dropdown:focus button::before,
 .subnav .navbar-foldout > li.dropdown:focus-within button::before,
 .subnav .navbar-foldout > li.dropdown.focus-within button::before {
-  top: 58px;
+  top: 60px;
 }
 @media (min-width: 768px) {
   .navbar-foldout > li.dropdown:hover::before,
