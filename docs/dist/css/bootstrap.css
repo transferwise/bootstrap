@@ -8698,25 +8698,19 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     background-color: #2e4369;
     border-top: none;
   }
-<<<<<<< HEAD
-=======
   .subnav .navbar-btn {
     margin-top: 17px;
     margin-bottom: 15px;
   }
->>>>>>> Align items
   .subnav .navbar-nav > li > a {
     padding-top: 13px;
   }
   .subnav .navbar-nav > li > button {
     height: 64px;
-<<<<<<< HEAD
   }
   .subnav .navbar-btn,
   .subnav .navbar-brand {
     margin-top: 16px;
-=======
->>>>>>> Align items
   }
   .subnav-menu {
     position: absolute;
@@ -8816,8 +8810,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
     position: absolute;
     top: 56px;
-    left: -webkit-calc(50% - 1100px / 2);
-    left:         calc(50% - 1100px / 2);
+    left: 0;
     z-index: 1001;
     display: -webkit-box;
     display: -webkit-flex;
@@ -8844,6 +8837,16 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .subnav .navbar-foldout > li.dropdown:focus-within .navbar-foldout-container,
   .subnav .navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
     top: 64px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  .navbar-foldout > li.dropdown:hover .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:active .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:focus .navbar-foldout-container,
+  .navbar-foldout > li.dropdown:focus-within .navbar-foldout-container,
+  .navbar-foldout > li.dropdown.focus-within .navbar-foldout-container {
+    left: -webkit-calc(50% - 1100px / 2);
+    left:         calc(50% - 1100px / 2);
   }
 }
 .navbar-foldout > li.dropdown:hover:hover .navbar-foldout-container,

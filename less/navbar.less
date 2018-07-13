@@ -1385,7 +1385,7 @@
           }
 
           .navbar-foldout-container {
-            left: calc(50% - @navbar-foldout-container-width / 2);
+            left: 0;
             top: @navbar-height;
             display: flex;
             align-items: center;
@@ -1397,6 +1397,9 @@
             z-index: 1001;
             max-width: @navbar-foldout-container-width;
             padding: @navbar-foldout-container-padding;
+            @media (min-width: @screen-xl) {
+              left: calc(50% - @navbar-foldout-container-width / 2);
+            }
 
             .subnav & {
               top: @navbar-secondary-height;
