@@ -8761,7 +8761,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .navbar-foldout > li.dropdown:focus-within button::before,
 .navbar-foldout > li.dropdown.focus-within button::before {
   top: 52px;
-  right: 18px;
+  right: 16px;
   left: auto;
   background: #fff;
 }
@@ -8771,7 +8771,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   .navbar-foldout > li.dropdown:focus button::before,
   .navbar-foldout > li.dropdown:focus-within button::before,
   .navbar-foldout > li.dropdown.focus-within button::before {
-    right: 21px;
+    right: 20px;
   }
 }
 .subnav .navbar-foldout > li.dropdown:hover button::before,
