@@ -1,4 +1,15 @@
 version: 2
+aliases:
+  - &save-pip-cache
+      key: pip-cache-{{ .Branch }}
+      paths:
+        - "~/.cache/pip"
+
+  - &restore-pip-cache
+      keys:
+        - pip-cache-{{ .Branch }}
+        - pip-cache-
+
 jobs:
   build:
     docker:
@@ -41,6 +52,37 @@ jobs:
           name: Deploy to GitHub
           command: ./.circleci/deploy.sh _gh_pages
 
+  publish-to-cdn:
+    working_directory: ~/bootstrap
+    docker:
+      - image: circleci/python:latest
+    steps:
+      - attach_workspace:
+          at: ~/bootstrap
+      - restore-cache: *restore-pip-cache
+      - run:
+          name: Install AWS CLI
+          command: pip install awscli --upgrade --user
+      - run:
+          name: Set environment variables
+          command: |
+            echo "export PATH=~/.local/bin:$PATH" >> $BASH_ENV
+            VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+            echo "export VERSION=$VERSION" >> $BASH_ENV
+            echo "export S3_PATH=tw-deployables/bootstrap" >> $BASH_ENV
+            echo "export DISTRIBUTION_ID=E2G39GLKN9BVEN" >> $BASH_ENV
+      - run:
+          name: Deploy to S3 version directory
+          command: aws s3 sync dist s3://$S3_PATH/$VERSION --acl public-read
+      - run:
+          name: Deploy to S3 latest directory
+          command: aws s3 sync dist s3://$S3_PATH/latest --acl public-read
+
+      - run:
+          name: Invalidate CloudFront
+          command: aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "dist/css/*" "dist/fonts/*" "dist/images/*" "dist/js/*"
+      - save-cache: *save-pip-cache
+
 workflows:
   version: 2
   build-deploy:
@@ -52,3 +94,9 @@ workflows:
           filters:
             branches:
               only: master
+      - publish-to-cdn:
+          requires:
+            - build
+          filters:
+            branches:
+              only: publish-to-cdn
