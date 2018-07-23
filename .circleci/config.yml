@@ -2,6 +2,8 @@ version: 2
 aliases:
   - &save-pip-cache
       key: pip-cache-{{ .Branch }}
+      paths:
+        - "~/.cache/pip"
 
   - &restore-pip-cache
       keys:
