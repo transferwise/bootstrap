@@ -66,8 +66,8 @@ jobs:
       - run:
           name: Set environment variables
           command: |
-            echo 'export PATH=~/.local/bin:$PATH' >> $BASH_ENV
-            VERSION = $(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+            echo "export PATH=~/.local/bin:$PATH" >> $BASH_ENV
+            VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
             echo "export VERSION=$VERSION" >> $BASH_ENV
             echo "export S3_PATH=tw-deployables/bootstrap" >> $BASH_ENV
             echo "export DISTRIBUTION_ID=E2G39GLKN9BVEN" >> $BASH_ENV
