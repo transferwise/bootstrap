@@ -1382,6 +1382,10 @@
             display: flex;
             animation: none;
             margin-top: 0;
+
+            &::before {
+              display: none;
+            }
           }
 
           .navbar-foldout-container {
@@ -1462,6 +1466,7 @@
             color: @link-color;
           }
         }
+
         &.navbar-foldout-title {
           font-weight: bold;
           padding-bottom: (@spacer * 2);
@@ -1482,6 +1487,7 @@
 .navbar-foldout-featured {
   display: none;
 }
+
 @media (min-width: @screen-xl) {
   .navbar-foldout-featured {
     display: flex;
@@ -1506,4 +1512,123 @@
     margin-bottom: @spacer * 3;
     position: absolute;
   }
+}
+
+.language-selector {
+  position: relative;
+  width: 100%;
+
+  .dropdown-menu {
+    padding-left: 60%;
+    column-count: 2;
+    display: block !important;
+
+    li > a {
+      display: inline-block;
+    }
+  }
+
+  .hello-world {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    opacity: 0;
+    min-width: 60%;
+    color: @text-bold-color;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .lang-item {
+    &:nth-of-type(1) {
+      .hello-world {
+        animation: hello-world 3s;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .hello-world {
+        animation: hello-world 3s 3s;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .hello-world {
+        animation: hello-world 3s 6s;
+      }
+    }
+
+    &:nth-of-type(5) {
+      .hello-world {
+        animation: hello-world 3s 9s;
+      }
+    }
+
+    &:nth-of-type(6) {
+      .hello-world {
+        animation: hello-world 3s 12s;
+      }
+    }
+
+    &:nth-of-type(7) {
+      .hello-world {
+        animation: hello-world 3s 15s;
+      }
+    }
+
+    &:nth-of-type(8) {
+      .hello-world {
+        animation: hello-world 3s 18s;
+      }
+    }
+
+    &:nth-of-type(9) {
+      .hello-world {
+        animation: hello-world 3s 21s;
+      }
+    }
+
+    &:nth-of-type(10) {
+      .hello-world {
+        animation: hello-world 3s 24s;
+      }
+    }
+
+    &:nth-of-type(11) {
+      .hello-world {
+        animation: hello-world 3s 27s;
+      }
+    }
+
+    &:nth-of-type(12) {
+      .hello-world {
+        animation: hello-world 3s 30s;
+      }
+    }
+
+    a {
+      &:hover {
+        ~ .hello-world {
+          opacity: 1;
+          z-index: 1;
+
+          &::before {
+            content: '';
+            background: white;
+            width: 100%;
+            position: absolute;
+            height: 120%;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes hello-world {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
 }

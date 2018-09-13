@@ -8803,6 +8803,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
          -o-animation: none;
             animation: none;
   }
+  .navbar-foldout > li.dropdown:hover .dropdown-menu::before,
+  .navbar-foldout > li.dropdown:active .dropdown-menu::before,
+  .navbar-foldout > li.dropdown:focus .dropdown-menu::before,
+  .navbar-foldout > li.dropdown:focus-within .dropdown-menu::before,
+  .navbar-foldout > li.dropdown.focus-within .dropdown-menu::before {
+    display: none;
+  }
   .navbar-foldout > li.dropdown:hover .navbar-foldout-container,
   .navbar-foldout > li.dropdown:active .navbar-foldout-container,
   .navbar-foldout > li.dropdown:focus .navbar-foldout-container,
@@ -8960,6 +8967,140 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     font-weight: 600;
     line-height: 32px;
     color: #2e4369;
+  }
+}
+.language-selector {
+  position: relative;
+  width: 100%;
+}
+.language-selector .dropdown-menu {
+  display: block !important;
+  padding-left: 60%;
+
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+}
+.language-selector .dropdown-menu li > a {
+  display: inline-block;
+}
+.language-selector .hello-world {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  min-width: 60%;
+  color: #2e4369;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+}
+.language-selector .lang-item:nth-of-type(1) .hello-world {
+  -webkit-animation: hello-world 3s;
+       -o-animation: hello-world 3s;
+          animation: hello-world 3s;
+}
+.language-selector .lang-item:nth-of-type(3) .hello-world {
+  -webkit-animation: hello-world 3s 3s;
+       -o-animation: hello-world 3s 3s;
+          animation: hello-world 3s 3s;
+}
+.language-selector .lang-item:nth-of-type(4) .hello-world {
+  -webkit-animation: hello-world 3s 6s;
+       -o-animation: hello-world 3s 6s;
+          animation: hello-world 3s 6s;
+}
+.language-selector .lang-item:nth-of-type(5) .hello-world {
+  -webkit-animation: hello-world 3s 9s;
+       -o-animation: hello-world 3s 9s;
+          animation: hello-world 3s 9s;
+}
+.language-selector .lang-item:nth-of-type(6) .hello-world {
+  -webkit-animation: hello-world 3s 12s;
+       -o-animation: hello-world 3s 12s;
+          animation: hello-world 3s 12s;
+}
+.language-selector .lang-item:nth-of-type(7) .hello-world {
+  -webkit-animation: hello-world 3s 15s;
+       -o-animation: hello-world 3s 15s;
+          animation: hello-world 3s 15s;
+}
+.language-selector .lang-item:nth-of-type(8) .hello-world {
+  -webkit-animation: hello-world 3s 18s;
+       -o-animation: hello-world 3s 18s;
+          animation: hello-world 3s 18s;
+}
+.language-selector .lang-item:nth-of-type(9) .hello-world {
+  -webkit-animation: hello-world 3s 21s;
+       -o-animation: hello-world 3s 21s;
+          animation: hello-world 3s 21s;
+}
+.language-selector .lang-item:nth-of-type(10) .hello-world {
+  -webkit-animation: hello-world 3s 24s;
+       -o-animation: hello-world 3s 24s;
+          animation: hello-world 3s 24s;
+}
+.language-selector .lang-item:nth-of-type(11) .hello-world {
+  -webkit-animation: hello-world 3s 27s;
+       -o-animation: hello-world 3s 27s;
+          animation: hello-world 3s 27s;
+}
+.language-selector .lang-item:nth-of-type(12) .hello-world {
+  -webkit-animation: hello-world 3s 30s;
+       -o-animation: hello-world 3s 30s;
+          animation: hello-world 3s 30s;
+}
+.language-selector .lang-item a:hover ~ .hello-world {
+  z-index: 1;
+  opacity: 1;
+}
+.language-selector .lang-item a:hover ~ .hello-world::before {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  content: '';
+  background: white;
+}
+@-webkit-keyframes hello-world {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes hello-world {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hello-world {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .breadcrumb {
