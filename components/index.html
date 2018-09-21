@@ -495,6 +495,31 @@
   </div>
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Inbox <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-success"</span><span class="nt">&gt;</span>new<span class="nt">&lt;/span&gt;&lt;/a&gt;</span></code></pre></figure>
 
+  <h4>Navigation Icon</h4>
+  <p>Use <code>.icon +.badge</code> contextual class. It's responsive to handle inverse case.</p>
+  <div class="bs-example" data-example-id="badges-icon-nav-inverse">
+    <nav class="navbar navbar-default m-b-0 simple-nav">
+      <ul class="nav navbar-nav">
+        <li class="m-r-0">
+          <a class="p-r-0">
+            <span class="icon icon-notification m-r-0"></span>
+            <span class="badge">20</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-default m-b-0 simple-nav"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"m-r-0"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"p-r-0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon icon-notification m-r-0"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span></code></pre></figure>
+
   <h4>Self collapsing</h4>
   <p>When there are no new or unread items, badges will simply collapse (via CSS's <code>:empty</code> selector) provided no content exists within.</p>
 
