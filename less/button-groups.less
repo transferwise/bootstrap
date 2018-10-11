@@ -351,15 +351,28 @@
     width: 100%;
 
     > li > a {
+      white-space: nowrap;
+      overflow: hidden;
       width: 100%;
+      text-overflow: ellipsis;
     }
   }
 }
 
-.btn-group .dropdown-menu {
+.btn-group {
+  .dropdown-menu {
     max-height: 90vh;
     overflow: auto;
+
+    > li > a {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      text-overflow: ellipsis;
+    }
+  }
 }
+
 @media (min-height: 592px) {
     .btn-group .dropdown-menu {
         max-height: 592px;	// (12 * 48) + 16 = 592
