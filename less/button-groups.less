@@ -351,7 +351,6 @@
     width: 100%;
 
     > li > a {
-      white-space: nowrap;
       overflow: hidden;
       width: 100%;
       text-overflow: ellipsis;
@@ -365,7 +364,6 @@
     overflow: auto;
 
     > li > a {
-      white-space: nowrap;
       overflow: hidden;
       width: 100%;
       text-overflow: ellipsis;
@@ -373,11 +371,9 @@
   }
 
   // allow tw-select options to wrap into multiple lines
-  &.tw-select {
-    .dropdown-menu {
-      > li > a {
-        white-space: normal;
-      }
+  .btn-input + .dropdown-menu {
+    > li > a {
+      white-space: normal;
     }
   }
 }
