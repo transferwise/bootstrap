@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v5.18.7 (http://bootstrap.transferwise.com)
- * Copyright 2011-2018 Twitter, Inc.
+ * Bootstrap v5.18.8 (http://bootstrap.transferwise.com)
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
 
@@ -12484,6 +12484,26 @@ li .circle {
 .tw-rate-lock-link:focus,
 .tw-rate-lock-link:active {
   color: #7e7f81;
+}
+/**
+ * Notification center
+ */
+@media screen and (max-width: 767px) {
+  .notification-center .open .dropdown-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    background-color: #fff;
+    -webkit-animation: listSlideOver .15s ease-out forwards;
+         -o-animation: listSlideOver .15s ease-out forwards;
+            animation: listSlideOver .15s ease-out forwards;
+  }
 }
 .navbar .glyphicon,
 .navbar .icon {
