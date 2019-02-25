@@ -1108,11 +1108,12 @@
   overflow-x: hidden;
   white-space: nowrap;
   display: inline-block;
-  width: 85vw;
+  max-width: calc(100vw ~"-" 2 * @spacing-1-mobile);
 
   @media (min-width: @screen-lg-min) {
     color: @headings-color;
     width: 100%;
+    max-width: initial;
   }
 }
 
