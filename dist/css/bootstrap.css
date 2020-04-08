@@ -8573,17 +8573,10 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   border-bottom: 1px solid #e2e6e8;
 }
 
-.nav-toolbar--modified {
-  padding-top: 0px;
-}
-
 @media (min-width: 992px) {
   .nav-toolbar {
     margin-top: 0;
     background-color: #fff;
-  }
-  .nav-toolbar--modified {
-    padding-top: 16px;
   }
   .nav-toolbar.affix {
     position: fixed;
