@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v5.20.0 (http://bootstrap.transferwise.com)
+ * Bootstrap v6.0.0 (http://bootstrap.transferwise.com)
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
@@ -12505,36 +12505,6 @@ li .circle {
 .tw-rate-lock-link:focus,
 .tw-rate-lock-link:active {
   color: #7e7f81;
-}
-.link-callout::after {
-  display: inline-block;
-  margin-left: 8px;
-  font-family: 'Glyphicons Halflings';
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  color: #00b9ff;
-  pointer-events: none;
-  content: "\e080";
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-       -o-transition:      -o-transform .2s ease-in-out;
-          transition:         transform .2s ease-in-out;
-  -webkit-transform: none;
-      -ms-transform: none;
-       -o-transform: none;
-          transform: none;
-
-  -webkit-font-smoothing: antialiased;
-}
-.link-callout:hover::after,
-.link-callout:focus::after,
-.callout-container:hover .link-callout::after,
-.callout-container:focus .link-callout::after {
-  -webkit-transform: translateX(4px);
-      -ms-transform: translateX(4px);
-       -o-transform: translateX(4px);
-          transform: translateX(4px);
 }
 .navbar .glyphicon,
 .navbar .icon {
