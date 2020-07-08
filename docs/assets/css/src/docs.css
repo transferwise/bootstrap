@@ -1578,9 +1578,9 @@ h4 code {
   display: inline-block;
 }
 .d-flex {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-box;
   display:         flex;
 }
 .flex-wrap {
