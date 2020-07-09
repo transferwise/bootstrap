@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v6.0.0 (http://bootstrap.transferwise.com)
+ * Bootstrap v7.0.0 (http://bootstrap.transferwise.com)
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/transferwise/bootstrap/blob/master/LICENSE)
  */
