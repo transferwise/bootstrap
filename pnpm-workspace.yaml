@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - '@sematext/gc-stats'
+  - core-js
+  - core-js-pure
+  - protobufjs
+  - unrs-resolver
